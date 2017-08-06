@@ -1,0 +1,549 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		D8388E401F37905B004A2DA3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8388E3F1F37905B004A2DA3 /* AppDelegate.swift */; };
+		D8388E421F37905B004A2DA3 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8388E411F37905B004A2DA3 /* ViewController.swift */; };
+		D8388E441F37905B004A2DA3 /* Document.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8388E431F37905B004A2DA3 /* Document.swift */; };
+		D8388E471F37905B004A2DA3 /* Document.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D8388E451F37905B004A2DA3 /* Document.xcdatamodeld */; };
+		D8388E491F37905B004A2DA3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D8388E481F37905B004A2DA3 /* Assets.xcassets */; };
+		D8388E4C1F37905B004A2DA3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D8388E4A1F37905B004A2DA3 /* Main.storyboard */; };
+		D8388E571F37905B004A2DA3 /* FruokTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8388E561F37905B004A2DA3 /* FruokTests.swift */; };
+		D8388E621F37905B004A2DA3 /* FruokUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8388E611F37905B004A2DA3 /* FruokUITests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		D8388E531F37905B004A2DA3 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D8388E341F37905B004A2DA3 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D8388E3B1F37905B004A2DA3;
+			remoteInfo = Fruok;
+		};
+		D8388E5E1F37905B004A2DA3 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D8388E341F37905B004A2DA3 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D8388E3B1F37905B004A2DA3;
+			remoteInfo = Fruok;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		D8388E3C1F37905B004A2DA3 /* Fruok.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Fruok.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		D8388E3F1F37905B004A2DA3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		D8388E411F37905B004A2DA3 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		D8388E431F37905B004A2DA3 /* Document.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Document.swift; sourceTree = "<group>"; };
+		D8388E461F37905B004A2DA3 /* Document.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Document.xcdatamodel; sourceTree = "<group>"; };
+		D8388E481F37905B004A2DA3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		D8388E4B1F37905B004A2DA3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		D8388E4D1F37905B004A2DA3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D8388E521F37905B004A2DA3 /* FruokTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FruokTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		D8388E561F37905B004A2DA3 /* FruokTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FruokTests.swift; sourceTree = "<group>"; };
+		D8388E581F37905B004A2DA3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D8388E5D1F37905B004A2DA3 /* FruokUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FruokUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		D8388E611F37905B004A2DA3 /* FruokUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FruokUITests.swift; sourceTree = "<group>"; };
+		D8388E631F37905B004A2DA3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		D8388E391F37905B004A2DA3 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D8388E4F1F37905B004A2DA3 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D8388E5A1F37905B004A2DA3 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		D8388E331F37905B004A2DA3 = {
+			isa = PBXGroup;
+			children = (
+				D8388E3E1F37905B004A2DA3 /* Fruok */,
+				D8388E551F37905B004A2DA3 /* FruokTests */,
+				D8388E601F37905B004A2DA3 /* FruokUITests */,
+				D8388E3D1F37905B004A2DA3 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		D8388E3D1F37905B004A2DA3 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				D8388E3C1F37905B004A2DA3 /* Fruok.app */,
+				D8388E521F37905B004A2DA3 /* FruokTests.xctest */,
+				D8388E5D1F37905B004A2DA3 /* FruokUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		D8388E3E1F37905B004A2DA3 /* Fruok */ = {
+			isa = PBXGroup;
+			children = (
+				D8388E3F1F37905B004A2DA3 /* AppDelegate.swift */,
+				D8388E411F37905B004A2DA3 /* ViewController.swift */,
+				D8388E431F37905B004A2DA3 /* Document.swift */,
+				D8388E481F37905B004A2DA3 /* Assets.xcassets */,
+				D8388E4A1F37905B004A2DA3 /* Main.storyboard */,
+				D8388E4D1F37905B004A2DA3 /* Info.plist */,
+				D8388E451F37905B004A2DA3 /* Document.xcdatamodeld */,
+			);
+			path = Fruok;
+			sourceTree = "<group>";
+		};
+		D8388E551F37905B004A2DA3 /* FruokTests */ = {
+			isa = PBXGroup;
+			children = (
+				D8388E561F37905B004A2DA3 /* FruokTests.swift */,
+				D8388E581F37905B004A2DA3 /* Info.plist */,
+			);
+			path = FruokTests;
+			sourceTree = "<group>";
+		};
+		D8388E601F37905B004A2DA3 /* FruokUITests */ = {
+			isa = PBXGroup;
+			children = (
+				D8388E611F37905B004A2DA3 /* FruokUITests.swift */,
+				D8388E631F37905B004A2DA3 /* Info.plist */,
+			);
+			path = FruokUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		D8388E3B1F37905B004A2DA3 /* Fruok */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D8388E661F37905B004A2DA3 /* Build configuration list for PBXNativeTarget "Fruok" */;
+			buildPhases = (
+				D8388E381F37905B004A2DA3 /* Sources */,
+				D8388E391F37905B004A2DA3 /* Frameworks */,
+				D8388E3A1F37905B004A2DA3 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Fruok;
+			productName = Fruok;
+			productReference = D8388E3C1F37905B004A2DA3 /* Fruok.app */;
+			productType = "com.apple.product-type.application";
+		};
+		D8388E511F37905B004A2DA3 /* FruokTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D8388E691F37905B004A2DA3 /* Build configuration list for PBXNativeTarget "FruokTests" */;
+			buildPhases = (
+				D8388E4E1F37905B004A2DA3 /* Sources */,
+				D8388E4F1F37905B004A2DA3 /* Frameworks */,
+				D8388E501F37905B004A2DA3 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				D8388E541F37905B004A2DA3 /* PBXTargetDependency */,
+			);
+			name = FruokTests;
+			productName = FruokTests;
+			productReference = D8388E521F37905B004A2DA3 /* FruokTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		D8388E5C1F37905B004A2DA3 /* FruokUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D8388E6C1F37905B004A2DA3 /* Build configuration list for PBXNativeTarget "FruokUITests" */;
+			buildPhases = (
+				D8388E591F37905B004A2DA3 /* Sources */,
+				D8388E5A1F37905B004A2DA3 /* Frameworks */,
+				D8388E5B1F37905B004A2DA3 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				D8388E5F1F37905B004A2DA3 /* PBXTargetDependency */,
+			);
+			name = FruokUITests;
+			productName = FruokUITests;
+			productReference = D8388E5D1F37905B004A2DA3 /* FruokUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		D8388E341F37905B004A2DA3 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0820;
+				LastUpgradeCheck = 0820;
+				ORGANIZATIONNAME = "Tristan Inc.";
+				TargetAttributes = {
+					D8388E3B1F37905B004A2DA3 = {
+						CreatedOnToolsVersion = 8.2.1;
+						DevelopmentTeam = V85GBYB7B9;
+						ProvisioningStyle = Automatic;
+					};
+					D8388E511F37905B004A2DA3 = {
+						CreatedOnToolsVersion = 8.2.1;
+						DevelopmentTeam = V85GBYB7B9;
+						ProvisioningStyle = Automatic;
+						TestTargetID = D8388E3B1F37905B004A2DA3;
+					};
+					D8388E5C1F37905B004A2DA3 = {
+						CreatedOnToolsVersion = 8.2.1;
+						DevelopmentTeam = V85GBYB7B9;
+						ProvisioningStyle = Automatic;
+						TestTargetID = D8388E3B1F37905B004A2DA3;
+					};
+				};
+			};
+			buildConfigurationList = D8388E371F37905B004A2DA3 /* Build configuration list for PBXProject "Fruok" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = D8388E331F37905B004A2DA3;
+			productRefGroup = D8388E3D1F37905B004A2DA3 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				D8388E3B1F37905B004A2DA3 /* Fruok */,
+				D8388E511F37905B004A2DA3 /* FruokTests */,
+				D8388E5C1F37905B004A2DA3 /* FruokUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		D8388E3A1F37905B004A2DA3 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D8388E491F37905B004A2DA3 /* Assets.xcassets in Resources */,
+				D8388E4C1F37905B004A2DA3 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D8388E501F37905B004A2DA3 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D8388E5B1F37905B004A2DA3 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		D8388E381F37905B004A2DA3 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D8388E471F37905B004A2DA3 /* Document.xcdatamodeld in Sources */,
+				D8388E421F37905B004A2DA3 /* ViewController.swift in Sources */,
+				D8388E401F37905B004A2DA3 /* AppDelegate.swift in Sources */,
+				D8388E441F37905B004A2DA3 /* Document.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D8388E4E1F37905B004A2DA3 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D8388E571F37905B004A2DA3 /* FruokTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D8388E591F37905B004A2DA3 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D8388E621F37905B004A2DA3 /* FruokUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		D8388E541F37905B004A2DA3 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = D8388E3B1F37905B004A2DA3 /* Fruok */;
+			targetProxy = D8388E531F37905B004A2DA3 /* PBXContainerItemProxy */;
+		};
+		D8388E5F1F37905B004A2DA3 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = D8388E3B1F37905B004A2DA3 /* Fruok */;
+			targetProxy = D8388E5E1F37905B004A2DA3 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		D8388E4A1F37905B004A2DA3 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D8388E4B1F37905B004A2DA3 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		D8388E641F37905B004A2DA3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		D8388E651F37905B004A2DA3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = macosx;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+			};
+			name = Release;
+		};
+		D8388E671F37905B004A2DA3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = V85GBYB7B9;
+				INFOPLIST_FILE = Fruok/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.tristan.Fruok;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		D8388E681F37905B004A2DA3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = V85GBYB7B9;
+				INFOPLIST_FILE = Fruok/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.tristan.Fruok;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
+		D8388E6A1F37905B004A2DA3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = V85GBYB7B9;
+				INFOPLIST_FILE = FruokTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.tristan.FruokTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Fruok.app/Contents/MacOS/Fruok";
+			};
+			name = Debug;
+		};
+		D8388E6B1F37905B004A2DA3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = V85GBYB7B9;
+				INFOPLIST_FILE = FruokTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.tristan.FruokTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Fruok.app/Contents/MacOS/Fruok";
+			};
+			name = Release;
+		};
+		D8388E6D1F37905B004A2DA3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = V85GBYB7B9;
+				INFOPLIST_FILE = FruokUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.tristan.FruokUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_TARGET_NAME = Fruok;
+			};
+			name = Debug;
+		};
+		D8388E6E1F37905B004A2DA3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = V85GBYB7B9;
+				INFOPLIST_FILE = FruokUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.tristan.FruokUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_TARGET_NAME = Fruok;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		D8388E371F37905B004A2DA3 /* Build configuration list for PBXProject "Fruok" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D8388E641F37905B004A2DA3 /* Debug */,
+				D8388E651F37905B004A2DA3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D8388E661F37905B004A2DA3 /* Build configuration list for PBXNativeTarget "Fruok" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D8388E671F37905B004A2DA3 /* Debug */,
+				D8388E681F37905B004A2DA3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		D8388E691F37905B004A2DA3 /* Build configuration list for PBXNativeTarget "FruokTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D8388E6A1F37905B004A2DA3 /* Debug */,
+				D8388E6B1F37905B004A2DA3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		D8388E6C1F37905B004A2DA3 /* Build configuration list for PBXNativeTarget "FruokUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D8388E6D1F37905B004A2DA3 /* Debug */,
+				D8388E6E1F37905B004A2DA3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		D8388E451F37905B004A2DA3 /* Document.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				D8388E461F37905B004A2DA3 /* Document.xcdatamodel */,
+			);
+			currentVersion = D8388E461F37905B004A2DA3 /* Document.xcdatamodel */;
+			path = Document.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = D8388E341F37905B004A2DA3 /* Project object */;
+}

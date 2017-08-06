@@ -7,10 +7,26 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D82ECF281F37985D008251C2 /* Document.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D82ECF151F37985D008251C2 /* Document.xcdatamodeld */; };
+		D82ECF291F37985D008251C2 /* BaseTask+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = D82ECF181F37985D008251C2 /* BaseTask+CoreDataClass.swift */; };
+		D82ECF2A1F37985D008251C2 /* BaseTask+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = D82ECF191F37985D008251C2 /* BaseTask+CoreDataProperties.swift */; };
+		D82ECF2B1F37985D008251C2 /* Label+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = D82ECF1A1F37985D008251C2 /* Label+CoreDataClass.swift */; };
+		D82ECF2C1F37985D008251C2 /* Label+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = D82ECF1B1F37985D008251C2 /* Label+CoreDataProperties.swift */; };
+		D82ECF2D1F37985D008251C2 /* LabelColor+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = D82ECF1C1F37985D008251C2 /* LabelColor+CoreDataClass.swift */; };
+		D82ECF2E1F37985D008251C2 /* LabelColor+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = D82ECF1D1F37985D008251C2 /* LabelColor+CoreDataProperties.swift */; };
+		D82ECF2F1F37985D008251C2 /* Project+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = D82ECF1E1F37985D008251C2 /* Project+CoreDataClass.swift */; };
+		D82ECF301F37985D008251C2 /* Project+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = D82ECF1F1F37985D008251C2 /* Project+CoreDataProperties.swift */; };
+		D82ECF311F37985D008251C2 /* RGBAColor+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = D82ECF201F37985D008251C2 /* RGBAColor+CoreDataClass.swift */; };
+		D82ECF321F37985D008251C2 /* RGBAColor+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = D82ECF211F37985D008251C2 /* RGBAColor+CoreDataProperties.swift */; };
+		D82ECF331F37985D008251C2 /* Subtask+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = D82ECF221F37985D008251C2 /* Subtask+CoreDataClass.swift */; };
+		D82ECF341F37985D008251C2 /* Subtask+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = D82ECF231F37985D008251C2 /* Subtask+CoreDataProperties.swift */; };
+		D82ECF351F37985D008251C2 /* Task+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = D82ECF241F37985D008251C2 /* Task+CoreDataClass.swift */; };
+		D82ECF361F37985D008251C2 /* Task+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = D82ECF251F37985D008251C2 /* Task+CoreDataProperties.swift */; };
+		D82ECF371F37985D008251C2 /* TaskState+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = D82ECF261F37985D008251C2 /* TaskState+CoreDataClass.swift */; };
+		D82ECF381F37985D008251C2 /* TaskState+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = D82ECF271F37985D008251C2 /* TaskState+CoreDataProperties.swift */; };
 		D8388E401F37905B004A2DA3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8388E3F1F37905B004A2DA3 /* AppDelegate.swift */; };
 		D8388E421F37905B004A2DA3 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8388E411F37905B004A2DA3 /* ViewController.swift */; };
 		D8388E441F37905B004A2DA3 /* Document.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8388E431F37905B004A2DA3 /* Document.swift */; };
-		D8388E471F37905B004A2DA3 /* Document.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D8388E451F37905B004A2DA3 /* Document.xcdatamodeld */; };
 		D8388E491F37905B004A2DA3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D8388E481F37905B004A2DA3 /* Assets.xcassets */; };
 		D8388E4C1F37905B004A2DA3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D8388E4A1F37905B004A2DA3 /* Main.storyboard */; };
 		D8388E571F37905B004A2DA3 /* FruokTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8388E561F37905B004A2DA3 /* FruokTests.swift */; };
@@ -35,11 +51,27 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		D82ECF161F37985D008251C2 /* Document.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Document.xcdatamodel; sourceTree = "<group>"; };
+		D82ECF181F37985D008251C2 /* BaseTask+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "BaseTask+CoreDataClass.swift"; sourceTree = "<group>"; };
+		D82ECF191F37985D008251C2 /* BaseTask+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "BaseTask+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		D82ECF1A1F37985D008251C2 /* Label+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Label+CoreDataClass.swift"; sourceTree = "<group>"; };
+		D82ECF1B1F37985D008251C2 /* Label+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Label+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		D82ECF1C1F37985D008251C2 /* LabelColor+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "LabelColor+CoreDataClass.swift"; sourceTree = "<group>"; };
+		D82ECF1D1F37985D008251C2 /* LabelColor+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "LabelColor+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		D82ECF1E1F37985D008251C2 /* Project+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Project+CoreDataClass.swift"; sourceTree = "<group>"; };
+		D82ECF1F1F37985D008251C2 /* Project+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Project+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		D82ECF201F37985D008251C2 /* RGBAColor+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "RGBAColor+CoreDataClass.swift"; sourceTree = "<group>"; };
+		D82ECF211F37985D008251C2 /* RGBAColor+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "RGBAColor+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		D82ECF221F37985D008251C2 /* Subtask+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Subtask+CoreDataClass.swift"; sourceTree = "<group>"; };
+		D82ECF231F37985D008251C2 /* Subtask+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Subtask+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		D82ECF241F37985D008251C2 /* Task+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Task+CoreDataClass.swift"; sourceTree = "<group>"; };
+		D82ECF251F37985D008251C2 /* Task+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Task+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		D82ECF261F37985D008251C2 /* TaskState+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "TaskState+CoreDataClass.swift"; sourceTree = "<group>"; };
+		D82ECF271F37985D008251C2 /* TaskState+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "TaskState+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		D8388E3C1F37905B004A2DA3 /* Fruok.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Fruok.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D8388E3F1F37905B004A2DA3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D8388E411F37905B004A2DA3 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		D8388E431F37905B004A2DA3 /* Document.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Document.swift; sourceTree = "<group>"; };
-		D8388E461F37905B004A2DA3 /* Document.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Document.xcdatamodel; sourceTree = "<group>"; };
 		D8388E481F37905B004A2DA3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D8388E4B1F37905B004A2DA3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		D8388E4D1F37905B004A2DA3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -76,6 +108,47 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		D82ECF141F37985D008251C2 /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				D82ECF151F37985D008251C2 /* Document.xcdatamodeld */,
+				D82ECF391F37AC96008251C2 /* Classes */,
+				D82ECF171F37985D008251C2 /* GeneratedClasses */,
+			);
+			path = CoreData;
+			sourceTree = "<group>";
+		};
+		D82ECF171F37985D008251C2 /* GeneratedClasses */ = {
+			isa = PBXGroup;
+			children = (
+				D82ECF191F37985D008251C2 /* BaseTask+CoreDataProperties.swift */,
+				D82ECF1B1F37985D008251C2 /* Label+CoreDataProperties.swift */,
+				D82ECF1D1F37985D008251C2 /* LabelColor+CoreDataProperties.swift */,
+				D82ECF1F1F37985D008251C2 /* Project+CoreDataProperties.swift */,
+				D82ECF211F37985D008251C2 /* RGBAColor+CoreDataProperties.swift */,
+				D82ECF231F37985D008251C2 /* Subtask+CoreDataProperties.swift */,
+				D82ECF251F37985D008251C2 /* Task+CoreDataProperties.swift */,
+				D82ECF271F37985D008251C2 /* TaskState+CoreDataProperties.swift */,
+			);
+			path = GeneratedClasses;
+			sourceTree = "<group>";
+		};
+		D82ECF391F37AC96008251C2 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				D82ECF181F37985D008251C2 /* BaseTask+CoreDataClass.swift */,
+				D82ECF1A1F37985D008251C2 /* Label+CoreDataClass.swift */,
+				D82ECF1C1F37985D008251C2 /* LabelColor+CoreDataClass.swift */,
+				D82ECF1E1F37985D008251C2 /* Project+CoreDataClass.swift */,
+				D82ECF201F37985D008251C2 /* RGBAColor+CoreDataClass.swift */,
+				D82ECF221F37985D008251C2 /* Subtask+CoreDataClass.swift */,
+				D82ECF241F37985D008251C2 /* Task+CoreDataClass.swift */,
+				D82ECF261F37985D008251C2 /* TaskState+CoreDataClass.swift */,
+			);
+			name = Classes;
+			path = GeneratedClasses;
+			sourceTree = "<group>";
+		};
 		D8388E331F37905B004A2DA3 = {
 			isa = PBXGroup;
 			children = (
@@ -99,13 +172,13 @@
 		D8388E3E1F37905B004A2DA3 /* Fruok */ = {
 			isa = PBXGroup;
 			children = (
+				D82ECF141F37985D008251C2 /* CoreData */,
 				D8388E3F1F37905B004A2DA3 /* AppDelegate.swift */,
 				D8388E411F37905B004A2DA3 /* ViewController.swift */,
 				D8388E431F37905B004A2DA3 /* Document.swift */,
 				D8388E481F37905B004A2DA3 /* Assets.xcassets */,
 				D8388E4A1F37905B004A2DA3 /* Main.storyboard */,
 				D8388E4D1F37905B004A2DA3 /* Info.plist */,
-				D8388E451F37905B004A2DA3 /* Document.xcdatamodeld */,
 			);
 			path = Fruok;
 			sourceTree = "<group>";
@@ -264,9 +337,25 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D8388E471F37905B004A2DA3 /* Document.xcdatamodeld in Sources */,
+				D82ECF281F37985D008251C2 /* Document.xcdatamodeld in Sources */,
+				D82ECF351F37985D008251C2 /* Task+CoreDataClass.swift in Sources */,
+				D82ECF291F37985D008251C2 /* BaseTask+CoreDataClass.swift in Sources */,
+				D82ECF2D1F37985D008251C2 /* LabelColor+CoreDataClass.swift in Sources */,
+				D82ECF361F37985D008251C2 /* Task+CoreDataProperties.swift in Sources */,
 				D8388E421F37905B004A2DA3 /* ViewController.swift in Sources */,
+				D82ECF2B1F37985D008251C2 /* Label+CoreDataClass.swift in Sources */,
+				D82ECF371F37985D008251C2 /* TaskState+CoreDataClass.swift in Sources */,
+				D82ECF381F37985D008251C2 /* TaskState+CoreDataProperties.swift in Sources */,
+				D82ECF2C1F37985D008251C2 /* Label+CoreDataProperties.swift in Sources */,
+				D82ECF341F37985D008251C2 /* Subtask+CoreDataProperties.swift in Sources */,
+				D82ECF2E1F37985D008251C2 /* LabelColor+CoreDataProperties.swift in Sources */,
+				D82ECF2A1F37985D008251C2 /* BaseTask+CoreDataProperties.swift in Sources */,
 				D8388E401F37905B004A2DA3 /* AppDelegate.swift in Sources */,
+				D82ECF331F37985D008251C2 /* Subtask+CoreDataClass.swift in Sources */,
+				D82ECF321F37985D008251C2 /* RGBAColor+CoreDataProperties.swift in Sources */,
+				D82ECF311F37985D008251C2 /* RGBAColor+CoreDataClass.swift in Sources */,
+				D82ECF2F1F37985D008251C2 /* Project+CoreDataClass.swift in Sources */,
+				D82ECF301F37985D008251C2 /* Project+CoreDataProperties.swift in Sources */,
 				D8388E441F37905B004A2DA3 /* Document.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -513,6 +602,7 @@
 				D8388E681F37905B004A2DA3 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		D8388E691F37905B004A2DA3 /* Build configuration list for PBXNativeTarget "FruokTests" */ = {
 			isa = XCConfigurationList;
@@ -521,6 +611,7 @@
 				D8388E6B1F37905B004A2DA3 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		D8388E6C1F37905B004A2DA3 /* Build configuration list for PBXNativeTarget "FruokUITests" */ = {
 			isa = XCConfigurationList;
@@ -529,16 +620,17 @@
 				D8388E6E1F37905B004A2DA3 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
 /* Begin XCVersionGroup section */
-		D8388E451F37905B004A2DA3 /* Document.xcdatamodeld */ = {
+		D82ECF151F37985D008251C2 /* Document.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
-				D8388E461F37905B004A2DA3 /* Document.xcdatamodel */,
+				D82ECF161F37985D008251C2 /* Document.xcdatamodel */,
 			);
-			currentVersion = D8388E461F37905B004A2DA3 /* Document.xcdatamodel */;
+			currentVersion = D82ECF161F37985D008251C2 /* Document.xcdatamodel */;
 			path = Document.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;

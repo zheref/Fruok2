@@ -25,12 +25,15 @@
 		D82ECF371F37985D008251C2 /* TaskState+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = D82ECF261F37985D008251C2 /* TaskState+CoreDataClass.swift */; };
 		D82ECF381F37985D008251C2 /* TaskState+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = D82ECF271F37985D008251C2 /* TaskState+CoreDataProperties.swift */; };
 		D8388E401F37905B004A2DA3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8388E3F1F37905B004A2DA3 /* AppDelegate.swift */; };
-		D8388E421F37905B004A2DA3 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8388E411F37905B004A2DA3 /* ViewController.swift */; };
-		D8388E441F37905B004A2DA3 /* Document.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8388E431F37905B004A2DA3 /* Document.swift */; };
+		D8388E421F37905B004A2DA3 /* DocumentContentVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8388E411F37905B004A2DA3 /* DocumentContentVC.swift */; };
+		D8388E441F37905B004A2DA3 /* FruokDocument.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8388E431F37905B004A2DA3 /* FruokDocument.swift */; };
 		D8388E491F37905B004A2DA3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D8388E481F37905B004A2DA3 /* Assets.xcassets */; };
 		D8388E4C1F37905B004A2DA3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D8388E4A1F37905B004A2DA3 /* Main.storyboard */; };
 		D8388E571F37905B004A2DA3 /* FruokTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8388E561F37905B004A2DA3 /* FruokTests.swift */; };
 		D8388E621F37905B004A2DA3 /* FruokUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8388E611F37905B004A2DA3 /* FruokUITests.swift */; };
+		D8C2AD0D1F38FB97002D75B2 /* KanbanVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8C2AD0C1F38FB97002D75B2 /* KanbanVC.swift */; };
+		D8C2AD0F1F39007E002D75B2 /* DocumentContentVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8C2AD0E1F39007E002D75B2 /* DocumentContentVM.swift */; };
+		D8C2AD111F390305002D75B2 /* KVVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8C2AD101F390305002D75B2 /* KVVM.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -70,8 +73,8 @@
 		D82ECF271F37985D008251C2 /* TaskState+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "TaskState+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		D8388E3C1F37905B004A2DA3 /* Fruok.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Fruok.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D8388E3F1F37905B004A2DA3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		D8388E411F37905B004A2DA3 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		D8388E431F37905B004A2DA3 /* Document.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Document.swift; sourceTree = "<group>"; };
+		D8388E411F37905B004A2DA3 /* DocumentContentVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DocumentContentVC.swift; sourceTree = "<group>"; };
+		D8388E431F37905B004A2DA3 /* FruokDocument.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FruokDocument.swift; sourceTree = "<group>"; };
 		D8388E481F37905B004A2DA3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D8388E4B1F37905B004A2DA3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		D8388E4D1F37905B004A2DA3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -81,6 +84,9 @@
 		D8388E5D1F37905B004A2DA3 /* FruokUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FruokUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D8388E611F37905B004A2DA3 /* FruokUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FruokUITests.swift; sourceTree = "<group>"; };
 		D8388E631F37905B004A2DA3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D8C2AD0C1F38FB97002D75B2 /* KanbanVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KanbanVC.swift; sourceTree = "<group>"; };
+		D8C2AD0E1F39007E002D75B2 /* DocumentContentVM.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DocumentContentVM.swift; sourceTree = "<group>"; };
+		D8C2AD101F390305002D75B2 /* KVVM.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KVVM.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -149,6 +155,15 @@
 			path = GeneratedClasses;
 			sourceTree = "<group>";
 		};
+		D82ECF3A1F37AECE008251C2 /* DocumentContent */ = {
+			isa = PBXGroup;
+			children = (
+				D8388E411F37905B004A2DA3 /* DocumentContentVC.swift */,
+				D8C2AD0E1F39007E002D75B2 /* DocumentContentVM.swift */,
+			);
+			name = DocumentContent;
+			sourceTree = "<group>";
+		};
 		D8388E331F37905B004A2DA3 = {
 			isa = PBXGroup;
 			children = (
@@ -174,8 +189,9 @@
 			children = (
 				D82ECF141F37985D008251C2 /* CoreData */,
 				D8388E3F1F37905B004A2DA3 /* AppDelegate.swift */,
-				D8388E411F37905B004A2DA3 /* ViewController.swift */,
-				D8388E431F37905B004A2DA3 /* Document.swift */,
+				D8C2AD051F38F530002D75B2 /* UI */,
+				D8388E431F37905B004A2DA3 /* FruokDocument.swift */,
+				D8C2AD101F390305002D75B2 /* KVVM.swift */,
 				D8388E481F37905B004A2DA3 /* Assets.xcassets */,
 				D8388E4A1F37905B004A2DA3 /* Main.storyboard */,
 				D8388E4D1F37905B004A2DA3 /* Info.plist */,
@@ -199,6 +215,23 @@
 				D8388E631F37905B004A2DA3 /* Info.plist */,
 			);
 			path = FruokUITests;
+			sourceTree = "<group>";
+		};
+		D8C2AD051F38F530002D75B2 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				D82ECF3A1F37AECE008251C2 /* DocumentContent */,
+				D8C2AD0B1F38FB70002D75B2 /* KanbanView */,
+			);
+			name = UI;
+			sourceTree = "<group>";
+		};
+		D8C2AD0B1F38FB70002D75B2 /* KanbanView */ = {
+			isa = PBXGroup;
+			children = (
+				D8C2AD0C1F38FB97002D75B2 /* KanbanVC.swift */,
+			);
+			name = KanbanView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -341,22 +374,25 @@
 				D82ECF351F37985D008251C2 /* Task+CoreDataClass.swift in Sources */,
 				D82ECF291F37985D008251C2 /* BaseTask+CoreDataClass.swift in Sources */,
 				D82ECF2D1F37985D008251C2 /* LabelColor+CoreDataClass.swift in Sources */,
+				D8C2AD111F390305002D75B2 /* KVVM.swift in Sources */,
 				D82ECF361F37985D008251C2 /* Task+CoreDataProperties.swift in Sources */,
-				D8388E421F37905B004A2DA3 /* ViewController.swift in Sources */,
+				D8388E421F37905B004A2DA3 /* DocumentContentVC.swift in Sources */,
 				D82ECF2B1F37985D008251C2 /* Label+CoreDataClass.swift in Sources */,
 				D82ECF371F37985D008251C2 /* TaskState+CoreDataClass.swift in Sources */,
 				D82ECF381F37985D008251C2 /* TaskState+CoreDataProperties.swift in Sources */,
+				D8C2AD0F1F39007E002D75B2 /* DocumentContentVM.swift in Sources */,
 				D82ECF2C1F37985D008251C2 /* Label+CoreDataProperties.swift in Sources */,
 				D82ECF341F37985D008251C2 /* Subtask+CoreDataProperties.swift in Sources */,
 				D82ECF2E1F37985D008251C2 /* LabelColor+CoreDataProperties.swift in Sources */,
 				D82ECF2A1F37985D008251C2 /* BaseTask+CoreDataProperties.swift in Sources */,
 				D8388E401F37905B004A2DA3 /* AppDelegate.swift in Sources */,
+				D8C2AD0D1F38FB97002D75B2 /* KanbanVC.swift in Sources */,
 				D82ECF331F37985D008251C2 /* Subtask+CoreDataClass.swift in Sources */,
 				D82ECF321F37985D008251C2 /* RGBAColor+CoreDataProperties.swift in Sources */,
 				D82ECF311F37985D008251C2 /* RGBAColor+CoreDataClass.swift in Sources */,
 				D82ECF2F1F37985D008251C2 /* Project+CoreDataClass.swift in Sources */,
 				D82ECF301F37985D008251C2 /* Project+CoreDataProperties.swift in Sources */,
-				D8388E441F37905B004A2DA3 /* Document.swift in Sources */,
+				D8388E441F37905B004A2DA3 /* FruokDocument.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

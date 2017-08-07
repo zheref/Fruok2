@@ -8,20 +8,16 @@
 
 import Cocoa
 
-class ViewController: NSViewController {
+class DocumentContentViewController: NSViewController {
+
+	@IBOutlet var containerView: NSView!
+
+	let viewModel = DocumentContentViewModel()
 
 	override func viewDidLoad() {
 		super.viewDidLoad()
-
 		// Do any additional setup after loading the view.
 	}
-
-	override var representedObject: Any? {
-		didSet {
-		// Update the view, if already loaded.
-		}
-	}
-
 
 }
 

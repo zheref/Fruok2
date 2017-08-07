@@ -8,7 +8,7 @@
 
 import Cocoa
 
-class Document: NSPersistentDocument {
+class FruokDocument: NSPersistentDocument {
 
 	override init() {
 	    super.init()
@@ -23,6 +23,8 @@ class Document: NSPersistentDocument {
 		// Returns the Storyboard that contains your Document window.
 		let storyboard = NSStoryboard(name: "Main", bundle: nil)
 		let windowController = storyboard.instantiateController(withIdentifier: "Document Window Controller") as! NSWindowController
+
+		(windowController.contentViewController as! DocumentContentViewController)
 		self.addWindowController(windowController)
 	}
 

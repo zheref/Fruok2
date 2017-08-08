@@ -8,7 +8,7 @@
 
 import Cocoa
 
-class KanbanVC: NSViewController {
+class KanbanViewController: NSViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()

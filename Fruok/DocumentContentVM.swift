@@ -7,13 +7,24 @@
 //
 
 import Foundation
+import Bond
 
+class DocumentContentViewModel {
 
-class DocumentContentViewModel: NSObject {
+	public enum ChildView: Int, OptionalRawValueRepresentable {
 
-	public enum ChildView {
 		case kanban
+		case statistics
+		case billing
 	}
 
-	public private(set) var currentChildView: ChildView? = .kanban
+	private(set) var currentChildView: Observable<ChildView?> = Observable(.kanban)
+
+	func changeCurrentChildView(to childView: ChildView?) {
+
+		if let childView = childView {
+
+			self.currentChildView.value = childView
+		}
+	}
 }

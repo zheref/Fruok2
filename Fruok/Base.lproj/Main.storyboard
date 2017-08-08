@@ -671,7 +671,7 @@
                         <rect key="screenRect" x="0.0" y="0.0" width="1680" height="1027"/>
                         <toolbar key="toolbar" implicitIdentifier="AC38A5F6-FDE9-4C35-878C-5EAD0A262C00" autosavesConfiguration="NO" allowsUserCustomization="NO" displayMode="iconOnly" sizeMode="small" id="j6z-lN-LgD">
                             <allowedToolbarItems>
-                                <toolbarItem implicitItemIdentifier="4482835E-E367-44C0-B6C9-E87E0B3F4870" label="View" paletteLabel="View" id="Ryo-ob-UDL">
+                                <toolbarItem implicitItemIdentifier="4482835E-E367-44C0-B6C9-E87E0B3F4870" explicitItemIdentifier="view" label="View" paletteLabel="View" id="Ryo-ob-UDL" customClass="ValidatingCustomToolbarItem" customModule="Fruok" customModuleProvider="target">
                                     <nil key="toolTip"/>
                                     <size key="minSize" width="104" height="24"/>
                                     <size key="maxSize" width="205" height="26"/>
@@ -687,6 +687,9 @@
                                             </segments>
                                         </segmentedCell>
                                     </segmentedControl>
+                                    <connections>
+                                        <action selector="currentChildViewControllerAction:" target="6f7-a7-6o1" id="D8M-Cx-DuI"/>
+                                    </connections>
                                 </toolbarItem>
                                 <toolbarItem implicitItemIdentifier="NSToolbarFlexibleSpaceItem" id="dkm-ZD-n9z"/>
                             </allowedToolbarItems>
@@ -725,6 +728,30 @@
                 <customObject id="2Tp-Fl-jBw" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="75" y="655"/>
+        </scene>
+        <!--Kanban View Controller-->
+        <scene sceneID="WXB-O3-Hkd">
+            <objects>
+                <viewController storyboardIdentifier="kanban" id="Fti-Zu-9Sz" customClass="KanbanViewController" customModule="Fruok" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" id="cHW-p2-Dc0">
+                        <rect key="frame" x="0.0" y="0.0" width="450" height="300"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <subviews>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="I57-Fu-xkw">
+                                <rect key="frame" x="193" y="141" width="50" height="17"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Kanban" id="RhK-AV-H1Q">
+                                    <font key="font" metaFont="system"/>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                        </subviews>
+                    </view>
+                </viewController>
+                <customObject id="d5e-X0-POK" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="290" y="1004"/>
         </scene>
     </scenes>
 </document>

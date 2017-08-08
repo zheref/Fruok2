@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		271EAC0BF16FE40B996281AF /* Pods_FruokUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 35F75909185B30AAE0ED14CB /* Pods_FruokUITests.framework */; };
+		52F2D2AB02B9F0489EF794AE /* Pods_FruokTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9FB1C67FA28B9D791E06D7D5 /* Pods_FruokTests.framework */; };
+		C510E1B01BE92F1C0CD199E6 /* Pods_Fruok.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3F4F892E3EC3444EAE5707A1 /* Pods_Fruok.framework */; };
 		D82ECF281F37985D008251C2 /* Document.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D82ECF151F37985D008251C2 /* Document.xcdatamodeld */; };
 		D82ECF291F37985D008251C2 /* BaseTask+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = D82ECF181F37985D008251C2 /* BaseTask+CoreDataClass.swift */; };
 		D82ECF2A1F37985D008251C2 /* BaseTask+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = D82ECF191F37985D008251C2 /* BaseTask+CoreDataProperties.swift */; };
@@ -34,6 +37,10 @@
 		D8C2AD0D1F38FB97002D75B2 /* KanbanVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8C2AD0C1F38FB97002D75B2 /* KanbanVC.swift */; };
 		D8C2AD0F1F39007E002D75B2 /* DocumentContentVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8C2AD0E1F39007E002D75B2 /* DocumentContentVM.swift */; };
 		D8C2AD111F390305002D75B2 /* KVVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8C2AD101F390305002D75B2 /* KVVM.swift */; };
+		D8C2AD1B1F3A4CC8002D75B2 /* NSLayoutConstraint+utilities.m in Sources */ = {isa = PBXBuildFile; fileRef = D8C2AD191F3A4CC7002D75B2 /* NSLayoutConstraint+utilities.m */; };
+		D8C2AD1F1F3A4E20002D75B2 /* NSView+SubviewHelpers.m in Sources */ = {isa = PBXBuildFile; fileRef = D8C2AD1D1F3A4E20002D75B2 /* NSView+SubviewHelpers.m */; };
+		D8C2AD221F3A571D002D75B2 /* OptionalRawValueInitializer.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8C2AD211F3A571D002D75B2 /* OptionalRawValueInitializer.swift */; };
+		D8C2AD241F3A5FFA002D75B2 /* ValidatingCustomToolbarItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8C2AD231F3A5FFA002D75B2 /* ValidatingCustomToolbarItem.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,6 +61,15 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		257C710E74A9AEF82CAAF9EC /* Pods-FruokUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FruokUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FruokUITests/Pods-FruokUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		35F75909185B30AAE0ED14CB /* Pods_FruokUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FruokUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		3F4F892E3EC3444EAE5707A1 /* Pods_Fruok.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Fruok.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		4C21E51D276DD940FC54F8EF /* Pods-Fruok.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Fruok.release.xcconfig"; path = "Pods/Target Support Files/Pods-Fruok/Pods-Fruok.release.xcconfig"; sourceTree = "<group>"; };
+		5C53158C7E7326DE87354803 /* Pods-FruokTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FruokTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FruokTests/Pods-FruokTests.debug.xcconfig"; sourceTree = "<group>"; };
+		6679486F929405FF3487ADB0 /* Pods-FruokTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FruokTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-FruokTests/Pods-FruokTests.release.xcconfig"; sourceTree = "<group>"; };
+		6C62FC992BCF259AA9BEB170 /* Pods-FruokUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FruokUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-FruokUITests/Pods-FruokUITests.release.xcconfig"; sourceTree = "<group>"; };
+		9FB1C67FA28B9D791E06D7D5 /* Pods_FruokTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FruokTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D2C4E5796C10D7F492F44FA3 /* Pods-Fruok.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Fruok.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Fruok/Pods-Fruok.debug.xcconfig"; sourceTree = "<group>"; };
 		D82ECF161F37985D008251C2 /* Document.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Document.xcdatamodel; sourceTree = "<group>"; };
 		D82ECF181F37985D008251C2 /* BaseTask+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "BaseTask+CoreDataClass.swift"; sourceTree = "<group>"; };
 		D82ECF191F37985D008251C2 /* BaseTask+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "BaseTask+CoreDataProperties.swift"; sourceTree = "<group>"; };
@@ -87,6 +103,13 @@
 		D8C2AD0C1F38FB97002D75B2 /* KanbanVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KanbanVC.swift; sourceTree = "<group>"; };
 		D8C2AD0E1F39007E002D75B2 /* DocumentContentVM.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DocumentContentVM.swift; sourceTree = "<group>"; };
 		D8C2AD101F390305002D75B2 /* KVVM.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KVVM.swift; sourceTree = "<group>"; };
+		D8C2AD171F3A4CC7002D75B2 /* Fruok-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.objj.h; name = "Fruok-Bridging-Header.h"; path = "../Thirdparty/Fruok-Bridging-Header.h"; sourceTree = "<group>"; };
+		D8C2AD181F3A4CC7002D75B2 /* NSLayoutConstraint+utilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.objj.h; path = "NSLayoutConstraint+utilities.h"; sourceTree = "<group>"; };
+		D8C2AD191F3A4CC7002D75B2 /* NSLayoutConstraint+utilities.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSLayoutConstraint+utilities.m"; sourceTree = "<group>"; };
+		D8C2AD1C1F3A4E20002D75B2 /* NSView+SubviewHelpers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.objj.h; path = "NSView+SubviewHelpers.h"; sourceTree = "<group>"; };
+		D8C2AD1D1F3A4E20002D75B2 /* NSView+SubviewHelpers.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSView+SubviewHelpers.m"; sourceTree = "<group>"; };
+		D8C2AD211F3A571D002D75B2 /* OptionalRawValueInitializer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OptionalRawValueInitializer.swift; sourceTree = "<group>"; };
+		D8C2AD231F3A5FFA002D75B2 /* ValidatingCustomToolbarItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ValidatingCustomToolbarItem.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,6 +117,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C510E1B01BE92F1C0CD199E6 /* Pods_Fruok.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -101,6 +125,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				52F2D2AB02B9F0489EF794AE /* Pods_FruokTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -108,12 +133,36 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				271EAC0BF16FE40B996281AF /* Pods_FruokUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3FC66957A157B6FFAA99A2F6 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				D2C4E5796C10D7F492F44FA3 /* Pods-Fruok.debug.xcconfig */,
+				4C21E51D276DD940FC54F8EF /* Pods-Fruok.release.xcconfig */,
+				5C53158C7E7326DE87354803 /* Pods-FruokTests.debug.xcconfig */,
+				6679486F929405FF3487ADB0 /* Pods-FruokTests.release.xcconfig */,
+				257C710E74A9AEF82CAAF9EC /* Pods-FruokUITests.debug.xcconfig */,
+				6C62FC992BCF259AA9BEB170 /* Pods-FruokUITests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		8525AC8F2E56C4546882ADA7 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				3F4F892E3EC3444EAE5707A1 /* Pods_Fruok.framework */,
+				9FB1C67FA28B9D791E06D7D5 /* Pods_FruokTests.framework */,
+				35F75909185B30AAE0ED14CB /* Pods_FruokUITests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		D82ECF141F37985D008251C2 /* CoreData */ = {
 			isa = PBXGroup;
 			children = (
@@ -167,10 +216,13 @@
 		D8388E331F37905B004A2DA3 = {
 			isa = PBXGroup;
 			children = (
+				D8C2AD121F3A4C87002D75B2 /* Thirdparty */,
 				D8388E3E1F37905B004A2DA3 /* Fruok */,
 				D8388E551F37905B004A2DA3 /* FruokTests */,
 				D8388E601F37905B004A2DA3 /* FruokUITests */,
 				D8388E3D1F37905B004A2DA3 /* Products */,
+				3FC66957A157B6FFAA99A2F6 /* Pods */,
+				8525AC8F2E56C4546882ADA7 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -187,11 +239,13 @@
 		D8388E3E1F37905B004A2DA3 /* Fruok */ = {
 			isa = PBXGroup;
 			children = (
+				D8C2AD201F3A56DA002D75B2 /* Utilities */,
 				D82ECF141F37985D008251C2 /* CoreData */,
 				D8388E3F1F37905B004A2DA3 /* AppDelegate.swift */,
 				D8C2AD051F38F530002D75B2 /* UI */,
 				D8388E431F37905B004A2DA3 /* FruokDocument.swift */,
 				D8C2AD101F390305002D75B2 /* KVVM.swift */,
+				D8C2AD171F3A4CC7002D75B2 /* Fruok-Bridging-Header.h */,
 				D8388E481F37905B004A2DA3 /* Assets.xcassets */,
 				D8388E4A1F37905B004A2DA3 /* Main.storyboard */,
 				D8388E4D1F37905B004A2DA3 /* Info.plist */,
@@ -234,6 +288,26 @@
 			name = KanbanView;
 			sourceTree = "<group>";
 		};
+		D8C2AD121F3A4C87002D75B2 /* Thirdparty */ = {
+			isa = PBXGroup;
+			children = (
+				D8C2AD231F3A5FFA002D75B2 /* ValidatingCustomToolbarItem.swift */,
+				D8C2AD181F3A4CC7002D75B2 /* NSLayoutConstraint+utilities.h */,
+				D8C2AD191F3A4CC7002D75B2 /* NSLayoutConstraint+utilities.m */,
+				D8C2AD1C1F3A4E20002D75B2 /* NSView+SubviewHelpers.h */,
+				D8C2AD1D1F3A4E20002D75B2 /* NSView+SubviewHelpers.m */,
+			);
+			path = Thirdparty;
+			sourceTree = "<group>";
+		};
+		D8C2AD201F3A56DA002D75B2 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				D8C2AD211F3A571D002D75B2 /* OptionalRawValueInitializer.swift */,
+			);
+			name = Utilities;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -241,9 +315,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = D8388E661F37905B004A2DA3 /* Build configuration list for PBXNativeTarget "Fruok" */;
 			buildPhases = (
+				ECD4A67BFAAB1B43812491F4 /* [CP] Check Pods Manifest.lock */,
 				D8388E381F37905B004A2DA3 /* Sources */,
 				D8388E391F37905B004A2DA3 /* Frameworks */,
 				D8388E3A1F37905B004A2DA3 /* Resources */,
+				45A5888D33F1861F66F5212D /* [CP] Embed Pods Frameworks */,
+				C16311C2D055D4AB20025404 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -258,9 +335,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = D8388E691F37905B004A2DA3 /* Build configuration list for PBXNativeTarget "FruokTests" */;
 			buildPhases = (
+				385E3B1107A1D90FC2DCF00D /* [CP] Check Pods Manifest.lock */,
 				D8388E4E1F37905B004A2DA3 /* Sources */,
 				D8388E4F1F37905B004A2DA3 /* Frameworks */,
 				D8388E501F37905B004A2DA3 /* Resources */,
+				BCE798319B3EBB41CFDA7120 /* [CP] Embed Pods Frameworks */,
+				9EB581AE88240798D581AE8B /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -276,9 +356,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = D8388E6C1F37905B004A2DA3 /* Build configuration list for PBXNativeTarget "FruokUITests" */;
 			buildPhases = (
+				EA172058D18D0AF5844C3E85 /* [CP] Check Pods Manifest.lock */,
 				D8388E591F37905B004A2DA3 /* Sources */,
 				D8388E5A1F37905B004A2DA3 /* Frameworks */,
 				D8388E5B1F37905B004A2DA3 /* Resources */,
+				374A407C80283E1D99994784 /* [CP] Embed Pods Frameworks */,
+				4D212D4BDEF03439192CE635 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -303,6 +386,7 @@
 					D8388E3B1F37905B004A2DA3 = {
 						CreatedOnToolsVersion = 8.2.1;
 						DevelopmentTeam = V85GBYB7B9;
+						LastSwiftMigration = 0820;
 						ProvisioningStyle = Automatic;
 					};
 					D8388E511F37905B004A2DA3 = {
@@ -365,6 +449,144 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		374A407C80283E1D99994784 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-FruokUITests/Pods-FruokUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		385E3B1107A1D90FC2DCF00D /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		45A5888D33F1861F66F5212D /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Fruok/Pods-Fruok-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		4D212D4BDEF03439192CE635 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-FruokUITests/Pods-FruokUITests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		9EB581AE88240798D581AE8B /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-FruokTests/Pods-FruokTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		BCE798319B3EBB41CFDA7120 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-FruokTests/Pods-FruokTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C16311C2D055D4AB20025404 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Fruok/Pods-Fruok-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		EA172058D18D0AF5844C3E85 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		ECD4A67BFAAB1B43812491F4 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		D8388E381F37905B004A2DA3 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -372,19 +594,23 @@
 			files = (
 				D82ECF281F37985D008251C2 /* Document.xcdatamodeld in Sources */,
 				D82ECF351F37985D008251C2 /* Task+CoreDataClass.swift in Sources */,
+				D8C2AD1B1F3A4CC8002D75B2 /* NSLayoutConstraint+utilities.m in Sources */,
 				D82ECF291F37985D008251C2 /* BaseTask+CoreDataClass.swift in Sources */,
 				D82ECF2D1F37985D008251C2 /* LabelColor+CoreDataClass.swift in Sources */,
 				D8C2AD111F390305002D75B2 /* KVVM.swift in Sources */,
 				D82ECF361F37985D008251C2 /* Task+CoreDataProperties.swift in Sources */,
 				D8388E421F37905B004A2DA3 /* DocumentContentVC.swift in Sources */,
 				D82ECF2B1F37985D008251C2 /* Label+CoreDataClass.swift in Sources */,
+				D8C2AD241F3A5FFA002D75B2 /* ValidatingCustomToolbarItem.swift in Sources */,
 				D82ECF371F37985D008251C2 /* TaskState+CoreDataClass.swift in Sources */,
 				D82ECF381F37985D008251C2 /* TaskState+CoreDataProperties.swift in Sources */,
 				D8C2AD0F1F39007E002D75B2 /* DocumentContentVM.swift in Sources */,
 				D82ECF2C1F37985D008251C2 /* Label+CoreDataProperties.swift in Sources */,
 				D82ECF341F37985D008251C2 /* Subtask+CoreDataProperties.swift in Sources */,
 				D82ECF2E1F37985D008251C2 /* LabelColor+CoreDataProperties.swift in Sources */,
+				D8C2AD1F1F3A4E20002D75B2 /* NSView+SubviewHelpers.m in Sources */,
 				D82ECF2A1F37985D008251C2 /* BaseTask+CoreDataProperties.swift in Sources */,
+				D8C2AD221F3A571D002D75B2 /* OptionalRawValueInitializer.swift in Sources */,
 				D8388E401F37905B004A2DA3 /* AppDelegate.swift in Sources */,
 				D8C2AD0D1F38FB97002D75B2 /* KanbanVC.swift in Sources */,
 				D82ECF331F37985D008251C2 /* Subtask+CoreDataClass.swift in Sources */,
@@ -531,34 +757,42 @@
 		};
 		D8388E671F37905B004A2DA3 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D2C4E5796C10D7F492F44FA3 /* Pods-Fruok.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = V85GBYB7B9;
 				INFOPLIST_FILE = Fruok/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.tristan.Fruok;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Thirdparty/Fruok-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
 		D8388E681F37905B004A2DA3 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4C21E51D276DD940FC54F8EF /* Pods-Fruok.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = V85GBYB7B9;
 				INFOPLIST_FILE = Fruok/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.tristan.Fruok;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Thirdparty/Fruok-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};
 		D8388E6A1F37905B004A2DA3 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5C53158C7E7326DE87354803 /* Pods-FruokTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -575,6 +809,7 @@
 		};
 		D8388E6B1F37905B004A2DA3 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6679486F929405FF3487ADB0 /* Pods-FruokTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -591,6 +826,7 @@
 		};
 		D8388E6D1F37905B004A2DA3 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 257C710E74A9AEF82CAAF9EC /* Pods-FruokUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				COMBINE_HIDPI_IMAGES = YES;
@@ -606,6 +842,7 @@
 		};
 		D8388E6E1F37905B004A2DA3 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6C62FC992BCF259AA9BEB170 /* Pods-FruokUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				COMBINE_HIDPI_IMAGES = YES;

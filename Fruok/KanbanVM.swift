@@ -10,11 +10,17 @@ import Foundation
 import ReactiveKit
 import Bond
 
+extension NSKeyValueChange: OptionalRawValueRepresentable {
+
+}
+
 class KanbanViewModel: NSObject, MVVMViewModel {
 
 	enum ViewActions {
 
 		case refreshTaskStates
+		case addTasksAtIndexes(IndexSet)
+		case deleteTasksAtIndexes(IndexSet)
 	}
 
 	typealias MODEL = Project
@@ -37,8 +43,24 @@ class KanbanViewModel: NSObject, MVVMViewModel {
 
 		if context == &kTaskStatesContext {
 
+			var action: ViewActions? = nil
+			switch NSKeyValueChange(optionalRawValue: change?[.kindKey] as? UInt) {
+
+			case .insertion?:
+				if let indexSet = change?[.indexesKey] as? IndexSet {
+					action = .addTasksAtIndexes(indexSet)
+				}
+			case .removal?:
+				if let indexSet = change?[.indexesKey] as? IndexSet {
+					action = .deleteTasksAtIndexes(indexSet)
+				}
+			default:
+				action = .refreshTaskStates
+			}
+
+
 			self.numTaskStates.value = self.project.taskStates?.count ?? 0
-			self.viewActions.value = .refreshTaskStates
+			self.viewActions.value = action ?? .refreshTaskStates
 		}
 	}
 
@@ -53,5 +75,19 @@ class KanbanViewModel: NSObject, MVVMViewModel {
 			self.project.addToTaskStates(state)
 			NSEntityDescription.insertNewObject(forEntityName: "TaskState", into: context)
 		}
+	}
+
+	func deleteTask(at index: Int) {
+
+		self.project.removeFromTaskStates(at: index)
+	}
+
+	func taskStateViewModel(for index: Int) -> KanbanTaskStateItemViewModel? {
+
+		guard let taskState = self.project.taskStates?[index] as? TaskState else {
+			return nil
+		}
+		return KanbanTaskStateItemViewModel(with: taskState)
+
 	}
 }

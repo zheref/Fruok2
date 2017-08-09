@@ -738,7 +738,7 @@
         <scene sceneID="WXB-O3-Hkd">
             <objects>
                 <viewController storyboardIdentifier="kanban" id="Fti-Zu-9Sz" customClass="KanbanViewController" customModule="Fruok" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" id="cHW-p2-Dc0">
+                    <view key="view" id="cHW-p2-Dc0" customClass="FirstResponderView" customModule="Fruok" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="0.0" width="450" height="300"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>

@@ -36,6 +36,29 @@ class KanbanViewController: NSViewController, MVVMView {
 			switch action {
 			case .refreshTaskStates?:
 				self.collectionView.reloadData()
+
+			case .addTasksAtIndexes(let indexSet)?:
+
+				let set = Set(indexSet.map({IndexPath(item: $0, section: 0)}))
+				self.collectionView.animator().performBatchUpdates({
+
+					NSAnimationContext.current().allowsImplicitAnimation = true
+					//NSAnimationContext.current().duration = 0.3
+					self.collectionView.insertItems(at: set)
+
+				}, completionHandler: { _ in
+					NSAnimationContext.current().allowsImplicitAnimation = true
+					self.collectionView.scrollToItems(at: set, scrollPosition: .centeredHorizontally)
+				})
+			case .deleteTasksAtIndexes(let indexSet)?:
+				self.collectionView.animator().performBatchUpdates({
+
+					let set = Set(indexSet.map({IndexPath(item: $0, section: 0)}))
+					self.collectionView.deleteItems(at: set)
+
+				}, completionHandler: { _ in
+
+				})
 			case nil:
 				break
 			}
@@ -46,7 +69,15 @@ class KanbanViewController: NSViewController, MVVMView {
 
 		self.viewModel?.addTask()
 	}
+
+	@IBAction func deleteTask(_ sender: NSCollectionViewItem) {
+
+		if let index = self.collectionView.indexPath(for: sender)?.item {
+			self.viewModel?.deleteTask(at: index)
+		}
+	}
 	
+
 }
 
 extension KanbanViewController: NSCollectionViewDataSource {
@@ -58,6 +89,11 @@ extension KanbanViewController: NSCollectionViewDataSource {
 
 	public func collectionView(_ collectionView: NSCollectionView, itemForRepresentedObjectAt indexPath: IndexPath) -> NSCollectionViewItem {
 
-		return self.collectionView.makeItem(withIdentifier: ItemIdentifier.task.rawValue, for: indexPath)
+		let item =  self.collectionView.makeItem(withIdentifier: ItemIdentifier.task.rawValue, for: indexPath) as! KanbanTaskStateItem
+
+		if let itemViewModel = self.viewModel?.taskStateViewModel(for: indexPath.item) {
+			item.set(viewModel: itemViewModel)
+		}
+		return item
 	}
 }

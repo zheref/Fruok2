@@ -1,0 +1,6 @@
+framework module Pods_FruokTests {
+  umbrella header "Pods-FruokTests-umbrella.h"
+
+  export *
+  module * { export * }
+}

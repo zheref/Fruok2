@@ -14,3 +14,8 @@ import CoreData
 public class LabelColor: RGBAColor {
 
 }
+
+extension LabelColor: ManagedObjectType {
+
+	@nonobjc static let entityName = "LabelColor"
+}

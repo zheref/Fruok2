@@ -715,11 +715,16 @@
                         <rect key="frame" x="0.0" y="0.0" width="480" height="270"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
-                            <containerView fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="pEL-mv-W1c">
+                            <containerView translatesAutoresizingMaskIntoConstraints="NO" id="pEL-mv-W1c">
                                 <rect key="frame" x="0.0" y="0.0" width="480" height="270"/>
-                                <autoresizingMask key="autoresizingMask"/>
                             </containerView>
                         </subviews>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="pEL-mv-W1c" secondAttribute="bottom" id="PFf-wA-5Pk"/>
+                            <constraint firstItem="pEL-mv-W1c" firstAttribute="top" secondItem="ERx-hH-rdd" secondAttribute="top" id="Rb5-lE-qa4"/>
+                            <constraint firstAttribute="trailing" secondItem="pEL-mv-W1c" secondAttribute="trailing" id="VWc-wh-M0N"/>
+                            <constraint firstItem="pEL-mv-W1c" firstAttribute="leading" secondItem="ERx-hH-rdd" secondAttribute="leading" id="ihj-e8-YXe"/>
+                        </constraints>
                     </view>
                     <connections>
                         <outlet property="containerView" destination="pEL-mv-W1c" id="WGJ-qw-l40"/>
@@ -746,12 +751,65 @@
                                     <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
                             </textField>
+                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Brs-fv-tm5">
+                                <rect key="frame" x="389" y="252" width="47" height="32"/>
+                                <buttonCell key="cell" type="push" bezelStyle="rounded" image="NSAddTemplate" imagePosition="only" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="4ES-oK-4rO">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="addTask:" target="Fti-Zu-9Sz" id="CC0-06-1R9"/>
+                                </connections>
+                            </button>
+                            <scrollView wantsLayer="YES" autohidesScrollers="YES" horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" usesPredominantAxisScrolling="NO" verticalScrollElasticity="none" translatesAutoresizingMaskIntoConstraints="NO" id="nBz-cZ-kCF">
+                                <rect key="frame" x="0.0" y="0.0" width="373" height="300"/>
+                                <clipView key="contentView" drawsBackground="NO" id="fat-8h-q7U">
+                                    <rect key="frame" x="1" y="1" width="371" height="298"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                    <subviews>
+                                        <collectionView id="60f-6M-7Qo">
+                                            <rect key="frame" x="0.0" y="0.0" width="371" height="298"/>
+                                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                            <collectionViewFlowLayout key="collectionViewLayout" minimumInteritemSpacing="10" minimumLineSpacing="10" id="fYt-ZK-pQ1">
+                                                <size key="itemSize" width="50" height="50"/>
+                                            </collectionViewFlowLayout>
+                                            <color key="primaryBackgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                            <connections>
+                                                <outlet property="dataSource" destination="Fti-Zu-9Sz" id="1S3-g6-s54"/>
+                                            </connections>
+                                        </collectionView>
+                                    </subviews>
+                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                </clipView>
+                                <scroller key="horizontalScroller" hidden="YES" verticalHuggingPriority="750" horizontal="YES" id="sNL-bn-jxc">
+                                    <rect key="frame" x="1" y="283" width="371" height="16"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </scroller>
+                                <scroller key="verticalScroller" hidden="YES" verticalHuggingPriority="750" doubleValue="1" horizontal="NO" id="Nm6-zM-NOc">
+                                    <rect key="frame" x="356" y="1" width="16" height="298"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </scroller>
+                            </scrollView>
                         </subviews>
+                        <constraints>
+                            <constraint firstItem="Brs-fv-tm5" firstAttribute="leading" secondItem="nBz-cZ-kCF" secondAttribute="trailing" constant="22" id="J28-0C-rys"/>
+                            <constraint firstItem="nBz-cZ-kCF" firstAttribute="top" secondItem="cHW-p2-Dc0" secondAttribute="top" id="Y1S-Cs-9bH"/>
+                            <constraint firstItem="Brs-fv-tm5" firstAttribute="top" secondItem="cHW-p2-Dc0" secondAttribute="top" constant="20" id="YhS-8o-K6e"/>
+                            <constraint firstAttribute="bottom" secondItem="nBz-cZ-kCF" secondAttribute="bottom" id="Zjn-sU-odd"/>
+                            <constraint firstAttribute="trailing" secondItem="Brs-fv-tm5" secondAttribute="trailing" constant="20" id="hkc-Ul-9wa"/>
+                            <constraint firstItem="nBz-cZ-kCF" firstAttribute="leading" secondItem="cHW-p2-Dc0" secondAttribute="leading" id="pFn-uM-cfD"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="collectionView" destination="60f-6M-7Qo" id="pF3-u4-9wS"/>
+                    </connections>
                 </viewController>
                 <customObject id="d5e-X0-POK" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="290" y="1004"/>
+            <point key="canvasLocation" x="242" y="1019"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="NSAddTemplate" width="11" height="11"/>
+    </resources>
 </document>

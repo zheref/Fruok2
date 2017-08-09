@@ -29,15 +29,20 @@ extension DocumentContentViewModel.ChildView {
 		}
 	}
 }
-class DocumentContentViewController: NSViewController {
+class DocumentContentViewController: NSViewController, MVVMView {
+
+	typealias VIEWMODEL = DocumentContentViewModel
+	private(set) var viewModel: DocumentContentViewModel?
+	internal func set(viewModel: DocumentContentViewModel) {
+
+		self.viewModel = viewModel
+		self.connectVMIfReady()
+	}
 
 	@IBOutlet var containerView: NSView!
 
-	internal let viewModel = DocumentContentViewModel()
-
 	override func viewDidLoad() {
 		super.viewDidLoad()
-		self.setup()
 		// Do any additional setup after loading the view.
 	}
 
@@ -57,13 +62,15 @@ class DocumentContentViewController: NSViewController {
 		}
 	}
 
-	func setup() {
+	func connectVM() {
 
-		self.viewModel.currentChildView.map { (childIdentifier) -> NSViewController? in
+		self.viewModel?.currentChildView.map { (childIdentifier) -> NSViewController? in
 
 			switch childIdentifier {
 			case .kanban?:
-				return self.storyboard?.instantiateController(withIdentifier: DocumentContentViewModel.ChildView.kanban.storyboardIdentifier) as! NSViewController?
+				let controller = self.storyboard?.instantiateController(withIdentifier: DocumentContentViewModel.ChildView.kanban.storyboardIdentifier) as! NSViewController
+				self.viewModel?.prepareCurentChildViewController(controller)
+				return controller
 			case .statistics?:
 				return nil
 			case .billing?:
@@ -80,7 +87,7 @@ class DocumentContentViewController: NSViewController {
 	@IBAction func currentChildViewControllerAction(_ sender: NSSegmentedControl?) {
 
 		let value = DocumentContentViewModel.ChildView(optionalRawValue: sender?.selectedSegment)
-		self.viewModel.changeCurrentChildView(to: value)
+		self.viewModel?.changeCurrentChildView(to: value)
 	}
 
 	enum ToolbarItemIdentifier: String {
@@ -90,7 +97,7 @@ class DocumentContentViewController: NSViewController {
 
 		switch ToolbarItemIdentifier(rawValue: item.itemIdentifier) {
 		case .view?:
-			(item.view as! NSSegmentedControl).selectedSegment = self.viewModel.currentChildView.value?.rawValue ?? 0
+			(item.view as! NSSegmentedControl).selectedSegment = self.viewModel?.currentChildView.value?.rawValue ?? 0
 			return true
 		default:
 			return super.validateToolbarItem(item)

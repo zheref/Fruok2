@@ -9,7 +9,16 @@
 import Foundation
 import Bond
 
-class DocumentContentViewModel {
+class DocumentContentViewModel: MVVMViewModel {
+
+	typealias MODEL = FruokDocument
+
+	required init(with document: FruokDocument) {
+
+		self.document = document
+	}
+
+	let document: FruokDocument
 
 	public enum ChildView: Int, OptionalRawValueRepresentable {
 
@@ -25,6 +34,19 @@ class DocumentContentViewModel {
 		if let childView = childView {
 
 			self.currentChildView.value = childView
+		}
+	}
+
+	func prepareCurentChildViewController(_ controller: NSViewController) {
+
+		switch self.currentChildView.value {
+		case .kanban?:
+			if let project = self.document.project {
+				let viewModel = KanbanViewModel(with: project)
+				(controller as! KanbanViewController).set(viewModel: viewModel)
+			}
+		default:
+			break
 		}
 	}
 }

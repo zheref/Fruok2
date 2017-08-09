@@ -18,6 +18,7 @@
         <attribute name="codeName" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="commercialName" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="deadLine" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
+        <relationship name="taskStates" optional="YES" toMany="YES" deletionRule="Nullify" ordered="YES" destinationEntity="TaskState" inverseName="project" inverseEntity="TaskState" syncable="YES"/>
     </entity>
     <entity name="RGBAColor" representedClassName="RGBAColor" isAbstract="YES" syncable="YES">
         <attribute name="a" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES" syncable="YES"/>
@@ -35,16 +36,17 @@
     </entity>
     <entity name="TaskState" representedClassName="TaskState" syncable="YES">
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="project" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Project" inverseName="taskStates" inverseEntity="Project" syncable="YES"/>
         <relationship name="tasks" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Task" inverseName="state" inverseEntity="Task" syncable="YES"/>
     </entity>
     <elements>
         <element name="BaseTask" positionX="-27" positionY="36" width="128" height="90"/>
         <element name="Label" positionX="-9" positionY="45" width="128" height="90"/>
         <element name="LabelColor" positionX="-18" positionY="63" width="128" height="60"/>
-        <element name="Project" positionX="-63" positionY="-18" width="128" height="105"/>
+        <element name="Project" positionX="-63" positionY="-18" width="128" height="120"/>
         <element name="RGBAColor" positionX="18" positionY="72" width="128" height="120"/>
         <element name="Subtask" positionX="9" positionY="90" width="128" height="60"/>
         <element name="Task" positionX="0" positionY="81" width="128" height="75"/>
-        <element name="TaskState" positionX="-45" positionY="27" width="128" height="75"/>
+        <element name="TaskState" positionX="-45" positionY="27" width="128" height="90"/>
     </elements>
 </model>

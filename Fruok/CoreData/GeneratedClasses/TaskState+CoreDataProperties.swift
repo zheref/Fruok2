@@ -1,10 +1,9 @@
 //
 //  TaskState+CoreDataProperties.swift
-//  Fruok
+//  
 //
-//  Created by Matthias Keiser on 06.08.17.
-//  Copyright © 2017 Tristan Inc. All rights reserved.
-//  This file was automatically generated and should not be edited.
+//  Created by Matthias Keiser on 09.08.17.
+//
 //
 
 import Foundation
@@ -19,5 +18,6 @@ extension TaskState {
 
     @NSManaged public var name: String?
     @NSManaged public var tasks: Task?
+    @NSManaged public var project: Project?
 
 }

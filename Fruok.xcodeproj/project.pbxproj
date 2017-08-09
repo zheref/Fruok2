@@ -41,6 +41,13 @@
 		D8C2AD1F1F3A4E20002D75B2 /* NSView+SubviewHelpers.m in Sources */ = {isa = PBXBuildFile; fileRef = D8C2AD1D1F3A4E20002D75B2 /* NSView+SubviewHelpers.m */; };
 		D8C2AD221F3A571D002D75B2 /* OptionalRawValueInitializer.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8C2AD211F3A571D002D75B2 /* OptionalRawValueInitializer.swift */; };
 		D8C2AD241F3A5FFA002D75B2 /* ValidatingCustomToolbarItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8C2AD231F3A5FFA002D75B2 /* ValidatingCustomToolbarItem.swift */; };
+		D8C2AD261F3A650D002D75B2 /* KanbanVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8C2AD251F3A650D002D75B2 /* KanbanVM.swift */; };
+		D8C2AD291F3A7EBC002D75B2 /* KanbanTaskStateItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8C2AD271F3A7EBC002D75B2 /* KanbanTaskStateItem.swift */; };
+		D8C2AD2A1F3A7EBC002D75B2 /* KanbanTaskStateItem.xib in Resources */ = {isa = PBXBuildFile; fileRef = D8C2AD281F3A7EBC002D75B2 /* KanbanTaskStateItem.xib */; };
+		D8C2AD2C1F3BA249002D75B2 /* ManagedObjectType.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8C2AD2B1F3BA249002D75B2 /* ManagedObjectType.swift */; };
+		D8C2AD321F3BA78B002D75B2 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = D8C2AD2E1F3BA78B002D75B2 /* .gitignore */; };
+		D8C2AD341F3BA78B002D75B2 /* NSManagedObjectModel+KCOrderedAccessorFix.m in Sources */ = {isa = PBXBuildFile; fileRef = D8C2AD301F3BA78B002D75B2 /* NSManagedObjectModel+KCOrderedAccessorFix.m */; };
+		D8C2AD381F3BABE6002D75B2 /* KanbanCollectionLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8C2AD371F3BABE6002D75B2 /* KanbanCollectionLayout.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -110,6 +117,15 @@
 		D8C2AD1D1F3A4E20002D75B2 /* NSView+SubviewHelpers.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSView+SubviewHelpers.m"; sourceTree = "<group>"; };
 		D8C2AD211F3A571D002D75B2 /* OptionalRawValueInitializer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OptionalRawValueInitializer.swift; sourceTree = "<group>"; };
 		D8C2AD231F3A5FFA002D75B2 /* ValidatingCustomToolbarItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ValidatingCustomToolbarItem.swift; sourceTree = "<group>"; };
+		D8C2AD251F3A650D002D75B2 /* KanbanVM.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KanbanVM.swift; sourceTree = "<group>"; };
+		D8C2AD271F3A7EBC002D75B2 /* KanbanTaskStateItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KanbanTaskStateItem.swift; sourceTree = "<group>"; };
+		D8C2AD281F3A7EBC002D75B2 /* KanbanTaskStateItem.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = KanbanTaskStateItem.xib; sourceTree = "<group>"; };
+		D8C2AD2B1F3BA249002D75B2 /* ManagedObjectType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ManagedObjectType.swift; sourceTree = "<group>"; };
+		D8C2AD2E1F3BA78B002D75B2 /* .gitignore */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
+		D8C2AD2F1F3BA78B002D75B2 /* NSManagedObjectModel+KCOrderedAccessorFix.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.objj.h; path = "NSManagedObjectModel+KCOrderedAccessorFix.h"; sourceTree = "<group>"; };
+		D8C2AD301F3BA78B002D75B2 /* NSManagedObjectModel+KCOrderedAccessorFix.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSManagedObjectModel+KCOrderedAccessorFix.m"; sourceTree = "<group>"; };
+		D8C2AD311F3BA78B002D75B2 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		D8C2AD371F3BABE6002D75B2 /* KanbanCollectionLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KanbanCollectionLayout.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -276,6 +292,7 @@
 			children = (
 				D82ECF3A1F37AECE008251C2 /* DocumentContent */,
 				D8C2AD0B1F38FB70002D75B2 /* KanbanView */,
+				D8C2AD361F3BAAE6002D75B2 /* KanbanTaskStateItem */,
 			);
 			name = UI;
 			sourceTree = "<group>";
@@ -283,7 +300,9 @@
 		D8C2AD0B1F38FB70002D75B2 /* KanbanView */ = {
 			isa = PBXGroup;
 			children = (
+				D8C2AD371F3BABE6002D75B2 /* KanbanCollectionLayout.swift */,
 				D8C2AD0C1F38FB97002D75B2 /* KanbanVC.swift */,
+				D8C2AD251F3A650D002D75B2 /* KanbanVM.swift */,
 			);
 			name = KanbanView;
 			sourceTree = "<group>";
@@ -291,6 +310,8 @@
 		D8C2AD121F3A4C87002D75B2 /* Thirdparty */ = {
 			isa = PBXGroup;
 			children = (
+				D8C2AD2D1F3BA78B002D75B2 /* KCOrderedAccessorFix */,
+				D8C2AD2B1F3BA249002D75B2 /* ManagedObjectType.swift */,
 				D8C2AD231F3A5FFA002D75B2 /* ValidatingCustomToolbarItem.swift */,
 				D8C2AD181F3A4CC7002D75B2 /* NSLayoutConstraint+utilities.h */,
 				D8C2AD191F3A4CC7002D75B2 /* NSLayoutConstraint+utilities.m */,
@@ -306,6 +327,26 @@
 				D8C2AD211F3A571D002D75B2 /* OptionalRawValueInitializer.swift */,
 			);
 			name = Utilities;
+			sourceTree = "<group>";
+		};
+		D8C2AD2D1F3BA78B002D75B2 /* KCOrderedAccessorFix */ = {
+			isa = PBXGroup;
+			children = (
+				D8C2AD2E1F3BA78B002D75B2 /* .gitignore */,
+				D8C2AD2F1F3BA78B002D75B2 /* NSManagedObjectModel+KCOrderedAccessorFix.h */,
+				D8C2AD301F3BA78B002D75B2 /* NSManagedObjectModel+KCOrderedAccessorFix.m */,
+				D8C2AD311F3BA78B002D75B2 /* README.md */,
+			);
+			path = KCOrderedAccessorFix;
+			sourceTree = "<group>";
+		};
+		D8C2AD361F3BAAE6002D75B2 /* KanbanTaskStateItem */ = {
+			isa = PBXGroup;
+			children = (
+				D8C2AD271F3A7EBC002D75B2 /* KanbanTaskStateItem.swift */,
+				D8C2AD281F3A7EBC002D75B2 /* KanbanTaskStateItem.xib */,
+			);
+			name = KanbanTaskStateItem;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -428,7 +469,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D8C2AD321F3BA78B002D75B2 /* .gitignore in Resources */,
 				D8388E491F37905B004A2DA3 /* Assets.xcassets in Resources */,
+				D8C2AD2A1F3A7EBC002D75B2 /* KanbanTaskStateItem.xib in Resources */,
 				D8388E4C1F37905B004A2DA3 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -596,12 +639,15 @@
 				D82ECF351F37985D008251C2 /* Task+CoreDataClass.swift in Sources */,
 				D8C2AD1B1F3A4CC8002D75B2 /* NSLayoutConstraint+utilities.m in Sources */,
 				D82ECF291F37985D008251C2 /* BaseTask+CoreDataClass.swift in Sources */,
+				D8C2AD291F3A7EBC002D75B2 /* KanbanTaskStateItem.swift in Sources */,
 				D82ECF2D1F37985D008251C2 /* LabelColor+CoreDataClass.swift in Sources */,
+				D8C2AD2C1F3BA249002D75B2 /* ManagedObjectType.swift in Sources */,
 				D8C2AD111F390305002D75B2 /* KVVM.swift in Sources */,
 				D82ECF361F37985D008251C2 /* Task+CoreDataProperties.swift in Sources */,
 				D8388E421F37905B004A2DA3 /* DocumentContentVC.swift in Sources */,
 				D82ECF2B1F37985D008251C2 /* Label+CoreDataClass.swift in Sources */,
 				D8C2AD241F3A5FFA002D75B2 /* ValidatingCustomToolbarItem.swift in Sources */,
+				D8C2AD381F3BABE6002D75B2 /* KanbanCollectionLayout.swift in Sources */,
 				D82ECF371F37985D008251C2 /* TaskState+CoreDataClass.swift in Sources */,
 				D82ECF381F37985D008251C2 /* TaskState+CoreDataProperties.swift in Sources */,
 				D8C2AD0F1F39007E002D75B2 /* DocumentContentVM.swift in Sources */,
@@ -609,6 +655,7 @@
 				D82ECF341F37985D008251C2 /* Subtask+CoreDataProperties.swift in Sources */,
 				D82ECF2E1F37985D008251C2 /* LabelColor+CoreDataProperties.swift in Sources */,
 				D8C2AD1F1F3A4E20002D75B2 /* NSView+SubviewHelpers.m in Sources */,
+				D8C2AD341F3BA78B002D75B2 /* NSManagedObjectModel+KCOrderedAccessorFix.m in Sources */,
 				D82ECF2A1F37985D008251C2 /* BaseTask+CoreDataProperties.swift in Sources */,
 				D8C2AD221F3A571D002D75B2 /* OptionalRawValueInitializer.swift in Sources */,
 				D8388E401F37905B004A2DA3 /* AppDelegate.swift in Sources */,
@@ -619,6 +666,7 @@
 				D82ECF2F1F37985D008251C2 /* Project+CoreDataClass.swift in Sources */,
 				D82ECF301F37985D008251C2 /* Project+CoreDataProperties.swift in Sources */,
 				D8388E441F37905B004A2DA3 /* FruokDocument.swift in Sources */,
+				D8C2AD261F3A650D002D75B2 /* KanbanVM.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

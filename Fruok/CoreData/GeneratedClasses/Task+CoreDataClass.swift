@@ -14,3 +14,8 @@ import CoreData
 public class Task: BaseTask {
 
 }
+
+extension Task: ManagedObjectType {
+
+	@nonobjc static let entityName = "Task"
+}

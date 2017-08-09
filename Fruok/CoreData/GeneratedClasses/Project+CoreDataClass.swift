@@ -14,3 +14,8 @@ import CoreData
 public class Project: NSManagedObject {
 
 }
+
+extension Project: ManagedObjectType {
+
+	@nonobjc static let entityName = "Project"
+}

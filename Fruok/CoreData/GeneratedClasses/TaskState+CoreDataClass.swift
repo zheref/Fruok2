@@ -14,3 +14,8 @@ import CoreData
 public class TaskState: NSManagedObject {
 
 }
+
+extension TaskState: ManagedObjectType {
+
+	@nonobjc static let entityName = "TaskState"
+}

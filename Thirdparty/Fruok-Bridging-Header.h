@@ -4,3 +4,4 @@
 
 #import "NSLayoutConstraint+utilities.h"
 #import "NSView+SubviewHelpers.h"
+#import "NSManagedObjectModel+KCOrderedAccessorFix.h"

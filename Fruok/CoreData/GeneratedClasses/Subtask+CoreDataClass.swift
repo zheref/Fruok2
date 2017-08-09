@@ -14,3 +14,8 @@ import CoreData
 public class Subtask: BaseTask {
 
 }
+
+extension Subtask: ManagedObjectType {
+
+	@nonobjc static let entityName = "Subtask"
+}

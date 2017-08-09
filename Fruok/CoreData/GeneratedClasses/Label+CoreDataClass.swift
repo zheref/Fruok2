@@ -14,3 +14,8 @@ import CoreData
 public class Label: NSManagedObject {
 
 }
+
+extension Label: ManagedObjectType {
+
+	@nonobjc static let entityName = "Label"
+}

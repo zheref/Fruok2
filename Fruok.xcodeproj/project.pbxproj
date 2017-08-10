@@ -11,23 +11,30 @@
 		52F2D2AB02B9F0489EF794AE /* Pods_FruokTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9FB1C67FA28B9D791E06D7D5 /* Pods_FruokTests.framework */; };
 		C510E1B01BE92F1C0CD199E6 /* Pods_Fruok.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3F4F892E3EC3444EAE5707A1 /* Pods_Fruok.framework */; };
 		D82E214C1F3BEC8000F601DD /* DocumentWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D82E214B1F3BEC8000F601DD /* DocumentWindowController.swift */; };
+		D82E21531F3C540100F601DD /* TasksCollectionVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D82E21521F3C540100F601DD /* TasksCollectionVC.swift */; };
+		D82E21551F3C541800F601DD /* TasksCollectionVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = D82E21541F3C541800F601DD /* TasksCollectionVM.swift */; };
+		D82E21571F3C577500F601DD /* TasksCollectionView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D82E21561F3C577500F601DD /* TasksCollectionView.storyboard */; };
+		D82E215B1F3C587D00F601DD /* KanbanTaskItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = D82E21591F3C587D00F601DD /* KanbanTaskItem.swift */; };
+		D82E215C1F3C587D00F601DD /* KanbanTaskItem.xib in Resources */ = {isa = PBXBuildFile; fileRef = D82E215A1F3C587D00F601DD /* KanbanTaskItem.xib */; };
+		D82E215E1F3C59BE00F601DD /* KanbanTaskItemVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = D82E215D1F3C59BE00F601DD /* KanbanTaskItemVM.swift */; };
+		D82E21671F3C5CE400F601DD /* BaseTask+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = D82E215F1F3C5CE400F601DD /* BaseTask+CoreDataProperties.swift */; };
+		D82E21681F3C5CE400F601DD /* Label+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = D82E21601F3C5CE400F601DD /* Label+CoreDataProperties.swift */; };
+		D82E21691F3C5CE400F601DD /* LabelColor+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = D82E21611F3C5CE400F601DD /* LabelColor+CoreDataProperties.swift */; };
+		D82E216A1F3C5CE400F601DD /* Project+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = D82E21621F3C5CE400F601DD /* Project+CoreDataProperties.swift */; };
+		D82E216B1F3C5CE400F601DD /* RGBAColor+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = D82E21631F3C5CE400F601DD /* RGBAColor+CoreDataProperties.swift */; };
+		D82E216C1F3C5CE400F601DD /* Subtask+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = D82E21641F3C5CE400F601DD /* Subtask+CoreDataProperties.swift */; };
+		D82E216D1F3C5CE400F601DD /* Task+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = D82E21651F3C5CE400F601DD /* Task+CoreDataProperties.swift */; };
+		D82E216E1F3C5CE400F601DD /* TaskState+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = D82E21661F3C5CE400F601DD /* TaskState+CoreDataProperties.swift */; };
+		D82E21701F3C616000F601DD /* TasksCollectionLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = D82E216F1F3C616000F601DD /* TasksCollectionLayout.swift */; };
 		D82ECF281F37985D008251C2 /* Document.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D82ECF151F37985D008251C2 /* Document.xcdatamodeld */; };
 		D82ECF291F37985D008251C2 /* BaseTask+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = D82ECF181F37985D008251C2 /* BaseTask+CoreDataClass.swift */; };
-		D82ECF2A1F37985D008251C2 /* BaseTask+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = D82ECF191F37985D008251C2 /* BaseTask+CoreDataProperties.swift */; };
 		D82ECF2B1F37985D008251C2 /* Label+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = D82ECF1A1F37985D008251C2 /* Label+CoreDataClass.swift */; };
-		D82ECF2C1F37985D008251C2 /* Label+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = D82ECF1B1F37985D008251C2 /* Label+CoreDataProperties.swift */; };
 		D82ECF2D1F37985D008251C2 /* LabelColor+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = D82ECF1C1F37985D008251C2 /* LabelColor+CoreDataClass.swift */; };
-		D82ECF2E1F37985D008251C2 /* LabelColor+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = D82ECF1D1F37985D008251C2 /* LabelColor+CoreDataProperties.swift */; };
 		D82ECF2F1F37985D008251C2 /* Project+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = D82ECF1E1F37985D008251C2 /* Project+CoreDataClass.swift */; };
-		D82ECF301F37985D008251C2 /* Project+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = D82ECF1F1F37985D008251C2 /* Project+CoreDataProperties.swift */; };
 		D82ECF311F37985D008251C2 /* RGBAColor+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = D82ECF201F37985D008251C2 /* RGBAColor+CoreDataClass.swift */; };
-		D82ECF321F37985D008251C2 /* RGBAColor+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = D82ECF211F37985D008251C2 /* RGBAColor+CoreDataProperties.swift */; };
 		D82ECF331F37985D008251C2 /* Subtask+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = D82ECF221F37985D008251C2 /* Subtask+CoreDataClass.swift */; };
-		D82ECF341F37985D008251C2 /* Subtask+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = D82ECF231F37985D008251C2 /* Subtask+CoreDataProperties.swift */; };
 		D82ECF351F37985D008251C2 /* Task+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = D82ECF241F37985D008251C2 /* Task+CoreDataClass.swift */; };
-		D82ECF361F37985D008251C2 /* Task+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = D82ECF251F37985D008251C2 /* Task+CoreDataProperties.swift */; };
 		D82ECF371F37985D008251C2 /* TaskState+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = D82ECF261F37985D008251C2 /* TaskState+CoreDataClass.swift */; };
-		D82ECF381F37985D008251C2 /* TaskState+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = D82ECF271F37985D008251C2 /* TaskState+CoreDataProperties.swift */; };
 		D8388E401F37905B004A2DA3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8388E3F1F37905B004A2DA3 /* AppDelegate.swift */; };
 		D8388E421F37905B004A2DA3 /* DocumentContentVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8388E411F37905B004A2DA3 /* DocumentContentVC.swift */; };
 		D8388E441F37905B004A2DA3 /* FruokDocument.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8388E431F37905B004A2DA3 /* FruokDocument.swift */; };
@@ -81,23 +88,30 @@
 		9FB1C67FA28B9D791E06D7D5 /* Pods_FruokTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FruokTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D2C4E5796C10D7F492F44FA3 /* Pods-Fruok.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Fruok.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Fruok/Pods-Fruok.debug.xcconfig"; sourceTree = "<group>"; };
 		D82E214B1F3BEC8000F601DD /* DocumentWindowController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DocumentWindowController.swift; sourceTree = "<group>"; };
+		D82E21521F3C540100F601DD /* TasksCollectionVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TasksCollectionVC.swift; sourceTree = "<group>"; };
+		D82E21541F3C541800F601DD /* TasksCollectionVM.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TasksCollectionVM.swift; sourceTree = "<group>"; };
+		D82E21561F3C577500F601DD /* TasksCollectionView.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = TasksCollectionView.storyboard; sourceTree = "<group>"; };
+		D82E21591F3C587D00F601DD /* KanbanTaskItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KanbanTaskItem.swift; sourceTree = "<group>"; };
+		D82E215A1F3C587D00F601DD /* KanbanTaskItem.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = KanbanTaskItem.xib; sourceTree = "<group>"; };
+		D82E215D1F3C59BE00F601DD /* KanbanTaskItemVM.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KanbanTaskItemVM.swift; sourceTree = "<group>"; };
+		D82E215F1F3C5CE400F601DD /* BaseTask+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "BaseTask+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		D82E21601F3C5CE400F601DD /* Label+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Label+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		D82E21611F3C5CE400F601DD /* LabelColor+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "LabelColor+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		D82E21621F3C5CE400F601DD /* Project+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Project+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		D82E21631F3C5CE400F601DD /* RGBAColor+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "RGBAColor+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		D82E21641F3C5CE400F601DD /* Subtask+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Subtask+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		D82E21651F3C5CE400F601DD /* Task+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Task+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		D82E21661F3C5CE400F601DD /* TaskState+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "TaskState+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		D82E216F1F3C616000F601DD /* TasksCollectionLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TasksCollectionLayout.swift; sourceTree = "<group>"; };
 		D82ECF161F37985D008251C2 /* Document.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Document.xcdatamodel; sourceTree = "<group>"; };
 		D82ECF181F37985D008251C2 /* BaseTask+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "BaseTask+CoreDataClass.swift"; sourceTree = "<group>"; };
-		D82ECF191F37985D008251C2 /* BaseTask+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "BaseTask+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		D82ECF1A1F37985D008251C2 /* Label+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Label+CoreDataClass.swift"; sourceTree = "<group>"; };
-		D82ECF1B1F37985D008251C2 /* Label+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Label+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		D82ECF1C1F37985D008251C2 /* LabelColor+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "LabelColor+CoreDataClass.swift"; sourceTree = "<group>"; };
-		D82ECF1D1F37985D008251C2 /* LabelColor+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "LabelColor+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		D82ECF1E1F37985D008251C2 /* Project+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Project+CoreDataClass.swift"; sourceTree = "<group>"; };
-		D82ECF1F1F37985D008251C2 /* Project+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Project+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		D82ECF201F37985D008251C2 /* RGBAColor+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "RGBAColor+CoreDataClass.swift"; sourceTree = "<group>"; };
-		D82ECF211F37985D008251C2 /* RGBAColor+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "RGBAColor+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		D82ECF221F37985D008251C2 /* Subtask+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Subtask+CoreDataClass.swift"; sourceTree = "<group>"; };
-		D82ECF231F37985D008251C2 /* Subtask+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Subtask+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		D82ECF241F37985D008251C2 /* Task+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Task+CoreDataClass.swift"; sourceTree = "<group>"; };
-		D82ECF251F37985D008251C2 /* Task+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Task+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		D82ECF261F37985D008251C2 /* TaskState+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "TaskState+CoreDataClass.swift"; sourceTree = "<group>"; };
-		D82ECF271F37985D008251C2 /* TaskState+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "TaskState+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		D8388E3C1F37905B004A2DA3 /* Fruok.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Fruok.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D8388E3F1F37905B004A2DA3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D8388E411F37905B004A2DA3 /* DocumentContentVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DocumentContentVC.swift; sourceTree = "<group>"; };
@@ -193,6 +207,27 @@
 			name = DocumentWindow;
 			sourceTree = "<group>";
 		};
+		D82E21511F3C53C200F601DD /* TaskCollectionView */ = {
+			isa = PBXGroup;
+			children = (
+				D82E216F1F3C616000F601DD /* TasksCollectionLayout.swift */,
+				D82E21521F3C540100F601DD /* TasksCollectionVC.swift */,
+				D82E21541F3C541800F601DD /* TasksCollectionVM.swift */,
+				D82E21561F3C577500F601DD /* TasksCollectionView.storyboard */,
+			);
+			name = TaskCollectionView;
+			sourceTree = "<group>";
+		};
+		D82E21581F3C584B00F601DD /* KanbanTaskItem */ = {
+			isa = PBXGroup;
+			children = (
+				D82E21591F3C587D00F601DD /* KanbanTaskItem.swift */,
+				D82E215D1F3C59BE00F601DD /* KanbanTaskItemVM.swift */,
+				D82E215A1F3C587D00F601DD /* KanbanTaskItem.xib */,
+			);
+			name = KanbanTaskItem;
+			sourceTree = "<group>";
+		};
 		D82ECF141F37985D008251C2 /* CoreData */ = {
 			isa = PBXGroup;
 			children = (
@@ -206,14 +241,14 @@
 		D82ECF171F37985D008251C2 /* GeneratedClasses */ = {
 			isa = PBXGroup;
 			children = (
-				D82ECF191F37985D008251C2 /* BaseTask+CoreDataProperties.swift */,
-				D82ECF1B1F37985D008251C2 /* Label+CoreDataProperties.swift */,
-				D82ECF1D1F37985D008251C2 /* LabelColor+CoreDataProperties.swift */,
-				D82ECF1F1F37985D008251C2 /* Project+CoreDataProperties.swift */,
-				D82ECF211F37985D008251C2 /* RGBAColor+CoreDataProperties.swift */,
-				D82ECF231F37985D008251C2 /* Subtask+CoreDataProperties.swift */,
-				D82ECF251F37985D008251C2 /* Task+CoreDataProperties.swift */,
-				D82ECF271F37985D008251C2 /* TaskState+CoreDataProperties.swift */,
+				D82E215F1F3C5CE400F601DD /* BaseTask+CoreDataProperties.swift */,
+				D82E21601F3C5CE400F601DD /* Label+CoreDataProperties.swift */,
+				D82E21611F3C5CE400F601DD /* LabelColor+CoreDataProperties.swift */,
+				D82E21621F3C5CE400F601DD /* Project+CoreDataProperties.swift */,
+				D82E21631F3C5CE400F601DD /* RGBAColor+CoreDataProperties.swift */,
+				D82E21641F3C5CE400F601DD /* Subtask+CoreDataProperties.swift */,
+				D82E21651F3C5CE400F601DD /* Task+CoreDataProperties.swift */,
+				D82E21661F3C5CE400F601DD /* TaskState+CoreDataProperties.swift */,
 			);
 			path = GeneratedClasses;
 			sourceTree = "<group>";
@@ -309,6 +344,8 @@
 				D82ECF3A1F37AECE008251C2 /* DocumentContent */,
 				D8C2AD0B1F38FB70002D75B2 /* KanbanView */,
 				D8C2AD361F3BAAE6002D75B2 /* KanbanTaskStateItem */,
+				D82E21511F3C53C200F601DD /* TaskCollectionView */,
+				D82E21581F3C584B00F601DD /* KanbanTaskItem */,
 			);
 			name = UI;
 			sourceTree = "<group>";
@@ -494,7 +531,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D82E21571F3C577500F601DD /* TasksCollectionView.storyboard in Resources */,
 				D8C2AD321F3BA78B002D75B2 /* .gitignore in Resources */,
+				D82E215C1F3C587D00F601DD /* KanbanTaskItem.xib in Resources */,
 				D8388E491F37905B004A2DA3 /* Assets.xcassets in Resources */,
 				D8C2AD2A1F3A7EBC002D75B2 /* KanbanTaskStateItem.xib in Resources */,
 				D8388E4C1F37905B004A2DA3 /* Main.storyboard in Resources */,
@@ -660,40 +699,45 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D82E216D1F3C5CE400F601DD /* Task+CoreDataProperties.swift in Sources */,
+				D82E21551F3C541800F601DD /* TasksCollectionVM.swift in Sources */,
 				D82ECF281F37985D008251C2 /* Document.xcdatamodeld in Sources */,
 				D82ECF351F37985D008251C2 /* Task+CoreDataClass.swift in Sources */,
+				D82E216E1F3C5CE400F601DD /* TaskState+CoreDataProperties.swift in Sources */,
 				D8C2AD1B1F3A4CC8002D75B2 /* NSLayoutConstraint+utilities.m in Sources */,
+				D82E215E1F3C59BE00F601DD /* KanbanTaskItemVM.swift in Sources */,
 				D82ECF291F37985D008251C2 /* BaseTask+CoreDataClass.swift in Sources */,
+				D82E216C1F3C5CE400F601DD /* Subtask+CoreDataProperties.swift in Sources */,
 				D8C2AD291F3A7EBC002D75B2 /* KanbanTaskStateItem.swift in Sources */,
+				D82E21681F3C5CE400F601DD /* Label+CoreDataProperties.swift in Sources */,
 				D82ECF2D1F37985D008251C2 /* LabelColor+CoreDataClass.swift in Sources */,
 				D8C2AD2C1F3BA249002D75B2 /* ManagedObjectType.swift in Sources */,
 				D8C2AD111F390305002D75B2 /* KVVM.swift in Sources */,
-				D82ECF361F37985D008251C2 /* Task+CoreDataProperties.swift in Sources */,
+				D82E21531F3C540100F601DD /* TasksCollectionVC.swift in Sources */,
+				D82E215B1F3C587D00F601DD /* KanbanTaskItem.swift in Sources */,
 				D8388E421F37905B004A2DA3 /* DocumentContentVC.swift in Sources */,
 				D82ECF2B1F37985D008251C2 /* Label+CoreDataClass.swift in Sources */,
 				D8C2AD241F3A5FFA002D75B2 /* ValidatingCustomToolbarItem.swift in Sources */,
+				D82E21671F3C5CE400F601DD /* BaseTask+CoreDataProperties.swift in Sources */,
+				D82E216A1F3C5CE400F601DD /* Project+CoreDataProperties.swift in Sources */,
 				D8C2AD3D1F3BD284002D75B2 /* FirstResponderView.swift in Sources */,
 				D8C2AD381F3BABE6002D75B2 /* KanbanCollectionLayout.swift in Sources */,
 				D82ECF371F37985D008251C2 /* TaskState+CoreDataClass.swift in Sources */,
-				D82ECF381F37985D008251C2 /* TaskState+CoreDataProperties.swift in Sources */,
 				D8C2AD0F1F39007E002D75B2 /* DocumentContentVM.swift in Sources */,
-				D82ECF2C1F37985D008251C2 /* Label+CoreDataProperties.swift in Sources */,
-				D82ECF341F37985D008251C2 /* Subtask+CoreDataProperties.swift in Sources */,
-				D82ECF2E1F37985D008251C2 /* LabelColor+CoreDataProperties.swift in Sources */,
 				D8C2AD1F1F3A4E20002D75B2 /* NSView+SubviewHelpers.m in Sources */,
 				D8C2AD341F3BA78B002D75B2 /* NSManagedObjectModel+KCOrderedAccessorFix.m in Sources */,
-				D82ECF2A1F37985D008251C2 /* BaseTask+CoreDataProperties.swift in Sources */,
 				D8C2AD221F3A571D002D75B2 /* OptionalRawValueInitializer.swift in Sources */,
+				D82E21691F3C5CE400F601DD /* LabelColor+CoreDataProperties.swift in Sources */,
 				D82E214C1F3BEC8000F601DD /* DocumentWindowController.swift in Sources */,
 				D8388E401F37905B004A2DA3 /* AppDelegate.swift in Sources */,
 				D8C2AD0D1F38FB97002D75B2 /* KanbanVC.swift in Sources */,
 				D82ECF331F37985D008251C2 /* Subtask+CoreDataClass.swift in Sources */,
-				D82ECF321F37985D008251C2 /* RGBAColor+CoreDataProperties.swift in Sources */,
 				D82ECF311F37985D008251C2 /* RGBAColor+CoreDataClass.swift in Sources */,
+				D82E216B1F3C5CE400F601DD /* RGBAColor+CoreDataProperties.swift in Sources */,
 				D82ECF2F1F37985D008251C2 /* Project+CoreDataClass.swift in Sources */,
-				D82ECF301F37985D008251C2 /* Project+CoreDataProperties.swift in Sources */,
 				D8388E441F37905B004A2DA3 /* FruokDocument.swift in Sources */,
 				D8C2AD3A1F3BB753002D75B2 /* KanbanTaskStateItemVM.swift in Sources */,
+				D82E21701F3C616000F601DD /* TasksCollectionLayout.swift in Sources */,
 				D8C2AD261F3A650D002D75B2 /* KanbanVM.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

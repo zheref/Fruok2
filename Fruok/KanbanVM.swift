@@ -74,10 +74,9 @@ class KanbanViewModel: NSObject, MVVMViewModel {
 	func addTask() {
 
 		if let context = self.project.managedObjectContext {
-			let state: TaskState = NSEntityDescription.insertNewObject(forEntityName: "TaskState", into: context) as! TaskState
-			state.name = "kjjkj"
+			let state: TaskState = NSEntityDescription.insertNewObject(forEntityName: TaskState.entityName, into: context) as! TaskState
+			state.name = NSLocalizedString("Untitled", comment: "Untitled tasks tate")
 			self.project.addToTaskStates(state)
-			NSEntityDescription.insertNewObject(forEntityName: "TaskState", into: context)
 		}
 	}
 

@@ -50,4 +50,17 @@ class KanbanTaskStateItemViewModel: NSObject, MVVMViewModel {
 		self.editable.value = false
 	}
 
+	func userWantsAddTask() {
+		if let context = self.taskState.managedObjectContext {
+			let task: Task = NSEntityDescription.insertNewObject(forEntityName: Task.entityName, into: context) as! Task
+			task.name = NSLocalizedString("Untitled", comment: "Untitled task")
+			self.taskState.addToTasks(task)
+		}
+	}
+
+	func tasksCollectionViewModel() -> TasksCollectionViewModel {
+
+		return TasksCollectionViewModel(with: self.taskState)
+	}
+
 }

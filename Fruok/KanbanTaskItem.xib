@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="11762" systemVersion="15G1421" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
+    <dependencies>
+        <deployment identifier="macosx"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="11762"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <customObject id="-2" userLabel="File's Owner">
+            <connections>
+                <outlet property="view" destination="Hz6-mo-xeY" id="0bl-1N-x8E"/>
+            </connections>
+        </customObject>
+        <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
+        <customObject id="-3" userLabel="Application" customClass="NSObject"/>
+        <customView id="Hz6-mo-xeY">
+            <rect key="frame" x="0.0" y="0.0" width="290" height="272"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+            <subviews>
+                <customView translatesAutoresizingMaskIntoConstraints="NO" id="lyQ-Hs-66d">
+                    <rect key="frame" x="0.0" y="234" width="290" height="38"/>
+                    <subviews>
+                        <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="1s1-G3-lq1">
+                            <rect key="frame" x="18" y="10" width="37" height="17"/>
+                            <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Label" id="GTu-Rb-Ki5">
+                                <font key="font" metaFont="system"/>
+                                <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                            </textFieldCell>
+                        </textField>
+                    </subviews>
+                    <constraints>
+                        <constraint firstItem="1s1-G3-lq1" firstAttribute="leading" secondItem="lyQ-Hs-66d" secondAttribute="leading" constant="20" id="7I3-3N-mQZ"/>
+                        <constraint firstAttribute="height" constant="38" id="KUD-N9-Cfd"/>
+                        <constraint firstItem="1s1-G3-lq1" firstAttribute="centerY" secondItem="lyQ-Hs-66d" secondAttribute="centerY" id="tg9-DA-AfP"/>
+                    </constraints>
+                </customView>
+            </subviews>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="lyQ-Hs-66d" secondAttribute="trailing" id="HeC-rh-GaC"/>
+                <constraint firstItem="lyQ-Hs-66d" firstAttribute="top" secondItem="Hz6-mo-xeY" secondAttribute="top" id="XLk-kv-J9A"/>
+                <constraint firstItem="lyQ-Hs-66d" firstAttribute="leading" secondItem="Hz6-mo-xeY" secondAttribute="leading" id="scW-as-K4L"/>
+            </constraints>
+            <point key="canvasLocation" x="234" y="168"/>
+        </customView>
+        <collectionViewItem id="5Gx-wo-5TF" customClass="KanbanTaskItem" customModule="Fruok" customModuleProvider="target">
+            <connections>
+                <outlet property="nameLabel" destination="1s1-G3-lq1" id="u0M-n4-gHx"/>
+                <outlet property="view" destination="Hz6-mo-xeY" id="Eja-bx-id6"/>
+            </connections>
+        </collectionViewItem>
+    </objects>
+</document>

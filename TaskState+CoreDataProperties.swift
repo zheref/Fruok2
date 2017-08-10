@@ -4,7 +4,6 @@
 //
 //  Created by Matthias Keiser on 10.08.17.
 //
-//  This file was automatically generated and should not be edited.
 //
 
 import Foundation

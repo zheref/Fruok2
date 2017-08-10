@@ -26,7 +26,7 @@
                         </textField>
                         <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="da0-61-7cz">
                             <rect key="frame" x="165" y="5" width="29" height="26"/>
-                            <buttonCell key="cell" type="disclosure" bezelStyle="roundedDisclosure" image="07B11E2A-6AF8-4ADB-8AD1-10BB59D93B73" imagePosition="only" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="jr6-8C-MWC">
+                            <buttonCell key="cell" type="disclosure" bezelStyle="roundedDisclosure" image="CAB48608-299D-4E84-9A75-74BA5950CE2F" imagePosition="only" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="jr6-8C-MWC">
                                 <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                 <font key="font" metaFont="system"/>
                             </buttonCell>
@@ -54,9 +54,38 @@
                         <constraint firstAttribute="trailing" secondItem="da0-61-7cz" secondAttribute="trailing" constant="10" id="pSB-lJ-0L3"/>
                     </constraints>
                 </customView>
+                <customView translatesAutoresizingMaskIntoConstraints="NO" id="bav-aC-6Xq">
+                    <rect key="frame" x="0.0" y="0.0" width="200" height="38"/>
+                    <subviews>
+                        <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="FPA-Fq-CWm">
+                            <rect key="frame" x="60" y="1" width="81" height="32"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                            <buttonCell key="cell" type="push" bezelStyle="rounded" image="NSAddTemplate" imagePosition="only" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="qt2-WV-u3H">
+                                <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                <font key="font" metaFont="system"/>
+                            </buttonCell>
+                            <connections>
+                                <action selector="addTaskAction:" target="xrH-mk-nUk" id="iGf-x7-Tn4"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="38" id="DDc-2m-7SQ"/>
+                    </constraints>
+                </customView>
+                <customView translatesAutoresizingMaskIntoConstraints="NO" id="OTY-ek-RVO">
+                    <rect key="frame" x="0.0" y="38" width="200" height="196"/>
+                </customView>
             </subviews>
             <constraints>
+                <constraint firstAttribute="bottom" secondItem="bav-aC-6Xq" secondAttribute="bottom" id="DJy-yp-1ad"/>
+                <constraint firstAttribute="trailing" secondItem="bav-aC-6Xq" secondAttribute="trailing" id="Mju-bE-8UK"/>
+                <constraint firstAttribute="trailing" secondItem="OTY-ek-RVO" secondAttribute="trailing" id="NMN-sS-bdC"/>
+                <constraint firstItem="bav-aC-6Xq" firstAttribute="leading" secondItem="Hz6-mo-xeY" secondAttribute="leading" id="PZ5-ur-S6a"/>
+                <constraint firstItem="OTY-ek-RVO" firstAttribute="leading" secondItem="Hz6-mo-xeY" secondAttribute="leading" id="Ukq-4C-9Nl"/>
+                <constraint firstItem="bav-aC-6Xq" firstAttribute="top" secondItem="OTY-ek-RVO" secondAttribute="bottom" id="bg8-Rg-ATr"/>
                 <constraint firstItem="omM-lG-5Gz" firstAttribute="top" secondItem="Hz6-mo-xeY" secondAttribute="top" id="ejl-Vc-bk9"/>
+                <constraint firstItem="OTY-ek-RVO" firstAttribute="top" secondItem="omM-lG-5Gz" secondAttribute="bottom" id="qca-XQ-X1d"/>
                 <constraint firstAttribute="trailing" secondItem="omM-lG-5Gz" secondAttribute="trailing" id="rcm-KN-yCr"/>
                 <constraint firstItem="omM-lG-5Gz" firstAttribute="leading" secondItem="Hz6-mo-xeY" secondAttribute="leading" id="uQt-rQ-ZpS"/>
             </constraints>
@@ -67,6 +96,7 @@
                 <outlet property="itemMenu" destination="Ehx-Bt-Jjz" id="s0w-kn-h5P"/>
                 <outlet property="nameEntryField" destination="vRZ-pc-Ppc" id="Z1R-vM-Psb"/>
                 <outlet property="nameLabel" destination="VQm-Cy-ap9" id="aTb-uP-L0M"/>
+                <outlet property="tasksContainerView" destination="OTY-ek-RVO" id="mH3-PN-EvR"/>
                 <outlet property="view" destination="Hz6-mo-xeY" id="dSQ-yc-p3e"/>
             </connections>
         </customObject>
@@ -89,7 +119,7 @@
         </menu>
     </objects>
     <resources>
-        <image name="07B11E2A-6AF8-4ADB-8AD1-10BB59D93B73" width="1" height="1">
+        <image name="CAB48608-299D-4E84-9A75-74BA5950CE2F" width="1" height="1">
             <mutableData key="keyedArchiveRepresentation">
 YnBsaXN0MDDUAQIDBAUGPT5YJHZlcnNpb25YJG9iamVjdHNZJGFyY2hpdmVyVCR0b3ASAAGGoK4HCBMU
 GR4fIyQrLjE3OlUkbnVsbNUJCgsMDQ4PEBESVk5TU2l6ZVYkY2xhc3NcTlNJbWFnZUZsYWdzVk5TUmVw
@@ -140,5 +170,6 @@ ALAAswC1ALcAuQC7AMAA1wDZANsJiwmQCZsJpAm3CbsJxgnPCdQJ3AnfCeQJ8wn3Cf4KBgoTChgKGgoc
 CiEKKQosCjEKOQo8Ck4KUQpWAAAAAAAAAgEAAAAAAAAAQQAAAAAAAAAAAAAAAAAAClg
 </mutableData>
         </image>
+        <image name="NSAddTemplate" width="11" height="11"/>
     </resources>
 </document>

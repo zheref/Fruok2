@@ -57,6 +57,10 @@ class KanbanTaskStateItem: NSCollectionViewItem, MVVMView {
 
 		NSApp.sendAction(#selector(KanbanViewController.deleteTask(_:)), to: nil, from: self)
 	}
+	@IBAction func editTaskState(_ sender: Any) {
+
+		self.viewModel?.editable.value = true
+	}
 
 }
 

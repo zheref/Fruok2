@@ -66,11 +66,6 @@ class KanbanTaskStateItem: NSCollectionViewItem, MVVMView {
 
 extension KanbanTaskStateItem: NSTextFieldDelegate {
 
-//	func control(_ control: NSControl, textShouldEndEditing fieldEditor: NSText) -> Bool {
-//		self.viewModel?.userDidChangeName(to: self.nameLabel.stringValue)
-//		return true
-//	}
-
 	override func controlTextDidEndEditing(_ obj: Notification) {
 
 		self.viewModel?.userDidChangeName(to: self.nameEntryField.stringValue)

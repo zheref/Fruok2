@@ -776,6 +776,7 @@
                                             <color key="primaryBackgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
                                             <connections>
                                                 <outlet property="dataSource" destination="Fti-Zu-9Sz" id="1S3-g6-s54"/>
+                                                <outlet property="delegate" destination="Fti-Zu-9Sz" id="eGi-51-DuF"/>
                                             </connections>
                                         </collectionView>
                                     </subviews>

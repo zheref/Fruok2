@@ -13,6 +13,9 @@ class KanbanViewController: NSViewController, MVVMView {
 	enum ItemIdentifier: String {
 		case task
 	}
+
+	let kTaskStateDragType = "kTaskStateDragType"
+
 	@IBOutlet var collectionView: NSCollectionView!
 
 	typealias VIEWMODEL = KanbanViewModel
@@ -26,6 +29,9 @@ class KanbanViewController: NSViewController, MVVMView {
 		let nib = NSNib(nibNamed: "KanbanTaskStateItem", bundle: nil)
 		self.collectionView.register(nib, forItemWithIdentifier: ItemIdentifier.task.rawValue)
 		self.collectionView.collectionViewLayout = KanbanCollectionLayout()
+		self.collectionView.register(forDraggedTypes: [kTaskStateDragType, NSURLPboardType])
+		self.collectionView.setDraggingSourceOperationMask(.every, forLocal: true)
+		self.collectionView.setDraggingSourceOperationMask(.every, forLocal: false)
 		self.connectVMIfReady()
     }
 
@@ -96,4 +102,34 @@ extension KanbanViewController: NSCollectionViewDataSource {
 		}
 		return item
 	}
+}
+
+extension KanbanViewController: NSCollectionViewDelegate {
+
+	func collectionView(_ collectionView: NSCollectionView, shouldSelectItemsAt indexPaths: Set<IndexPath>) -> Set<IndexPath> {
+		return indexPaths
+	}
+	// Dragging Source
+	func collectionView(_ collectionView: NSCollectionView, canDragItemsAt indexPaths: Set<IndexPath>, with event: NSEvent) -> Bool {
+		return true
+	}
+	func collectionView(_ collectionView: NSCollectionView, pasteboardWriterForItemAt index: Int) -> NSPasteboardWriting? {
+
+		return Bundle.main.bundleURL.absoluteURL as NSURL
+		return "\(index)" as NSString
+	}
+
+	func collectionView(_ collectionView: NSCollectionView, validateDrop draggingInfo: NSDraggingInfo, proposedIndexPath proposedDropIndexPath: AutoreleasingUnsafeMutablePointer<NSIndexPath>, dropOperation proposedDropOperation: UnsafeMutablePointer<NSCollectionViewDropOperation>) -> NSDragOperation {
+
+		return .move
+	}
+
+	// Dragging Destination
+
+	func collectionView(_ collectionView: NSCollectionView, acceptDrop draggingInfo: NSDraggingInfo, indexPath: IndexPath, dropOperation: NSCollectionViewDropOperation) -> Bool {
+
+		let str = draggingInfo.draggingPasteboard().string(forType: self.kTaskStateDragType)
+		return true
+	}
+
 }

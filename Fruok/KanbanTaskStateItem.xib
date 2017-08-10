@@ -9,7 +9,7 @@
         <customObject id="-2" userLabel="File's Owner"/>
         <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
         <customObject id="-3" userLabel="Application" customClass="NSObject"/>
-        <customView id="Hz6-mo-xeY" customClass="FirstResponderView" customModule="Fruok" customModuleProvider="target">
+        <customView id="Hz6-mo-xeY">
             <rect key="frame" x="0.0" y="0.0" width="200" height="272"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
             <subviews>
@@ -26,7 +26,7 @@
                         </textField>
                         <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="da0-61-7cz">
                             <rect key="frame" x="165" y="5" width="29" height="26"/>
-                            <buttonCell key="cell" type="disclosure" bezelStyle="roundedDisclosure" image="5FDB46C5-1023-4E41-B0BB-6F1981230AAC" imagePosition="only" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="jr6-8C-MWC">
+                            <buttonCell key="cell" type="disclosure" bezelStyle="roundedDisclosure" image="07B11E2A-6AF8-4ADB-8AD1-10BB59D93B73" imagePosition="only" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="jr6-8C-MWC">
                                 <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                 <font key="font" metaFont="system"/>
                             </buttonCell>
@@ -89,7 +89,7 @@
         </menu>
     </objects>
     <resources>
-        <image name="5FDB46C5-1023-4E41-B0BB-6F1981230AAC" width="1" height="1">
+        <image name="07B11E2A-6AF8-4ADB-8AD1-10BB59D93B73" width="1" height="1">
             <mutableData key="keyedArchiveRepresentation">
 YnBsaXN0MDDUAQIDBAUGPT5YJHZlcnNpb25YJG9iamVjdHNZJGFyY2hpdmVyVCR0b3ASAAGGoK4HCBMU
 GR4fIyQrLjE3OlUkbnVsbNUJCgsMDQ4PEBESVk5TU2l6ZVYkY2xhc3NcTlNJbWFnZUZsYWdzVk5TUmVw

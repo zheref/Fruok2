@@ -10,6 +10,7 @@
 		271EAC0BF16FE40B996281AF /* Pods_FruokUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 35F75909185B30AAE0ED14CB /* Pods_FruokUITests.framework */; };
 		52F2D2AB02B9F0489EF794AE /* Pods_FruokTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9FB1C67FA28B9D791E06D7D5 /* Pods_FruokTests.framework */; };
 		C510E1B01BE92F1C0CD199E6 /* Pods_Fruok.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3F4F892E3EC3444EAE5707A1 /* Pods_Fruok.framework */; };
+		D82E214C1F3BEC8000F601DD /* DocumentWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D82E214B1F3BEC8000F601DD /* DocumentWindowController.swift */; };
 		D82ECF281F37985D008251C2 /* Document.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D82ECF151F37985D008251C2 /* Document.xcdatamodeld */; };
 		D82ECF291F37985D008251C2 /* BaseTask+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = D82ECF181F37985D008251C2 /* BaseTask+CoreDataClass.swift */; };
 		D82ECF2A1F37985D008251C2 /* BaseTask+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = D82ECF191F37985D008251C2 /* BaseTask+CoreDataProperties.swift */; };
@@ -79,6 +80,7 @@
 		6C62FC992BCF259AA9BEB170 /* Pods-FruokUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FruokUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-FruokUITests/Pods-FruokUITests.release.xcconfig"; sourceTree = "<group>"; };
 		9FB1C67FA28B9D791E06D7D5 /* Pods_FruokTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FruokTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D2C4E5796C10D7F492F44FA3 /* Pods-Fruok.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Fruok.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Fruok/Pods-Fruok.debug.xcconfig"; sourceTree = "<group>"; };
+		D82E214B1F3BEC8000F601DD /* DocumentWindowController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DocumentWindowController.swift; sourceTree = "<group>"; };
 		D82ECF161F37985D008251C2 /* Document.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Document.xcdatamodel; sourceTree = "<group>"; };
 		D82ECF181F37985D008251C2 /* BaseTask+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "BaseTask+CoreDataClass.swift"; sourceTree = "<group>"; };
 		D82ECF191F37985D008251C2 /* BaseTask+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "BaseTask+CoreDataProperties.swift"; sourceTree = "<group>"; };
@@ -181,6 +183,14 @@
 				35F75909185B30AAE0ED14CB /* Pods_FruokUITests.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		D82E214A1F3BEC5D00F601DD /* DocumentWindow */ = {
+			isa = PBXGroup;
+			children = (
+				D82E214B1F3BEC8000F601DD /* DocumentWindowController.swift */,
+			);
+			name = DocumentWindow;
 			sourceTree = "<group>";
 		};
 		D82ECF141F37985D008251C2 /* CoreData */ = {
@@ -295,6 +305,7 @@
 			isa = PBXGroup;
 			children = (
 				D8C2AD3B1F3BD271002D75B2 /* Shared */,
+				D82E214A1F3BEC5D00F601DD /* DocumentWindow */,
 				D82ECF3A1F37AECE008251C2 /* DocumentContent */,
 				D8C2AD0B1F38FB70002D75B2 /* KanbanView */,
 				D8C2AD361F3BAAE6002D75B2 /* KanbanTaskStateItem */,
@@ -673,6 +684,7 @@
 				D8C2AD341F3BA78B002D75B2 /* NSManagedObjectModel+KCOrderedAccessorFix.m in Sources */,
 				D82ECF2A1F37985D008251C2 /* BaseTask+CoreDataProperties.swift in Sources */,
 				D8C2AD221F3A571D002D75B2 /* OptionalRawValueInitializer.swift in Sources */,
+				D82E214C1F3BEC8000F601DD /* DocumentWindowController.swift in Sources */,
 				D8388E401F37905B004A2DA3 /* AppDelegate.swift in Sources */,
 				D8C2AD0D1F38FB97002D75B2 /* KanbanVC.swift in Sources */,
 				D82ECF331F37985D008251C2 /* Subtask+CoreDataClass.swift in Sources */,

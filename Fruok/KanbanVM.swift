@@ -39,6 +39,7 @@ class KanbanViewModel: NSObject, MVVMViewModel {
 	
 	private var kTaskStatesContext = "kTaskStatesContext"
 
+	private var lastAdded = IndexSet()
 	override func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?) {
 
 		if context == &kTaskStatesContext {
@@ -49,12 +50,15 @@ class KanbanViewModel: NSObject, MVVMViewModel {
 			case .insertion?:
 				if let indexSet = change?[.indexesKey] as? IndexSet {
 					action = .addTasksAtIndexes(indexSet)
+					self.lastAdded = indexSet
 				}
 			case .removal?:
 				if let indexSet = change?[.indexesKey] as? IndexSet {
 					action = .deleteTasksAtIndexes(indexSet)
 				}
+				self.lastAdded = IndexSet()
 			default:
+				self.lastAdded = IndexSet()
 				action = .refreshTaskStates
 			}
 
@@ -87,7 +91,8 @@ class KanbanViewModel: NSObject, MVVMViewModel {
 		guard let taskState = self.project.taskStates?[index] as? TaskState else {
 			return nil
 		}
-		return KanbanTaskStateItemViewModel(with: taskState)
-
+		let viewModel = KanbanTaskStateItemViewModel(with: taskState)
+		viewModel.editable.value = self.lastAdded.contains(index)
+		return viewModel
 	}
 }

@@ -9,7 +9,7 @@
         <customObject id="-2" userLabel="File's Owner"/>
         <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
         <customObject id="-3" userLabel="Application" customClass="NSObject"/>
-        <customView id="Hz6-mo-xeY">
+        <customView id="Hz6-mo-xeY" customClass="FirstResponderView" customModule="Fruok" customModuleProvider="target">
             <rect key="frame" x="0.0" y="0.0" width="200" height="272"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
             <subviews>
@@ -26,7 +26,7 @@
                         </textField>
                         <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="da0-61-7cz">
                             <rect key="frame" x="165" y="5" width="29" height="26"/>
-                            <buttonCell key="cell" type="disclosure" bezelStyle="roundedDisclosure" image="6353A92D-315C-4541-8804-2D63C36213A1" imagePosition="only" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="jr6-8C-MWC">
+                            <buttonCell key="cell" type="disclosure" bezelStyle="roundedDisclosure" image="171E6E6C-DABE-4080-B18B-2062C9135A77" imagePosition="only" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="jr6-8C-MWC">
                                 <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                 <font key="font" metaFont="system"/>
                             </buttonCell>
@@ -34,9 +34,20 @@
                                 <action selector="menuAction:" target="xrH-mk-nUk" id="E11-xR-qsu"/>
                             </connections>
                         </button>
+                        <textField hidden="YES" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="vRZ-pc-Ppc">
+                            <rect key="frame" x="12" y="7" width="149" height="22"/>
+                            <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" drawsBackground="YES" id="eNo-oH-3ln">
+                                <font key="font" metaFont="system"/>
+                                <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                            </textFieldCell>
+                        </textField>
                     </subviews>
                     <constraints>
+                        <constraint firstItem="da0-61-7cz" firstAttribute="leading" secondItem="vRZ-pc-Ppc" secondAttribute="trailing" constant="8" id="4zO-AX-bi8"/>
                         <constraint firstItem="VQm-Cy-ap9" firstAttribute="leading" secondItem="omM-lG-5Gz" secondAttribute="leading" constant="12" id="7CN-c3-6lc"/>
+                        <constraint firstItem="vRZ-pc-Ppc" firstAttribute="leading" secondItem="VQm-Cy-ap9" secondAttribute="leading" id="IGJ-Lr-0v7"/>
+                        <constraint firstItem="vRZ-pc-Ppc" firstAttribute="centerY" secondItem="VQm-Cy-ap9" secondAttribute="centerY" id="TtE-Dm-LOZ"/>
                         <constraint firstItem="VQm-Cy-ap9" firstAttribute="top" secondItem="omM-lG-5Gz" secondAttribute="top" constant="11" id="VHg-OX-VlW"/>
                         <constraint firstAttribute="height" constant="38" id="dGb-aF-fg1"/>
                         <constraint firstItem="da0-61-7cz" firstAttribute="centerY" secondItem="VQm-Cy-ap9" secondAttribute="centerY" id="g3C-ox-9fx"/>
@@ -54,6 +65,7 @@
         <customObject id="xrH-mk-nUk" customClass="KanbanTaskStateItem" customModule="Fruok" customModuleProvider="target">
             <connections>
                 <outlet property="itemMenu" destination="Ehx-Bt-Jjz" id="s0w-kn-h5P"/>
+                <outlet property="nameEntryField" destination="vRZ-pc-Ppc" id="Z1R-vM-Psb"/>
                 <outlet property="nameLabel" destination="VQm-Cy-ap9" id="aTb-uP-L0M"/>
                 <outlet property="view" destination="Hz6-mo-xeY" id="dSQ-yc-p3e"/>
             </connections>
@@ -71,7 +83,7 @@
         </menu>
     </objects>
     <resources>
-        <image name="6353A92D-315C-4541-8804-2D63C36213A1" width="1" height="1">
+        <image name="171E6E6C-DABE-4080-B18B-2062C9135A77" width="1" height="1">
             <mutableData key="keyedArchiveRepresentation">
 YnBsaXN0MDDUAQIDBAUGPT5YJHZlcnNpb25YJG9iamVjdHNZJGFyY2hpdmVyVCR0b3ASAAGGoK4HCBMU
 GR4fIyQrLjE3OlUkbnVsbNUJCgsMDQ4PEBESVk5TU2l6ZVYkY2xhc3NcTlNJbWFnZUZsYWdzVk5TUmVw

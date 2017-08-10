@@ -42,4 +42,12 @@ class KanbanTaskStateItemViewModel: NSObject, MVVMViewModel {
 	}
 
 	let name = Observable<String?>(nil)
+	let editable = Observable<Bool>(false)
+
+	func userDidChangeName(to name: String) {
+
+		self.taskState.name = name
+		self.editable.value = false
+	}
+
 }

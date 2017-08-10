@@ -25,7 +25,10 @@ class KanbanTaskStateItem: NSCollectionViewItem, MVVMView {
         super.viewDidLoad()
 		self.nameEntryField.delegate = self
         self.view.wantsLayer = true
-		self.view.layer?.backgroundColor = NSColor.red.cgColor
+		//self.view.layer?.backgroundColor = NSColor.red.cgColor
+		self.view.layer?.cornerRadius = 8.0
+		self.view.layer?.borderColor = NSColor.lightGray.cgColor
+		self.view.layer?.borderWidth = 2.0
 		self.connectVMIfReady()
     }
 

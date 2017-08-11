@@ -70,5 +70,18 @@ class TaskDetailViewController: NSViewController, MVVMView {
 				mySelf.suppressTextChange = false
 			}
 		}.dispose(in: bag)
+
+		self.viewModel?.dismiss.filter({ doDismiss in
+
+			return doDismiss
+		}).bind(to: self) { me, dismiss in
+
+			me.dismiss(nil)
+		}
 	}
+
+	@IBAction func deleteTask(_ sender: Any) {
+		self.viewModel?.userRequestsTaskDeletion()
+	}
+	
 }

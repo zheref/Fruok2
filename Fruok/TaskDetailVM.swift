@@ -32,5 +32,13 @@ class TaskDetailViewModel: NSObject, MVVMViewModel {
 	let name = Observable<String?>("")
 	let stateName = Observable<String?>("")
 	let descriptionText = Observable<NSAttributedString?>(NSAttributedString(string:""))
+	let dismiss = Observable<Bool>(false)
+
+	func userRequestsTaskDeletion() {
+
+		self.dismiss.value = true
+
+		self.task.state?.removeFromTasks(self.task)
+	}
 
 }

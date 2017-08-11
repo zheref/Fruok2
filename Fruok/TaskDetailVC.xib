@@ -40,6 +40,19 @@
                 </customView>
                 <customView translatesAutoresizingMaskIntoConstraints="NO" id="xau-bX-rfq">
                     <rect key="frame" x="0.0" y="0.0" width="480" height="38"/>
+                    <subviews>
+                        <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="2sT-8o-BVO">
+                            <rect key="frame" x="15" y="1" width="80" height="32"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                            <buttonCell key="cell" type="push" title="Delete" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="BJp-bw-KU5">
+                                <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                <font key="font" metaFont="system"/>
+                                <connections>
+                                    <action selector="deleteTask:" target="-2" id="Rdy-yo-l2Y"/>
+                                </connections>
+                            </buttonCell>
+                        </button>
+                    </subviews>
                     <constraints>
                         <constraint firstAttribute="height" constant="38" id="ghS-xv-gtr"/>
                     </constraints>

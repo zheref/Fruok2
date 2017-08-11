@@ -1,10 +1,9 @@
 //
 //  BaseTask+CoreDataProperties.swift
-//  Fruok
+//  
 //
-//  Created by Matthias Keiser on 06.08.17.
-//  Copyright © 2017 Tristan Inc. All rights reserved.
-//  This file was automatically generated and should not be edited.
+//  Created by Matthias Keiser on 10.08.17.
+//
 //
 
 import Foundation
@@ -17,8 +16,8 @@ extension BaseTask {
         return NSFetchRequest<BaseTask>(entityName: "BaseTask");
     }
 
+    @NSManaged public var descriptionString: NSAttributedString?
     @NSManaged public var name: String?
-    @NSManaged public var descriptionString: String?
     @NSManaged public var labels: NSSet?
 
 }

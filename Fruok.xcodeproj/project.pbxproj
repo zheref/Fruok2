@@ -26,6 +26,9 @@
 		D82E216D1F3C5CE400F601DD /* Task+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = D82E21651F3C5CE400F601DD /* Task+CoreDataProperties.swift */; };
 		D82E216E1F3C5CE400F601DD /* TaskState+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = D82E21661F3C5CE400F601DD /* TaskState+CoreDataProperties.swift */; };
 		D82E21701F3C616000F601DD /* TasksCollectionLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = D82E216F1F3C616000F601DD /* TasksCollectionLayout.swift */; };
+		D82E21741F3CFFFD00F601DD /* TaskDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D82E21721F3CFFFD00F601DD /* TaskDetailVC.swift */; };
+		D82E21751F3CFFFD00F601DD /* TaskDetailVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = D82E21731F3CFFFD00F601DD /* TaskDetailVC.xib */; };
+		D82E21771F3D02E900F601DD /* TaskDetailVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = D82E21761F3D02E900F601DD /* TaskDetailVM.swift */; };
 		D82ECF281F37985D008251C2 /* Document.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D82ECF151F37985D008251C2 /* Document.xcdatamodeld */; };
 		D82ECF291F37985D008251C2 /* BaseTask+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = D82ECF181F37985D008251C2 /* BaseTask+CoreDataClass.swift */; };
 		D82ECF2B1F37985D008251C2 /* Label+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = D82ECF1A1F37985D008251C2 /* Label+CoreDataClass.swift */; };
@@ -103,6 +106,9 @@
 		D82E21651F3C5CE400F601DD /* Task+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Task+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		D82E21661F3C5CE400F601DD /* TaskState+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "TaskState+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		D82E216F1F3C616000F601DD /* TasksCollectionLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TasksCollectionLayout.swift; sourceTree = "<group>"; };
+		D82E21721F3CFFFD00F601DD /* TaskDetailVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaskDetailVC.swift; sourceTree = "<group>"; };
+		D82E21731F3CFFFD00F601DD /* TaskDetailVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TaskDetailVC.xib; sourceTree = "<group>"; };
+		D82E21761F3D02E900F601DD /* TaskDetailVM.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaskDetailVM.swift; sourceTree = "<group>"; };
 		D82ECF161F37985D008251C2 /* Document.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Document.xcdatamodel; sourceTree = "<group>"; };
 		D82ECF181F37985D008251C2 /* BaseTask+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "BaseTask+CoreDataClass.swift"; sourceTree = "<group>"; };
 		D82ECF1A1F37985D008251C2 /* Label+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Label+CoreDataClass.swift"; sourceTree = "<group>"; };
@@ -228,6 +234,16 @@
 			name = KanbanTaskItem;
 			sourceTree = "<group>";
 		};
+		D82E21711F3CFF9400F601DD /* TaskDetail */ = {
+			isa = PBXGroup;
+			children = (
+				D82E21721F3CFFFD00F601DD /* TaskDetailVC.swift */,
+				D82E21761F3D02E900F601DD /* TaskDetailVM.swift */,
+				D82E21731F3CFFFD00F601DD /* TaskDetailVC.xib */,
+			);
+			name = TaskDetail;
+			sourceTree = "<group>";
+		};
 		D82ECF141F37985D008251C2 /* CoreData */ = {
 			isa = PBXGroup;
 			children = (
@@ -346,6 +362,7 @@
 				D8C2AD361F3BAAE6002D75B2 /* KanbanTaskStateItem */,
 				D82E21511F3C53C200F601DD /* TaskCollectionView */,
 				D82E21581F3C584B00F601DD /* KanbanTaskItem */,
+				D82E21711F3CFF9400F601DD /* TaskDetail */,
 			);
 			name = UI;
 			sourceTree = "<group>";
@@ -533,6 +550,7 @@
 			files = (
 				D82E21571F3C577500F601DD /* TasksCollectionView.storyboard in Resources */,
 				D8C2AD321F3BA78B002D75B2 /* .gitignore in Resources */,
+				D82E21751F3CFFFD00F601DD /* TaskDetailVC.xib in Resources */,
 				D82E215C1F3C587D00F601DD /* KanbanTaskItem.xib in Resources */,
 				D8388E491F37905B004A2DA3 /* Assets.xcassets in Resources */,
 				D8C2AD2A1F3A7EBC002D75B2 /* KanbanTaskStateItem.xib in Resources */,
@@ -704,6 +722,7 @@
 				D82ECF281F37985D008251C2 /* Document.xcdatamodeld in Sources */,
 				D82ECF351F37985D008251C2 /* Task+CoreDataClass.swift in Sources */,
 				D82E216E1F3C5CE400F601DD /* TaskState+CoreDataProperties.swift in Sources */,
+				D82E21741F3CFFFD00F601DD /* TaskDetailVC.swift in Sources */,
 				D8C2AD1B1F3A4CC8002D75B2 /* NSLayoutConstraint+utilities.m in Sources */,
 				D82E215E1F3C59BE00F601DD /* KanbanTaskItemVM.swift in Sources */,
 				D82ECF291F37985D008251C2 /* BaseTask+CoreDataClass.swift in Sources */,
@@ -724,6 +743,7 @@
 				D8C2AD381F3BABE6002D75B2 /* KanbanCollectionLayout.swift in Sources */,
 				D82ECF371F37985D008251C2 /* TaskState+CoreDataClass.swift in Sources */,
 				D8C2AD0F1F39007E002D75B2 /* DocumentContentVM.swift in Sources */,
+				D82E21771F3D02E900F601DD /* TaskDetailVM.swift in Sources */,
 				D8C2AD1F1F3A4E20002D75B2 /* NSView+SubviewHelpers.m in Sources */,
 				D8C2AD341F3BA78B002D75B2 /* NSManagedObjectModel+KCOrderedAccessorFix.m in Sources */,
 				D8C2AD221F3A571D002D75B2 /* OptionalRawValueInitializer.swift in Sources */,

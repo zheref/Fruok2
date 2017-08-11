@@ -41,8 +41,8 @@ class KanbanTaskItem: NSCollectionViewItem, MVVMView {
 			}
 		}.dispose(in: bag)
 
-		self.nameLabel.reactive.editingString.bidirectionalMap(to: {$0}, from: {$0 ?? ""}).bidirectionalBind(to: self.viewModel!.taskName)
-//		self.viewModel!.taskName.bidirectionalBind(to: self.nameLabel.reactive.editingString)
+		//self.nameLabel.reactive.editingString.bidirectionalMap(to: {$0}, from: {$0 ?? ""}).bidirectionalBind(to: self.viewModel!.taskName)
+		self.viewModel!.taskName.map({$0 ?? ""}).bind(to: self.nameLabel.reactive.editingString)
 		self.viewModel!.taskDescription.map{$0 ?? ""}.bind(to: self.descriptionLabel)
 	}
 	@IBAction func showTaskDetailAction(_ sender: Any) {

@@ -82,6 +82,19 @@ class KanbanViewController: NSViewController, MVVMView {
 			self.viewModel?.deleteTask(at: index)
 		}
 	}
+
+	@IBAction func showTaskDetails(_ sender: Any?) {
+
+		guard let taskItem = sender as? KanbanTaskItem, let itemViewModel = taskItem.viewModel else {
+			return
+		}
+		let taskViewModel = itemViewModel.viewModelForTaskDetail()
+		let detailController = TaskDetailViewController()
+		detailController.set(viewModel: taskViewModel)
+		self.presentViewController(detailController, asPopoverRelativeTo: taskItem.view.bounds, of: taskItem.view, preferredEdge: .maxX, behavior: .semitransient)
+	}
+
+
 	
 
 }

@@ -51,14 +51,25 @@ class TasksCollectionViewController: NSViewController, MVVMView {
 
 				let set = Set(indexSet.map({IndexPath(item: $0, section: 0)}))
 				self.collectionView.animator().performBatchUpdates({
-
 					NSAnimationContext.current().allowsImplicitAnimation = true
-					//NSAnimationContext.current().duration = 0.3
 					self.collectionView.insertItems(at: set)
 
 				}, completionHandler: { _ in
+
+
+					NSAnimationContext.runAnimationGroup({ context in
+
+						NSAnimationContext.current().allowsImplicitAnimation = true
+						self.collectionView.scrollToItems(at: set, scrollPosition: .centeredVertically)
+					}, completionHandler: {
+
+						if let indexPath = set.first, let item = self.collectionView.item(at: indexPath) {
+
+							NSApp.sendAction(#selector(KanbanViewController.showTaskDetails(_:)), to: nil, from: item)
+						}
+					})
+
 					NSAnimationContext.current().allowsImplicitAnimation = true
-					self.collectionView.scrollToItems(at: set, scrollPosition: .centeredVertically)
 				})
 			case .deleteTasksAtIndexes(let indexSet)?:
 				self.collectionView.animator().performBatchUpdates({

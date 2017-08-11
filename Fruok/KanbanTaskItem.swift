@@ -50,25 +50,8 @@ class KanbanTaskItem: NSCollectionViewItem, MVVMView {
 		self.viewModel?.userRequestedTaskDetails()
 	}
 
-	lazy var popover: NSPopover = {
-		let popover = NSPopover()
-		popover.behavior = .transient
-		return popover
-	}()
-	var detailViewController: TaskDetailViewController?
-
 	func doShowTaskDetails() {
 
-		if self.popover.isShown {
-			return
-		}
-
-		let controller = TaskDetailViewController()
-		controller.set(viewModel: self.viewModel!.viewModelForTaskDetail())
-		self.detailViewController = controller
-
-		self.popover.contentViewController = controller
-
-		self.popover.show(relativeTo: self.view.bounds, of: self.view, preferredEdge: NSRectEdge.maxX)
+		NSApp.sendAction(#selector(KanbanViewController.showTaskDetails(_:)), to: nil, from: self)
 	}
 }

@@ -21,6 +21,7 @@ class KanbanViewModel: NSObject, MVVMViewModel {
 		case refreshTaskStates
 		case addTasksAtIndexes(IndexSet)
 		case deleteTasksAtIndexes(IndexSet)
+		case moveTasks([Int: Int])
 	}
 
 	typealias MODEL = Project
@@ -42,7 +43,7 @@ class KanbanViewModel: NSObject, MVVMViewModel {
 	private var lastAdded = IndexSet()
 	override func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?) {
 
-		if context == &kTaskStatesContext {
+		if context == &kTaskStatesContext && !self.supressTaskStateObservation {
 
 			var action: ViewActions? = nil
 			switch NSKeyValueChange(optionalRawValue: change?[.kindKey] as? UInt) {
@@ -92,6 +93,64 @@ class KanbanViewModel: NSObject, MVVMViewModel {
 		}
 		let viewModel = KanbanTaskStateItemViewModel(with: taskState)
 		viewModel.editable.value = self.lastAdded.contains(index)
+		self.lastAdded.remove(index)
 		return viewModel
+	}
+
+	func pasteboardItemForTastState(at index: Int) -> NSPasteboardWriting? {
+
+		return self.project.taskStates?[index] as? TaskState
+	}
+
+	var supressTaskStateObservation = false
+
+	func moveTaskStates(withURIStrings uriStrings: [String], beforeIndexPath: IndexPath) -> Bool {
+
+		let objectIndexes = self.objectIndexes(for: uriStrings)
+
+		guard objectIndexes.count == uriStrings.count else {
+			return false
+		}
+
+		let taskStates = self.project.mutableOrderedSetValue(forKey: #keyPath(Project.taskStates))
+
+		self.supressTaskStateObservation = true
+		let targetIndex = KanbanViewModel.actualDropIndex(forDraggedIndexes: objectIndexes, proposedIndex: beforeIndexPath.item, withNumStates: taskStates.count)
+			taskStates.moveObjects(at: objectIndexes, to: targetIndex)
+		let mappingDict: Dictionary<Int, Int> = zip(objectIndexes, 0..<objectIndexes.count)
+			.reduce(Dictionary<Int, Int>()) { (result, pair)  in
+
+				var copy = result
+				copy[pair.0] = pair.1 + targetIndex
+				return copy
+		}
+
+		self.viewActions.value = .moveTasks(mappingDict)
+		self.supressTaskStateObservation = false
+
+		return true
+	}
+
+	func objectIndexes(for uriStrings: [String]) -> IndexSet {
+
+		let taskStates = self.project.mutableOrderedSetValue(forKey: #keyPath(Project.taskStates))
+
+		let objectIndexes: IndexSet = uriStrings.flatMap { self.project.managedObjectContext?.object(withURIString: $0) }
+			.flatMap { $0 as? TaskState }
+			.map { taskStates.index(of: $0) }
+			.filter{ $0 != NSNotFound }
+			.reduce(IndexSet()) { (result, index) -> IndexSet in
+				var resultCopy = result
+				resultCopy.insert(index)
+				return resultCopy
+		}
+		return objectIndexes
+	}
+
+	static func actualDropIndex(forDraggedIndexes draggedIndexes: IndexSet, proposedIndex proposed: Int, withNumStates numStates: Int) -> Int {
+
+		let dropIndexAfter = proposed - draggedIndexes.filteredIndexSet(includeInteger: {$0 < proposed}).count
+
+		return dropIndexAfter >= numStates ? (numStates - 1) : dropIndexAfter
 	}
 }

@@ -34,6 +34,8 @@ class KanbanCollectionLayout: NSCollectionViewLayout {
 		return attributes
 	}
 
+	var hiddenIndexPaths: Set<IndexPath>?
+
 	override func layoutAttributesForItem(at indexPath: IndexPath) -> NSCollectionViewLayoutAttributes? {
 
 		let x = (CGFloat(indexPath.item) * kItemWidth) + (CGFloat(indexPath.item + 1)) * kHorizontalMargin
@@ -48,8 +50,45 @@ class KanbanCollectionLayout: NSCollectionViewLayout {
 		let attributes = NSCollectionViewLayoutAttributes(forItemWith: indexPath)
 		attributes.frame = frame
 
+		if hiddenIndexPaths?.contains(indexPath) ?? false {
+			attributes.alpha = 0.0
+		}
 		return attributes
 	}
+
+	override func layoutAttributesForInterItemGap(before indexPath: IndexPath) -> NSCollectionViewLayoutAttributes? {
+
+		guard let itemAttributes = self.layoutAttributesForItem(at: indexPath) else {
+			return nil
+		}
+
+		var frame = itemAttributes.frame
+		frame.origin.x -= kHorizontalMargin
+		frame.size.width = kHorizontalMargin
+
+		let attributes = NSCollectionViewLayoutAttributes(forInterItemGapBefore: indexPath)
+		attributes.frame = frame
+
+		return attributes
+	}
+
+	override func layoutAttributesForDropTarget(at pointInCollectionView: NSPoint) -> NSCollectionViewLayoutAttributes? {
+
+		if let attributes = super.layoutAttributesForDropTarget(at: pointInCollectionView) {
+			return attributes
+		}
+
+		var index = Int(floor((pointInCollectionView.x - kHorizontalMargin) / (kItemWidth + kHorizontalMargin))) + 1
+
+		guard let collectionView = self.collectionView else {
+			return nil
+		}
+
+		index = min(index, collectionView.numberOfItems(inSection: 0))
+
+		return self.layoutAttributesForInterItemGap(before: IndexPath(item: index, section: 0))
+	}
+
 
 	override var collectionViewContentSize: NSSize {
 

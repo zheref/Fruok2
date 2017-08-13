@@ -9,16 +9,20 @@
 		<dict>
 			<key>CFBundleTypeExtensions</key>
 			<array>
-				<string>binary</string>
+				<string>fruokdocument</string>
 			</array>
 			<key>CFBundleTypeMIMETypes</key>
 			<array>
 				<string>application/octet-stream</string>
 			</array>
 			<key>CFBundleTypeName</key>
-			<string>Binary</string>
+			<string>Fruok Document</string>
 			<key>CFBundleTypeRole</key>
 			<string>Editor</string>
+			<key>LSItemContentTypes</key>
+			<array>
+				<string>com.tristan.FruokDocument</string>
+			</array>
 			<key>LSTypeIsPackage</key>
 			<false/>
 			<key>NSDocumentClass</key>
@@ -97,5 +101,21 @@
 	<string>Main</string>
 	<key>NSPrincipalClass</key>
 	<string>NSApplication</string>
+	<key>UTExportedTypeDeclarations</key>
+	<array>
+		<dict>
+			<key>UTTypeDescription</key>
+			<string>Fruok Document</string>
+			<key>UTTypeIdentifier</key>
+			<string>com.tristan.FruokDocument</string>
+			<key>UTTypeTagSpecification</key>
+			<dict>
+				<key>public.filename-extension</key>
+				<array>
+					<string>fruokdocument</string>
+				</array>
+			</dict>
+		</dict>
+	</array>
 </dict>
 </plist>

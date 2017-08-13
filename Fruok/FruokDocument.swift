@@ -8,6 +8,11 @@
 
 import Cocoa
 
+extension UTI {
+
+	static let fruokDocument = UTI(rawValue: "com.tristan.FruokDocument")
+}
+
 class FruokDocument: NSPersistentDocument {
 
 	override class func autosavesInPlace() -> Bool {

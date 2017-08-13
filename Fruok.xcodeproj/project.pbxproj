@@ -29,6 +29,8 @@
 		D82E21741F3CFFFD00F601DD /* TaskDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D82E21721F3CFFFD00F601DD /* TaskDetailVC.swift */; };
 		D82E21751F3CFFFD00F601DD /* TaskDetailVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = D82E21731F3CFFFD00F601DD /* TaskDetailVC.xib */; };
 		D82E21771F3D02E900F601DD /* TaskDetailVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = D82E21761F3D02E900F601DD /* TaskDetailVM.swift */; };
+		D82E21791F3E6C5300F601DD /* UTI.swift in Sources */ = {isa = PBXBuildFile; fileRef = D82E21781F3E6C5300F601DD /* UTI.swift */; };
+		D82E217B1F3F822000F601DD /* NSManagedObjectContext+URI.swift in Sources */ = {isa = PBXBuildFile; fileRef = D82E217A1F3F822000F601DD /* NSManagedObjectContext+URI.swift */; };
 		D82ECF281F37985D008251C2 /* Document.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D82ECF151F37985D008251C2 /* Document.xcdatamodeld */; };
 		D82ECF291F37985D008251C2 /* BaseTask+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = D82ECF181F37985D008251C2 /* BaseTask+CoreDataClass.swift */; };
 		D82ECF2B1F37985D008251C2 /* Label+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = D82ECF1A1F37985D008251C2 /* Label+CoreDataClass.swift */; };
@@ -109,6 +111,8 @@
 		D82E21721F3CFFFD00F601DD /* TaskDetailVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaskDetailVC.swift; sourceTree = "<group>"; };
 		D82E21731F3CFFFD00F601DD /* TaskDetailVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TaskDetailVC.xib; sourceTree = "<group>"; };
 		D82E21761F3D02E900F601DD /* TaskDetailVM.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaskDetailVM.swift; sourceTree = "<group>"; };
+		D82E21781F3E6C5300F601DD /* UTI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UTI.swift; sourceTree = "<group>"; };
+		D82E217A1F3F822000F601DD /* NSManagedObjectContext+URI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSManagedObjectContext+URI.swift"; sourceTree = "<group>"; };
 		D82ECF161F37985D008251C2 /* Document.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Document.xcdatamodel; sourceTree = "<group>"; };
 		D82ECF181F37985D008251C2 /* BaseTask+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "BaseTask+CoreDataClass.swift"; sourceTree = "<group>"; };
 		D82ECF1A1F37985D008251C2 /* Label+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Label+CoreDataClass.swift"; sourceTree = "<group>"; };
@@ -387,6 +391,7 @@
 				D8C2AD191F3A4CC7002D75B2 /* NSLayoutConstraint+utilities.m */,
 				D8C2AD1C1F3A4E20002D75B2 /* NSView+SubviewHelpers.h */,
 				D8C2AD1D1F3A4E20002D75B2 /* NSView+SubviewHelpers.m */,
+				D82E21781F3E6C5300F601DD /* UTI.swift */,
 			);
 			path = Thirdparty;
 			sourceTree = "<group>";
@@ -395,6 +400,7 @@
 			isa = PBXGroup;
 			children = (
 				D8C2AD211F3A571D002D75B2 /* OptionalRawValueInitializer.swift */,
+				D82E217A1F3F822000F601DD /* NSManagedObjectContext+URI.swift */,
 			);
 			name = Utilities;
 			sourceTree = "<group>";
@@ -729,6 +735,7 @@
 				D82E216C1F3C5CE400F601DD /* Subtask+CoreDataProperties.swift in Sources */,
 				D8C2AD291F3A7EBC002D75B2 /* KanbanTaskStateItem.swift in Sources */,
 				D82E21681F3C5CE400F601DD /* Label+CoreDataProperties.swift in Sources */,
+				D82E217B1F3F822000F601DD /* NSManagedObjectContext+URI.swift in Sources */,
 				D82ECF2D1F37985D008251C2 /* LabelColor+CoreDataClass.swift in Sources */,
 				D8C2AD2C1F3BA249002D75B2 /* ManagedObjectType.swift in Sources */,
 				D8C2AD111F390305002D75B2 /* KVVM.swift in Sources */,
@@ -745,6 +752,7 @@
 				D8C2AD0F1F39007E002D75B2 /* DocumentContentVM.swift in Sources */,
 				D82E21771F3D02E900F601DD /* TaskDetailVM.swift in Sources */,
 				D8C2AD1F1F3A4E20002D75B2 /* NSView+SubviewHelpers.m in Sources */,
+				D82E21791F3E6C5300F601DD /* UTI.swift in Sources */,
 				D8C2AD341F3BA78B002D75B2 /* NSManagedObjectModel+KCOrderedAccessorFix.m in Sources */,
 				D8C2AD221F3A571D002D75B2 /* OptionalRawValueInitializer.swift in Sources */,
 				D82E21691F3C5CE400F601DD /* LabelColor+CoreDataProperties.swift in Sources */,

@@ -7,6 +7,7 @@
 //
 
 import Cocoa
+import ReactiveKit
 
 class KanbanTaskStateItem: NSCollectionViewItem, MVVMView {
 
@@ -16,7 +17,11 @@ class KanbanTaskStateItem: NSCollectionViewItem, MVVMView {
 	@IBOutlet weak var tasksContainerView: NSView!
 
 	typealias VIEWMODEL = KanbanTaskStateItemViewModel
-	private(set) var viewModel: KanbanTaskStateItemViewModel?
+	private(set) var viewModel: KanbanTaskStateItemViewModel? {
+		willSet {
+			self.reuseBag.dispose()
+		}
+	}
 	func set(viewModel: KanbanTaskStateItemViewModel) {
 		self.viewModel = viewModel
 		self.connectVMIfReady()
@@ -49,11 +54,13 @@ class KanbanTaskStateItem: NSCollectionViewItem, MVVMView {
 		self.connectVMIfReady()
     }
 
+	private let reuseBag = DisposeBag()
+
 	func connectVM() {
 
 		self.viewModel?.name.map{
 			return $0 ?? ""
-		}.bind(to: self.nameLabel)
+		}.bind(to: self.nameLabel).dispose(in: self.reuseBag)
 
 		self.viewModel!.editable.observeNext(with: {editable in
 
@@ -65,9 +72,15 @@ class KanbanTaskStateItem: NSCollectionViewItem, MVVMView {
 				self.nameLabel.isHidden = false
 				self.nameEntryField.isHidden = true
 			}
-		}).dispose(in: bag)
+		}).dispose(in: self.reuseBag)
 
 		self.tasksCollectionView?.set(viewModel: self.viewModel!.tasksCollectionViewModel())
+	}
+
+	override func prepareForReuse() {
+
+		super.prepareForReuse()
+		self.viewModel = nil
 	}
 
 	@IBAction func menuAction(_ sender: Any) {

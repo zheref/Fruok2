@@ -80,6 +80,16 @@ class KanbanViewController: NSViewController, CollectionViewModelClientView {
 		}).dispose(in: bag)
 
 		self.collectionViewDelegate = CollectionViewDragAndDropDelegate<VIEWMODEL>(withViewModel: self.viewModel!, collectionView: collectionView, draggingUTI: UTI.fruokTaskState)
+
+		self.viewModel?.showTaskDeleteDialog.observeNext(with: { dialogViewModel in
+
+			if let dialogViewModel = dialogViewModel {
+
+				let confirmationDialog = DeleteTaskStateConfirmationDialog()
+				confirmationDialog.set(viewModel: dialogViewModel)
+				self.presentViewControllerAsSheet(confirmationDialog)
+			}
+		}).dispose(in: bag)
 	}
 
 	@IBAction func addTask(_ sender: Any) {
@@ -87,7 +97,7 @@ class KanbanViewController: NSViewController, CollectionViewModelClientView {
 		self.viewModel?.addTask()
 	}
 
-	@IBAction func deleteTaskState(_ sender: NSCollectionViewItem) {
+	@IBAction func deleteTaskStateAction(_ sender: NSCollectionViewItem) {
 
 		if let index = self.collectionView.indexPath(for: sender)?.item {
 			self.viewModel?.deleteTaskState(at: index)

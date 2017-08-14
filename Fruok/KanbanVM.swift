@@ -59,9 +59,46 @@ class KanbanViewModel: NSObject, CollectionDragAndDropViewModel {
 		}
 	}
 
+	let showTaskDeleteDialog = Observable<DeleteTaskStateConfirmationViewModel?>(nil)
+
 	func deleteTaskState(at index: Int) {
 
-		self.project.removeFromTaskStates(at: index)
+		guard let state = self.project.taskStates?[index] as? TaskState else {
+			return
+		}
+
+		guard
+			let tasks = state.tasks?.array as? [Task],
+			tasks.count > 0 else {
+
+				self.doDeleteTaskState(state, insertingTasksInto: nil)
+				return
+		}
+
+		let dialogViewModel = DeleteTaskStateConfirmationViewModel(with: state)
+		dialogViewModel.callback = { proceed in
+
+			if !proceed { return }
+
+			if dialogViewModel.deleteChoiceSelected.value {
+				self.doDeleteTaskState(state, insertingTasksInto: nil)
+			} else if dialogViewModel.assignChoiceSelected.value {
+				if let otherIndex = dialogViewModel.selectedOtherState.value {
+				self.doDeleteTaskState(state, insertingTasksInto: dialogViewModel.otherStates[otherIndex])
+				}
+			}
+
+		}
+		self.showTaskDeleteDialog.value = dialogViewModel
+	}
+
+	func doDeleteTaskState(_ taskState: TaskState, insertingTasksInto otherTaskState: TaskState?) {
+
+		if let otherTaskState = otherTaskState, let tasks = taskState.tasks {
+			otherTaskState.addToTasks(tasks)
+		}
+
+		taskState.project?.removeFromTaskStates(taskState)
 	}
 
 	func taskStateViewModel(for index: Int) -> KanbanTaskStateItemViewModel? {

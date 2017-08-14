@@ -90,7 +90,7 @@ class KanbanTaskStateItem: NSCollectionViewItem, MVVMView {
 
 	@IBAction func deleteTaskState(_ sender: Any) {
 
-		NSApp.sendAction(#selector(KanbanViewController.deleteTaskState(_:)), to: nil, from: self)
+		NSApp.sendAction(#selector(KanbanViewController.deleteTaskStateAction(_:)), to: nil, from: self)
 	}
 	@IBAction func editTaskState(_ sender: Any) {
 

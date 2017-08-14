@@ -67,6 +67,9 @@
 		D8C2AD381F3BABE6002D75B2 /* KanbanCollectionLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8C2AD371F3BABE6002D75B2 /* KanbanCollectionLayout.swift */; };
 		D8C2AD3A1F3BB753002D75B2 /* KanbanTaskStateItemVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8C2AD391F3BB753002D75B2 /* KanbanTaskStateItemVM.swift */; };
 		D8C2AD3D1F3BD284002D75B2 /* FirstResponderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8C2AD3C1F3BD284002D75B2 /* FirstResponderView.swift */; };
+		D8F7B4711F423C4E00060F08 /* DeleteTaskStateConfirmationDialog.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8F7B46F1F423C4E00060F08 /* DeleteTaskStateConfirmationDialog.swift */; };
+		D8F7B4721F423C4E00060F08 /* DeleteTaskStateConfirmationDialog.xib in Resources */ = {isa = PBXBuildFile; fileRef = D8F7B4701F423C4E00060F08 /* DeleteTaskStateConfirmationDialog.xib */; };
+		D8F7B4741F423C7000060F08 /* DeleteTaskStateConfirmationVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8F7B4731F423C7000060F08 /* DeleteTaskStateConfirmationVM.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -164,6 +167,9 @@
 		D8C2AD371F3BABE6002D75B2 /* KanbanCollectionLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KanbanCollectionLayout.swift; sourceTree = "<group>"; };
 		D8C2AD391F3BB753002D75B2 /* KanbanTaskStateItemVM.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KanbanTaskStateItemVM.swift; sourceTree = "<group>"; };
 		D8C2AD3C1F3BD284002D75B2 /* FirstResponderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirstResponderView.swift; sourceTree = "<group>"; };
+		D8F7B46F1F423C4E00060F08 /* DeleteTaskStateConfirmationDialog.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeleteTaskStateConfirmationDialog.swift; sourceTree = "<group>"; };
+		D8F7B4701F423C4E00060F08 /* DeleteTaskStateConfirmationDialog.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DeleteTaskStateConfirmationDialog.xib; sourceTree = "<group>"; };
+		D8F7B4731F423C7000060F08 /* DeleteTaskStateConfirmationVM.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeleteTaskStateConfirmationVM.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -385,6 +391,7 @@
 				D8C2AD371F3BABE6002D75B2 /* KanbanCollectionLayout.swift */,
 				D8C2AD0C1F38FB97002D75B2 /* KanbanVC.swift */,
 				D8C2AD251F3A650D002D75B2 /* KanbanVM.swift */,
+				D8F7B46E1F423C2400060F08 /* DeleteTaskStateConfirmation */,
 			);
 			name = KanbanView;
 			sourceTree = "<group>";
@@ -444,6 +451,16 @@
 				D82E21821F4111BC00F601DD /* DragAndDropCollectionLayout.swift */,
 			);
 			name = Shared;
+			sourceTree = "<group>";
+		};
+		D8F7B46E1F423C2400060F08 /* DeleteTaskStateConfirmation */ = {
+			isa = PBXGroup;
+			children = (
+				D8F7B46F1F423C4E00060F08 /* DeleteTaskStateConfirmationDialog.swift */,
+				D8F7B4731F423C7000060F08 /* DeleteTaskStateConfirmationVM.swift */,
+				D8F7B4701F423C4E00060F08 /* DeleteTaskStateConfirmationDialog.xib */,
+			);
+			name = DeleteTaskStateConfirmation;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -572,6 +589,7 @@
 				D82E215C1F3C587D00F601DD /* KanbanTaskItem.xib in Resources */,
 				D8388E491F37905B004A2DA3 /* Assets.xcassets in Resources */,
 				D8C2AD2A1F3A7EBC002D75B2 /* KanbanTaskStateItem.xib in Resources */,
+				D8F7B4721F423C4E00060F08 /* DeleteTaskStateConfirmationDialog.xib in Resources */,
 				D8388E4C1F37905B004A2DA3 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -778,11 +796,13 @@
 				D82ECF311F37985D008251C2 /* RGBAColor+CoreDataClass.swift in Sources */,
 				D82E216B1F3C5CE400F601DD /* RGBAColor+CoreDataProperties.swift in Sources */,
 				D82ECF2F1F37985D008251C2 /* Project+CoreDataClass.swift in Sources */,
+				D8F7B4741F423C7000060F08 /* DeleteTaskStateConfirmationVM.swift in Sources */,
 				D8388E441F37905B004A2DA3 /* FruokDocument.swift in Sources */,
 				D82E217D1F40B57F00F601DD /* CollectionDelegateDragAndDrop.swift in Sources */,
 				D8C2AD3A1F3BB753002D75B2 /* KanbanTaskStateItemVM.swift in Sources */,
 				D82E21701F3C616000F601DD /* TasksCollectionLayout.swift in Sources */,
 				D8C2AD261F3A650D002D75B2 /* KanbanVM.swift in Sources */,
+				D8F7B4711F423C4E00060F08 /* DeleteTaskStateConfirmationDialog.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

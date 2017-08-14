@@ -87,10 +87,10 @@ class KanbanViewController: NSViewController, CollectionViewModelClientView {
 		self.viewModel?.addTask()
 	}
 
-	@IBAction func deleteTask(_ sender: NSCollectionViewItem) {
+	@IBAction func deleteTaskState(_ sender: NSCollectionViewItem) {
 
 		if let index = self.collectionView.indexPath(for: sender)?.item {
-			self.viewModel?.deleteTask(at: index)
+			self.viewModel?.deleteTaskState(at: index)
 		}
 	}
 

@@ -59,7 +59,7 @@ class KanbanViewModel: NSObject, CollectionDragAndDropViewModel {
 		}
 	}
 
-	func deleteTask(at index: Int) {
+	func deleteTaskState(at index: Int) {
 
 		self.project.removeFromTaskStates(at: index)
 	}

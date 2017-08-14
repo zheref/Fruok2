@@ -8,7 +8,7 @@
 
 import Cocoa
 
-class TasksCollectionLayout: NSCollectionViewLayout {
+class TasksCollectionLayout: DragAndDropCollectionLayout {
 
 	let kItemHeight: CGFloat = 130.0
 	let kHorizontalMargin: CGFloat = 10.0
@@ -47,7 +47,44 @@ class TasksCollectionLayout: NSCollectionViewLayout {
 		let attributes = NSCollectionViewLayoutAttributes(forItemWith: indexPath)
 		attributes.frame = frame
 
+		if hiddenIndexPaths?.contains(indexPath) ?? false {
+			attributes.alpha = 0.0
+		}
+
 		return attributes
+	}
+
+	override func layoutAttributesForInterItemGap(before indexPath: IndexPath) -> NSCollectionViewLayoutAttributes? {
+
+		guard let itemAttributes = self.layoutAttributesForItem(at: indexPath) else {
+			return nil
+		}
+
+		var frame = itemAttributes.frame
+		frame.origin.y -= kVerticalMargin
+		frame.size.height = kVerticalMargin
+
+		let attributes = NSCollectionViewLayoutAttributes(forInterItemGapBefore: indexPath)
+		attributes.frame = frame
+
+		return attributes
+	}
+
+	override func layoutAttributesForDropTarget(at pointInCollectionView: NSPoint) -> NSCollectionViewLayoutAttributes? {
+
+		if let attributes = super.layoutAttributesForDropTarget(at: pointInCollectionView) {
+			return attributes
+		}
+
+		var index = Int(floor((pointInCollectionView.y - kVerticalMargin) / (kItemHeight + kVerticalMargin))) + 1
+
+		guard let collectionView = self.collectionView else {
+			return nil
+		}
+
+		index = min(index, collectionView.numberOfItems(inSection: 0))
+
+		return self.layoutAttributesForInterItemGap(before: IndexPath(item: index, section: 0))
 	}
 
 	override var collectionViewContentSize: NSSize {

@@ -8,7 +8,7 @@
 
 import Cocoa
 
-class KanbanCollectionLayout: NSCollectionViewLayout {
+class KanbanCollectionLayout: DragAndDropCollectionLayout {
 
 	let kItemWidth: CGFloat = 200.0
 	let kHorizontalMargin: CGFloat = 10.0
@@ -33,8 +33,6 @@ class KanbanCollectionLayout: NSCollectionViewLayout {
 
 		return attributes
 	}
-
-	var hiddenIndexPaths: Set<IndexPath>?
 
 	override func layoutAttributesForItem(at indexPath: IndexPath) -> NSCollectionViewLayoutAttributes? {
 

@@ -9,14 +9,17 @@
 import Cocoa
 import Bond
 
-class TasksCollectionViewModel: NSObject, MVVMViewModel {
+class TasksCollectionViewModel: NSObject, CollectionDragAndDropViewModel {
 
-	enum ViewActions {
+	internal func pasteboardItemForTastState(at index: Int) -> NSPasteboardWriting? {
 
-		case refreshTasks
-		case addTasksAtIndexes(IndexSet)
-		case deleteTasksAtIndexes(IndexSet)
+		return self.taskState.tasks?[index] as? Task
 	}
+	var model: MODEL {
+		return self.taskState
+	}
+	let modelCollectionKeyPath = #keyPath(TaskState.tasks)
+	var supressTaskStateObservation = false
 
 	typealias MODEL = TaskState
 	@objc dynamic private let taskState: TaskState
@@ -40,32 +43,12 @@ class TasksCollectionViewModel: NSObject, MVVMViewModel {
 
 		if context == &kTasksContext {
 
-			var action: ViewActions? = nil
-			switch NSKeyValueChange(optionalRawValue: change?[.kindKey] as? UInt) {
-
-			case .insertion?:
-				if let indexSet = change?[.indexesKey] as? IndexSet {
-					action = .addTasksAtIndexes(indexSet)
-					self.lastAdded = indexSet
-				}
-			case .removal?:
-				if let indexSet = change?[.indexesKey] as? IndexSet {
-					action = .deleteTasksAtIndexes(indexSet)
-				}
-				self.lastAdded = IndexSet()
-			default:
-				self.lastAdded = IndexSet()
-				action = .refreshTasks
-			}
-
-
-			self.numTaskStates.value = self.taskState.tasks?.count ?? 0
-			self.viewActions.value = action ?? .refreshTasks
+			self.reactToCoreDataKVOMessage(change)
 		}
 	}
 
-	let numTaskStates = Observable<Int>(0)
-	let viewActions = Observable<ViewActions?>(nil)
+	let numCollectionObjects = Observable<Int>(0)
+	let viewActions = Observable<CollectionViewModelActions?>(nil)
 
 	func taskItemViewModel(for index: Int) -> KanbanTaskItemViewModel? {
 

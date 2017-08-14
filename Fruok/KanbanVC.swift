@@ -79,7 +79,7 @@ class KanbanViewController: NSViewController, CollectionViewModelClientView {
 
 		}).dispose(in: bag)
 
-		self.collectionViewDelegate = CollectionViewDragAndDropDelegate<VIEWMODEL>(withViewModel: self.viewModel!, collectionView: collectionView)
+		self.collectionViewDelegate = CollectionViewDragAndDropDelegate<VIEWMODEL>(withViewModel: self.viewModel!, collectionView: collectionView, draggingUTI: UTI.fruokTaskState)
 	}
 
 	@IBAction func addTask(_ sender: Any) {

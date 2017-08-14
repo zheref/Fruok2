@@ -55,7 +55,7 @@ extension CollectionViewModelClientView {
 				for item in draggedIndexPaths.map({self.collectionView.item(at: $0)}) {
 					item?.view.alphaValue = 0.0
 				}
-				(self.collectionView.collectionViewLayout as? KanbanCollectionLayout)?.hiddenIndexPaths = targetPaths
+				(self.collectionView.collectionViewLayout as? DragAndDropCollectionLayout)?.hiddenIndexPaths = targetPaths
 			}
 			self.collectionView.animator().performBatchUpdates({
 
@@ -64,7 +64,7 @@ extension CollectionViewModelClientView {
 				}
 			}, completionHandler: { _ in
 
-				(self.collectionView.collectionViewLayout as? KanbanCollectionLayout)?.hiddenIndexPaths = nil
+				(self.collectionView.collectionViewLayout as? DragAndDropCollectionLayout)?.hiddenIndexPaths = nil
 				self.collectionView.collectionViewLayout?.invalidateLayout()
 			})
 		case nil:

@@ -7,12 +7,16 @@
 //
 
 import Cocoa
-import Bond
+import ReactiveKit
 
 class KanbanTaskItem: NSCollectionViewItem, MVVMView {
 
 	typealias VIEWMODEL = KanbanTaskItemViewModel
-	private(set) var viewModel: KanbanTaskItemViewModel?
+	private(set) var viewModel: KanbanTaskItemViewModel?{
+		willSet {
+			self.reuseBag.dispose()
+		}
+	}
 	func set(viewModel: KanbanTaskItemViewModel) {
 
 		self.viewModel = viewModel
@@ -31,6 +35,8 @@ class KanbanTaskItem: NSCollectionViewItem, MVVMView {
 		self.connectVMIfReady()
     }
 
+	private let reuseBag = DisposeBag()
+
 	func connectVM() {
 
 		self.viewModel!.showTaskDetails.observeNext { show in
@@ -39,11 +45,11 @@ class KanbanTaskItem: NSCollectionViewItem, MVVMView {
 
 				self.doShowTaskDetails()
 			}
-		}.dispose(in: bag)
+		}.dispose(in: reuseBag)
 
 		//self.nameLabel.reactive.editingString.bidirectionalMap(to: {$0}, from: {$0 ?? ""}).bidirectionalBind(to: self.viewModel!.taskName)
-		self.viewModel!.taskName.map({$0 ?? ""}).bind(to: self.nameLabel.reactive.editingString)
-		self.viewModel!.taskDescription.map{$0 ?? ""}.bind(to: self.descriptionLabel)
+		self.viewModel!.taskName.map({$0 ?? ""}).bind(to: self.nameLabel.reactive.editingString).dispose(in: reuseBag)
+		self.viewModel!.taskDescription.map{$0 ?? ""}.bind(to: self.descriptionLabel).dispose(in: reuseBag)
 	}
 	@IBAction func showTaskDetailAction(_ sender: Any) {
 

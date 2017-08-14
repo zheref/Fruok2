@@ -31,6 +31,10 @@
 		D82E21771F3D02E900F601DD /* TaskDetailVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = D82E21761F3D02E900F601DD /* TaskDetailVM.swift */; };
 		D82E21791F3E6C5300F601DD /* UTI.swift in Sources */ = {isa = PBXBuildFile; fileRef = D82E21781F3E6C5300F601DD /* UTI.swift */; };
 		D82E217B1F3F822000F601DD /* NSManagedObjectContext+URI.swift in Sources */ = {isa = PBXBuildFile; fileRef = D82E217A1F3F822000F601DD /* NSManagedObjectContext+URI.swift */; };
+		D82E217D1F40B57F00F601DD /* CollectionDelegateDragAndDrop.swift in Sources */ = {isa = PBXBuildFile; fileRef = D82E217C1F40B57F00F601DD /* CollectionDelegateDragAndDrop.swift */; };
+		D82E217F1F40F2F700F601DD /* CollectionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D82E217E1F40F2F700F601DD /* CollectionViewModel.swift */; };
+		D82E21811F40FAAD00F601DD /* CollectionViewModelClientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D82E21801F40FAAD00F601DD /* CollectionViewModelClientView.swift */; };
+		D82E21831F4111BD00F601DD /* DragAndDropCollectionLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = D82E21821F4111BC00F601DD /* DragAndDropCollectionLayout.swift */; };
 		D82ECF281F37985D008251C2 /* Document.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D82ECF151F37985D008251C2 /* Document.xcdatamodeld */; };
 		D82ECF291F37985D008251C2 /* BaseTask+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = D82ECF181F37985D008251C2 /* BaseTask+CoreDataClass.swift */; };
 		D82ECF2B1F37985D008251C2 /* Label+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = D82ECF1A1F37985D008251C2 /* Label+CoreDataClass.swift */; };
@@ -113,6 +117,10 @@
 		D82E21761F3D02E900F601DD /* TaskDetailVM.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaskDetailVM.swift; sourceTree = "<group>"; };
 		D82E21781F3E6C5300F601DD /* UTI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UTI.swift; sourceTree = "<group>"; };
 		D82E217A1F3F822000F601DD /* NSManagedObjectContext+URI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSManagedObjectContext+URI.swift"; sourceTree = "<group>"; };
+		D82E217C1F40B57F00F601DD /* CollectionDelegateDragAndDrop.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionDelegateDragAndDrop.swift; sourceTree = "<group>"; };
+		D82E217E1F40F2F700F601DD /* CollectionViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionViewModel.swift; sourceTree = "<group>"; };
+		D82E21801F40FAAD00F601DD /* CollectionViewModelClientView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionViewModelClientView.swift; sourceTree = "<group>"; };
+		D82E21821F4111BC00F601DD /* DragAndDropCollectionLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DragAndDropCollectionLayout.swift; sourceTree = "<group>"; };
 		D82ECF161F37985D008251C2 /* Document.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Document.xcdatamodel; sourceTree = "<group>"; };
 		D82ECF181F37985D008251C2 /* BaseTask+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "BaseTask+CoreDataClass.swift"; sourceTree = "<group>"; };
 		D82ECF1A1F37985D008251C2 /* Label+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Label+CoreDataClass.swift"; sourceTree = "<group>"; };
@@ -430,6 +438,10 @@
 			isa = PBXGroup;
 			children = (
 				D8C2AD3C1F3BD284002D75B2 /* FirstResponderView.swift */,
+				D82E217C1F40B57F00F601DD /* CollectionDelegateDragAndDrop.swift */,
+				D82E21801F40FAAD00F601DD /* CollectionViewModelClientView.swift */,
+				D82E217E1F40F2F700F601DD /* CollectionViewModel.swift */,
+				D82E21821F4111BC00F601DD /* DragAndDropCollectionLayout.swift */,
 			);
 			name = Shared;
 			sourceTree = "<group>";
@@ -727,15 +739,18 @@
 				D82E21551F3C541800F601DD /* TasksCollectionVM.swift in Sources */,
 				D82ECF281F37985D008251C2 /* Document.xcdatamodeld in Sources */,
 				D82ECF351F37985D008251C2 /* Task+CoreDataClass.swift in Sources */,
+				D82E21831F4111BD00F601DD /* DragAndDropCollectionLayout.swift in Sources */,
 				D82E216E1F3C5CE400F601DD /* TaskState+CoreDataProperties.swift in Sources */,
 				D82E21741F3CFFFD00F601DD /* TaskDetailVC.swift in Sources */,
 				D8C2AD1B1F3A4CC8002D75B2 /* NSLayoutConstraint+utilities.m in Sources */,
 				D82E215E1F3C59BE00F601DD /* KanbanTaskItemVM.swift in Sources */,
 				D82ECF291F37985D008251C2 /* BaseTask+CoreDataClass.swift in Sources */,
 				D82E216C1F3C5CE400F601DD /* Subtask+CoreDataProperties.swift in Sources */,
+				D82E217F1F40F2F700F601DD /* CollectionViewModel.swift in Sources */,
 				D8C2AD291F3A7EBC002D75B2 /* KanbanTaskStateItem.swift in Sources */,
 				D82E21681F3C5CE400F601DD /* Label+CoreDataProperties.swift in Sources */,
 				D82E217B1F3F822000F601DD /* NSManagedObjectContext+URI.swift in Sources */,
+				D82E21811F40FAAD00F601DD /* CollectionViewModelClientView.swift in Sources */,
 				D82ECF2D1F37985D008251C2 /* LabelColor+CoreDataClass.swift in Sources */,
 				D8C2AD2C1F3BA249002D75B2 /* ManagedObjectType.swift in Sources */,
 				D8C2AD111F390305002D75B2 /* KVVM.swift in Sources */,
@@ -764,6 +779,7 @@
 				D82E216B1F3C5CE400F601DD /* RGBAColor+CoreDataProperties.swift in Sources */,
 				D82ECF2F1F37985D008251C2 /* Project+CoreDataClass.swift in Sources */,
 				D8388E441F37905B004A2DA3 /* FruokDocument.swift in Sources */,
+				D82E217D1F40B57F00F601DD /* CollectionDelegateDragAndDrop.swift in Sources */,
 				D8C2AD3A1F3BB753002D75B2 /* KanbanTaskStateItemVM.swift in Sources */,
 				D82E21701F3C616000F601DD /* TasksCollectionLayout.swift in Sources */,
 				D8C2AD261F3A650D002D75B2 /* KanbanVM.swift in Sources */,

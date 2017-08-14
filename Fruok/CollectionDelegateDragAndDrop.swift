@@ -11,13 +11,25 @@ import Bond
 
 class CollectionViewDragAndDropDelegate<VIEWMODEL: CollectionDragAndDropViewModel>: NSObject, NSCollectionViewDelegate {
 
+	let vertical: Bool
 	let viewModel: VIEWMODEL
 	let collectionView: NSCollectionView
+	let draggingUTI: UTI
 
-	init(withViewModel viewModel: VIEWMODEL, collectionView: NSCollectionView) {
+	init(withViewModel viewModel: VIEWMODEL, collectionView: NSCollectionView, draggingUTI: UTI) {
 
+		self.vertical = true
 		self.viewModel = viewModel
 		self.collectionView = collectionView
+		self.draggingUTI = draggingUTI
+	}
+
+	init(horizontalWithViewModel viewModel: VIEWMODEL, collectionView: NSCollectionView, draggingUTI: UTI) {
+
+		self.vertical = false
+		self.viewModel = viewModel
+		self.collectionView = collectionView
+		self.draggingUTI = draggingUTI
 	}
 
 	var draggedIndexPaths: Set<IndexPath>?
@@ -52,7 +64,9 @@ class CollectionViewDragAndDropDelegate<VIEWMODEL: CollectionDragAndDropViewMode
 
 			let location = self.collectionView.convert(draggingInfo.draggingLocation(), from: nil)
 
-			if itemFrame.midX < location.x {
+			let shift = self.vertical ? (itemFrame.midX < location.x) : (itemFrame.midY < location.y)
+
+			if shift {
 
 				let next = IndexPath(item: proposedDropIndexPath.pointee.item + 1, section: proposedDropIndexPath.pointee.section)
 				proposedDropIndexPath.pointee = next as NSIndexPath
@@ -76,12 +90,12 @@ class CollectionViewDragAndDropDelegate<VIEWMODEL: CollectionDragAndDropViewMode
 
 		let taskStateItems = items.filter { item in
 
-			return item.availableType(from: [UTI.fruokTaskState.rawValue]) != nil
+			return item.availableType(from: [self.draggingUTI.rawValue]) != nil
 		}
 
 		let objectURIStrings: [String] = taskStateItems.flatMap { item in
 
-			item.string(forType: UTI.fruokTaskState.rawValue)
+			item.string(forType: self.draggingUTI.rawValue)
 		}
 
 		guard objectURIStrings.count == taskStateItems.count else {
@@ -90,12 +104,16 @@ class CollectionViewDragAndDropDelegate<VIEWMODEL: CollectionDragAndDropViewMode
 
 		if dropOperation == .before {
 
-			let draggedIndexes = self.viewModel.objectIndexes(for: objectURIStrings)
-			let targetIndex = KanbanViewModel.actualDropIndex(forDraggedIndexes: draggedIndexes, proposedIndex: indexPath.item, withNumStates: self.collectionView.numberOfItems(inSection: 0))
-			draggingInfo.enumerateDraggingItems(options: [.clearNonenumeratedImages], for: self.collectionView, classes: [NSPasteboardItem.self], searchOptions: [:], using: { (item, index, stop) in
+			if let targetIndexes = self.viewModel.dropIndex(forDraggedURIs: objectURIStrings, proposedIndex: indexPath.item) {
+				draggingInfo.enumerateDraggingItems(options: [.clearNonenumeratedImages], for: self.collectionView, classes: [NSPasteboardItem.self], searchOptions: [:], using: { (item, index, stop) in
 
-				item.draggingFrame = (self.collectionView.collectionViewLayout?.layoutAttributesForItem(at: IndexPath(item: targetIndex, section: 0)))?.frame ?? item.draggingFrame
-			})
+					if let uri = (item.item as! NSPasteboardItem).string(forType: self.draggingUTI.rawValue) {
+						if let targetIndex = targetIndexes[uri] {
+							item.draggingFrame = self.collectionView.collectionViewLayout?.layoutAttributesForItem(at: IndexPath(item: targetIndex, section: 0))?.frame ?? item.draggingFrame
+						}
+					}
+				})
+			}
 			return self.viewModel.moveObjects(withURIStrings: objectURIStrings, beforeIndexPath: indexPath)
 		} else {
 			return false

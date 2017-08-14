@@ -68,11 +68,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Fruok/KanbanVC.swift"
-            timestampString = "524353372.783195"
+            timestampString = "524354531.059766"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "160"
-            endingLineNumber = "160"
+            startingLineNumber = "109"
+            endingLineNumber = "109"
             landmarkName = "KanbanViewController"
             landmarkType = "4">
          </BreakpointContent>
@@ -84,11 +84,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Fruok/KanbanVC.swift"
-            timestampString = "524353372.783195"
+            timestampString = "524354531.059766"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "166"
-            endingLineNumber = "166"
+            startingLineNumber = "115"
+            endingLineNumber = "115"
             landmarkName = "KanbanViewController"
             landmarkType = "4">
          </BreakpointContent>
@@ -100,11 +100,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Fruok/KanbanVC.swift"
-            timestampString = "524353372.783195"
+            timestampString = "524354531.059766"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "161"
-            endingLineNumber = "161"
+            startingLineNumber = "110"
+            endingLineNumber = "110"
             landmarkName = "KanbanViewController"
             landmarkType = "4">
          </BreakpointContent>
@@ -132,11 +132,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Fruok/KanbanCollectionLayout.swift"
-            timestampString = "524334949.973676"
+            timestampString = "524358278.992019"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "95"
-            endingLineNumber = "95"
+            startingLineNumber = "93"
+            endingLineNumber = "93"
             landmarkName = "KanbanCollectionLayout"
             landmarkType = "3">
          </BreakpointContent>
@@ -148,11 +148,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Fruok/KanbanCollectionLayout.swift"
-            timestampString = "524334949.973676"
+            timestampString = "524358278.992019"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "94"
-            endingLineNumber = "94"
+            startingLineNumber = "92"
+            endingLineNumber = "92"
             landmarkName = "KanbanCollectionLayout"
             landmarkType = "3">
          </BreakpointContent>
@@ -164,11 +164,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Fruok/KanbanCollectionLayout.swift"
-            timestampString = "524334949.973676"
+            timestampString = "524358278.992019"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "103"
-            endingLineNumber = "103"
+            startingLineNumber = "101"
+            endingLineNumber = "101"
             landmarkName = "KanbanCollectionLayout"
             landmarkType = "3">
          </BreakpointContent>
@@ -180,11 +180,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Fruok/KanbanCollectionLayout.swift"
-            timestampString = "524334949.973676"
+            timestampString = "524358278.992019"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "108"
-            endingLineNumber = "108"
+            startingLineNumber = "106"
+            endingLineNumber = "106"
             landmarkName = "KanbanCollectionLayout"
             landmarkType = "3">
          </BreakpointContent>
@@ -228,11 +228,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Fruok/KanbanVC.swift"
-            timestampString = "524353372.783195"
+            timestampString = "524354531.059766"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "144"
-            endingLineNumber = "144"
+            startingLineNumber = "93"
+            endingLineNumber = "93"
             landmarkName = "deleteTask(_:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -244,11 +244,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Fruok/KanbanVC.swift"
-            timestampString = "524353372.783195"
+            timestampString = "524354531.059766"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "139"
-            endingLineNumber = "139"
+            startingLineNumber = "88"
+            endingLineNumber = "88"
             landmarkName = "addTask(_:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -276,11 +276,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Fruok/KanbanVC.swift"
-            timestampString = "524353372.783195"
+            timestampString = "524354531.059766"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "143"
-            endingLineNumber = "143"
+            startingLineNumber = "92"
+            endingLineNumber = "92"
             landmarkName = "deleteTask(_:)"
             landmarkType = "7">
             <Locations>
@@ -500,11 +500,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Fruok/KanbanVC.swift"
-            timestampString = "524353372.783195"
+            timestampString = "524354531.059766"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "138"
-            endingLineNumber = "138"
+            startingLineNumber = "87"
+            endingLineNumber = "87"
             landmarkName = "addTask(_:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -516,11 +516,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Fruok/KanbanVC.swift"
-            timestampString = "524336536.499281"
+            timestampString = "524354531.059766"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "67"
-            endingLineNumber = "67"
+            startingLineNumber = "66"
+            endingLineNumber = "66"
             landmarkName = "viewDidLoad()"
             landmarkType = "7">
          </BreakpointContent>
@@ -548,11 +548,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Fruok/TasksCollectionVC.swift"
-            timestampString = "524183104.141829"
+            timestampString = "524354614.992134"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "94"
-            endingLineNumber = "94"
+            startingLineNumber = "93"
+            endingLineNumber = "93"
             landmarkName = "collectionView(_:numberOfItemsInSection:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -564,11 +564,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Fruok/TasksCollectionVM.swift"
-            timestampString = "524050647.752149"
+            timestampString = "524354531.059766"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "41"
-            endingLineNumber = "41"
+            startingLineNumber = "44"
+            endingLineNumber = "44"
             landmarkName = "observeValue(forKeyPath:of:change:context:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -580,11 +580,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Fruok/TasksCollectionVC.swift"
-            timestampString = "524051135.022356"
+            timestampString = "524354614.992134"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "46"
-            endingLineNumber = "46"
+            startingLineNumber = "82"
+            endingLineNumber = "82"
             landmarkName = "connectVM()"
             landmarkType = "7">
          </BreakpointContent>
@@ -676,11 +676,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Fruok/KanbanTaskItem.swift"
-            timestampString = "524178012.272783"
+            timestampString = "524361177.731245"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "36"
-            endingLineNumber = "36"
+            startingLineNumber = "42"
+            endingLineNumber = "42"
             landmarkName = "connectVM()"
             landmarkType = "7">
             <Locations>
@@ -740,11 +740,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Fruok/KanbanVC.swift"
-            timestampString = "524353372.783195"
+            timestampString = "524354531.059766"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "150"
-            endingLineNumber = "150"
+            startingLineNumber = "99"
+            endingLineNumber = "99"
             landmarkName = "showTaskDetails(_:)"
             landmarkType = "7">
             <Locations>
@@ -856,11 +856,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Fruok/KanbanCollectionLayout.swift"
-            timestampString = "524315111.809294"
+            timestampString = "524358278.992019"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "54"
-            endingLineNumber = "54"
+            startingLineNumber = "52"
+            endingLineNumber = "52"
             landmarkName = "layoutAttributesForItem(at:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -926,6 +926,870 @@
             startingLineNumber = "57"
             endingLineNumber = "57"
             landmarkName = "addTask()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Fruok/CollectionDelegateDragAndDrop.swift"
+            timestampString = "524356797.815441"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "63"
+            endingLineNumber = "63"
+            landmarkName = "collectionView(_:validateDrop:proposedIndexPath:dropOperation:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Fruok.CollectionViewDragAndDropDelegate.collectionView (__ObjC.NSCollectionView, validateDrop : __ObjC.NSDraggingInfo, proposedIndexPath : Swift.AutoreleasingUnsafeMutablePointer&lt;__ObjC.NSIndexPath&gt;, dropOperation : Swift.UnsafeMutablePointer&lt;__C.NSCollectionViewDropOperation&gt;) -&gt; __C.NSDragOperation"
+                  moduleName = "Fruok"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/meister/Documents/Source/Fruok/Fruok/CollectionDelegateDragAndDrop.swift"
+                  timestampString = "524354900.54588"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "51"
+                  endingLineNumber = "51"
+                  offsetFromSymbolStart = "66">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Fruok.CollectionViewDragAndDropDelegate.collectionView (__ObjC.NSCollectionView, validateDrop : __ObjC.NSDraggingInfo, proposedIndexPath : Swift.AutoreleasingUnsafeMutablePointer&lt;__ObjC.NSIndexPath&gt;, dropOperation : Swift.UnsafeMutablePointer&lt;__C.NSCollectionViewDropOperation&gt;) -&gt; __C.NSDragOperation"
+                  moduleName = "Fruok"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/meister/Documents/Source/Fruok/Fruok/CollectionDelegateDragAndDrop.swift"
+                  timestampString = "524354900.54912"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "51"
+                  endingLineNumber = "51"
+                  offsetFromSymbolStart = "940">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Fruok/CollectionDelegateDragAndDrop.swift"
+            timestampString = "524356797.815441"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "58"
+            endingLineNumber = "58"
+            landmarkName = "collectionView(_:draggingSession:endedAt:dragOperation:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Fruok/CollectionViewModelClientView.swift"
+            timestampString = "524398853.706969"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "63"
+            endingLineNumber = "63"
+            landmarkName = "executeCollectionViewModelAction(_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Fruok/CollectionViewModelClientView.swift"
+            timestampString = "524356345.685813"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "22"
+            endingLineNumber = "22"
+            landmarkName = "executeCollectionViewModelAction(_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Fruok/CollectionViewModelClientView.swift"
+            timestampString = "524398853.706969"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "53"
+            endingLineNumber = "53"
+            landmarkName = "executeCollectionViewModelAction(_:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(extension in Fruok):Fruok.CollectionViewModelClientView.executeCollectionViewModelAction (Swift.Optional&lt;Fruok.CollectionViewModelActions&gt;) -&gt; ()"
+                  moduleName = "Fruok"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/meister/Documents/Source/Fruok/Fruok/CollectionViewModelClientView.swift"
+                  timestampString = "524358281.52272"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "53"
+                  endingLineNumber = "53"
+                  offsetFromSymbolStart = "4327">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(extension in Fruok):Fruok.CollectionViewModelClientView.executeCollectionViewModelAction (Swift.Optional&lt;Fruok.CollectionViewModelActions&gt;) -&gt; ()"
+                  moduleName = "Fruok"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/meister/Documents/Source/Fruok/Fruok/CollectionViewModelClientView.swift"
+                  timestampString = "524358281.529042"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "53"
+                  endingLineNumber = "53"
+                  offsetFromSymbolStart = "4403">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Fruok/CollectionViewModel.swift"
+            timestampString = "524395253.274118"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "43"
+            endingLineNumber = "43"
+            landmarkName = "objectIndexes(for:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Fruok/CollectionViewModel.swift"
+            timestampString = "524395253.274118"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "45"
+            endingLineNumber = "45"
+            landmarkName = "objectIndexes(for:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(extension in Fruok):Fruok.CollectionViewModel&lt;A where A: Fruok.CollectionViewModel, A.MODEL: __ObjC.NSManagedObject&gt;.objectIndexes (for : Swift.Array&lt;Swift.String&gt;) -&gt; Foundation.IndexSet"
+                  moduleName = "Fruok"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/meister/Documents/Source/Fruok/Fruok/CollectionViewModel.swift"
+                  timestampString = "524357372.305157"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "44"
+                  endingLineNumber = "44"
+                  offsetFromSymbolStart = "232">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(extension in Fruok):Fruok.CollectionViewModel&lt;A where A: Fruok.CollectionViewModel, A.MODEL: __ObjC.NSManagedObject&gt;.(objectIndexes (for : Swift.Array&lt;Swift.String&gt;) -&gt; Foundation.IndexSet).(closure #1)"
+                  moduleName = "Fruok"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/meister/Documents/Source/Fruok/Fruok/CollectionViewModel.swift"
+                  timestampString = "524357372.308593"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "45"
+                  endingLineNumber = "45"
+                  offsetFromSymbolStart = "35">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Fruok/CollectionViewModel.swift"
+            timestampString = "524395253.274118"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "44"
+            endingLineNumber = "44"
+            landmarkName = "objectIndexes(for:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(extension in Fruok):Fruok.CollectionViewModel&lt;A where A: Fruok.CollectionViewModel, A.MODEL: __ObjC.NSManagedObject&gt;.objectIndexes (for : Swift.Array&lt;Swift.String&gt;) -&gt; Foundation.IndexSet"
+                  moduleName = "Fruok"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/meister/Documents/Source/Fruok/Fruok/CollectionViewModel.swift"
+                  timestampString = "524357412.749455"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "44"
+                  endingLineNumber = "44"
+                  offsetFromSymbolStart = "232">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(extension in Fruok):Fruok.CollectionViewModel&lt;A where A: Fruok.CollectionViewModel, A.MODEL: __ObjC.NSManagedObject&gt;.(objectIndexes (for : Swift.Array&lt;Swift.String&gt;) -&gt; Foundation.IndexSet).(closure #1)"
+                  moduleName = "Fruok"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/meister/Documents/Source/Fruok/Fruok/CollectionViewModel.swift"
+                  timestampString = "524357412.75362"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "45"
+                  endingLineNumber = "45"
+                  offsetFromSymbolStart = "35">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Fruok/CollectionViewModel.swift"
+            timestampString = "524395253.274118"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "46"
+            endingLineNumber = "46"
+            landmarkName = "objectIndexes(for:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Fruok/CollectionViewModel.swift"
+            timestampString = "524395253.274118"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "48"
+            endingLineNumber = "48"
+            landmarkName = "objectIndexes(for:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Fruok/CollectionViewModel.swift"
+            timestampString = "524395253.274118"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "50"
+            endingLineNumber = "50"
+            landmarkName = "objectIndexes(for:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Fruok/CollectionViewModelClientView.swift"
+            timestampString = "524398853.706969"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "47"
+            endingLineNumber = "47"
+            landmarkName = "executeCollectionViewModelAction(_:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(extension in Fruok):Fruok.CollectionViewModelClientView.executeCollectionViewModelAction (Swift.Optional&lt;Fruok.CollectionViewModelActions&gt;) -&gt; ()"
+                  moduleName = "Fruok"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/meister/Documents/Source/Fruok/Fruok/CollectionViewModelClientView.swift"
+                  timestampString = "524358281.572067"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "47"
+                  endingLineNumber = "47"
+                  offsetFromSymbolStart = "3888">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(extension in Fruok):Fruok.CollectionViewModelClientView.(executeCollectionViewModelAction (Swift.Optional&lt;Fruok.CollectionViewModelActions&gt;) -&gt; ()).(closure #5)"
+                  moduleName = "Fruok"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/meister/Documents/Source/Fruok/Fruok/CollectionViewModelClientView.swift"
+                  timestampString = "524358281.576809"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "48"
+                  endingLineNumber = "48"
+                  offsetFromSymbolStart = "16">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Fruok/TasksCollectionLayout.swift"
+            timestampString = "524358373.083387"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "51"
+            endingLineNumber = "51"
+            landmarkName = "layoutAttributesForItem(at:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Fruok/TasksCollectionLayout.swift"
+            timestampString = "524358405.993999"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "50"
+            endingLineNumber = "50"
+            landmarkName = "layoutAttributesForItem(at:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Fruok/CollectionViewModelClientView.swift"
+            timestampString = "524398853.706969"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "40"
+            endingLineNumber = "40"
+            landmarkName = "executeCollectionViewModelAction(_:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(extension in Fruok):Fruok.CollectionViewModelClientView.(executeCollectionViewModelAction (Swift.Optional&lt;Fruok.CollectionViewModelActions&gt;) -&gt; ()).(closure #4)"
+                  moduleName = "Fruok"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/meister/Documents/Source/Fruok/Fruok/CollectionViewModelClientView.swift"
+                  timestampString = "524385406.177899"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "41"
+                  endingLineNumber = "41"
+                  offsetFromSymbolStart = "61">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(extension in Fruok):Fruok.CollectionViewModelClientView.(executeCollectionViewModelAction (Swift.Optional&lt;Fruok.CollectionViewModelActions&gt;) -&gt; ()).(closure #4).(closure #1)"
+                  moduleName = "Fruok"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/meister/Documents/Source/Fruok/Fruok/CollectionViewModelClientView.swift"
+                  timestampString = "524385406.181274"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "41"
+                  endingLineNumber = "41"
+                  offsetFromSymbolStart = "16">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Fruok/CollectionViewModelClientView.swift"
+            timestampString = "524387318.307096"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "28"
+            endingLineNumber = "28"
+            landmarkName = "executeCollectionViewModelAction(_:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(extension in Fruok):Fruok.CollectionViewModelClientView.executeCollectionViewModelAction (Swift.Optional&lt;Fruok.CollectionViewModelActions&gt;) -&gt; ()"
+                  moduleName = "Fruok"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/meister/Documents/Source/Fruok/Fruok/CollectionViewModelClientView.swift"
+                  timestampString = "524385521.794807"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "28"
+                  endingLineNumber = "28"
+                  offsetFromSymbolStart = "807">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(extension in Fruok):Fruok.CollectionViewModelClientView.(executeCollectionViewModelAction (Swift.Optional&lt;Fruok.CollectionViewModelActions&gt;) -&gt; ()).(closure #1)"
+                  moduleName = "Fruok"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/meister/Documents/Source/Fruok/Fruok/CollectionViewModelClientView.swift"
+                  timestampString = "524385521.797904"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "28"
+                  endingLineNumber = "28"
+                  offsetFromSymbolStart = "16">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Fruok/CollectionViewModelClientView.swift"
+            timestampString = "524385524.23295"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "24"
+            endingLineNumber = "24"
+            landmarkName = "executeCollectionViewModelAction(_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Fruok/CollectionViewModelClientView.swift"
+            timestampString = "524398853.706969"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "60"
+            endingLineNumber = "60"
+            landmarkName = "executeCollectionViewModelAction(_:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(extension in Fruok):Fruok.CollectionViewModelClientView.executeCollectionViewModelAction (Swift.Optional&lt;Fruok.CollectionViewModelActions&gt;) -&gt; ()"
+                  moduleName = "Fruok"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/meister/Documents/Source/Fruok/Fruok/CollectionViewModelClientView.swift"
+                  timestampString = "524385529.466152"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "60"
+                  endingLineNumber = "60"
+                  offsetFromSymbolStart = "3887">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(extension in Fruok):Fruok.CollectionViewModelClientView.(executeCollectionViewModelAction (Swift.Optional&lt;Fruok.CollectionViewModelActions&gt;) -&gt; ()).(closure #5)"
+                  moduleName = "Fruok"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/meister/Documents/Source/Fruok/Fruok/CollectionViewModelClientView.swift"
+                  timestampString = "524385529.471027"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "62"
+                  endingLineNumber = "62"
+                  offsetFromSymbolStart = "57">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Fruok/CollectionViewModelClientView.swift"
+            timestampString = "524385543.31109"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "26"
+            endingLineNumber = "26"
+            landmarkName = "executeCollectionViewModelAction(_:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(extension in Fruok):Fruok.CollectionViewModelClientView.executeCollectionViewModelAction (Swift.Optional&lt;Fruok.CollectionViewModelActions&gt;) -&gt; ()"
+                  moduleName = "Fruok"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/meister/Documents/Source/Fruok/Fruok/CollectionViewModelClientView.swift"
+                  timestampString = "524385807.235475"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "28"
+                  endingLineNumber = "28"
+                  offsetFromSymbolStart = "807">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(extension in Fruok):Fruok.CollectionViewModelClientView.(executeCollectionViewModelAction (Swift.Optional&lt;Fruok.CollectionViewModelActions&gt;) -&gt; ()).(closure #1)"
+                  moduleName = "Fruok"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/meister/Documents/Source/Fruok/Fruok/CollectionViewModelClientView.swift"
+                  timestampString = "524385807.240918"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "28"
+                  endingLineNumber = "28"
+                  offsetFromSymbolStart = "16">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Fruok/CollectionViewModelClientView.swift"
+            timestampString = "524398853.706969"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "38"
+            endingLineNumber = "38"
+            landmarkName = "executeCollectionViewModelAction(_:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(extension in Fruok):Fruok.CollectionViewModelClientView.executeCollectionViewModelAction (Swift.Optional&lt;Fruok.CollectionViewModelActions&gt;) -&gt; ()"
+                  moduleName = "Fruok"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/meister/Documents/Source/Fruok/Fruok/CollectionViewModelClientView.swift"
+                  timestampString = "524385807.253328"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "39"
+                  endingLineNumber = "39"
+                  offsetFromSymbolStart = "2722">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(extension in Fruok):Fruok.CollectionViewModelClientView.(executeCollectionViewModelAction (Swift.Optional&lt;Fruok.CollectionViewModelActions&gt;) -&gt; ()).(closure #4)"
+                  moduleName = "Fruok"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/meister/Documents/Source/Fruok/Fruok/CollectionViewModelClientView.swift"
+                  timestampString = "524385807.258521"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "41"
+                  endingLineNumber = "41"
+                  offsetFromSymbolStart = "61">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Fruok/CollectionViewModelClientView.swift"
+            timestampString = "524398853.706969"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "45"
+            endingLineNumber = "45"
+            landmarkName = "executeCollectionViewModelAction(_:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(extension in Fruok):Fruok.CollectionViewModelClientView.executeCollectionViewModelAction (Swift.Optional&lt;Fruok.CollectionViewModelActions&gt;) -&gt; ()"
+                  moduleName = "Fruok"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/meister/Documents/Source/Fruok/Fruok/CollectionViewModelClientView.swift"
+                  timestampString = "524385807.270153"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "60"
+                  endingLineNumber = "60"
+                  offsetFromSymbolStart = "3887">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(extension in Fruok):Fruok.CollectionViewModelClientView.(executeCollectionViewModelAction (Swift.Optional&lt;Fruok.CollectionViewModelActions&gt;) -&gt; ()).(closure #5)"
+                  moduleName = "Fruok"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/meister/Documents/Source/Fruok/Fruok/CollectionViewModelClientView.swift"
+                  timestampString = "524385807.276124"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "62"
+                  endingLineNumber = "62"
+                  offsetFromSymbolStart = "57">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Fruok/CollectionViewModel.swift"
+            timestampString = "524395253.274118"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "68"
+            endingLineNumber = "68"
+            landmarkName = "reactToCoreDataKVOMessage(_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Fruok/CollectionViewModel.swift"
+            timestampString = "524395253.274118"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "69"
+            endingLineNumber = "69"
+            landmarkName = "reactToCoreDataKVOMessage(_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Fruok/CollectionViewModel.swift"
+            timestampString = "524395253.274118"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "66"
+            endingLineNumber = "66"
+            landmarkName = "reactToCoreDataKVOMessage(_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Fruok/KanbanVM.swift"
+            timestampString = "524389793.210703"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "25"
+            endingLineNumber = "25"
+            landmarkName = "init(with:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Fruok/KanbanVM.swift"
+            timestampString = "524389794.602821"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "30"
+            endingLineNumber = "30"
+            landmarkName = "deinit"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Fruok/TasksCollectionVM.swift"
+            timestampString = "524389878.924817"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "31"
+            endingLineNumber = "31"
+            landmarkName = "init(with:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Fruok/TasksCollectionVM.swift"
+            timestampString = "524389880.507242"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "36"
+            endingLineNumber = "36"
+            landmarkName = "deinit"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Fruok/TasksCollectionVM.swift"
+            timestampString = "524390824.348014"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "47"
+            endingLineNumber = "47"
+            landmarkName = "observeValue(forKeyPath:of:change:context:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Fruok/TasksCollectionVM.swift"
+            timestampString = "524390825.675171"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "46"
+            endingLineNumber = "46"
+            landmarkName = "observeValue(forKeyPath:of:change:context:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Fruok/CollectionViewModel.swift"
+            timestampString = "524398214.331096"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "94"
+            endingLineNumber = "94"
+            landmarkName = "moveObjects(withURIStrings:beforeIndexPath:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Fruok/CollectionViewModel.swift"
+            timestampString = "524398539.483842"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "169"
+            endingLineNumber = "169"
+            landmarkName = "dropIndex(forDraggedURIs:proposedIndex:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

@@ -20,12 +20,10 @@
                                     <rect key="frame" x="1" y="1" width="448" height="298"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
-                                        <collectionView id="o4g-X6-xW9">
+                                        <collectionView selectable="YES" id="o4g-X6-xW9">
                                             <rect key="frame" x="0.0" y="0.0" width="448" height="298"/>
                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                            <collectionViewFlowLayout key="collectionViewLayout" minimumInteritemSpacing="10" minimumLineSpacing="10" id="82d-c1-1Os">
-                                                <size key="itemSize" width="50" height="50"/>
-                                            </collectionViewFlowLayout>
+                                            <collectionViewLayout key="collectionViewLayout" id="cxj-t5-tQf"/>
                                             <color key="primaryBackgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
                                             <connections>
                                                 <outlet property="dataSource" destination="5bB-8n-WwE" id="LpF-o0-GIu"/>

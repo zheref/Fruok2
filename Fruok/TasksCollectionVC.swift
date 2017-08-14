@@ -8,7 +8,31 @@
 
 import Cocoa
 
-class TasksCollectionViewController: NSViewController, MVVMView {
+extension UTI {
+
+	static let fruokTask = UTI(rawValue: "com.tristan.fruok.task")
+}
+
+extension Task: NSPasteboardWriting {
+
+	public func writableTypes(for pasteboard: NSPasteboard) -> [String] {
+		return [UTI.fruokTask.rawValue]
+	}
+
+	public func pasteboardPropertyList(forType type: String) -> Any? {
+
+		switch UTI(rawValue: type) {
+
+		case UTI.fruokTask:
+			return self.objectID.uriRepresentation().absoluteString
+
+		default:
+			return nil
+		}
+	}
+}
+
+class TasksCollectionViewController: NSViewController, CollectionViewModelClientView {
 
 	enum ItemIdentifier: String {
 		case task
@@ -23,12 +47,24 @@ class TasksCollectionViewController: NSViewController, MVVMView {
 		let controller = storyboard.instantiateInitialController()
 		return controller as! TasksCollectionViewController
 	}
-	
+	var collectionViewDelegate: CollectionViewDragAndDropDelegate<VIEWMODEL>? {
+		didSet {
+			self.collectionView.delegate = self.collectionViewDelegate
+		}
+	}
+	func draggedIndexPaths() -> Set<IndexPath>? {
+
+		return self.collectionViewDelegate?.draggedIndexPaths
+	}
+
+
 	@IBOutlet var collectionView: NSCollectionView!
     override func viewDidLoad() {
         super.viewDidLoad()
 		let nib = NSNib(nibNamed: "KanbanTaskItem", bundle: nil)
 		self.collectionView.register(nib, forItemWithIdentifier: ItemIdentifier.task.rawValue)
+		self.collectionView.register(forDraggedTypes: [UTI.fruokTask.rawValue])
+		self.collectionView.setDraggingSourceOperationMask(.move, forLocal: true)
 		self.collectionView.collectionViewLayout = TasksCollectionLayout()
 		self.connectVMIfReady()
     }
@@ -43,47 +79,10 @@ class TasksCollectionViewController: NSViewController, MVVMView {
 
 		self.viewModel?.viewActions.observeNext(with: { action in
 
-			switch action {
-			case .refreshTasks?:
-				self.collectionView.reloadData()
-
-			case .addTasksAtIndexes(let indexSet)?:
-
-				let set = Set(indexSet.map({IndexPath(item: $0, section: 0)}))
-				self.collectionView.animator().performBatchUpdates({
-					NSAnimationContext.current().allowsImplicitAnimation = true
-					self.collectionView.insertItems(at: set)
-
-				}, completionHandler: { _ in
-
-
-					NSAnimationContext.runAnimationGroup({ context in
-
-						NSAnimationContext.current().allowsImplicitAnimation = true
-						self.collectionView.scrollToItems(at: set, scrollPosition: .centeredVertically)
-					}, completionHandler: {
-
-						if let indexPath = set.first, let item = self.collectionView.item(at: indexPath) {
-
-							NSApp.sendAction(#selector(KanbanViewController.showTaskDetails(_:)), to: nil, from: item)
-						}
-					})
-
-					NSAnimationContext.current().allowsImplicitAnimation = true
-				})
-			case .deleteTasksAtIndexes(let indexSet)?:
-				self.collectionView.animator().performBatchUpdates({
-
-					let set = Set(indexSet.map({IndexPath(item: $0, section: 0)}))
-					self.collectionView.deleteItems(at: set)
-
-				}, completionHandler: { _ in
-
-				})
-			case nil:
-				break
-			}
+			self.executeCollectionViewModelAction(action)
 		}).dispose(in: bag)
+
+		self.collectionViewDelegate = CollectionViewDragAndDropDelegate<VIEWMODEL>(horizontalWithViewModel: self.viewModel!, collectionView: collectionView, draggingUTI: UTI.fruokTask)
 	}
 }
 
@@ -91,7 +90,7 @@ extension TasksCollectionViewController: NSCollectionViewDataSource {
 
 	public func collectionView(_ collectionView: NSCollectionView, numberOfItemsInSection section: Int) -> Int {
 
-		return self.viewModel?.numTaskStates.value ?? 0
+		return self.viewModel?.numCollectionObjects.value ?? 0
 	}
 
 	public func collectionView(_ collectionView: NSCollectionView, itemForRepresentedObjectAt indexPath: IndexPath) -> NSCollectionViewItem {

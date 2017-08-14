@@ -736,7 +736,7 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "No"
+            shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Fruok/KanbanVC.swift"
@@ -749,33 +749,33 @@
             landmarkType = "7">
             <Locations>
                <Location
-                  shouldBeEnabled = "No"
+                  shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
                   symbolName = "Fruok.KanbanViewController.showTaskDetails (Swift.Optional&lt;Any&gt;) -&gt; ()"
                   moduleName = "Fruok"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/meister/Documents/Source/Fruok/Fruok/KanbanVC.swift"
-                  timestampString = "524182164.1342"
+                  timestampString = "524400183.217983"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "88"
-                  endingLineNumber = "88"
+                  startingLineNumber = "99"
+                  endingLineNumber = "99"
                   offsetFromSymbolStart = "23">
                </Location>
                <Location
-                  shouldBeEnabled = "No"
+                  shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
                   symbolName = "Fruok.KanbanViewController.showTaskDetails (Swift.Optional&lt;Any&gt;) -&gt; ()"
                   moduleName = "Fruok"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/meister/Documents/Source/Fruok/Fruok/KanbanVC.swift"
-                  timestampString = "524182164.140314"
+                  timestampString = "524400183.224334"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "88"
-                  endingLineNumber = "88"
+                  startingLineNumber = "99"
+                  endingLineNumber = "99"
                   offsetFromSymbolStart = "351">
                </Location>
             </Locations>
@@ -1790,6 +1790,22 @@
             startingLineNumber = "169"
             endingLineNumber = "169"
             landmarkName = "dropIndex(forDraggedURIs:proposedIndex:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Fruok/KanbanTaskItemVM.swift"
+            timestampString = "524400234.482477"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "32"
+            endingLineNumber = "32"
+            landmarkName = "userRequestedTaskDetails()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

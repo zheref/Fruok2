@@ -10,7 +10,7 @@ import Cocoa
 
 extension UTI {
 
-	static let fruokDocument = UTI(rawValue: "com.tristan.FruokDocument")
+	static let fruokDocument = UTI(rawValue: "com.tristan.fruok.document")
 }
 
 class FruokDocument: NSPersistentDocument {

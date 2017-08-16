@@ -13,15 +13,15 @@
 			</array>
 			<key>CFBundleTypeMIMETypes</key>
 			<array>
-				<string>application/octet-stream</string>
+				<string>text/xml</string>
 			</array>
 			<key>CFBundleTypeName</key>
-			<string>Fruok Document</string>
+			<string>Fruo Document</string>
 			<key>CFBundleTypeRole</key>
 			<string>Editor</string>
 			<key>LSItemContentTypes</key>
 			<array>
-				<string>com.tristan.FruokDocument</string>
+				<string>com.tristan.fruok.document</string>
 			</array>
 			<key>LSTypeIsPackage</key>
 			<false/>
@@ -58,10 +58,14 @@
 	<key>UTExportedTypeDeclarations</key>
 	<array>
 		<dict>
+			<key>UTTypeConformsTo</key>
+			<array>
+				<string>public.data</string>
+			</array>
 			<key>UTTypeDescription</key>
 			<string>Fruok Document</string>
 			<key>UTTypeIdentifier</key>
-			<string>com.tristan.FruokDocument</string>
+			<string>com.tristan.fruok.document</string>
 			<key>UTTypeTagSpecification</key>
 			<dict>
 				<key>public.filename-extension</key>

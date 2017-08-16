@@ -756,10 +756,10 @@
                                 <buttonCell key="cell" type="push" bezelStyle="rounded" image="NSAddTemplate" imagePosition="only" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="4ES-oK-4rO">
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                     <font key="font" metaFont="system"/>
+                                    <connections>
+                                        <action selector="addTaskState:" target="Fti-Zu-9Sz" id="t6q-n5-FJ0"/>
+                                    </connections>
                                 </buttonCell>
-                                <connections>
-                                    <action selector="addTask:" target="Fti-Zu-9Sz" id="CC0-06-1R9"/>
-                                </connections>
                             </button>
                             <scrollView wantsLayer="YES" autohidesScrollers="YES" horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" verticalScrollElasticity="none" translatesAutoresizingMaskIntoConstraints="NO" id="nBz-cZ-kCF" customClass="NestedScrollView" customModule="Fruok" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="0.0" width="373" height="300"/>

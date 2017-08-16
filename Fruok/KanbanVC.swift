@@ -92,9 +92,9 @@ class KanbanViewController: NSViewController, CollectionViewModelClientView {
 		}).dispose(in: bag)
 	}
 
-	@IBAction func addTask(_ sender: Any) {
+	@IBAction func addTaskState(_ sender: Any) {
 
-		self.viewModel?.addTask()
+		self.viewModel?.addTaskState()
 	}
 
 	@IBAction func deleteTaskStateAction(_ sender: NSCollectionViewItem) {

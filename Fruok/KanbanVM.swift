@@ -49,7 +49,7 @@ class KanbanViewModel: NSObject, CollectionDragAndDropViewModel {
 
 	var lastAddedIndex: Int?
 
-	func addTask() {
+	func addTaskState() {
 
 		if let context = self.project.managedObjectContext {
 			let state: TaskState = NSEntityDescription.insertNewObject(forEntityName: TaskState.entityName, into: context) as! TaskState

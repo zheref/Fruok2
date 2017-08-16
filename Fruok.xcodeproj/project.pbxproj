@@ -70,6 +70,7 @@
 		D8F7B4711F423C4E00060F08 /* DeleteTaskStateConfirmationDialog.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8F7B46F1F423C4E00060F08 /* DeleteTaskStateConfirmationDialog.swift */; };
 		D8F7B4721F423C4E00060F08 /* DeleteTaskStateConfirmationDialog.xib in Resources */ = {isa = PBXBuildFile; fileRef = D8F7B4701F423C4E00060F08 /* DeleteTaskStateConfirmationDialog.xib */; };
 		D8F7B4741F423C7000060F08 /* DeleteTaskStateConfirmationVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8F7B4731F423C7000060F08 /* DeleteTaskStateConfirmationVM.swift */; };
+		D8F7B4761F4364B200060F08 /* NestedScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8F7B4751F4364B200060F08 /* NestedScrollView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -170,6 +171,7 @@
 		D8F7B46F1F423C4E00060F08 /* DeleteTaskStateConfirmationDialog.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeleteTaskStateConfirmationDialog.swift; sourceTree = "<group>"; };
 		D8F7B4701F423C4E00060F08 /* DeleteTaskStateConfirmationDialog.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DeleteTaskStateConfirmationDialog.xib; sourceTree = "<group>"; };
 		D8F7B4731F423C7000060F08 /* DeleteTaskStateConfirmationVM.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeleteTaskStateConfirmationVM.swift; sourceTree = "<group>"; };
+		D8F7B4751F4364B200060F08 /* NestedScrollView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NestedScrollView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -445,6 +447,7 @@
 			isa = PBXGroup;
 			children = (
 				D8C2AD3C1F3BD284002D75B2 /* FirstResponderView.swift */,
+				D8F7B4751F4364B200060F08 /* NestedScrollView.swift */,
 				D82E217C1F40B57F00F601DD /* CollectionDelegateDragAndDrop.swift */,
 				D82E21801F40FAAD00F601DD /* CollectionViewModelClientView.swift */,
 				D82E217E1F40F2F700F601DD /* CollectionViewModel.swift */,
@@ -774,6 +777,7 @@
 				D8C2AD111F390305002D75B2 /* KVVM.swift in Sources */,
 				D82E21531F3C540100F601DD /* TasksCollectionVC.swift in Sources */,
 				D82E215B1F3C587D00F601DD /* KanbanTaskItem.swift in Sources */,
+				D8F7B4761F4364B200060F08 /* NestedScrollView.swift in Sources */,
 				D8388E421F37905B004A2DA3 /* DocumentContentVC.swift in Sources */,
 				D82ECF2B1F37985D008251C2 /* Label+CoreDataClass.swift in Sources */,
 				D8C2AD241F3A5FFA002D75B2 /* ValidatingCustomToolbarItem.swift in Sources */,

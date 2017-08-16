@@ -48,10 +48,12 @@ class TaskDetailViewModel: NSObject, MVVMViewModel {
 
 			NSString(format: NSLocalizedString("Delete task %@?", comment: "Task deletion") as NSString, self.task.name ?? "") as String
 
-			) {
+		) {
 
 			self.dismiss.value = true
 			self.task.state?.removeFromTasks(self.task)
+			self.task.managedObjectContext?.delete(self.task)
+			self.dismiss.value = true
 		}
 
 		self.taskDeleteConfirmation.value = info

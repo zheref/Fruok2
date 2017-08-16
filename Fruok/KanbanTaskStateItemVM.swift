@@ -37,6 +37,8 @@ class KanbanTaskStateItemViewModel: NSObject, MVVMViewModel {
 			let task: Task = NSEntityDescription.insertNewObject(forEntityName: Task.entityName, into: context) as! Task
 			task.name = NSLocalizedString("Untitled", comment: "Untitled task")
 			self.taskState.addToTasks(task)
+
+				NotificationCenter.default.post(name: .FRUDisplayDetailRequestedForTask, object: self.taskState, userInfo: [FRUDisplayDetailRequestedInfoKeys.task.rawValue: task])
 		}
 	}
 

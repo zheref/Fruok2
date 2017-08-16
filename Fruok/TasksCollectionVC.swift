@@ -83,6 +83,40 @@ class TasksCollectionViewController: NSViewController, CollectionViewModelClient
 		}).dispose(in: bag)
 
 		self.collectionViewDelegate = CollectionViewDragAndDropDelegate<VIEWMODEL>(horizontalWithViewModel: self.viewModel!, collectionView: collectionView, draggingUTI: UTI.fruokTask)
+
+		self.viewModel?.showDetailsForTaskAtIndex.observeNext(with: { taskIndex in
+
+			// We need to dispatch async, because just after item creation,
+			// scrollToItems(at:scrollPosition:) fails
+
+			DispatchQueue.main.async {
+
+				guard let taskIndex = taskIndex else {
+					return
+				}
+
+				let actionBlock: (NSCollectionViewItem?) -> Void = { item in
+
+					if item != nil {
+						NSApp.sendAction(#selector(KanbanViewController.showTaskDetails(_:)), to: nil, from: item)
+					}
+				}
+
+				let indexPath = IndexPath(item: taskIndex, section: 0)
+				if let item = self.collectionView.item(at: indexPath) {
+
+					actionBlock(item)
+				} else {
+
+					NSAnimationContext.runAnimationGroup({ context in
+						self.collectionView.animator().scrollToItems(at: Set([indexPath]), scrollPosition:[.centeredVertically])
+					}, completionHandler: {
+						actionBlock(self.collectionView.item(at: indexPath))
+					})
+				}
+			}
+		}).dispose(in: bag)
+
 	}
 }
 

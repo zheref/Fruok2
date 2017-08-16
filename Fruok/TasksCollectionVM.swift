@@ -9,6 +9,16 @@
 import Cocoa
 import Bond
 
+extension Notification.Name {
+
+	static let FRUDisplayDetailRequestedForTask = Notification.Name("FRUDisplayDetailRequestedForTask")
+}
+
+enum FRUDisplayDetailRequestedInfoKeys: String {
+
+	case task
+}
+
 class TasksCollectionViewModel: NSObject, CollectionDragAndDropViewModel {
 
 	internal func pasteboardItemForTastState(at index: Int) -> NSPasteboardWriting? {
@@ -23,6 +33,7 @@ class TasksCollectionViewModel: NSObject, CollectionDragAndDropViewModel {
 
 	typealias MODEL = TaskState
 	@objc dynamic private let taskState: TaskState
+
 	required init(with model: TaskState) {
 
 		self.taskState = model
@@ -30,6 +41,19 @@ class TasksCollectionViewModel: NSObject, CollectionDragAndDropViewModel {
 
 		self.addObserver(self, forKeyPath: #keyPath(TasksCollectionViewModel.taskState.tasks), options: .initial, context: &kTasksContext)
 
+		NotificationCenter.default.reactive.notification(name: .FRUDisplayDetailRequestedForTask, object: self.taskState).observeNext { notification in
+
+			guard let task = notification.userInfo?[FRUDisplayDetailRequestedInfoKeys.task.rawValue] else {
+				return
+			}
+
+			guard let taskIndex = self.taskState.tasks?.index(of: task), taskIndex != NSNotFound else {
+				return
+			}
+
+			self.showDetailsForTaskAtIndex.value = taskIndex
+
+		}.dispose(in: bag)
 	}
 
 	deinit {
@@ -48,6 +72,8 @@ class TasksCollectionViewModel: NSObject, CollectionDragAndDropViewModel {
 	}
 
 	let numCollectionObjects = Observable<Int>(0)
+	let showDetailsForTaskAtIndex = Observable<Int?>(nil)
+
 	let viewActions = Observable<CollectionViewModelActions?>(nil)
 
 	func taskItemViewModel(for index: Int) -> KanbanTaskItemViewModel? {

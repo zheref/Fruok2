@@ -24,7 +24,6 @@ class KanbanTaskItemViewModel: NSObject, MVVMViewModel {
 
 		self.reactive.keyPath(#keyPath(KanbanTaskItemViewModel.task.descriptionString.string), ofType: Optional<String>.self, context: .immediateOnMain).bind(to: self.taskDescription)
 			.dispose(in: bag)
-
 	}
 
 	func userRequestedTaskDetails() {

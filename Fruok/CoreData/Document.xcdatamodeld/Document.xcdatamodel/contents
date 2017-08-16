@@ -28,6 +28,7 @@
         <attribute name="r" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES" syncable="YES"/>
     </entity>
     <entity name="Subtask" representedClassName="Subtask" parentEntity="BaseTask" syncable="YES">
+        <attribute name="done" optional="YES" attributeType="Boolean" defaultValueString="NO" usesScalarValueType="YES" syncable="YES"/>
         <relationship name="task" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Task" inverseName="subtasks" inverseEntity="Task" syncable="YES"/>
     </entity>
     <entity name="Task" representedClassName="Task" parentEntity="BaseTask" syncable="YES">
@@ -45,7 +46,7 @@
         <element name="LabelColor" positionX="-18" positionY="63" width="128" height="60"/>
         <element name="Project" positionX="-63" positionY="-18" width="128" height="120"/>
         <element name="RGBAColor" positionX="18" positionY="72" width="128" height="120"/>
-        <element name="Subtask" positionX="9" positionY="90" width="128" height="60"/>
+        <element name="Subtask" positionX="9" positionY="90" width="128" height="75"/>
         <element name="Task" positionX="0" positionY="81" width="128" height="75"/>
         <element name="TaskState" positionX="-45" positionY="27" width="128" height="90"/>
     </elements>

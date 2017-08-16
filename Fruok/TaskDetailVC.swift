@@ -62,6 +62,25 @@ class TaskDetailViewController: NSViewController, MVVMView {
 			self.descriptionField.insertText(attrString, replacementRange: NSMakeRange(0, self.descriptionField.textStorage?.length ?? 0))
 		}.dispose(in: bag)
 
+		self.viewModel?.taskDeleteConfirmation.observeNext { info in
+
+			guard let info = info, let window = self.view.window?.parent else { return }
+
+			let alert = NSAlert()
+			alert.alertStyle = .informational
+			alert.messageText = info.question
+			alert.addButton(withTitle: NSLocalizedString("Delete", comment: "Confirm task deletion button"))
+			alert.addButton(withTitle: NSLocalizedString("Cancel", comment: "Cancel task deletion button"))
+
+			alert.beginSheetModal(for: window, completionHandler: { response in
+
+				if response == NSAlertFirstButtonReturn {
+					info.callback()
+				}
+			})
+			
+		}.dispose(in: bag)
+
 		NotificationCenter.default.reactive.notification(name: Notification.Name.NSTextDidChange, object:self.descriptionField).observeNext { [weak self] notification in
 
 			if let mySelf = self {

@@ -34,11 +34,26 @@ class TaskDetailViewModel: NSObject, MVVMViewModel {
 	let descriptionText = Observable<NSAttributedString?>(NSAttributedString(string:""))
 	let dismiss = Observable<Bool>(false)
 
-	func userRequestsTaskDeletion() {
-
-		self.dismiss.value = true
-
-		self.task.state?.removeFromTasks(self.task)
+	struct TaskDeleteConfirmationInfo {
+		let question: String
+		let callback: () -> Void
 	}
 
+	let taskDeleteConfirmation = Observable<TaskDeleteConfirmationInfo?>(nil)
+
+	func userRequestsTaskDeletion() {
+
+		let info = TaskDeleteConfirmationInfo(question:
+
+
+			NSString(format: NSLocalizedString("Delete task %@?", comment: "Task deletion") as NSString, self.task.name ?? "") as String
+
+			) {
+
+			self.dismiss.value = true
+			self.task.state?.removeFromTasks(self.task)
+		}
+
+		self.taskDeleteConfirmation.value = info
+	}
 }

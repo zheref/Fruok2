@@ -40,10 +40,7 @@ class SubtasksViewController: NSViewController, MVVMView {
 	convenience init() {
 		self.init(nibName: "SubtasksVC", bundle: nil)!
 	}
-	deinit {
-		NSLog("SubtasksViewController deinit")
-	}
-	
+
     override func viewDidLoad() {
         super.viewDidLoad()
 		self.tableView.doubleAction = #selector(SubtasksViewController.edit(_ :))
@@ -52,9 +49,9 @@ class SubtasksViewController: NSViewController, MVVMView {
 
 	func connectVM() {
 
-		self.viewModel?.viewActions.observeNext(with: { action in
+		self.viewModel?.viewActions.observeNext(with: { [weak self] action in
 
-			self.executeCollectionViewModelAction(action)
+			self?.executeCollectionViewModelAction(action)
 
 		}).dispose(in: bag)
 	}

@@ -40,9 +40,6 @@ class TaskDetailViewController: NSViewController, MVVMView {
 
 		self.init(nibName: "TaskDetailVC", bundle: nil)!
 	}
-	deinit {
-		NSLog("TaskDetailViewController deinit")
-	}
     override func viewDidLoad() {
         super.viewDidLoad()
 		self.connectVMIfReady()
@@ -53,9 +50,9 @@ class TaskDetailViewController: NSViewController, MVVMView {
 	func connectVM() {
 
 		self.viewModel!.name.map({$0 ?? ""}).bind(to: self.nameLabel.reactive.stringValue)
-		self.nameLabel.reactive.textDidEndEditing.observeNext { (textField, flag) in
+		self.nameLabel.reactive.textDidEndEditing.observeNext { [weak self] (textField, flag) in
 
-			self.viewModel?.name.value = textField.stringValue
+			self?.viewModel?.name.value = textField.stringValue
 		}.dispose(in: bag)
 
 		self.viewModel!.descriptionText.map({$0 ?? NSAttributedString()}).observeNext { [weak self] (attrString) in

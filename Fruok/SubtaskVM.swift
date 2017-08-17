@@ -16,7 +16,6 @@ class SubtaskViewModel: NSObject, MVVMViewModel {
 	required init(with model: MODEL) {
 		self.subtask = model
 		super.init()
-		NSLog("SubtaskViewModel init")
 		self.reactive.keyPath(#keyPath(SubtaskViewModel.subtask.name), ofType: Optional<String>.self, context: .immediateOnMain)
 			.map{ name in
 				return name ?? NSLocalizedString("Untitled", comment: "Untitled subtask")
@@ -30,9 +29,6 @@ class SubtaskViewModel: NSObject, MVVMViewModel {
 		}
 	}
 
-	deinit {
-		NSLog("SubtaskViewModel deinit")
-	}
 	let name = Observable("")
 	let done = Observable(false)
 	let editable = Observable(false)

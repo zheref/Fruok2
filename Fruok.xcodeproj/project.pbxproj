@@ -71,6 +71,11 @@
 		D8F7B4721F423C4E00060F08 /* DeleteTaskStateConfirmationDialog.xib in Resources */ = {isa = PBXBuildFile; fileRef = D8F7B4701F423C4E00060F08 /* DeleteTaskStateConfirmationDialog.xib */; };
 		D8F7B4741F423C7000060F08 /* DeleteTaskStateConfirmationVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8F7B4731F423C7000060F08 /* DeleteTaskStateConfirmationVM.swift */; };
 		D8F7B4761F4364B200060F08 /* NestedScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8F7B4751F4364B200060F08 /* NestedScrollView.swift */; };
+		D8F7B47B1F44E65900060F08 /* SubtasksVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8F7B47A1F44E65900060F08 /* SubtasksVM.swift */; };
+		D8F7B47E1F44EE2800060F08 /* SubtasksVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8F7B47C1F44EE2800060F08 /* SubtasksVC.swift */; };
+		D8F7B47F1F44EE2800060F08 /* SubtasksVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = D8F7B47D1F44EE2800060F08 /* SubtasksVC.xib */; };
+		D8F7B4821F44F03C00060F08 /* SubtaskCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8F7B4811F44F03C00060F08 /* SubtaskCell.swift */; };
+		D8F7B4841F45D16900060F08 /* SubtaskVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8F7B4831F45D16900060F08 /* SubtaskVM.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -172,6 +177,11 @@
 		D8F7B4701F423C4E00060F08 /* DeleteTaskStateConfirmationDialog.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DeleteTaskStateConfirmationDialog.xib; sourceTree = "<group>"; };
 		D8F7B4731F423C7000060F08 /* DeleteTaskStateConfirmationVM.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeleteTaskStateConfirmationVM.swift; sourceTree = "<group>"; };
 		D8F7B4751F4364B200060F08 /* NestedScrollView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NestedScrollView.swift; sourceTree = "<group>"; };
+		D8F7B47A1F44E65900060F08 /* SubtasksVM.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SubtasksVM.swift; sourceTree = "<group>"; };
+		D8F7B47C1F44EE2800060F08 /* SubtasksVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SubtasksVC.swift; sourceTree = "<group>"; };
+		D8F7B47D1F44EE2800060F08 /* SubtasksVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SubtasksVC.xib; sourceTree = "<group>"; };
+		D8F7B4811F44F03C00060F08 /* SubtaskCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SubtaskCell.swift; sourceTree = "<group>"; };
+		D8F7B4831F45D16900060F08 /* SubtaskVM.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SubtaskVM.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -383,6 +393,7 @@
 				D82E21511F3C53C200F601DD /* TaskCollectionView */,
 				D82E21581F3C584B00F601DD /* KanbanTaskItem */,
 				D82E21711F3CFF9400F601DD /* TaskDetail */,
+				D8F7B4791F44E63400060F08 /* Subtasks */,
 			);
 			name = UI;
 			sourceTree = "<group>";
@@ -464,6 +475,26 @@
 				D8F7B4701F423C4E00060F08 /* DeleteTaskStateConfirmationDialog.xib */,
 			);
 			name = DeleteTaskStateConfirmation;
+			sourceTree = "<group>";
+		};
+		D8F7B4791F44E63400060F08 /* Subtasks */ = {
+			isa = PBXGroup;
+			children = (
+				D8F7B47C1F44EE2800060F08 /* SubtasksVC.swift */,
+				D8F7B47A1F44E65900060F08 /* SubtasksVM.swift */,
+				D8F7B4801F44F02200060F08 /* SubtaskCell */,
+				D8F7B47D1F44EE2800060F08 /* SubtasksVC.xib */,
+			);
+			name = Subtasks;
+			sourceTree = "<group>";
+		};
+		D8F7B4801F44F02200060F08 /* SubtaskCell */ = {
+			isa = PBXGroup;
+			children = (
+				D8F7B4811F44F03C00060F08 /* SubtaskCell.swift */,
+				D8F7B4831F45D16900060F08 /* SubtaskVM.swift */,
+			);
+			name = SubtaskCell;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -594,6 +625,7 @@
 				D8C2AD2A1F3A7EBC002D75B2 /* KanbanTaskStateItem.xib in Resources */,
 				D8F7B4721F423C4E00060F08 /* DeleteTaskStateConfirmationDialog.xib in Resources */,
 				D8388E4C1F37905B004A2DA3 /* Main.storyboard in Resources */,
+				D8F7B47F1F44EE2800060F08 /* SubtasksVC.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -764,6 +796,7 @@
 				D82E216E1F3C5CE400F601DD /* TaskState+CoreDataProperties.swift in Sources */,
 				D82E21741F3CFFFD00F601DD /* TaskDetailVC.swift in Sources */,
 				D8C2AD1B1F3A4CC8002D75B2 /* NSLayoutConstraint+utilities.m in Sources */,
+				D8F7B4841F45D16900060F08 /* SubtaskVM.swift in Sources */,
 				D82E215E1F3C59BE00F601DD /* KanbanTaskItemVM.swift in Sources */,
 				D82ECF291F37985D008251C2 /* BaseTask+CoreDataClass.swift in Sources */,
 				D82E216C1F3C5CE400F601DD /* Subtask+CoreDataProperties.swift in Sources */,
@@ -779,6 +812,7 @@
 				D82E215B1F3C587D00F601DD /* KanbanTaskItem.swift in Sources */,
 				D8F7B4761F4364B200060F08 /* NestedScrollView.swift in Sources */,
 				D8388E421F37905B004A2DA3 /* DocumentContentVC.swift in Sources */,
+				D8F7B4821F44F03C00060F08 /* SubtaskCell.swift in Sources */,
 				D82ECF2B1F37985D008251C2 /* Label+CoreDataClass.swift in Sources */,
 				D8C2AD241F3A5FFA002D75B2 /* ValidatingCustomToolbarItem.swift in Sources */,
 				D82E21671F3C5CE400F601DD /* BaseTask+CoreDataProperties.swift in Sources */,
@@ -806,7 +840,9 @@
 				D8C2AD3A1F3BB753002D75B2 /* KanbanTaskStateItemVM.swift in Sources */,
 				D82E21701F3C616000F601DD /* TasksCollectionLayout.swift in Sources */,
 				D8C2AD261F3A650D002D75B2 /* KanbanVM.swift in Sources */,
+				D8F7B47B1F44E65900060F08 /* SubtasksVM.swift in Sources */,
 				D8F7B4711F423C4E00060F08 /* DeleteTaskStateConfirmationDialog.swift in Sources */,
+				D8F7B47E1F44EE2800060F08 /* SubtasksVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

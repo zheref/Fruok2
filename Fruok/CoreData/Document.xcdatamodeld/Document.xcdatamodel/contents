@@ -33,7 +33,7 @@
     </entity>
     <entity name="Task" representedClassName="Task" parentEntity="BaseTask" syncable="YES">
         <relationship name="state" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="TaskState" inverseName="tasks" inverseEntity="TaskState" syncable="YES"/>
-        <relationship name="subtasks" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Subtask" inverseName="task" inverseEntity="Subtask" syncable="YES"/>
+        <relationship name="subtasks" optional="YES" toMany="YES" deletionRule="Nullify" ordered="YES" destinationEntity="Subtask" inverseName="task" inverseEntity="Subtask" syncable="YES"/>
     </entity>
     <entity name="TaskState" representedClassName="TaskState" syncable="YES">
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>

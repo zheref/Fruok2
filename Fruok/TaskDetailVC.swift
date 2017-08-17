@@ -26,6 +26,7 @@ class TaskDetailViewController: NSViewController, MVVMView {
 
 	@IBOutlet var nameLabel: NSTextField!
 	@IBOutlet var descriptionField: NSTextView!
+	@IBOutlet var subtasksEmbeddingView: NSView!
 
 	typealias VIEWMODEL = TaskDetailViewModel
 	private(set) var viewModel: TaskDetailViewModel?
@@ -38,6 +39,9 @@ class TaskDetailViewController: NSViewController, MVVMView {
 	convenience init() {
 
 		self.init(nibName: "TaskDetailVC", bundle: nil)!
+	}
+	deinit {
+		NSLog("TaskDetailViewController deinit")
 	}
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -54,17 +58,19 @@ class TaskDetailViewController: NSViewController, MVVMView {
 			self.viewModel?.name.value = textField.stringValue
 		}.dispose(in: bag)
 
-		self.viewModel!.descriptionText.map({$0 ?? NSAttributedString()}).observeNext { (attrString) in
+		self.viewModel!.descriptionText.map({$0 ?? NSAttributedString()}).observeNext { [weak self] (attrString) in
 
-			if self.suppressTextChange {
+			guard let strongSelf = self else {return}
+
+			if strongSelf.suppressTextChange {
 				return
 			}
-			self.descriptionField.insertText(attrString, replacementRange: NSMakeRange(0, self.descriptionField.textStorage?.length ?? 0))
+			strongSelf.descriptionField.insertText(attrString, replacementRange: NSMakeRange(0, strongSelf.descriptionField.textStorage?.length ?? 0))
 		}.dispose(in: bag)
 
-		self.viewModel?.taskDeleteConfirmation.observeNext { info in
+		self.viewModel?.taskDeleteConfirmation.observeNext { [weak self] info in
 
-			guard let info = info, let window = self.view.window?.parent else { return }
+			guard let info = info, let window = self?.view.window?.parent else { return }
 
 			let alert = NSAlert()
 			alert.alertStyle = .informational
@@ -96,6 +102,23 @@ class TaskDetailViewController: NSViewController, MVVMView {
 		}).bind(to: self) { me, dismiss in
 
 			me.dismiss(nil)
+		}
+
+		let subtasksController = SubtasksViewController()
+		subtasksController.set(viewModel: self.viewModel!.subtasksViewModel())
+		self.subtasksController = subtasksController
+	}
+
+	var subtasksController: SubtasksViewController? {
+		willSet {
+			guard let current = self.subtasksController else { return }
+			current.removeFromParentViewController()
+			current.view.removeFromSuperview()
+		} didSet {
+			guard let current = self.subtasksController else { return }
+			current.view.translatesAutoresizingMaskIntoConstraints = false
+			self.subtasksEmbeddingView.addSubview(current.view)
+			self.subtasksEmbeddingView.addConstraints(NSLayoutConstraint.tr_fit(current.view))
 		}
 	}
 

@@ -34,7 +34,7 @@
 		D82E217D1F40B57F00F601DD /* CollectionDelegateDragAndDrop.swift in Sources */ = {isa = PBXBuildFile; fileRef = D82E217C1F40B57F00F601DD /* CollectionDelegateDragAndDrop.swift */; };
 		D82E217F1F40F2F700F601DD /* CollectionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D82E217E1F40F2F700F601DD /* CollectionViewModel.swift */; };
 		D82E21811F40FAAD00F601DD /* CollectionViewModelClientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D82E21801F40FAAD00F601DD /* CollectionViewModelClientView.swift */; };
-		D82E21831F4111BD00F601DD /* DragAndDropCollectionLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = D82E21821F4111BC00F601DD /* DragAndDropCollectionLayout.swift */; };
+		D82E21831F4111BD00F601DD /* OneDimensionalFittingCollectionViewLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = D82E21821F4111BC00F601DD /* OneDimensionalFittingCollectionViewLayout.swift */; };
 		D82ECF281F37985D008251C2 /* Document.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D82ECF151F37985D008251C2 /* Document.xcdatamodeld */; };
 		D82ECF291F37985D008251C2 /* BaseTask+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = D82ECF181F37985D008251C2 /* BaseTask+CoreDataClass.swift */; };
 		D82ECF2B1F37985D008251C2 /* Label+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = D82ECF1A1F37985D008251C2 /* Label+CoreDataClass.swift */; };
@@ -129,7 +129,7 @@
 		D82E217C1F40B57F00F601DD /* CollectionDelegateDragAndDrop.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionDelegateDragAndDrop.swift; sourceTree = "<group>"; };
 		D82E217E1F40F2F700F601DD /* CollectionViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionViewModel.swift; sourceTree = "<group>"; };
 		D82E21801F40FAAD00F601DD /* CollectionViewModelClientView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionViewModelClientView.swift; sourceTree = "<group>"; };
-		D82E21821F4111BC00F601DD /* DragAndDropCollectionLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DragAndDropCollectionLayout.swift; sourceTree = "<group>"; };
+		D82E21821F4111BC00F601DD /* OneDimensionalFittingCollectionViewLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OneDimensionalFittingCollectionViewLayout.swift; sourceTree = "<group>"; };
 		D82ECF161F37985D008251C2 /* Document.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Document.xcdatamodel; sourceTree = "<group>"; };
 		D82ECF181F37985D008251C2 /* BaseTask+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "BaseTask+CoreDataClass.swift"; sourceTree = "<group>"; };
 		D82ECF1A1F37985D008251C2 /* Label+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Label+CoreDataClass.swift"; sourceTree = "<group>"; };
@@ -462,7 +462,7 @@
 				D82E217C1F40B57F00F601DD /* CollectionDelegateDragAndDrop.swift */,
 				D82E21801F40FAAD00F601DD /* CollectionViewModelClientView.swift */,
 				D82E217E1F40F2F700F601DD /* CollectionViewModel.swift */,
-				D82E21821F4111BC00F601DD /* DragAndDropCollectionLayout.swift */,
+				D82E21821F4111BC00F601DD /* OneDimensionalFittingCollectionViewLayout.swift */,
 			);
 			name = Shared;
 			sourceTree = "<group>";
@@ -792,7 +792,7 @@
 				D82E21551F3C541800F601DD /* TasksCollectionVM.swift in Sources */,
 				D82ECF281F37985D008251C2 /* Document.xcdatamodeld in Sources */,
 				D82ECF351F37985D008251C2 /* Task+CoreDataClass.swift in Sources */,
-				D82E21831F4111BD00F601DD /* DragAndDropCollectionLayout.swift in Sources */,
+				D82E21831F4111BD00F601DD /* OneDimensionalFittingCollectionViewLayout.swift in Sources */,
 				D82E216E1F3C5CE400F601DD /* TaskState+CoreDataProperties.swift in Sources */,
 				D82E21741F3CFFFD00F601DD /* TaskDetailVC.swift in Sources */,
 				D8C2AD1B1F3A4CC8002D75B2 /* NSLayoutConstraint+utilities.m in Sources */,

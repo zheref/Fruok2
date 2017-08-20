@@ -35,4 +35,14 @@ extension Project {
 			return Set()
 		}
 	}
+
+	func purgeUnusedLabels() {
+
+		for label in self.labels {
+
+			if (label.tasks?.count ?? 0) == 0 {
+				self.managedObjectContext?.delete(label)
+			}
+		}
+	}
 }

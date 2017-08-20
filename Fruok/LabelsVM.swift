@@ -154,10 +154,9 @@ class LabelsViewModel: NSObject, CollectionDragAndDropViewModel {
 		}
 
 		self.task.managedObjectContext?.undoManager?.beginUndoGrouping()
+		let project = self.task.state?.project
 		self.task.removeFromLabels(label)
-		if (label.tasks?.count ?? 0) == 0 {
-			label.managedObjectContext?.delete(label)
-		}
+		project?.purgeUnusedLabels()
 		self.task.managedObjectContext?.undoManager?.endUndoGrouping()
 	}
 

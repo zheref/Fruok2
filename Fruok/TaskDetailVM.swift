@@ -52,8 +52,10 @@ class TaskDetailViewModel: NSObject, MVVMViewModel {
 			callback: { [weak self] in
 
 				self?.dismiss.value = true
+				let project = thisTask.state?.project
 				thisTask.state?.removeFromTasks(thisTask)
 				thisTask.managedObjectContext?.delete(thisTask)
+				project?.purgeUnusedLabels()
 				self?.dismiss.value = true
 		})
 

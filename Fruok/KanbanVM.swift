@@ -98,8 +98,12 @@ class KanbanViewModel: NSObject, CollectionDragAndDropViewModel {
 			otherTaskState.addToTasks(tasks)
 		}
 
+		let project = taskState.project
+
 		taskState.project?.removeFromTaskStates(taskState)
 		taskState.managedObjectContext?.delete(taskState)
+		project?.purgeUnusedLabels()
+
 	}
 
 	func taskStateViewModel(for index: Int) -> KanbanTaskStateItemViewModel? {

@@ -21,6 +21,4 @@ extension RGBAColor {
     @NSManaged public var g: Double
     @NSManaged public var b: Double
     @NSManaged public var a: Double
-    @NSManaged public var colorSpace: String?
-
 }

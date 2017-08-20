@@ -1,10 +1,9 @@
 //
 //  Label+CoreDataProperties.swift
-//  Fruok
+//  
 //
-//  Created by Matthias Keiser on 06.08.17.
-//  Copyright © 2017 Tristan Inc. All rights reserved.
-//  This file was automatically generated and should not be edited.
+//  Created by Matthias Keiser on 19.08.17.
+//
 //
 
 import Foundation
@@ -17,8 +16,25 @@ extension Label {
         return NSFetchRequest<Label>(entityName: "Label");
     }
 
-    @NSManaged public var name: String?
+    @NSManaged public var name: String
     @NSManaged public var color: LabelColor?
-    @NSManaged public var tasks: BaseTask?
+    @NSManaged public var tasks: NSSet?
+
+}
+
+// MARK: Generated accessors for tasks
+extension Label {
+
+    @objc(addTasksObject:)
+    @NSManaged public func addToTasks(_ value: Task)
+
+    @objc(removeTasksObject:)
+    @NSManaged public func removeFromTasks(_ value: Task)
+
+    @objc(addTasks:)
+    @NSManaged public func addToTasks(_ values: NSSet)
+
+    @objc(removeTasks:)
+    @NSManaged public func removeFromTasks(_ values: NSSet)
 
 }

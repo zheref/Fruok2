@@ -2,7 +2,7 @@
 //  Task+CoreDataProperties.swift
 //  
 //
-//  Created by Matthias Keiser on 16.08.17.
+//  Created by Matthias Keiser on 19.08.17.
 //
 //
 
@@ -18,6 +18,7 @@ extension Task {
 
     @NSManaged public var state: TaskState?
     @NSManaged public var subtasks: NSOrderedSet?
+    @NSManaged public var labels: NSOrderedSet?
 
 }
 
@@ -53,5 +54,40 @@ extension Task {
 
     @objc(removeSubtasks:)
     @NSManaged public func removeFromSubtasks(_ values: NSOrderedSet)
+
+}
+
+// MARK: Generated accessors for labels
+extension Task {
+
+    @objc(insertObject:inLabelsAtIndex:)
+    @NSManaged public func insertIntoLabels(_ value: Label, at idx: Int)
+
+    @objc(removeObjectFromLabelsAtIndex:)
+    @NSManaged public func removeFromLabels(at idx: Int)
+
+    @objc(insertLabels:atIndexes:)
+    @NSManaged public func insertIntoLabels(_ values: [Label], at indexes: NSIndexSet)
+
+    @objc(removeLabelsAtIndexes:)
+    @NSManaged public func removeFromLabels(at indexes: NSIndexSet)
+
+    @objc(replaceObjectInLabelsAtIndex:withObject:)
+    @NSManaged public func replaceLabels(at idx: Int, with value: Label)
+
+    @objc(replaceLabelsAtIndexes:withLabels:)
+    @NSManaged public func replaceLabels(at indexes: NSIndexSet, with values: [Label])
+
+    @objc(addLabelsObject:)
+    @NSManaged public func addToLabels(_ value: Label)
+
+    @objc(removeLabelsObject:)
+    @NSManaged public func removeFromLabels(_ value: Label)
+
+    @objc(addLabels:)
+    @NSManaged public func addToLabels(_ values: NSOrderedSet)
+
+    @objc(removeLabels:)
+    @NSManaged public func removeFromLabels(_ values: NSOrderedSet)
 
 }

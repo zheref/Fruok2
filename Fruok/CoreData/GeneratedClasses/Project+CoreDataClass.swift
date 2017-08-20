@@ -19,3 +19,20 @@ extension Project: ManagedObjectType {
 
 	@nonobjc static let entityName = "Project"
 }
+
+extension Project {
+
+	var labels: Set<Label> {
+
+		guard let context = self.managedObjectContext else {
+			return Set()
+		}
+
+		let fetchRequest: NSFetchRequest<Label> = NSFetchRequest(entityName: Label.entityName)
+		do {
+			return  Set(try context.fetch(fetchRequest))
+		} catch {
+			return Set()
+		}
+	}
+}

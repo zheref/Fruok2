@@ -64,4 +64,10 @@ class TaskDetailViewModel: NSObject, MVVMViewModel {
 
 		return SubtasksViewModel(with: self.task)
 	}
+
+	func labelsViewModel() -> LabelsViewModel {
+
+		return LabelsViewModel(with: self.task)
+	}
+
 }

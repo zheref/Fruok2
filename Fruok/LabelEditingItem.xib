@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="11762" systemVersion="15G1611" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
+    <dependencies>
+        <deployment identifier="macosx"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="11762"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <customObject id="-2" userLabel="File's Owner"/>
+        <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
+        <customObject id="-3" userLabel="Application" customClass="NSObject"/>
+        <collectionViewItem id="owA-Xx-XSO" customClass="LabelEditingCell" customModule="Fruok" customModuleProvider="target">
+            <connections>
+                <outlet property="colorWell" destination="qH2-5I-XVc" id="IW9-Oi-AD4"/>
+                <outlet property="labelComboBox" destination="doY-J5-uQ8" id="c4k-FG-qEr"/>
+                <outlet property="view" destination="Clh-a4-i9s" id="h45-Fp-cO3"/>
+            </connections>
+        </collectionViewItem>
+        <customView id="Clh-a4-i9s" customClass="LabelEditingCellView" customModule="Fruok" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="237" height="42"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+            <subviews>
+                <colorWell translatesAutoresizingMaskIntoConstraints="NO" id="qH2-5I-XVc" customClass="LabelEditingColorWell" customModule="Fruok" customModuleProvider="target">
+                    <rect key="frame" x="198" y="11" width="33" height="20"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="33" id="Y7N-3J-BrU"/>
+                    </constraints>
+                    <color key="color" red="0.05813049898" green="0.055541899059999997" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                    <connections>
+                        <action selector="colorAction:" target="owA-Xx-XSO" id="9Rg-h5-G7u"/>
+                    </connections>
+                </colorWell>
+                <comboBox verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="doY-J5-uQ8" customClass="LabelComboBox" customModule="Fruok" customModuleProvider="target">
+                    <rect key="frame" x="16" y="7" width="179" height="26"/>
+                    <comboBoxCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" borderStyle="bezel" drawsBackground="YES" buttonBordered="NO" completes="NO" usesDataSource="YES" numberOfVisibleItems="5" id="RbY-2k-Bro">
+                        <font key="font" metaFont="system"/>
+                        <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                        <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                    </comboBoxCell>
+                    <connections>
+                        <action selector="textFieldAction:" target="owA-Xx-XSO" id="LQX-me-Car"/>
+                        <outlet property="dataSource" destination="owA-Xx-XSO" id="Kb4-om-gZP"/>
+                        <outlet property="delegate" destination="owA-Xx-XSO" id="NLg-kM-ajT"/>
+                    </connections>
+                </comboBox>
+            </subviews>
+            <constraints>
+                <constraint firstItem="qH2-5I-XVc" firstAttribute="height" secondItem="doY-J5-uQ8" secondAttribute="height" id="9GJ-WK-l2X"/>
+                <constraint firstItem="qH2-5I-XVc" firstAttribute="centerY" secondItem="doY-J5-uQ8" secondAttribute="centerY" id="JoM-nP-kpf"/>
+                <constraint firstAttribute="trailing" secondItem="qH2-5I-XVc" secondAttribute="trailing" constant="6" id="OBi-Yh-ry9"/>
+                <constraint firstItem="qH2-5I-XVc" firstAttribute="leading" secondItem="doY-J5-uQ8" secondAttribute="trailing" constant="6" id="Tkh-pY-7fg"/>
+                <constraint firstItem="doY-J5-uQ8" firstAttribute="centerY" secondItem="Clh-a4-i9s" secondAttribute="centerY" id="YHy-6s-G9y"/>
+                <constraint firstItem="doY-J5-uQ8" firstAttribute="leading" secondItem="Clh-a4-i9s" secondAttribute="leading" constant="16" id="seH-0l-r8D"/>
+            </constraints>
+            <point key="canvasLocation" x="-136.5" y="81"/>
+        </customView>
+    </objects>
+</document>

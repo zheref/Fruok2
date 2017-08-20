@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="11762" systemVersion="15G1611" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
+    <dependencies>
+        <deployment identifier="macosx"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="11762"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <customObject id="-2" userLabel="File's Owner"/>
+        <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
+        <customObject id="-3" userLabel="Application" customClass="NSObject"/>
+        <collectionViewItem id="BL6-zq-0oB" customClass="LabelItem" customModule="Fruok" customModuleProvider="target">
+            <connections>
+                <outlet property="nameField" destination="MVQ-zr-79j" id="fUk-l5-JnI"/>
+                <outlet property="view" destination="h6v-eI-Dd3" id="plw-eM-YBJ"/>
+            </connections>
+        </collectionViewItem>
+        <customView id="h6v-eI-Dd3" customClass="LabelItemView" customModule="Fruok" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="113" height="29"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+            <subviews>
+                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="MVQ-zr-79j">
+                    <rect key="frame" x="4" y="6" width="105" height="17"/>
+                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="left" title="Label" drawsBackground="YES" id="8xH-Fi-PvX">
+                        <font key="font" metaFont="systemBold"/>
+                        <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                        <color key="backgroundColor" white="1" alpha="0.0" colorSpace="deviceWhite"/>
+                    </textFieldCell>
+                </textField>
+            </subviews>
+            <constraints>
+                <constraint firstItem="MVQ-zr-79j" firstAttribute="leading" secondItem="h6v-eI-Dd3" secondAttribute="leading" constant="4" id="8Fu-KM-DO7"/>
+                <constraint firstAttribute="trailing" secondItem="MVQ-zr-79j" secondAttribute="trailing" constant="4" id="Crk-Dj-IhD"/>
+                <constraint firstItem="MVQ-zr-79j" firstAttribute="centerY" secondItem="h6v-eI-Dd3" secondAttribute="centerY" id="Ko3-OR-0A3"/>
+            </constraints>
+            <connections>
+                <outlet property="menu" destination="uXG-Y1-UPP" id="W67-dz-B3t"/>
+            </connections>
+            <point key="canvasLocation" x="-156.5" y="134.5"/>
+        </customView>
+        <menu id="uXG-Y1-UPP">
+            <items>
+                <menuItem title="Edit..." id="a9X-hk-0Uk">
+                    <modifierMask key="keyEquivalentModifierMask"/>
+                    <connections>
+                        <action selector="edit:" target="-1" id="ua2-Eh-Nzv"/>
+                    </connections>
+                </menuItem>
+                <menuItem title="Delete" id="24R-kj-ftg">
+                    <modifierMask key="keyEquivalentModifierMask"/>
+                    <connections>
+                        <action selector="delete:" target="-1" id="fcz-pg-F7e"/>
+                    </connections>
+                </menuItem>
+            </items>
+        </menu>
+    </objects>
+</document>

@@ -27,6 +27,7 @@ class TaskDetailViewController: NSViewController, MVVMView {
 	@IBOutlet var nameLabel: NSTextField!
 	@IBOutlet var descriptionField: NSTextView!
 	@IBOutlet var subtasksEmbeddingView: NSView!
+	@IBOutlet var labelsEmbeddingView: NSView!
 
 	typealias VIEWMODEL = TaskDetailViewModel
 	private(set) var viewModel: TaskDetailViewModel?
@@ -104,6 +105,10 @@ class TaskDetailViewController: NSViewController, MVVMView {
 		let subtasksController = SubtasksViewController()
 		subtasksController.set(viewModel: self.viewModel!.subtasksViewModel())
 		self.subtasksController = subtasksController
+
+		let labelsController = LabelsViewController()
+		labelsController.set(viewModel: self.viewModel!.labelsViewModel())
+		self.labelsController = labelsController
 	}
 
 	var subtasksController: SubtasksViewController? {
@@ -116,6 +121,19 @@ class TaskDetailViewController: NSViewController, MVVMView {
 			current.view.translatesAutoresizingMaskIntoConstraints = false
 			self.subtasksEmbeddingView.addSubview(current.view)
 			self.subtasksEmbeddingView.addConstraints(NSLayoutConstraint.tr_fit(current.view))
+		}
+	}
+
+	var labelsController: LabelsViewController? {
+		willSet {
+			guard let current = self.labelsController else { return }
+			current.removeFromParentViewController()
+			current.view.removeFromSuperview()
+		} didSet {
+			guard let current = self.labelsController else { return }
+			current.view.translatesAutoresizingMaskIntoConstraints = false
+			self.labelsEmbeddingView.addSubview(current.view)
+			self.labelsEmbeddingView.addConstraints(NSLayoutConstraint.tr_fit(current.view))
 		}
 	}
 

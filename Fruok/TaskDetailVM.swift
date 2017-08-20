@@ -43,18 +43,18 @@ class TaskDetailViewModel: NSObject, MVVMViewModel {
 
 	func userRequestsTaskDeletion() {
 
+		let thisTask = self.task
+
 		let info = TaskDeleteConfirmationInfo(
 			question:
 
 			NSString(format: NSLocalizedString("Delete task %@?", comment: "Task deletion") as NSString, self.task.name ?? "") as String,
 			callback: { [weak self] in
 
-				guard let myself = self else {return}
-				
-				myself.dismiss.value = true
-				myself.task.state?.removeFromTasks(myself.task)
-				myself.task.managedObjectContext?.delete(myself.task)
-				myself.dismiss.value = true
+				self?.dismiss.value = true
+				thisTask.state?.removeFromTasks(thisTask)
+				thisTask.managedObjectContext?.delete(thisTask)
+				self?.dismiss.value = true
 		})
 
 		self.taskDeleteConfirmation.value = info

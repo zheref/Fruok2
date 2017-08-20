@@ -96,10 +96,15 @@ class KanbanViewModel: NSObject, CollectionDragAndDropViewModel {
 
 		if let otherTaskState = otherTaskState, let tasks = taskState.tasks {
 			otherTaskState.addToTasks(tasks)
+		} else if let tasks = taskState.tasks {
+			for task in tasks {
+				if let task = task as? Task {
+					taskState.managedObjectContext?.delete(task)
+				}
+			}
 		}
 
 		let project = taskState.project
-
 		taskState.project?.removeFromTaskStates(taskState)
 		taskState.managedObjectContext?.delete(taskState)
 		project?.purgeUnusedLabels()

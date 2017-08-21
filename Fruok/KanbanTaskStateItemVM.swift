@@ -20,7 +20,7 @@ class KanbanTaskStateItemViewModel: NSObject, MVVMViewModel {
 	required init(with model: TaskState) {
 		self.taskState = model
 		super.init()
-		self.reactive.keyPath(#keyPath(KanbanTaskStateItemViewModel.taskState.name), ofType: Optional<String>.self, context: .immediateOnMain).bidirectionalBind(to: self.name).dispose(in: bag)
+		self.reactive.keyPath(#keyPath(KanbanTaskStateItemViewModel.taskState.name), ofType: Optional<String>.self, context: .immediateOnMain).bind(to: self.name).dispose(in: bag)
 	}
 
 	let name = Observable<String?>(nil)

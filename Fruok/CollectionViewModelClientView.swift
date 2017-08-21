@@ -32,8 +32,12 @@ extension CollectionViewModelClientView {
 				self.collectionView.insertItems(at: set)
 
 			}, completionHandler: { _ in
-				NSAnimationContext.current().allowsImplicitAnimation = true
-				self.collectionView.scrollToItems(at: set, scrollPosition: .centeredHorizontally)
+
+				let liveSet = Set(set.filter{ $0.item < self.collectionView.numberOfItems(inSection: 0) })
+				if liveSet.count > 0 {
+					NSAnimationContext.current().allowsImplicitAnimation = true
+					self.collectionView.scrollToItems(at: set, scrollPosition: .centeredHorizontally)
+				}
 			})
 		case .deleteTasksAtIndexes(let indexSet)?:
 			self.collectionView.animator().performBatchUpdates({

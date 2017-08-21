@@ -53,6 +53,10 @@ class SubtasksViewModel: NSObject, CollectionViewModel {
 		guard let context = self.task.managedObjectContext else {
 			return
 		}
+
+		self.task.managedObjectContext?.undoManager?.beginUndoGrouping()
+		defer { self.task.managedObjectContext?.undoManager?.endUndoGrouping() }
+
 		let subtask: Subtask = context.insertObject() as Subtask
 		subtask.name = NSLocalizedString("Untitled", comment: "Untitled Subtask")
 		self.editableIndex = self.task.subtasks?.count
@@ -66,6 +70,9 @@ class SubtasksViewModel: NSObject, CollectionViewModel {
 	}
 
 	func userWantsDeleteSubtask(at index: Int) {
+
+		self.task.managedObjectContext?.undoManager?.beginUndoGrouping()
+		defer { self.task.managedObjectContext?.undoManager?.endUndoGrouping() }
 
 		guard let subtask = self.task.subtasks?[index] as? Subtask else { return }
 		self.task.removeFromSubtasks(subtask)

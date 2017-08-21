@@ -111,6 +111,9 @@ class LabelsViewModel: NSObject, CollectionDragAndDropViewModel {
 
 	func userWantsCommitEditLabel(with viewModel: LabelEditingItemViewModel) {
 
+		self.task.managedObjectContext?.undoManager?.beginUndoGrouping()
+		defer { self.task.managedObjectContext?.undoManager?.endUndoGrouping() }
+
 		guard let context = self.task.managedObjectContext else {
 			return
 		}
@@ -154,10 +157,11 @@ class LabelsViewModel: NSObject, CollectionDragAndDropViewModel {
 		}
 
 		self.task.managedObjectContext?.undoManager?.beginUndoGrouping()
+		defer { self.task.managedObjectContext?.undoManager?.endUndoGrouping() }
+
 		let project = self.task.state?.project
 		self.task.removeFromLabels(label)
 		project?.purgeUnusedLabels()
-		self.task.managedObjectContext?.undoManager?.endUndoGrouping()
 	}
 
 	func userWantsSetExisintLabelAtEditingPosition(editViewModel: LabelEditingItemViewModel) {
@@ -165,6 +169,9 @@ class LabelsViewModel: NSObject, CollectionDragAndDropViewModel {
 		guard let label = editViewModel.existingLabel, let editingIndex = self.indexBeingEdited.value else {
 			return
 		}
+
+		self.task.managedObjectContext?.undoManager?.beginUndoGrouping()
+		defer { self.task.managedObjectContext?.undoManager?.endUndoGrouping() }
 
 		self.indexBeingEdited.value = nil
 		self.supressTaskStateObservation = true

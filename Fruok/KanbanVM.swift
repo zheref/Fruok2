@@ -51,6 +51,9 @@ class KanbanViewModel: NSObject, CollectionDragAndDropViewModel {
 
 	func addTaskState() {
 
+		self.project.managedObjectContext?.undoManager?.beginUndoGrouping()
+		defer { self.project.managedObjectContext?.undoManager?.endUndoGrouping() }
+
 		if let context = self.project.managedObjectContext {
 			let state: TaskState = NSEntityDescription.insertNewObject(forEntityName: TaskState.entityName, into: context) as! TaskState
 			state.name = NSLocalizedString("Untitled", comment: "Untitled tasks tate")
@@ -94,6 +97,9 @@ class KanbanViewModel: NSObject, CollectionDragAndDropViewModel {
 
 	func doDeleteTaskState(_ taskState: TaskState, insertingTasksInto otherTaskState: TaskState?) {
 
+		self.project.managedObjectContext?.undoManager?.beginUndoGrouping()
+		defer { self.project.managedObjectContext?.undoManager?.endUndoGrouping() }
+
 		if let otherTaskState = otherTaskState, let tasks = taskState.tasks {
 			otherTaskState.addToTasks(tasks)
 		} else if let tasks = taskState.tasks {
@@ -108,7 +114,6 @@ class KanbanViewModel: NSObject, CollectionDragAndDropViewModel {
 		taskState.project?.removeFromTaskStates(taskState)
 		taskState.managedObjectContext?.delete(taskState)
 		project?.purgeUnusedLabels()
-
 	}
 
 	func taskStateViewModel(for index: Int) -> KanbanTaskStateItemViewModel? {

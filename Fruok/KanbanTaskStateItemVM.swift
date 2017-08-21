@@ -33,6 +33,10 @@ class KanbanTaskStateItemViewModel: NSObject, MVVMViewModel {
 	}
 
 	func userWantsAddTask() {
+
+		self.taskState.managedObjectContext?.undoManager?.beginUndoGrouping()
+		defer { self.taskState.managedObjectContext?.undoManager?.endUndoGrouping() }
+
 		if let context = self.taskState.managedObjectContext {
 			let task: Task = NSEntityDescription.insertNewObject(forEntityName: Task.entityName, into: context) as! Task
 			task.name = NSLocalizedString("Untitled", comment: "Untitled task")

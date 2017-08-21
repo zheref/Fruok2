@@ -2,7 +2,7 @@
 //  Project+CoreDataProperties.swift
 //  
 //
-//  Created by Matthias Keiser on 09.08.17.
+//  Created by Matthias Keiser on 21.08.17.
 //
 //
 
@@ -20,6 +20,8 @@ extension Project {
     @NSManaged public var codeName: String?
     @NSManaged public var commercialName: String?
     @NSManaged public var deadLine: NSDate?
+    @NSManaged public var duration: Int32
+    @NSManaged public var kind: Int32
     @NSManaged public var taskStates: NSOrderedSet?
 
 }

@@ -12,6 +12,7 @@ import Bond
 extension DocumentContentViewModel.ChildView {
 
 	public enum ChildViewIdentifier: String {
+		case project
 		case kanban
 		case statistics
 		case billing
@@ -20,6 +21,8 @@ extension DocumentContentViewModel.ChildView {
 	var storyboardIdentifier: String {
 
 		switch self {
+		case .project:
+			return "none"
 		case .kanban:
 			return ChildViewIdentifier.kanban.rawValue
 		case .statistics:
@@ -67,9 +70,17 @@ class DocumentContentViewController: NSViewController, MVVMView {
 		self.viewModel?.currentChildView.map { (childIdentifier) -> NSViewController? in
 
 			switch childIdentifier {
+			case .project?:
+				let controller = ProjectMetadataViewController()
+				if let viewModel = self.viewModel?.viewModelForProjectMetadata() {
+					controller.set(viewModel: viewModel)
+				}
+				return controller
 			case .kanban?:
-				let controller = self.storyboard?.instantiateController(withIdentifier: DocumentContentViewModel.ChildView.kanban.storyboardIdentifier) as! NSViewController
-				self.viewModel?.prepareCurentChildViewController(controller)
+				let controller = self.storyboard?.instantiateController(withIdentifier: DocumentContentViewModel.ChildView.kanban.storyboardIdentifier) as! KanbanViewController
+				if let viewModel = self.viewModel?.viewModelForKanBan() {
+					controller.set(viewModel: viewModel)
+				}
 				return controller
 			case .statistics?:
 				return nil

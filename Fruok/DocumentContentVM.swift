@@ -22,12 +22,13 @@ class DocumentContentViewModel: MVVMViewModel {
 
 	public enum ChildView: Int, OptionalRawValueRepresentable {
 
+		case project
 		case kanban
 		case statistics
 		case billing
 	}
 
-	private(set) var currentChildView: Observable<ChildView?> = Observable(.kanban)
+	private(set) var currentChildView: Observable<ChildView?> = Observable(.project)
 
 	func changeCurrentChildView(to childView: ChildView?) {
 
@@ -37,16 +38,15 @@ class DocumentContentViewModel: MVVMViewModel {
 		}
 	}
 
-	func prepareCurentChildViewController(_ controller: NSViewController) {
+	func viewModelForProjectMetadata() -> ProjectMetadataViewModel? {
 
-		switch self.currentChildView.value {
-		case .kanban?:
-			if let project = self.document.project {
-				let viewModel = KanbanViewModel(with: project)
-				(controller as! KanbanViewController).set(viewModel: viewModel)
-			}
-		default:
-			break
-		}
+		guard let project = self.document.project else { return nil }
+		return ProjectMetadataViewModel(with: project)
+	}
+
+	func viewModelForKanBan() -> KanbanViewModel? {
+
+		guard let project = self.document.project else { return nil }
+		return KanbanViewModel(with: project)
 	}
 }

@@ -51,6 +51,9 @@
 		D8339DEF1F4711E000EA5617 /* LabelItem.xib in Resources */ = {isa = PBXBuildFile; fileRef = D8339DEE1F4711E000EA5617 /* LabelItem.xib */; };
 		D8339DF11F47127800EA5617 /* LabelItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8339DF01F47127800EA5617 /* LabelItem.swift */; };
 		D8339DF31F477FE400EA5617 /* LabelsCollectionLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8339DF21F477FE400EA5617 /* LabelsCollectionLayout.swift */; };
+		D834BD371F4B0D58001B99D2 /* ProjectMetadataVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D834BD351F4B0D58001B99D2 /* ProjectMetadataVC.swift */; };
+		D834BD381F4B0D58001B99D2 /* ProjectMetadataVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = D834BD361F4B0D58001B99D2 /* ProjectMetadataVC.xib */; };
+		D834BD3A1F4B3594001B99D2 /* ProjectMetadataVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = D834BD391F4B3594001B99D2 /* ProjectMetadataVM.swift */; };
 		D8388E401F37905B004A2DA3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8388E3F1F37905B004A2DA3 /* AppDelegate.swift */; };
 		D8388E421F37905B004A2DA3 /* DocumentContentVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8388E411F37905B004A2DA3 /* DocumentContentVC.swift */; };
 		D8388E441F37905B004A2DA3 /* FruokDocument.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8388E431F37905B004A2DA3 /* FruokDocument.swift */; };
@@ -160,6 +163,9 @@
 		D8339DEE1F4711E000EA5617 /* LabelItem.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LabelItem.xib; sourceTree = "<group>"; };
 		D8339DF01F47127800EA5617 /* LabelItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LabelItem.swift; sourceTree = "<group>"; };
 		D8339DF21F477FE400EA5617 /* LabelsCollectionLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LabelsCollectionLayout.swift; sourceTree = "<group>"; };
+		D834BD351F4B0D58001B99D2 /* ProjectMetadataVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProjectMetadataVC.swift; sourceTree = "<group>"; };
+		D834BD361F4B0D58001B99D2 /* ProjectMetadataVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ProjectMetadataVC.xib; sourceTree = "<group>"; };
+		D834BD391F4B3594001B99D2 /* ProjectMetadataVM.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProjectMetadataVM.swift; sourceTree = "<group>"; };
 		D8388E3C1F37905B004A2DA3 /* Fruok.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Fruok.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D8388E3F1F37905B004A2DA3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D8388E411F37905B004A2DA3 /* DocumentContentVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DocumentContentVC.swift; sourceTree = "<group>"; };
@@ -376,6 +382,16 @@
 			name = LabelItem;
 			sourceTree = "<group>";
 		};
+		D834BD341F4B0C9C001B99D2 /* ProjectOverview */ = {
+			isa = PBXGroup;
+			children = (
+				D834BD351F4B0D58001B99D2 /* ProjectMetadataVC.swift */,
+				D834BD361F4B0D58001B99D2 /* ProjectMetadataVC.xib */,
+				D834BD391F4B3594001B99D2 /* ProjectMetadataVM.swift */,
+			);
+			name = ProjectOverview;
+			sourceTree = "<group>";
+		};
 		D8388E331F37905B004A2DA3 = {
 			isa = PBXGroup;
 			children = (
@@ -450,6 +466,7 @@
 				D8C2AD3B1F3BD271002D75B2 /* Shared */,
 				D82E214A1F3BEC5D00F601DD /* DocumentWindow */,
 				D82ECF3A1F37AECE008251C2 /* DocumentContent */,
+				D834BD341F4B0C9C001B99D2 /* ProjectOverview */,
 				D8C2AD0B1F38FB70002D75B2 /* KanbanView */,
 				D8C2AD361F3BAAE6002D75B2 /* KanbanTaskStateItem */,
 				D82E21511F3C53C200F601DD /* TaskCollectionView */,
@@ -701,6 +718,7 @@
 				D8F7B4721F423C4E00060F08 /* DeleteTaskStateConfirmationDialog.xib in Resources */,
 				D8388E4C1F37905B004A2DA3 /* Main.storyboard in Resources */,
 				D8339DEF1F4711E000EA5617 /* LabelItem.xib in Resources */,
+				D834BD381F4B0D58001B99D2 /* ProjectMetadataVC.xib in Resources */,
 				D8F7B47F1F44EE2800060F08 /* SubtasksVC.xib in Resources */,
 				D8339DE71F46FA9700EA5617 /* LabelsVC.xib in Resources */,
 			);
@@ -906,9 +924,11 @@
 				D82ECF371F37985D008251C2 /* TaskState+CoreDataClass.swift in Sources */,
 				D8C2AD0F1F39007E002D75B2 /* DocumentContentVM.swift in Sources */,
 				D82E21771F3D02E900F601DD /* TaskDetailVM.swift in Sources */,
+				D834BD371F4B0D58001B99D2 /* ProjectMetadataVC.swift in Sources */,
 				D8C2AD1F1F3A4E20002D75B2 /* NSView+SubviewHelpers.m in Sources */,
 				D8FC65171F48C2FA0065D566 /* LabelEditingItemVM.swift in Sources */,
 				D82E21791F3E6C5300F601DD /* UTI.swift in Sources */,
+				D834BD3A1F4B3594001B99D2 /* ProjectMetadataVM.swift in Sources */,
 				D8C2AD341F3BA78B002D75B2 /* NSManagedObjectModel+KCOrderedAccessorFix.m in Sources */,
 				D8C2AD221F3A571D002D75B2 /* OptionalRawValueInitializer.swift in Sources */,
 				D82E21691F3C5CE400F601DD /* LabelColor+CoreDataProperties.swift in Sources */,

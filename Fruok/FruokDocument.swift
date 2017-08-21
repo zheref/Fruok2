@@ -14,6 +14,12 @@ enum FruokDocumentError: Error {
 	case unhandledDocumentType
 }
 
+enum FruokProjectType: Int, OptionalRawValueRepresentable {
+	case software
+	case website
+	case film
+}
+
 class FruokDocumentObjectContext: NSManagedObjectContext {
 
 	weak var delegate: FruokDocumentObjectContextDelegate?

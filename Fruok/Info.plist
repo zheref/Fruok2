@@ -24,7 +24,7 @@
 				<string>com.tristan.fruok.document</string>
 			</array>
 			<key>LSTypeIsPackage</key>
-			<false/>
+			<integer>1</integer>
 			<key>NSDocumentClass</key>
 			<string>$(PRODUCT_MODULE_NAME).FruokDocument</string>
 			<key>NSPersistentStoreTypeKey</key>
@@ -60,7 +60,7 @@
 		<dict>
 			<key>UTTypeConformsTo</key>
 			<array>
-				<string>public.data</string>
+				<string>com.apple.package</string>
 			</array>
 			<key>UTTypeDescription</key>
 			<string>Fruok Document</string>

@@ -9,16 +9,6 @@
 import Cocoa
 import ReactiveKit
 
-extension NSComboBox {
-
-	func tr_setExpanded() {
-
-		if let ax = NSAccessibilityUnignoredDescendant(self) as? NSObject {
-			ax.accessibilitySetValue(NSNumber(value: true), forAttribute: NSAccessibilityExpandedAttribute)
-		}
- }
-}
-
 class LabelItem: NSCollectionViewItem, MVVMView {
 
 	@IBOutlet weak var nameField: NSTextField!

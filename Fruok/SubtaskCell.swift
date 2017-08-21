@@ -25,7 +25,11 @@ class SubtaskCell: NSTableCellView, MVVMView {
 	@IBOutlet var nameEditingField: NSTextField!
 
 	typealias VIEWMODEL = SubtaskViewModel
-	private(set) var viewModel: SubtaskViewModel?
+	private(set) var viewModel: SubtaskViewModel? {
+		willSet {
+			self.reuseBag.dispose()
+		}
+	}
 	internal func set(viewModel: SubtaskViewModel) {
 
 		self.reuseBag.dispose()

@@ -93,6 +93,7 @@ class FruokDocument: NSDocument, FruokDocumentObjectContextDelegate {
 		let context = FruokDocumentObjectContext(concurrencyType: .mainQueueConcurrencyType)
 		context.delegate = self
 		context.persistentStoreCoordinator = coordinator
+		context.undoManager = self.undoManager
 
 		self.managedObjectContext = context
 	}

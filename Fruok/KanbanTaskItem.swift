@@ -52,7 +52,6 @@ class KanbanTaskItem: NSCollectionViewItem, MVVMView {
 			}
 		}.dispose(in: reuseBag)
 
-		//self.nameLabel.reactive.editingString.bidirectionalMap(to: {$0}, from: {$0 ?? ""}).bidirectionalBind(to: self.viewModel!.taskName)
 		self.viewModel!.taskName.map({$0 ?? ""}).bind(to: self.nameLabel.reactive.editingString).dispose(in: reuseBag)
 		self.viewModel!.taskDescription.map{$0 ?? ""}.bind(to: self.descriptionLabel).dispose(in: reuseBag)
 	}

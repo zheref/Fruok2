@@ -19,7 +19,7 @@ class KanbanTaskItemViewModel: NSObject, MVVMViewModel {
 		super.init()
 
 		self.reactive.keyPath(#keyPath(KanbanTaskItemViewModel.task.name), ofType: Optional<String>.self, context: .immediateOnMain)
-			.bidirectionalBind(to: self.taskName)
+			.bind(to: self.taskName)
 		.dispose(in: bag)
 
 		self.reactive.keyPath(#keyPath(KanbanTaskItemViewModel.task.descriptionString.string), ofType: Optional<String>.self, context: .immediateOnMain).bind(to: self.taskDescription)

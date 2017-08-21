@@ -91,7 +91,7 @@ class TasksCollectionViewController: NSViewController, CollectionViewModelClient
 
 			DispatchQueue.main.async {
 
-				guard let taskIndex = taskIndex else {
+				guard let taskIndex = taskIndex, taskIndex < self.collectionView.numberOfItems(inSection: 0) else {
 					return
 				}
 

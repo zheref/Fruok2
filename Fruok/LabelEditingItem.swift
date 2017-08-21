@@ -16,10 +16,13 @@ class LabelEditingCell: NSCollectionViewItem, MVVMView {
 
 	@IBOutlet weak var labelComboBox: NSComboBox!
 	typealias VIEWMODEL = LabelEditingItemViewModel
-	private(set) var viewModel: LabelEditingItemViewModel?
+	private(set) var viewModel: LabelEditingItemViewModel? {
+		willSet {
+			self.reuseBag.dispose()
+		}
+	}
 	func set(viewModel: LabelEditingItemViewModel) {
 		self.viewModel = viewModel
-		self.reuseBag.dispose()
 		self.connectVMIfReady()
 	}
 

@@ -13,10 +13,13 @@ class LabelItem: NSCollectionViewItem, MVVMView {
 
 	@IBOutlet weak var nameField: NSTextField!
 	typealias VIEWMODEL = LabelItemViewModel
-	private(set) var viewModel: LabelItemViewModel?
+	private(set) var viewModel: LabelItemViewModel? {
+		willSet {
+			self.reuseBag.dispose()
+		}
+	}
 	func set(viewModel: LabelItemViewModel) {
 		self.viewModel = viewModel
-		self.reuseBag.dispose()
 		self.connectVMIfReady()
 	}
     override func viewDidLoad() {
@@ -31,7 +34,7 @@ class LabelItem: NSCollectionViewItem, MVVMView {
 
 	override func prepareForReuse() {
 		super.prepareForReuse()
-		self.reuseBag.dispose()
+		self.viewModel = nil
 	}
 
 	func connectVM() {

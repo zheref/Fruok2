@@ -37,6 +37,11 @@ class KanbanTaskItem: NSCollectionViewItem, MVVMView {
 
 	private let reuseBag = DisposeBag()
 
+	override func prepareForReuse() {
+		super.prepareForReuse()
+		self.viewModel = nil
+	}
+
 	func connectVM() {
 
 		self.viewModel!.showTaskDetails.observeNext { show in

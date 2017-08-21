@@ -16,21 +16,15 @@ class TaskDetailViewModel: NSObject, MVVMViewModel {
 		self.task = model
 		super.init()
 
-		self.reactive.keyPath(#keyPath(TaskDetailViewModel.task.name), ofType: Optional<String>.self, context: .immediateOnMain).bidirectionalBind(to: self.name)
+		self.reactive.keyPath(#keyPath(TaskDetailViewModel.task.name), ofType: Optional<String>.self, context: .immediateOnMain).bind(to: self.name)
 			.dispose(in: bag)
 
 		self.reactive.keyPath(#keyPath(TaskDetailViewModel.task.descriptionString), ofType: Optional<NSAttributedString>.self, context: .immediateOnMain)
-			.bidirectionalBind(to: self.descriptionText)
+			.bind(to: self.descriptionText)
 		.dispose(in: bag)
-
-		self.reactive.keyPath(#keyPath(TaskDetailViewModel.task.state.name), ofType: Optional<String>.self, context: .immediateOnMain)
-			.bidirectionalBind(to: self.stateName)
-			.dispose(in: bag)
-
 	}
 
 	let name = Observable<String?>("")
-	let stateName = Observable<String?>("")
 	let descriptionText = Observable<NSAttributedString?>(NSAttributedString(string:""))
 	let dismiss = Observable<Bool>(false)
 
@@ -72,6 +66,13 @@ class TaskDetailViewModel: NSObject, MVVMViewModel {
 	func labelsViewModel() -> LabelsViewModel {
 
 		return LabelsViewModel(with: self.task)
+	}
+
+	func userWantsChangeDescriptionText(attributedString: NSAttributedString) {
+		self.task.descriptionString = attributedString
+	}
+	func userWantsChangeName(name: String) {
+		self.task.name = name
 	}
 
 }

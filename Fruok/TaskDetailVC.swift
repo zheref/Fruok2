@@ -53,7 +53,7 @@ class TaskDetailViewController: NSViewController, MVVMView {
 		self.viewModel!.name.map({$0 ?? ""}).bind(to: self.nameLabel.reactive.stringValue)
 		self.nameLabel.reactive.textDidEndEditing.observeNext { [weak self] (textField, flag) in
 
-			self?.viewModel?.name.value = textField.stringValue
+			self?.viewModel?.userWantsChangeName(name: textField.stringValue)
 		}.dispose(in: bag)
 
 		self.viewModel!.descriptionText.map({$0 ?? NSAttributedString()}).observeNext { [weak self] (attrString) in
@@ -89,7 +89,7 @@ class TaskDetailViewController: NSViewController, MVVMView {
 
 			if let mySelf = self {
 				mySelf.suppressTextChange = true
-				mySelf.viewModel!.descriptionText.value = mySelf.descriptionField.attributedString()
+				mySelf.viewModel?.userWantsChangeDescriptionText(attributedString: mySelf.descriptionField.attributedString())
 				mySelf.suppressTextChange = false
 			}
 		}.dispose(in: bag)

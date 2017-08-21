@@ -85,6 +85,7 @@ class KanbanTaskStateItem: NSCollectionViewItem, MVVMView {
 
 	@IBAction func menuAction(_ sender: Any) {
 
+		self.view.window?.makeFirstResponder(self.view)
 		self.itemMenu.popUp(positioning: nil, at: .zero, in: sender as? NSView)
 	}
 

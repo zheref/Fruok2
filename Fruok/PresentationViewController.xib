@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="11762" systemVersion="15G1611" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
+    <dependencies>
+        <deployment identifier="macosx"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="11762"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <customObject id="-2" userLabel="File's Owner" customClass="PresentationViewController" customModule="Fruok" customModuleProvider="target">
+            <connections>
+                <outlet property="scrollEmbeddingView" destination="PVe-WS-0yl" id="cJ6-kG-1aU"/>
+                <outlet property="scrollView" destination="M7H-DM-oZC" id="JUg-Fp-sgR"/>
+                <outlet property="view" destination="Hz6-mo-xeY" id="0bl-1N-x8E"/>
+            </connections>
+        </customObject>
+        <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
+        <customObject id="-3" userLabel="Application" customClass="NSObject"/>
+        <customView id="Hz6-mo-xeY" customClass="PresentationView" customModule="Fruok" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="520" height="312"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+            <subviews>
+                <customView translatesAutoresizingMaskIntoConstraints="NO" id="PVe-WS-0yl" customClass="RoundedRectView" customModule="Fruok" customModuleProvider="target">
+                    <rect key="frame" x="50" y="50" width="420" height="212"/>
+                    <subviews>
+                        <scrollView horizontalHuggingPriority="1000" verticalHuggingPriority="1000" horizontalCompressionResistancePriority="751" verticalCompressionResistancePriority="751" borderType="none" horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" usesPredominantAxisScrolling="NO" horizontalScrollElasticity="allowed" verticalScrollElasticity="allowed" translatesAutoresizingMaskIntoConstraints="NO" id="M7H-DM-oZC">
+                            <rect key="frame" x="10" y="0.0" width="400" height="212"/>
+                            <clipView key="contentView" id="ABs-6I-eNw">
+                                <rect key="frame" x="0.0" y="0.0" width="400" height="212"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <subviews>
+                                    <view fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="XTq-qV-XmF">
+                                        <rect key="frame" x="0.0" y="0.0" width="385" height="197"/>
+                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                    </view>
+                                </subviews>
+                            </clipView>
+                            <scroller key="horizontalScroller" verticalHuggingPriority="750" horizontal="YES" id="KR2-77-LGo">
+                                <rect key="frame" x="0.0" y="196" width="400" height="16"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                            </scroller>
+                            <scroller key="verticalScroller" verticalHuggingPriority="750" doubleValue="1" horizontal="NO" id="bts-qo-mmU">
+                                <rect key="frame" x="384" y="0.0" width="16" height="212"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                            </scroller>
+                        </scrollView>
+                    </subviews>
+                    <constraints>
+                        <constraint firstItem="M7H-DM-oZC" firstAttribute="top" secondItem="PVe-WS-0yl" secondAttribute="top" id="Ryg-CK-bQH"/>
+                        <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="420" id="al3-fT-1gz"/>
+                        <constraint firstAttribute="trailing" secondItem="M7H-DM-oZC" secondAttribute="trailing" constant="10" id="fTV-vw-mqJ"/>
+                        <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="212" id="gqr-wu-ViP"/>
+                        <constraint firstAttribute="bottom" secondItem="M7H-DM-oZC" secondAttribute="bottom" id="jcD-IZ-FQz"/>
+                        <constraint firstItem="M7H-DM-oZC" firstAttribute="leading" secondItem="PVe-WS-0yl" secondAttribute="leading" constant="10" id="pzK-yl-9PQ"/>
+                    </constraints>
+                </customView>
+            </subviews>
+            <constraints>
+                <constraint firstItem="PVe-WS-0yl" firstAttribute="centerX" secondItem="Hz6-mo-xeY" secondAttribute="centerX" id="2bF-2N-o4s"/>
+                <constraint firstItem="PVe-WS-0yl" firstAttribute="top" relation="greaterThanOrEqual" secondItem="Hz6-mo-xeY" secondAttribute="top" constant="50" id="83F-dq-Anb"/>
+                <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="PVe-WS-0yl" secondAttribute="bottom" constant="50" id="9GB-yv-eLU"/>
+                <constraint firstItem="PVe-WS-0yl" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="Hz6-mo-xeY" secondAttribute="leading" constant="50" id="Mbq-iW-sIB"/>
+                <constraint firstItem="PVe-WS-0yl" firstAttribute="centerY" secondItem="Hz6-mo-xeY" secondAttribute="centerY" id="bcu-pa-WUg"/>
+                <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="PVe-WS-0yl" secondAttribute="trailing" constant="50" id="dEb-YA-Lk8"/>
+            </constraints>
+        </customView>
+    </objects>
+</document>

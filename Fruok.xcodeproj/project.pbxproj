@@ -54,6 +54,9 @@
 		D834BD371F4B0D58001B99D2 /* ProjectMetadataVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D834BD351F4B0D58001B99D2 /* ProjectMetadataVC.swift */; };
 		D834BD381F4B0D58001B99D2 /* ProjectMetadataVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = D834BD361F4B0D58001B99D2 /* ProjectMetadataVC.xib */; };
 		D834BD3A1F4B3594001B99D2 /* ProjectMetadataVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = D834BD391F4B3594001B99D2 /* ProjectMetadataVM.swift */; };
+		D834BD4C1F4C851A001B99D2 /* DetailPresentationAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D834BD4B1F4C851A001B99D2 /* DetailPresentationAnimator.swift */; };
+		D834BD4F1F4CA17D001B99D2 /* PresentationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D834BD4D1F4CA17D001B99D2 /* PresentationViewController.swift */; };
+		D834BD501F4CA17D001B99D2 /* PresentationViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D834BD4E1F4CA17D001B99D2 /* PresentationViewController.xib */; };
 		D8388E401F37905B004A2DA3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8388E3F1F37905B004A2DA3 /* AppDelegate.swift */; };
 		D8388E421F37905B004A2DA3 /* DocumentContentVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8388E411F37905B004A2DA3 /* DocumentContentVC.swift */; };
 		D8388E441F37905B004A2DA3 /* FruokDocument.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8388E431F37905B004A2DA3 /* FruokDocument.swift */; };
@@ -166,6 +169,9 @@
 		D834BD351F4B0D58001B99D2 /* ProjectMetadataVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProjectMetadataVC.swift; sourceTree = "<group>"; };
 		D834BD361F4B0D58001B99D2 /* ProjectMetadataVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ProjectMetadataVC.xib; sourceTree = "<group>"; };
 		D834BD391F4B3594001B99D2 /* ProjectMetadataVM.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProjectMetadataVM.swift; sourceTree = "<group>"; };
+		D834BD4B1F4C851A001B99D2 /* DetailPresentationAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailPresentationAnimator.swift; sourceTree = "<group>"; };
+		D834BD4D1F4CA17D001B99D2 /* PresentationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PresentationViewController.swift; sourceTree = "<group>"; };
+		D834BD4E1F4CA17D001B99D2 /* PresentationViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PresentationViewController.xib; sourceTree = "<group>"; };
 		D8388E3C1F37905B004A2DA3 /* Fruok.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Fruok.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D8388E3F1F37905B004A2DA3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D8388E411F37905B004A2DA3 /* DocumentContentVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DocumentContentVC.swift; sourceTree = "<group>"; };
@@ -481,6 +487,9 @@
 		D8C2AD0B1F38FB70002D75B2 /* KanbanView */ = {
 			isa = PBXGroup;
 			children = (
+				D834BD4D1F4CA17D001B99D2 /* PresentationViewController.swift */,
+				D834BD4E1F4CA17D001B99D2 /* PresentationViewController.xib */,
+				D834BD4B1F4C851A001B99D2 /* DetailPresentationAnimator.swift */,
 				D8C2AD371F3BABE6002D75B2 /* KanbanCollectionLayout.swift */,
 				D8C2AD0C1F38FB97002D75B2 /* KanbanVC.swift */,
 				D8C2AD251F3A650D002D75B2 /* KanbanVM.swift */,
@@ -720,6 +729,7 @@
 				D8339DEF1F4711E000EA5617 /* LabelItem.xib in Resources */,
 				D834BD381F4B0D58001B99D2 /* ProjectMetadataVC.xib in Resources */,
 				D8F7B47F1F44EE2800060F08 /* SubtasksVC.xib in Resources */,
+				D834BD501F4CA17D001B99D2 /* PresentationViewController.xib in Resources */,
 				D8339DE71F46FA9700EA5617 /* LabelsVC.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -919,9 +929,11 @@
 				D82E216A1F3C5CE400F601DD /* Project+CoreDataProperties.swift in Sources */,
 				D8339DE61F46FA9700EA5617 /* LabelsVC.swift in Sources */,
 				D8C2AD3D1F3BD284002D75B2 /* FirstResponderView.swift in Sources */,
+				D834BD4C1F4C851A001B99D2 /* DetailPresentationAnimator.swift in Sources */,
 				D8C2AD381F3BABE6002D75B2 /* KanbanCollectionLayout.swift in Sources */,
 				D8339DE91F46FB0500EA5617 /* LabelsVM.swift in Sources */,
 				D82ECF371F37985D008251C2 /* TaskState+CoreDataClass.swift in Sources */,
+				D834BD4F1F4CA17D001B99D2 /* PresentationViewController.swift in Sources */,
 				D8C2AD0F1F39007E002D75B2 /* DocumentContentVM.swift in Sources */,
 				D82E21771F3D02E900F601DD /* TaskDetailVM.swift in Sources */,
 				D834BD371F4B0D58001B99D2 /* ProjectMetadataVC.swift in Sources */,

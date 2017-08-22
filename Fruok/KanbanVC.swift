@@ -112,7 +112,7 @@ class KanbanViewController: NSViewController, CollectionViewModelClientView {
 		let taskViewModel = itemViewModel.viewModelForTaskDetail()
 		let detailController = TaskDetailViewController()
 		detailController.set(viewModel: taskViewModel)
-		self.presentViewController(detailController, asPopoverRelativeTo: taskItem.view.bounds, of: taskItem.view, preferredEdge: .maxX, behavior: .transient)
+		self.presentViewController(detailController, animator: DetailPresentationAnimator())
 	}
 }
 

@@ -58,6 +58,7 @@
                         <constraint firstItem="2sT-8o-BVO" firstAttribute="centerY" secondItem="xau-bX-rfq" secondAttribute="centerY" id="6uT-ci-CgR"/>
                         <constraint firstItem="2sT-8o-BVO" firstAttribute="leading" secondItem="xau-bX-rfq" secondAttribute="leading" constant="21" id="JwO-yf-hdL"/>
                         <constraint firstAttribute="height" constant="38" id="ghS-xv-gtr"/>
+                        <constraint firstAttribute="width" constant="480" id="zMD-nZ-lhZ"/>
                     </constraints>
                 </customView>
                 <scrollView horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" hasHorizontalScroller="NO" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DvX-Vn-Tn6">
@@ -102,6 +103,9 @@
                         </textField>
                         <customView translatesAutoresizingMaskIntoConstraints="NO" id="tNJ-hI-t07">
                             <rect key="frame" x="21" y="0.0" width="438" height="255"/>
+                            <constraints>
+                                <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="100" id="17K-zw-fSr"/>
+                            </constraints>
                         </customView>
                     </subviews>
                     <constraints>

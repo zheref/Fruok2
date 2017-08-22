@@ -17,7 +17,9 @@ class LabelItemViewModel: NSObject, MVVMViewModel {
 		self.label = model
 		super.init()
 
-		self.reactive.keyPath(#keyPath(LabelItemViewModel.label.name), ofType: String.self, context: .immediateOnMain).bind(to: self.name)
+		self.reactive.keyPath(#keyPath(LabelItemViewModel.label.name), ofType: Optional<String>.self, context: .immediateOnMain)
+			.map{ $0 ?? NSLocalizedString("Untitled", comment: "Untitled Label")}
+			.bind(to: self.name)
 
 		self.reactive.keyPath(#keyPath(LabelItemViewModel.label.color), ofType: Optional<LabelColor>.self, context: .immediateOnMain)
 			.map{ labelColor in

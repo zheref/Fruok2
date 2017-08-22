@@ -68,7 +68,7 @@ class TaskDetailViewController: NSViewController, MVVMView {
 
 		self.viewModel?.taskDeleteConfirmation.observeNext { [weak self] info in
 
-			guard let info = info, let window = self?.view.window?.parent else { return }
+			guard let info = info, let window = (self?.view.window?.parent ?? self?.view.window) else { return }
 
 			let alert = NSAlert()
 			alert.alertStyle = .informational
@@ -99,7 +99,7 @@ class TaskDetailViewController: NSViewController, MVVMView {
 			return doDismiss
 		}).bind(to: self) { me, dismiss in
 
-			me.dismiss(nil)
+			me.presenting?.dismissViewController(me)
 		}
 
 		let subtasksController = SubtasksViewController()

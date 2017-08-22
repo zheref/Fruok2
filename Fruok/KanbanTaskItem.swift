@@ -57,6 +57,7 @@ class KanbanTaskItem: NSCollectionViewItem, MVVMView {
 	}
 	@IBAction func showTaskDetailAction(_ sender: Any) {
 
+		self.view.window?.makeFirstResponder(self.view)
 		self.viewModel?.userRequestedTaskDetails()
 	}
 

@@ -56,6 +56,11 @@ class PresentationViewController: NSViewController {
 			height.priority = 100
 
 			self.view.addConstraints([width, height])
+			self.view.needsLayout = true
+			self.view.layoutSubtreeIfNeeded()
+			let scrollPoint = CGPoint(x: 0, y: wrappedController.view.frame.maxY - self.scrollView.bounds.height)
+			self.scrollView.contentView.scroll(to: scrollPoint)
+			self.scrollView.reflectScrolledClipView(self.scrollView.contentView)
 		}
 	}
 

@@ -44,7 +44,6 @@ class SubtaskCell: NSTableCellView, MVVMView {
 				self?.nameLabel.isHidden = true
 				self?.nameEditingField.isHidden = false
 				self?.nameEditingField.isEnabled = true
-				let res = self?.window?.makeFirstResponder(self?.nameEditingField)
 			} else {
 				self?.nameLabel.isHidden = false
 				self?.nameEditingField.isHidden = true

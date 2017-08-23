@@ -50,10 +50,10 @@ class PresentationViewController: NSViewController {
 			self.scrollView.documentView = wrappedController.view
 
 			let width = NSLayoutConstraint(item: wrappedController.view, attribute: .width, relatedBy: .equal, toItem: self.scrollView.contentView, attribute: .width, multiplier: 1.0, constant: 0)
-			width.priority = 600
+			width.priority = 100
 
 			let height = NSLayoutConstraint(item: wrappedController.view, attribute: .height, relatedBy: .equal, toItem: self.scrollView.contentView, attribute: .height, multiplier: 1.0, constant: 0)
-			height.priority = 600
+			height.priority = 100
 
 			self.view.addConstraints([width, height])
 		}

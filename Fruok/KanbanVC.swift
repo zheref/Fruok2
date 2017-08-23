@@ -106,6 +106,15 @@ class KanbanViewController: NSViewController, CollectionViewModelClientView {
 
 	@IBAction func showTaskDetails(_ sender: Any?) {
 
+		if let presentedViewControllers = self.presentedViewControllers {
+
+			for presented in presentedViewControllers {
+
+				if presented is TaskDetailViewController {
+					return
+				}
+			}
+		}
 		guard let taskItem = sender as? KanbanTaskItem, let itemViewModel = taskItem.viewModel else {
 			return
 		}

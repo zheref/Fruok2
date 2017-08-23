@@ -2,7 +2,7 @@
 //  Task+CoreDataProperties.swift
 //  
 //
-//  Created by Matthias Keiser on 19.08.17.
+//  Created by Matthias Keiser on 22.08.17.
 //
 //
 
@@ -16,9 +16,45 @@ extension Task {
         return NSFetchRequest<Task>(entityName: "Task");
     }
 
+    @NSManaged public var labels: NSOrderedSet?
     @NSManaged public var state: TaskState?
     @NSManaged public var subtasks: NSOrderedSet?
-    @NSManaged public var labels: NSOrderedSet?
+    @NSManaged public var attachments: NSOrderedSet?
+
+}
+
+// MARK: Generated accessors for labels
+extension Task {
+
+    @objc(insertObject:inLabelsAtIndex:)
+    @NSManaged public func insertIntoLabels(_ value: Label, at idx: Int)
+
+    @objc(removeObjectFromLabelsAtIndex:)
+    @NSManaged public func removeFromLabels(at idx: Int)
+
+    @objc(insertLabels:atIndexes:)
+    @NSManaged public func insertIntoLabels(_ values: [Label], at indexes: NSIndexSet)
+
+    @objc(removeLabelsAtIndexes:)
+    @NSManaged public func removeFromLabels(at indexes: NSIndexSet)
+
+    @objc(replaceObjectInLabelsAtIndex:withObject:)
+    @NSManaged public func replaceLabels(at idx: Int, with value: Label)
+
+    @objc(replaceLabelsAtIndexes:withLabels:)
+    @NSManaged public func replaceLabels(at indexes: NSIndexSet, with values: [Label])
+
+    @objc(addLabelsObject:)
+    @NSManaged public func addToLabels(_ value: Label)
+
+    @objc(removeLabelsObject:)
+    @NSManaged public func removeFromLabels(_ value: Label)
+
+    @objc(addLabels:)
+    @NSManaged public func addToLabels(_ values: NSOrderedSet)
+
+    @objc(removeLabels:)
+    @NSManaged public func removeFromLabels(_ values: NSOrderedSet)
 
 }
 
@@ -57,37 +93,37 @@ extension Task {
 
 }
 
-// MARK: Generated accessors for labels
+// MARK: Generated accessors for attachments
 extension Task {
 
-    @objc(insertObject:inLabelsAtIndex:)
-    @NSManaged public func insertIntoLabels(_ value: Label, at idx: Int)
+    @objc(insertObject:inAttachmentsAtIndex:)
+    @NSManaged public func insertIntoAttachments(_ value: Attachment, at idx: Int)
 
-    @objc(removeObjectFromLabelsAtIndex:)
-    @NSManaged public func removeFromLabels(at idx: Int)
+    @objc(removeObjectFromAttachmentsAtIndex:)
+    @NSManaged public func removeFromAttachments(at idx: Int)
 
-    @objc(insertLabels:atIndexes:)
-    @NSManaged public func insertIntoLabels(_ values: [Label], at indexes: NSIndexSet)
+    @objc(insertAttachments:atIndexes:)
+    @NSManaged public func insertIntoAttachments(_ values: [Attachment], at indexes: NSIndexSet)
 
-    @objc(removeLabelsAtIndexes:)
-    @NSManaged public func removeFromLabels(at indexes: NSIndexSet)
+    @objc(removeAttachmentsAtIndexes:)
+    @NSManaged public func removeFromAttachments(at indexes: NSIndexSet)
 
-    @objc(replaceObjectInLabelsAtIndex:withObject:)
-    @NSManaged public func replaceLabels(at idx: Int, with value: Label)
+    @objc(replaceObjectInAttachmentsAtIndex:withObject:)
+    @NSManaged public func replaceAttachments(at idx: Int, with value: Attachment)
 
-    @objc(replaceLabelsAtIndexes:withLabels:)
-    @NSManaged public func replaceLabels(at indexes: NSIndexSet, with values: [Label])
+    @objc(replaceAttachmentsAtIndexes:withAttachments:)
+    @NSManaged public func replaceAttachments(at indexes: NSIndexSet, with values: [Attachment])
 
-    @objc(addLabelsObject:)
-    @NSManaged public func addToLabels(_ value: Label)
+    @objc(addAttachmentsObject:)
+    @NSManaged public func addToAttachments(_ value: Attachment)
 
-    @objc(removeLabelsObject:)
-    @NSManaged public func removeFromLabels(_ value: Label)
+    @objc(removeAttachmentsObject:)
+    @NSManaged public func removeFromAttachments(_ value: Attachment)
 
-    @objc(addLabels:)
-    @NSManaged public func addToLabels(_ values: NSOrderedSet)
+    @objc(addAttachments:)
+    @NSManaged public func addToAttachments(_ values: NSOrderedSet)
 
-    @objc(removeLabels:)
-    @NSManaged public func removeFromLabels(_ values: NSOrderedSet)
+    @objc(removeAttachments:)
+    @NSManaged public func removeFromAttachments(_ values: NSOrderedSet)
 
 }

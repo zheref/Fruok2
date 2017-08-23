@@ -7,6 +7,7 @@
 //
 
 import Cocoa
+import ReactiveKit // for result type
 
 enum FruokDocumentError: Error {
 	case coreDataModelNotFound
@@ -37,6 +38,9 @@ class FruokDocumentObjectContext: NSManagedObjectContext {
 protocol FruokDocumentObjectContextDelegate: class {
 
 	func contextCreatePersistenStore(_ context: NSManagedObjectContext) throws
+	func context(_ context: NSManagedObjectContext, urlForExistingAttachmentWithIdentifier identifier: String, name: String) -> URL?
+	func context(_ context: NSManagedObjectContext, copyFileURLSToInbox urls: [URL], callback: @escaping ([Result<AttachmentCopyResult, NSError>]) -> Void)
+	func context(_ context: NSManagedObjectContext, deleteAttachments attachmentInfos: [(identifier: String, filename: String)])
 }
 
 extension UTI {
@@ -56,6 +60,31 @@ class FruokDocument: NSDocument, FruokDocumentObjectContextDelegate {
 
 		return documentURL.appendingPathComponent("data").appendingPathComponent("database.xml")
 	}
+
+	static func attachmentsURLFor(documentURL: URL) -> URL {
+
+		return documentURL.appendingPathComponent("attachments", isDirectory: true)
+	}
+
+	static func attachmentURLFor(documentURL: URL, attachmentIdentifier: String, name: String) -> URL {
+
+		return self.attachmentsURLFor(documentURL: documentURL)
+			.appendingPathComponent(attachmentIdentifier)
+			.appendingPathComponent(name)
+	}
+
+	func inboxURLForAttachment(withIdentifier identifier: String, name: String) -> URL {
+
+		return type(of: self).attachmentURLFor(documentURL: self.temporaryDirectory, attachmentIdentifier: identifier, name: name)
+	}
+
+	func savedURLForAttachment(withIdentifier identifier: String, name: String) -> URL? {
+
+		guard let fileURL = self.fileURL else {return nil}
+
+		return type(of: self).attachmentURLFor(documentURL: fileURL, attachmentIdentifier: identifier, name: name)
+	}
+
 
 	func contextCreatePersistenStore(_ context: NSManagedObjectContext) throws {
 
@@ -103,6 +132,9 @@ class FruokDocument: NSDocument, FruokDocumentObjectContextDelegate {
 	override class func autosavesInPlace() -> Bool {
 		return true
 	}
+	override class func autosavesDrafts() -> Bool {
+		return false
+	}
 
 	override init() {
 		super.init()
@@ -127,6 +159,7 @@ class FruokDocument: NSDocument, FruokDocumentObjectContextDelegate {
 
 	override func write(to url: URL, ofType typeName: String, for saveOperation: NSSaveOperationType, originalContentsURL absoluteOriginalContentsURL: URL?) throws {
 
+		do {
 		try self.managedObjectContext?.save()
 
 		let tempDataURL = FruokDocument.databaseURLFor(documentURL: self.temporaryDirectory)
@@ -134,8 +167,83 @@ class FruokDocument: NSDocument, FruokDocumentObjectContextDelegate {
 
 		try FileManager.default.createDirectory(at: destinationDataURL.deletingLastPathComponent(), withIntermediateDirectories: true, attributes: nil)
 		try FileManager.default.copyItem(atPath: tempDataURL.path, toPath: destinationDataURL.path)
+
+		if let taskStates = self.project?.taskStates {
+
+			let needsToCopySavedAttachments: Bool
+			let needsToCopyInboxAttachments: Bool
+
+			switch saveOperation {
+			case .saveOperation,
+			     .autosaveInPlaceOperation:
+
+				needsToCopySavedAttachments = false
+				needsToCopyInboxAttachments = false
+
+			case .saveAsOperation:
+
+				needsToCopySavedAttachments = true
+				needsToCopyInboxAttachments = false
+
+			case .saveToOperation,
+			     .autosaveAsOperation,
+			     .autosaveElsewhereOperation:
+
+				needsToCopySavedAttachments = true
+				needsToCopyInboxAttachments = true
+
+			}
+
+			for state in taskStates {
+
+				guard let tasks = (state as? TaskState)?.tasks else { continue }
+
+				for task in tasks {
+
+					guard let attachments = (task as? Task)?.attachments else { continue }
+
+					for attachment in attachments {
+
+						guard let attachment = attachment as? Attachment else { continue }
+
+						let writeURL = type(of: self).attachmentURLFor(documentURL: url, attachmentIdentifier: attachment.identifier, name: attachment.filename)
+
+						if let absoluteOriginalContentsURL = absoluteOriginalContentsURL {
+
+							let originalAttachmentURL = type(of: self).attachmentURLFor(documentURL: absoluteOriginalContentsURL, attachmentIdentifier: attachment.identifier, name: attachment.filename)
+
+							if FileManager.default.fileExists(atPath: originalAttachmentURL.path) {
+
+								if needsToCopySavedAttachments {
+
+									try FileManager.default.createDirectory(at: writeURL.deletingLastPathComponent(), withIntermediateDirectories: true, attributes: nil)
+									try FileManager.default.copyItem(at: originalAttachmentURL, to: writeURL)
+								}
+								continue
+							}
+						}
+
+						let tempAttachmentURL = type(of: self).attachmentURLFor(documentURL: self.temporaryDirectory, attachmentIdentifier: attachment.identifier, name: attachment.filename)
+
+						if FileManager.default.fileExists(atPath: tempAttachmentURL.path) {
+
+							try FileManager.default.createDirectory(at: writeURL.deletingLastPathComponent(), withIntermediateDirectories: true, attributes: nil)
+
+							if needsToCopyInboxAttachments {
+								try FileManager.default.copyItem(at: tempAttachmentURL, to: writeURL)
+							} else {
+								try FileManager.default.moveItem(at: tempAttachmentURL, to: writeURL)
+							}
+						}
+					}
+				}
+			}
+		}
+		} catch {
+			throw error
+		}
 	}
-	
+
 	override func makeWindowControllers() {
 		// Returns the Storyboard that contains your Document window.
 		let storyboard = NSStoryboard(name: "Main", bundle: nil)
@@ -172,4 +280,71 @@ class FruokDocument: NSDocument, FruokDocumentObjectContextDelegate {
 		self.undoManager?.enableUndoRegistration()
 		return project
 	}
+
+	func urlForExistingAttachment(with identifier: String,  name: String) -> URL? {
+
+		if let url = self.savedURLForAttachment(withIdentifier: identifier, name: name) {
+
+			if FileManager.default.fileExists(atPath: url.path) {
+				return url
+			}
+		}
+
+		let url = self.inboxURLForAttachment(withIdentifier: identifier, name: name)
+
+		if FileManager.default.fileExists(atPath: url.path) {
+			return url
+		}
+
+		return nil
+	}
+	
+	func context(_ context: NSManagedObjectContext, urlForExistingAttachmentWithIdentifier identifier: String, name: String) -> URL? {
+
+		return self.urlForExistingAttachment(with: identifier, name: name)
+	}
+
+	func context(_ context: NSManagedObjectContext, copyFileURLSToInbox urls: [URL], callback: @escaping ([Result<AttachmentCopyResult, NSError>]) -> Void) {
+
+		DispatchQueue.global().async {
+
+			var results: [Result<AttachmentCopyResult, NSError>] = []
+
+			for url in urls {
+
+				let identifier = UUID().uuidString
+				let filename = url.lastPathComponent
+				let inboxURL = self.inboxURLForAttachment(withIdentifier: identifier, name: filename)
+
+				do {
+					try FileManager.default.createDirectory(at: inboxURL.deletingLastPathComponent(), withIntermediateDirectories: true, attributes: nil)
+					try FileManager.default.copyItem(at: url, to: inboxURL)
+					results.append(Result(AttachmentCopyResult(originalURL: url, identifier: identifier, filename: filename)))
+				} catch {
+					results.append(Result(error as NSError))
+				}
+			}
+
+			DispatchQueue.main.async {
+				callback(results)
+			}
+		}
+	}
+
+	func context(_ context: NSManagedObjectContext, deleteAttachments attachmentInfos: [(identifier: String, filename: String)]) {
+
+		for (identifier, filename) in attachmentInfos {
+
+			if let url = self.urlForExistingAttachment(with: identifier, name: filename) {
+				do {try FileManager.default.removeItem(at: url.deletingLastPathComponent())} catch{}
+			}
+		}
+	}
+
+}
+
+struct AttachmentCopyResult {
+	let originalURL: URL
+	let identifier: String
+	let filename: String
 }

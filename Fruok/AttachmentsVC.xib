@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="11762" systemVersion="15G1611" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
+    <dependencies>
+        <deployment identifier="macosx"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="11762"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <customObject id="-2" userLabel="File's Owner" customClass="AttachmentsViewController" customModule="Fruok" customModuleProvider="target">
+            <connections>
+                <outlet property="tableView" destination="gt4-ah-shb" id="Ald-Ml-pS6"/>
+                <outlet property="view" destination="Hz6-mo-xeY" id="0bl-1N-x8E"/>
+            </connections>
+        </customObject>
+        <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
+        <customObject id="-3" userLabel="Application" customClass="NSObject"/>
+        <customView id="Hz6-mo-xeY">
+            <rect key="frame" x="0.0" y="0.0" width="480" height="272"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+            <subviews>
+                <scrollView autohidesScrollers="YES" horizontalLineScroll="29" horizontalPageScroll="10" verticalLineScroll="29" verticalPageScroll="10" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0tq-Cj-ELZ">
+                    <rect key="frame" x="0.0" y="50" width="480" height="222"/>
+                    <clipView key="contentView" id="lOY-VS-9CO">
+                        <rect key="frame" x="1" y="1" width="478" height="220"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnAutoresizingStyle="lastColumnOnly" columnReordering="NO" columnSelection="YES" columnResizing="NO" multipleSelection="NO" autosaveColumns="NO" rowHeight="27" viewBased="YES" id="gt4-ah-shb">
+                                <rect key="frame" x="0.0" y="0.0" width="478" height="220"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <size key="intercellSpacing" width="3" height="2"/>
+                                <color key="backgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                <color key="gridColor" name="gridColor" catalog="System" colorSpace="catalog"/>
+                                <tableColumns>
+                                    <tableColumn identifier="Image" width="50" minWidth="50" maxWidth="50" id="chB-ys-K3i">
+                                        <tableHeaderCell key="headerCell" lineBreakMode="truncatingTail" borderStyle="border">
+                                            <font key="font" metaFont="smallSystem"/>
+                                            <color key="textColor" name="headerTextColor" catalog="System" colorSpace="catalog"/>
+                                            <color key="backgroundColor" name="headerColor" catalog="System" colorSpace="catalog"/>
+                                        </tableHeaderCell>
+                                        <textFieldCell key="dataCell" lineBreakMode="truncatingTail" selectable="YES" editable="YES" title="Text Cell" id="Mzw-1B-2JQ">
+                                            <font key="font" metaFont="system"/>
+                                            <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                            <color key="backgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                        </textFieldCell>
+                                        <tableColumnResizingMask key="resizingMask" resizeWithTable="YES" userResizable="YES"/>
+                                        <prototypeCellViews>
+                                            <tableCellView id="IdJ-e8-hBc" customClass="AttachmentImageCell" customModule="Fruok" customModuleProvider="target">
+                                                <rect key="frame" x="1" y="1" width="50" height="27"/>
+                                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                                <subviews>
+                                                    <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="wwn-Xf-iO2">
+                                                        <rect key="frame" x="10" y="0.0" width="27" height="27"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" secondItem="wwn-Xf-iO2" secondAttribute="height" multiplier="1:1" id="Qbx-io-hhD"/>
+                                                        </constraints>
+                                                        <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" id="WNT-db-Y6m"/>
+                                                    </imageView>
+                                                </subviews>
+                                                <constraints>
+                                                    <constraint firstItem="wwn-Xf-iO2" firstAttribute="top" secondItem="IdJ-e8-hBc" secondAttribute="top" id="D4Y-0H-NJp"/>
+                                                    <constraint firstItem="wwn-Xf-iO2" firstAttribute="leading" secondItem="IdJ-e8-hBc" secondAttribute="leading" constant="10" id="IQK-cd-bim"/>
+                                                    <constraint firstAttribute="bottom" secondItem="wwn-Xf-iO2" secondAttribute="bottom" id="pdo-3H-fPF"/>
+                                                </constraints>
+                                                <connections>
+                                                    <outlet property="imageView" destination="wwn-Xf-iO2" id="mwO-cf-Vrt"/>
+                                                </connections>
+                                            </tableCellView>
+                                        </prototypeCellViews>
+                                    </tableColumn>
+                                    <tableColumn identifier="Name" width="356" minWidth="40" maxWidth="1000" id="7JS-wh-6LH">
+                                        <tableHeaderCell key="headerCell" lineBreakMode="truncatingTail" borderStyle="border">
+                                            <font key="font" metaFont="smallSystem"/>
+                                            <color key="textColor" name="headerTextColor" catalog="System" colorSpace="catalog"/>
+                                            <color key="backgroundColor" name="headerColor" catalog="System" colorSpace="catalog"/>
+                                        </tableHeaderCell>
+                                        <textFieldCell key="dataCell" lineBreakMode="truncatingTail" selectable="YES" editable="YES" title="Text Cell" id="FMw-k9-9nV">
+                                            <font key="font" metaFont="system"/>
+                                            <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                            <color key="backgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                        </textFieldCell>
+                                        <tableColumnResizingMask key="resizingMask" resizeWithTable="YES" userResizable="YES"/>
+                                        <prototypeCellViews>
+                                            <tableCellView id="Gib-VB-ofc" customClass="AttachmentFilenameCell" customModule="Fruok" customModuleProvider="target">
+                                                <rect key="frame" x="54" y="1" width="356" height="27"/>
+                                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                                <subviews>
+                                                    <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" translatesAutoresizingMaskIntoConstraints="NO" id="ZpR-RL-GQe">
+                                                        <rect key="frame" x="8" y="5" width="97" height="17"/>
+                                                        <textFieldCell key="cell" lineBreakMode="truncatingTail" sendsActionOnEndEditing="YES" title="Table View Cell" id="spx-ME-Yid">
+                                                            <font key="font" metaFont="system"/>
+                                                            <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                                        </textFieldCell>
+                                                    </textField>
+                                                </subviews>
+                                                <constraints>
+                                                    <constraint firstItem="ZpR-RL-GQe" firstAttribute="leading" secondItem="Gib-VB-ofc" secondAttribute="leading" constant="10" id="CBn-IX-ZIA"/>
+                                                    <constraint firstItem="ZpR-RL-GQe" firstAttribute="centerY" secondItem="Gib-VB-ofc" secondAttribute="centerY" id="QCk-UG-lOt"/>
+                                                </constraints>
+                                                <connections>
+                                                    <outlet property="textField" destination="ZpR-RL-GQe" id="Iz6-mH-M9g"/>
+                                                </connections>
+                                            </tableCellView>
+                                        </prototypeCellViews>
+                                    </tableColumn>
+                                </tableColumns>
+                                <connections>
+                                    <outlet property="dataSource" destination="-2" id="DUo-xk-nKE"/>
+                                    <outlet property="delegate" destination="-2" id="s3w-6t-Z8U"/>
+                                    <outlet property="menu" destination="2ji-H1-fqK" id="71B-Sg-Z2q"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                    </clipView>
+                    <scroller key="horizontalScroller" hidden="YES" verticalHuggingPriority="750" horizontal="YES" id="BO6-NL-u9n">
+                        <rect key="frame" x="1" y="119" width="223" height="15"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </scroller>
+                    <scroller key="verticalScroller" hidden="YES" verticalHuggingPriority="750" horizontal="NO" id="5cU-Mx-QYM">
+                        <rect key="frame" x="224" y="17" width="15" height="102"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </scroller>
+                </scrollView>
+                <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="5TT-dJ-GGq">
+                    <rect key="frame" x="359" y="13" width="107" height="32"/>
+                    <buttonCell key="cell" type="push" title="Add Files..." bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="AIZ-55-wej">
+                        <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                        <font key="font" metaFont="system"/>
+                    </buttonCell>
+                    <connections>
+                        <action selector="addFiles:" target="-2" id="Bdt-G7-fda"/>
+                    </connections>
+                </button>
+            </subviews>
+            <constraints>
+                <constraint firstItem="0tq-Cj-ELZ" firstAttribute="leading" secondItem="Hz6-mo-xeY" secondAttribute="leading" id="KUO-Op-wLx"/>
+                <constraint firstItem="5TT-dJ-GGq" firstAttribute="top" secondItem="0tq-Cj-ELZ" secondAttribute="bottom" constant="9" id="OcD-Hb-tz7"/>
+                <constraint firstAttribute="bottom" secondItem="5TT-dJ-GGq" secondAttribute="bottom" constant="20" id="loN-XM-tLB"/>
+                <constraint firstItem="0tq-Cj-ELZ" firstAttribute="top" secondItem="Hz6-mo-xeY" secondAttribute="top" id="sH7-c5-g15"/>
+                <constraint firstAttribute="trailing" secondItem="5TT-dJ-GGq" secondAttribute="trailing" constant="20" id="tde-R0-lTj"/>
+                <constraint firstAttribute="trailing" secondItem="0tq-Cj-ELZ" secondAttribute="trailing" id="zJ8-eg-EWy"/>
+            </constraints>
+        </customView>
+        <menu id="2ji-H1-fqK">
+            <items>
+                <menuItem title="Delete..." id="XPq-XB-FsT">
+                    <modifierMask key="keyEquivalentModifierMask"/>
+                    <connections>
+                        <action selector="delete:" target="-1" id="Jeh-KB-3qN"/>
+                    </connections>
+                </menuItem>
+            </items>
+        </menu>
+    </objects>
+</document>

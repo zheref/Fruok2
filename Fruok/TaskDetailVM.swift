@@ -68,6 +68,11 @@ class TaskDetailViewModel: NSObject, MVVMViewModel {
 		return LabelsViewModel(with: self.task)
 	}
 
+	func attachmentsViewModel() -> AttachmentsViewModel {
+
+		return AttachmentsViewModel(with: self.task)
+	}
+
 	func userWantsChangeDescriptionText(attributedString: NSAttributedString) {
 		self.task.descriptionString = attributedString
 	}

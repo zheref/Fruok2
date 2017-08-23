@@ -28,6 +28,7 @@ class TaskDetailViewController: NSViewController, MVVMView {
 	@IBOutlet var descriptionField: NSTextView!
 	@IBOutlet var subtasksEmbeddingView: NSView!
 	@IBOutlet var labelsEmbeddingView: NSView!
+	@IBOutlet var attachmentsEmbeddingView: NSView!
 
 	typealias VIEWMODEL = TaskDetailViewModel
 	private(set) var viewModel: TaskDetailViewModel?
@@ -109,6 +110,10 @@ class TaskDetailViewController: NSViewController, MVVMView {
 		let labelsController = LabelsViewController()
 		labelsController.set(viewModel: self.viewModel!.labelsViewModel())
 		self.labelsController = labelsController
+
+		let attachmentsController = AttachmentsViewController()
+		attachmentsController.set(viewModel: self.viewModel!.attachmentsViewModel())
+		self.attachmentsController = attachmentsController
 	}
 
 	var subtasksController: SubtasksViewController? {
@@ -136,6 +141,20 @@ class TaskDetailViewController: NSViewController, MVVMView {
 			self.labelsEmbeddingView.addConstraints(NSLayoutConstraint.tr_fit(current.view))
 		}
 	}
+
+	var attachmentsController: AttachmentsViewController? {
+		willSet {
+			guard let current = self.attachmentsController else { return }
+			current.removeFromParentViewController()
+			current.view.removeFromSuperview()
+		} didSet {
+			guard let current = self.attachmentsController else { return }
+			current.view.translatesAutoresizingMaskIntoConstraints = false
+			self.attachmentsEmbeddingView.addSubview(current.view)
+			self.attachmentsEmbeddingView.addConstraints(NSLayoutConstraint.tr_fit(current.view))
+		}
+	}
+
 
 	@IBAction func deleteTask(_ sender: Any) {
 		self.viewModel?.userRequestsTaskDeletion()

@@ -170,28 +170,61 @@ class FruokDocument: NSDocument, FruokDocumentObjectContextDelegate {
 
 		if let taskStates = self.project?.taskStates {
 
-			let needsToCopySavedAttachments: Bool
-			let needsToCopyInboxAttachments: Bool
+			enum FileOp {
+				case move
+				case copy
+				case none
+
+				func execute(source: URL, destination: URL) throws {
+
+
+					switch self {
+					case .move:
+						try FileManager.default.createDirectory(at: destination.deletingLastPathComponent(), withIntermediateDirectories: true, attributes: nil)
+						try FileManager.default.moveItem(at: source, to: destination)
+					case .copy:
+						try FileManager.default.createDirectory(at: destination.deletingLastPathComponent(), withIntermediateDirectories: true, attributes: nil)
+						try FileManager.default.copyItem(at: source, to: destination)
+					case .none:
+						return
+					}
+				}
+			}
+
+			let inboxFileOp: FileOp
+			let savedFileOp: FileOp
 
 			switch saveOperation {
-			case .saveOperation,
-			     .autosaveInPlaceOperation:
 
-				needsToCopySavedAttachments = false
-				needsToCopyInboxAttachments = false
+			case .saveOperation:
+
+				inboxFileOp = .copy
+				savedFileOp = .none
+
+			case .autosaveInPlaceOperation:
+
+				inboxFileOp = .move
+				savedFileOp = .move // since we write to a temp dir, we *need* to move
 
 			case .saveAsOperation:
 
-				needsToCopySavedAttachments = true
-				needsToCopyInboxAttachments = false
+				inboxFileOp = .move
+				savedFileOp = .copy
 
-			case .saveToOperation,
-			     .autosaveAsOperation,
-			     .autosaveElsewhereOperation:
+			case .saveToOperation:
 
-				needsToCopySavedAttachments = true
-				needsToCopyInboxAttachments = true
+				inboxFileOp = .copy
+				savedFileOp = .copy
 
+			case .autosaveAsOperation:
+
+				inboxFileOp = .move
+				savedFileOp = .copy
+
+			case .autosaveElsewhereOperation:
+
+				inboxFileOp = .copy
+				savedFileOp = .copy
 			}
 
 			for state in taskStates {
@@ -214,11 +247,7 @@ class FruokDocument: NSDocument, FruokDocumentObjectContextDelegate {
 
 							if FileManager.default.fileExists(atPath: originalAttachmentURL.path) {
 
-								if needsToCopySavedAttachments {
-
-									try FileManager.default.createDirectory(at: writeURL.deletingLastPathComponent(), withIntermediateDirectories: true, attributes: nil)
-									try FileManager.default.copyItem(at: originalAttachmentURL, to: writeURL)
-								}
+								try savedFileOp.execute(source: originalAttachmentURL, destination: writeURL)
 								continue
 							}
 						}
@@ -227,13 +256,7 @@ class FruokDocument: NSDocument, FruokDocumentObjectContextDelegate {
 
 						if FileManager.default.fileExists(atPath: tempAttachmentURL.path) {
 
-							try FileManager.default.createDirectory(at: writeURL.deletingLastPathComponent(), withIntermediateDirectories: true, attributes: nil)
-
-							if needsToCopyInboxAttachments {
-								try FileManager.default.copyItem(at: tempAttachmentURL, to: writeURL)
-							} else {
-								try FileManager.default.moveItem(at: tempAttachmentURL, to: writeURL)
-							}
+							try inboxFileOp.execute(source: tempAttachmentURL, destination: writeURL)
 						}
 					}
 				}

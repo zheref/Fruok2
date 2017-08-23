@@ -10,13 +10,6 @@ import Cocoa
 import Bond
 import ReactiveKit
 
-extension ReactiveExtensions where Base : NSTextField {
-
-	public var tr_isEditable: Bond<Bool> {
-		return bond { $0.isEditable = $1 }
-	}
-}
-
 class SubtaskCell: NSTableCellView, MVVMView {
 
 
@@ -50,17 +43,14 @@ class SubtaskCell: NSTableCellView, MVVMView {
 			if editable {
 				self?.nameLabel.isHidden = true
 				self?.nameEditingField.isHidden = false
-				self?.window?.makeFirstResponder(self?.nameEditingField)
+				self?.nameEditingField.isEnabled = true
+				let res = self?.window?.makeFirstResponder(self?.nameEditingField)
 			} else {
 				self?.nameLabel.isHidden = false
 				self?.nameEditingField.isHidden = true
+				self?.nameEditingField.isEnabled = false
 			}
 		}).dispose(in: reuseBag)
-
-		self.nameEditingField.reactive.textDidEndEditing.observeNext { [weak self] (textField, flag) in
-			self?.viewModel?.name.value = textField.stringValue
-			self?.viewModel?.userWantsEndEditing()
-		}.dispose(in: reuseBag)
 
 		self.reactive.keyPath(#keyPath(SubtaskCell.window), ofType: Optional<NSWindow>.self).bind(to: self, context: .immediateOnMain) { (me, window) in
 
@@ -70,6 +60,31 @@ class SubtaskCell: NSTableCellView, MVVMView {
 		}
 	}
 
+	var didAwake = false
+	override func awakeFromNib() {
+		super.awakeFromNib()
+		self.nameEditingField.target = self
+		self.nameEditingField.action = #selector(SubtaskCell.nameFieldAction(_:))
+		self.didAwake = true
+		self.connectVMIfReady()
+	}
+
+	override func viewDidMoveToWindow() {
+		super.viewDidMoveToWindow()
+		self.connectVMIfReady()
+	}
+	func connectVMIfReady() {
+
+		if self.viewModel != nil && self.didAwake && self.window != nil {
+			self.connectVM()
+		}
+	}
+
+	@IBAction func nameFieldAction(_ sender: Any?) {
+
+		self.viewModel?.userWantsSetSubtaskName(self.nameEditingField.stringValue)
+	}
+	
 	@IBAction override func cancelOperation(_ sender: Any?) {
 
 		self.nameEditingField.stringValue = self.nameLabel.stringValue
@@ -85,6 +100,5 @@ class SubtaskCell: NSTableCellView, MVVMView {
 			nextResponder = nextResponder?.nextResponder
 		}
 	}
-
 }
 

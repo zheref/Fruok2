@@ -33,7 +33,11 @@ class SubtaskViewModel: NSObject, MVVMViewModel {
 	let done = Observable(false)
 	let editable = Observable(false)
 
-	func userWantsEndEditing() {
+	func userWantsSetSubtaskName(_ name: String) {
+
+		if !name.isEmpty {
+			self.subtask.name = name
+		}
 		self.editable.value = false
 	}
 }

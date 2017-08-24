@@ -54,7 +54,6 @@ class KanbanViewModel: NSObject, CollectionDragAndDropViewModel {
 		self.project.managedObjectContext?.undoGroupWithOperations({ context in
 
 			let state: TaskState = context.insertObject()
-			state.name = NSLocalizedString("Untitled", comment: "Untitled tasks tate")
 			self.lastAddedIndex = self.project.taskStates?.count
 			self.project.addToTaskStates(state)
 		})

@@ -682,7 +682,7 @@
                                             <font key="font" metaFont="system"/>
                                             <segments>
                                                 <segment label="Project"/>
-                                                <segment label="KanBan" selected="YES" tag="1"/>
+                                                <segment label="Kanban" selected="YES" tag="1"/>
                                                 <segment label="Statistics"/>
                                                 <segment label="Billing"/>
                                             </segments>

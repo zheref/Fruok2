@@ -57,10 +57,9 @@
                 <customView translatesAutoresizingMaskIntoConstraints="NO" id="bav-aC-6Xq">
                     <rect key="frame" x="0.0" y="0.0" width="200" height="38"/>
                     <subviews>
-                        <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="FPA-Fq-CWm">
-                            <rect key="frame" x="60" y="1" width="81" height="32"/>
-                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                            <buttonCell key="cell" type="push" bezelStyle="rounded" image="NSAddTemplate" imagePosition="only" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="qt2-WV-u3H">
+                        <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="FPA-Fq-CWm">
+                            <rect key="frame" x="0.0" y="0.0" width="200" height="38"/>
+                            <buttonCell key="cell" type="square" bezelStyle="shadowlessSquare" image="NSAddTemplate" imagePosition="only" alignment="center" imageScaling="proportionallyDown" inset="2" id="qt2-WV-u3H">
                                 <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                 <font key="font" metaFont="system"/>
                             </buttonCell>
@@ -70,7 +69,11 @@
                         </button>
                     </subviews>
                     <constraints>
+                        <constraint firstItem="FPA-Fq-CWm" firstAttribute="top" secondItem="bav-aC-6Xq" secondAttribute="top" id="6lT-0O-YYV"/>
+                        <constraint firstAttribute="trailing" secondItem="FPA-Fq-CWm" secondAttribute="trailing" id="8rp-Xt-7D0"/>
                         <constraint firstAttribute="height" constant="38" id="DDc-2m-7SQ"/>
+                        <constraint firstItem="FPA-Fq-CWm" firstAttribute="leading" secondItem="bav-aC-6Xq" secondAttribute="leading" id="RzJ-TX-X86"/>
+                        <constraint firstAttribute="bottom" secondItem="FPA-Fq-CWm" secondAttribute="bottom" id="iRO-Gt-MWe"/>
                     </constraints>
                 </customView>
                 <customView translatesAutoresizingMaskIntoConstraints="NO" id="OTY-ek-RVO">

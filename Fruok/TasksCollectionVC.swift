@@ -7,6 +7,7 @@
 //
 
 import Cocoa
+import ReactiveKit
 
 extension UTI {
 
@@ -39,7 +40,11 @@ class TasksCollectionViewController: NSViewController, CollectionViewModelClient
 	}
 
 	typealias VIEWMODEL = TasksCollectionViewModel
-	private(set) var viewModel: TasksCollectionViewModel?
+	private(set) var viewModel: TasksCollectionViewModel? {
+		willSet {
+			self.reuseBag.dispose()
+		}
+	}
 
 	static func create() -> TasksCollectionViewController {
 
@@ -75,12 +80,14 @@ class TasksCollectionViewController: NSViewController, CollectionViewModelClient
 		self.connectVMIfReady()
 	}
 
+	let reuseBag = DisposeBag()
+
 	func connectVM() {
 
 		self.viewModel?.viewActions.observeNext(with: { action in
 
 			self.executeCollectionViewModelAction(action)
-		}).dispose(in: bag)
+		}).dispose(in: reuseBag)
 
 		self.collectionViewDelegate = CollectionViewDragAndDropDelegate<VIEWMODEL>(horizontalWithViewModel: self.viewModel!, collectionView: collectionView, draggingUTI: UTI.fruokTask)
 
@@ -115,7 +122,7 @@ class TasksCollectionViewController: NSViewController, CollectionViewModelClient
 					})
 				}
 			}
-		}).dispose(in: bag)
+		}).dispose(in: reuseBag)
 
 	}
 }

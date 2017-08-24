@@ -71,6 +71,11 @@ class LabelsViewModel: NSObject, CollectionDragAndDropViewModel {
 
 		if index == self.indexBeingEdited.value {
 
+			if index < (self.task.labels?.count ?? 0) {
+
+				let initialString = (self.task.labels?[index] as? Label)?.name ?? ""
+				return LabelEditingItemViewModel(with: self.task, initialEditingString: initialString)
+			}
 			return LabelEditingItemViewModel(with: self.task)
 		}
 

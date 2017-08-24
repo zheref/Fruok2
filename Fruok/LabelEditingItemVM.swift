@@ -15,6 +15,11 @@ class LabelEditingItemViewModel: NSObject, MVVMViewModel {
 	typealias MODEL = Task
 	@objc private let task: Task
 
+	convenience init(with model: Task, initialEditingString: String) {
+		self.init(with: model)
+		self.initialEditingString.value = initialEditingString
+	}
+
 	required init(with model: Task) {
 
 		self.task = model
@@ -57,6 +62,7 @@ class LabelEditingItemViewModel: NSObject, MVVMViewModel {
 		})
 	}
 
+	let initialEditingString = Property<String>("")
 	let currentEditingString = Property<String?>(nil)
 	let currentEditingSuggestionLabels = Property<[Label]>([])
 	let currentEditingSuggestions = Property<[(name: String, color: RGBAColorValues)]>([])

@@ -49,10 +49,15 @@ class LabelEditingCell: NSCollectionViewItem, MVVMView {
 			me.colorWell.color = NSColor(withRGBAValues: colorValues)
 		}).dispose(in: reuseBag)
 
+		self.viewModel?.initialEditingString.bind(to: self, context: .immediateOnMain, setter: { [weak self] _ in
+
+			self?.labelComboBox.stringValue = self?.viewModel?.initialEditingString.value ?? ""
+		}).dispose(in: reuseBag)
+
 		self.viewModel?.currentEditingSuggestions.bind(to: self, context: .immediateOnMain, setter: { [weak self] _ in
 
 			self?.labelComboBox.reloadData()
-		})
+		}).dispose(in: reuseBag)
 	}
 
 	override func viewDidAppear() {

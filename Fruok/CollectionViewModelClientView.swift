@@ -39,7 +39,7 @@ extension CollectionViewModelClientView {
 //				let liveSet = Set(set.filter{ $0.item < self.collectionView.numberOfItems(inSection: 0) })
 //				if liveSet.count > 0 {
 //					NSAnimationContext.current().allowsImplicitAnimation = true
-//					self.collectionView.scrollToItems(at: set, scrollPosition: .centeredHorizontally)
+//					self.collectionView.scrollToItems(at: liveSet, scrollPosition: .centeredHorizontally)
 //				}
 //			})
 //		case .deleteTasksAtIndexes(let indexSet)?:

@@ -9,18 +9,19 @@
         <customObject id="-2" userLabel="File's Owner"/>
         <collectionViewItem id="m8h-NA-oow" customClass="LabelAddItem" customModule="Fruok" customModuleProvider="target">
             <connections>
+                <outlet property="addButton" destination="aIn-PV-Rka" id="MPS-60-eww"/>
                 <outlet property="view" destination="e0G-hb-Qj3" id="Spv-E3-jVu"/>
             </connections>
         </collectionViewItem>
         <customView id="e0G-hb-Qj3">
-            <rect key="frame" x="0.0" y="0.0" width="100" height="17"/>
+            <rect key="frame" x="0.0" y="0.0" width="100" height="19"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
             <subviews>
                 <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="aIn-PV-Rka">
-                    <rect key="frame" x="0.0" y="0.0" width="100" height="17"/>
-                    <buttonCell key="cell" type="square" title="Add Label..." bezelStyle="shadowlessSquare" alignment="left" imageScaling="proportionallyDown" inset="2" id="hCL-P1-IdH">
+                    <rect key="frame" x="0.0" y="0.0" width="100" height="19"/>
+                    <buttonCell key="cell" type="square" title="Add Label..." bezelStyle="shadowlessSquare" alignment="left" inset="2" id="hCL-P1-IdH">
                         <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                        <font key="font" metaFont="system"/>
+                        <font key="font" metaFont="systemBold" size="16"/>
                     </buttonCell>
                     <connections>
                         <action selector="addLabel:" target="m8h-NA-oow" id="LSL-n5-DpO"/>

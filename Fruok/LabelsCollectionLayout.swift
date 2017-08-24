@@ -15,7 +15,7 @@ class LabelsCollectionLayout: HorizontalFittingCollectionLayout {
 		self.init(
 			withItemIdension: 0.0,
 			interItemMargin: 2.0,
-			leadingEdgeMargin: 2.0,
+			leadingEdgeMargin: 0.0,
 			trailingEdgeMargin: 18.0)
 	}
 

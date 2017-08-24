@@ -13,7 +13,7 @@ class TaskDescriptionTextView: NSTextView {
 	var placeHolderString: NSAttributedString = NSAttributedString(string:
 		NSLocalizedString("Task Description...", comment: "Task Description Placeholder")
 		, attributes: [
-			NSFontAttributeName: NSFont.boldSystemFont(ofSize: 20),
+			NSFontAttributeName: NSFont.boldSystemFont(ofSize: 13),
 			NSForegroundColorAttributeName : NSColor.lightGray]
 	)
 

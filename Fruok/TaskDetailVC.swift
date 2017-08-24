@@ -10,18 +10,6 @@ import Cocoa
 import ReactiveKit
 import Bond
 
-public extension ReactiveExtensions where Base: NSTextView {
-
-	public var tr_attributedString: DynamicSubject<NSAttributedString?> {
-		let notificationName = NSNotification.Name.NSTextDidChange
-		return dynamicSubject(
-			signal: NotificationCenter.default.reactive.notification(name: notificationName, object: base).eraseType(),
-			get: { $0.textStorage },
-			set: { $0.textStorage?.setAttributedString($1 ?? NSAttributedString()) }
-		)
-	}
-}
-
 class TaskDetailViewController: NSViewController, MVVMView {
 
 	@IBOutlet var nameLabel: NSTextField!

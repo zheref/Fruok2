@@ -50,6 +50,7 @@ class KanbanTaskStateItem: NSCollectionViewItem, MVVMView {
 		self.view.layer?.cornerRadius = 8.0
 		self.view.layer?.borderColor = NSColor.lightGray.cgColor
 		self.view.layer?.borderWidth = 2.0
+		self.view.layer?.backgroundColor = NSColor(calibratedWhite: 0.9, alpha: 1.0).cgColor
 		self.tasksCollectionView = TasksCollectionViewController.create()
 		self.connectVMIfReady()
     }

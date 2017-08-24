@@ -37,7 +37,6 @@ class KanbanTaskStateItemViewModel: NSObject, MVVMViewModel {
 		self.taskState.managedObjectContext?.undoGroupWithOperations({ context in
 
 			let task: Task = context.insertObject()
-			task.name = NSLocalizedString("Untitled", comment: "Untitled task")
 			self.taskState.addToTasks(task)
 
 			NotificationCenter.default.post(name: .FRUDisplayDetailRequestedForTask, object: self.taskState, userInfo: [FRUDisplayDetailRequestedInfoKeys.task.rawValue: task])

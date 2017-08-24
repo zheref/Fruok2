@@ -9,6 +9,7 @@
         <customObject id="-2" userLabel="File's Owner" customClass="TaskDetailViewController" customModule="Fruok" customModuleProvider="target">
             <connections>
                 <outlet property="attachmentsEmbeddingView" destination="Ue8-wh-s5Y" id="Yxw-kY-61g"/>
+                <outlet property="deleteButton" destination="2sT-8o-BVO" id="BKc-Jy-jLe"/>
                 <outlet property="descriptionField" destination="dWT-j5-noC" id="e6n-xN-foR"/>
                 <outlet property="labelsEmbeddingView" destination="vVC-2D-b6X" id="QYn-aj-wYi"/>
                 <outlet property="nameLabel" destination="DCG-sv-8N3" id="BvH-Np-Baa"/>
@@ -45,7 +46,7 @@
                     <rect key="frame" x="0.0" y="0.0" width="480" height="38"/>
                     <subviews>
                         <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="2sT-8o-BVO">
-                            <rect key="frame" x="15" y="1" width="80" height="32"/>
+                            <rect key="frame" x="200" y="1" width="80" height="32"/>
                             <buttonCell key="cell" type="push" title="Delete" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="BJp-bw-KU5">
                                 <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                 <font key="font" metaFont="system"/>
@@ -57,8 +58,8 @@
                     </subviews>
                     <constraints>
                         <constraint firstItem="2sT-8o-BVO" firstAttribute="centerY" secondItem="xau-bX-rfq" secondAttribute="centerY" id="6uT-ci-CgR"/>
-                        <constraint firstItem="2sT-8o-BVO" firstAttribute="leading" secondItem="xau-bX-rfq" secondAttribute="leading" constant="21" id="JwO-yf-hdL"/>
                         <constraint firstAttribute="height" constant="38" id="ghS-xv-gtr"/>
+                        <constraint firstItem="2sT-8o-BVO" firstAttribute="centerX" secondItem="xau-bX-rfq" secondAttribute="centerX" id="npk-wD-AxJ"/>
                         <constraint firstAttribute="width" constant="480" id="zMD-nZ-lhZ"/>
                     </constraints>
                 </customView>

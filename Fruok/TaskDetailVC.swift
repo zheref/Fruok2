@@ -17,7 +17,8 @@ class TaskDetailViewController: NSViewController, MVVMView {
 	@IBOutlet var subtasksEmbeddingView: NSView!
 	@IBOutlet var labelsEmbeddingView: NSView!
 	@IBOutlet var attachmentsEmbeddingView: NSView!
-
+	@IBOutlet var deleteButton: NSButton!
+	
 	typealias VIEWMODEL = TaskDetailViewModel
 	private(set) var viewModel: TaskDetailViewModel?
 	internal func set(viewModel: TaskDetailViewModel) {
@@ -96,6 +97,21 @@ class TaskDetailViewController: NSViewController, MVVMView {
 		self.attachmentsController = attachmentsController
 
 		self.nameLabel.nextKeyView = self.descriptionField
+	}
+
+	override func awakeFromNib() {
+		super.awakeFromNib()
+		let style = NSMutableParagraphStyle()
+		style.alignment = .center
+		let attrs = [
+			NSFontAttributeName : NSFont.boldSystemFont(ofSize: 13.0),
+			NSForegroundColorAttributeName: #colorLiteral(red: 0.8859125972, green: 0.1864079535, blue: 0.2725405097, alpha: 1),
+			NSParagraphStyleAttributeName: style
+			] as [String : Any]
+		let string = NSMutableAttributedString(string:
+			NSLocalizedString("Delete Task", comment: "Delete Task Button"),
+		                                       attributes:attrs)
+		self.deleteButton.attributedTitle = string
 	}
 
 	override func viewDidAppear() {

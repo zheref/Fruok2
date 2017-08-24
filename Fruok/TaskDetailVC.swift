@@ -53,6 +53,7 @@ class TaskDetailViewController: NSViewController, MVVMView {
 		self.nameLabel.reactive.textDidEndEditing.observeNext { [weak self] (textField, flag) in
 
 			self?.viewModel?.userWantsChangeName(name: textField.stringValue)
+			self?.view.window?.makeFirstResponder(self?.view)
 		}.dispose(in: bag)
 
 		self.viewModel!.descriptionText.observeNext { [weak self] (attrString) in
@@ -105,8 +106,17 @@ class TaskDetailViewController: NSViewController, MVVMView {
 		let attachmentsController = AttachmentsViewController()
 		attachmentsController.set(viewModel: self.viewModel!.attachmentsViewModel())
 		self.attachmentsController = attachmentsController
+
+		self.nameLabel.nextKeyView = self.descriptionField
 	}
 
+	override func viewDidAppear() {
+
+		if self.viewModel?.name.value?.isEmpty ?? true {
+
+			self.view.window?.makeFirstResponder(self.nameLabel)
+		}
+	}
 	override func viewWillDisappear() {
 		super.viewWillDisappear()
 

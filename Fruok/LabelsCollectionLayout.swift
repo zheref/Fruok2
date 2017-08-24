@@ -23,6 +23,7 @@ class LabelsCollectionLayout: HorizontalFittingCollectionLayout {
 	let kDefaultWidth: CGFloat = 100.0
 	var computedWidths: [CGFloat]?
 	let kEditingItemWidth: CGFloat = 200.0
+	let kAddItemWidth: CGFloat = 92.0
 
 	override func prepare() {
 
@@ -44,13 +45,18 @@ class LabelsCollectionLayout: HorizontalFittingCollectionLayout {
 			return
 		}
 
-		self.computedWidths = (0..<delegate.numItemsIncludingEditing).map {
+		self.computedWidths = (0..<delegate.numTotalItems).map {
+
+			if delegate.addItemIndex == $0 {
+				return kAddItemWidth
+			}
 
 			guard let viewModel = delegate.labelItemViewModel(for: $0) else {
 				return self.kDefaultWidth
 			}
 
 			if let viewModel = viewModel as? LabelItemViewModel {
+
 				prototypeItem.set(viewModel: viewModel)
 
 				return prototypeItem.view.fittingSize.width
@@ -112,6 +118,10 @@ class LabelsCollectionLayout: HorizontalFittingCollectionLayout {
 
 		if hiddenIndexPaths?.contains(indexPath) ?? false {
 			attributes.alpha = 0.0
+		}
+
+		if self.delegate?.addItemIndex == indexPath.item {
+			attributes.zIndex = 1000
 		}
 
 		return attributes

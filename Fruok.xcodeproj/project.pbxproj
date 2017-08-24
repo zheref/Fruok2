@@ -75,8 +75,10 @@
 		D84E45B91F49BC4E00C7891F /* RGBAColorsMarshalling+CoreData.swift in Sources */ = {isa = PBXBuildFile; fileRef = D84E45B81F49BC4E00C7891F /* RGBAColorsMarshalling+CoreData.swift */; };
 		D84E45BB1F49BD3200C7891F /* RGBAColorsMarshalling+NSColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = D84E45BA1F49BD3200C7891F /* RGBAColorsMarshalling+NSColor.swift */; };
 		D84E45BD1F4A15EE00C7891F /* LabelEditingColorWell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D84E45BC1F4A15EE00C7891F /* LabelEditingColorWell.swift */; };
+		D85D52651F4F0482009B34FE /* LabelAddItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = D85D52641F4F0482009B34FE /* LabelAddItem.swift */; };
 		D86441081F4EA9EE00884D49 /* NSManagedContext+UndoGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = D86441071F4EA9EE00884D49 /* NSManagedContext+UndoGroup.swift */; };
 		D864410C1F4EE3E000884D49 /* TaskDescriptionTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D864410B1F4EE3E000884D49 /* TaskDescriptionTextView.swift */; };
+		D864410F1F4EFBEA00884D49 /* LabelAddItem.xib in Resources */ = {isa = PBXBuildFile; fileRef = D864410E1F4EFBEA00884D49 /* LabelAddItem.xib */; };
 		D8C2AD0D1F38FB97002D75B2 /* KanbanVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8C2AD0C1F38FB97002D75B2 /* KanbanVC.swift */; };
 		D8C2AD0F1F39007E002D75B2 /* DocumentContentVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8C2AD0E1F39007E002D75B2 /* DocumentContentVM.swift */; };
 		D8C2AD111F390305002D75B2 /* KVVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8C2AD101F390305002D75B2 /* KVVM.swift */; };
@@ -205,8 +207,10 @@
 		D84E45B81F49BC4E00C7891F /* RGBAColorsMarshalling+CoreData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "RGBAColorsMarshalling+CoreData.swift"; sourceTree = "<group>"; };
 		D84E45BA1F49BD3200C7891F /* RGBAColorsMarshalling+NSColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "RGBAColorsMarshalling+NSColor.swift"; sourceTree = "<group>"; };
 		D84E45BC1F4A15EE00C7891F /* LabelEditingColorWell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LabelEditingColorWell.swift; sourceTree = "<group>"; };
+		D85D52641F4F0482009B34FE /* LabelAddItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LabelAddItem.swift; sourceTree = "<group>"; };
 		D86441071F4EA9EE00884D49 /* NSManagedContext+UndoGroup.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSManagedContext+UndoGroup.swift"; sourceTree = "<group>"; };
 		D864410B1F4EE3E000884D49 /* TaskDescriptionTextView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaskDescriptionTextView.swift; sourceTree = "<group>"; };
+		D864410E1F4EFBEA00884D49 /* LabelAddItem.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LabelAddItem.xib; sourceTree = "<group>"; };
 		D8C2AD0C1F38FB97002D75B2 /* KanbanVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KanbanVC.swift; sourceTree = "<group>"; };
 		D8C2AD0E1F39007E002D75B2 /* DocumentContentVM.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DocumentContentVM.swift; sourceTree = "<group>"; };
 		D8C2AD101F390305002D75B2 /* KVVM.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KVVM.swift; sourceTree = "<group>"; };
@@ -393,6 +397,7 @@
 				D8339DE41F46FA9700EA5617 /* LabelsVC.swift */,
 				D8339DE81F46FB0500EA5617 /* LabelsVM.swift */,
 				D8339DE51F46FA9700EA5617 /* LabelsVC.xib */,
+				D864410D1F4EFBBC00884D49 /* LabelAddItem */,
 				D8339DEB1F47110100EA5617 /* LabelItem */,
 				D8FC65111F48C2080065D566 /* LabelEditingCell */,
 			);
@@ -505,6 +510,15 @@
 				D84E45BA1F49BD3200C7891F /* RGBAColorsMarshalling+NSColor.swift */,
 			);
 			name = Colors;
+			sourceTree = "<group>";
+		};
+		D864410D1F4EFBBC00884D49 /* LabelAddItem */ = {
+			isa = PBXGroup;
+			children = (
+				D864410E1F4EFBEA00884D49 /* LabelAddItem.xib */,
+				D85D52641F4F0482009B34FE /* LabelAddItem.swift */,
+			);
+			name = LabelAddItem;
 			sourceTree = "<group>";
 		};
 		D8C2AD051F38F530002D75B2 /* UI */ = {
@@ -769,6 +783,7 @@
 				D8C2AD2A1F3A7EBC002D75B2 /* KanbanTaskStateItem.xib in Resources */,
 				D834BD431F4C12AC001B99D2 /* AttachmentsVC.xib in Resources */,
 				D8F7B4721F423C4E00060F08 /* DeleteTaskStateConfirmationDialog.xib in Resources */,
+				D864410F1F4EFBEA00884D49 /* LabelAddItem.xib in Resources */,
 				D8388E4C1F37905B004A2DA3 /* Main.storyboard in Resources */,
 				D8339DEF1F4711E000EA5617 /* LabelItem.xib in Resources */,
 				D834BD381F4B0D58001B99D2 /* ProjectMetadataVC.xib in Resources */,
@@ -978,6 +993,7 @@
 				D8339DE61F46FA9700EA5617 /* LabelsVC.swift in Sources */,
 				D8C2AD3D1F3BD284002D75B2 /* FirstResponderView.swift in Sources */,
 				D834BD4C1F4C851A001B99D2 /* DetailPresentationAnimator.swift in Sources */,
+				D85D52651F4F0482009B34FE /* LabelAddItem.swift in Sources */,
 				D8C2AD381F3BABE6002D75B2 /* KanbanCollectionLayout.swift in Sources */,
 				D834BD491F4C5376001B99D2 /* AttachmentCell.swift in Sources */,
 				D8339DE91F46FB0500EA5617 /* LabelsVM.swift in Sources */,

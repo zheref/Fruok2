@@ -19,13 +19,13 @@
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
             <subviews>
                 <scrollView wantsLayer="YES" borderType="none" horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" hasHorizontalScroller="NO" hasVerticalScroller="NO" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QBm-ft-MLN">
-                    <rect key="frame" x="0.0" y="0.0" width="346" height="37"/>
+                    <rect key="frame" x="0.0" y="0.0" width="370" height="37"/>
                     <clipView key="contentView" drawsBackground="NO" id="ey3-Gg-4vC">
-                        <rect key="frame" x="0.0" y="0.0" width="346" height="37"/>
+                        <rect key="frame" x="0.0" y="0.0" width="370" height="37"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView id="ecA-sh-FXu">
-                                <rect key="frame" x="0.0" y="0.0" width="346" height="37"/>
+                                <rect key="frame" x="0.0" y="0.0" width="370" height="37"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumInteritemSpacing="10" minimumLineSpacing="10" id="iWR-Tq-cap">
                                     <size key="itemSize" width="50" height="50"/>
@@ -47,33 +47,14 @@
                         <autoresizingMask key="autoresizingMask"/>
                     </scroller>
                 </scrollView>
-                <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="5Ci-aM-kKT">
-                    <rect key="frame" x="346" y="11" width="24" height="24"/>
-                    <constraints>
-                        <constraint firstAttribute="height" constant="24" id="buu-P2-iW4"/>
-                        <constraint firstAttribute="width" constant="24" id="emq-iw-MBu"/>
-                    </constraints>
-                    <buttonCell key="cell" type="square" bezelStyle="shadowlessSquare" image="NSAddTemplate" imagePosition="only" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="WTt-pQ-lJK">
-                        <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                        <font key="font" metaFont="system"/>
-                    </buttonCell>
-                    <connections>
-                        <action selector="addLabel:" target="-2" id="CDj-pq-dGD"/>
-                    </connections>
-                </button>
             </subviews>
             <constraints>
                 <constraint firstItem="QBm-ft-MLN" firstAttribute="top" secondItem="Hz6-mo-xeY" secondAttribute="top" id="2M6-gH-eDA"/>
-                <constraint firstAttribute="trailing" secondItem="5Ci-aM-kKT" secondAttribute="trailing" id="MIG-3n-cDo"/>
-                <constraint firstItem="5Ci-aM-kKT" firstAttribute="top" secondItem="Hz6-mo-xeY" secondAttribute="top" constant="2" id="dUl-bQ-n8j"/>
                 <constraint firstAttribute="bottom" secondItem="QBm-ft-MLN" secondAttribute="bottom" id="iob-NF-u4w"/>
                 <constraint firstItem="QBm-ft-MLN" firstAttribute="leading" secondItem="Hz6-mo-xeY" secondAttribute="leading" id="isq-wt-KvZ"/>
-                <constraint firstItem="5Ci-aM-kKT" firstAttribute="leading" secondItem="QBm-ft-MLN" secondAttribute="trailing" id="pXH-Iz-OOi"/>
+                <constraint firstAttribute="trailing" secondItem="QBm-ft-MLN" secondAttribute="trailing" id="vQX-Ui-Opf"/>
             </constraints>
             <point key="canvasLocation" x="194" y="51.5"/>
         </customView>
     </objects>
-    <resources>
-        <image name="NSAddTemplate" width="11" height="11"/>
-    </resources>
 </document>

@@ -49,9 +49,14 @@ class LabelsViewModel: NSObject, CollectionDragAndDropViewModel {
 		return "__none__" as NSString
 	}
 
+	var addItemIndex: Int? {
+
+		return self.numItemsIncludingEditing
+	}
+
 	let indexBeingEdited = Property<Int?>(nil)
 
-	var numItemsIncludingEditing: Int {
+	private var numItemsIncludingEditing: Int {
 
 		guard let editedIndex = self.indexBeingEdited.value else {
 			return self.numCollectionObjects.value
@@ -65,6 +70,11 @@ class LabelsViewModel: NSObject, CollectionDragAndDropViewModel {
 		}
 
 		preconditionFailure()
+	}
+
+	var numTotalItems: Int {
+
+		return self.numItemsIncludingEditing + (self.addItemIndex != nil ? 1 : 0)
 	}
 
 	func labelItemViewModel(for index: Int) -> LabelViewModelType? {

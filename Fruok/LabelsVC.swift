@@ -13,6 +13,7 @@ class LabelsViewController: NSViewController, CollectionViewModelClientView {
 	enum ItemIdentifier: String {
 		case label
 		case editingLabel
+		case addLabelItem
 	}
 
 	@IBOutlet var collectionView: NSCollectionView!
@@ -40,6 +41,8 @@ class LabelsViewController: NSViewController, CollectionViewModelClientView {
 		self.collectionView.register(nib, forItemWithIdentifier: ItemIdentifier.label.rawValue)
 		let editingNib = NSNib(nibNamed: "LabelEditingItem", bundle: nil)
 		self.collectionView.register(editingNib, forItemWithIdentifier: ItemIdentifier.editingLabel.rawValue)
+		let addNib = NSNib(nibNamed: "LabelAddItem", bundle: nil)
+		self.collectionView.register(addNib, forItemWithIdentifier: ItemIdentifier.addLabelItem.rawValue)
 		self.connectVMIfReady()
     }
 
@@ -109,10 +112,16 @@ extension LabelsViewController: NSCollectionViewDataSource {
 
 	public func collectionView(_ collectionView: NSCollectionView, numberOfItemsInSection section: Int) -> Int {
 
-		return self.viewModel?.numItemsIncludingEditing ?? 0
+		return self.viewModel?.numTotalItems ?? 0
 	}
 
 	public func collectionView(_ collectionView: NSCollectionView, itemForRepresentedObjectAt indexPath: IndexPath) -> NSCollectionViewItem {
+
+		if indexPath.item == self.viewModel?.addItemIndex {
+
+			let item = self.collectionView.makeItem(withIdentifier: ItemIdentifier.addLabelItem.rawValue, for: indexPath)
+			return item
+		}
 
 		if indexPath.item == self.viewModel?.indexBeingEdited.value {
 			let item = self.collectionView.makeItem(withIdentifier: ItemIdentifier.editingLabel.rawValue, for: indexPath) as! LabelEditingCell
@@ -131,4 +140,3 @@ extension LabelsViewController: NSCollectionViewDataSource {
 		return item
 	}
 }
-

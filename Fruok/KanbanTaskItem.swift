@@ -25,6 +25,8 @@ class KanbanTaskItem: NSCollectionViewItem, MVVMView {
 
 	@IBOutlet weak var nameLabel: NSTextField!
 	@IBOutlet weak var descriptionLabel: NSTextField!
+
+	lazy var gestureRecognizer: NSClickGestureRecognizer = NSClickGestureRecognizer(target: (self as KanbanTaskItem), action: #selector(KanbanTaskItem.showTaskDetailAction(_:)))
 	
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -33,6 +35,9 @@ class KanbanTaskItem: NSCollectionViewItem, MVVMView {
 		self.view.layer?.borderColor = NSColor.lightGray.cgColor
 		self.view.layer?.borderWidth = 2
 		self.view.layer?.backgroundColor = NSColor.white.cgColor
+
+		self.view.addGestureRecognizer(self.gestureRecognizer)
+
 		self.connectVMIfReady()
     }
 

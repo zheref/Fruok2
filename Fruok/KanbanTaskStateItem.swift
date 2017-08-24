@@ -56,6 +56,17 @@ class KanbanTaskStateItem: NSCollectionViewItem, MVVMView {
 
 	private let reuseBag = DisposeBag()
 
+	override func viewDidAppear() {
+		super.viewDidAppear()
+		if self.viewModel?.editable.value ?? false {
+
+			// This is a bit of a hack to make the editable value signal again,
+			// so that we can set the first responder
+			self.viewModel?.editable.value = false
+			self.viewModel?.editable.value = true
+		}
+	}
+
 	func connectVM() {
 
 		self.viewModel?.name.map{

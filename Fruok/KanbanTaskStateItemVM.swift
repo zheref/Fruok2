@@ -34,16 +34,14 @@ class KanbanTaskStateItemViewModel: NSObject, MVVMViewModel {
 
 	func userWantsAddTask() {
 
-		self.taskState.managedObjectContext?.undoManager?.beginUndoGrouping()
-		defer { self.taskState.managedObjectContext?.undoManager?.endUndoGrouping() }
+		self.taskState.managedObjectContext?.undoGroupWithOperations({ context in
 
-		if let context = self.taskState.managedObjectContext {
-			let task: Task = NSEntityDescription.insertNewObject(forEntityName: Task.entityName, into: context) as! Task
+			let task: Task = context.insertObject()
 			task.name = NSLocalizedString("Untitled", comment: "Untitled task")
 			self.taskState.addToTasks(task)
 
-				NotificationCenter.default.post(name: .FRUDisplayDetailRequestedForTask, object: self.taskState, userInfo: [FRUDisplayDetailRequestedInfoKeys.task.rawValue: task])
-		}
+			NotificationCenter.default.post(name: .FRUDisplayDetailRequestedForTask, object: self.taskState, userInfo: [FRUDisplayDetailRequestedInfoKeys.task.rawValue: task])
+		})
 	}
 
 	func tasksCollectionViewModel() -> TasksCollectionViewModel {

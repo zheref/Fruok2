@@ -51,15 +51,13 @@ class KanbanViewModel: NSObject, CollectionDragAndDropViewModel {
 
 	func addTaskState() {
 
-		self.project.managedObjectContext?.undoManager?.beginUndoGrouping()
-		defer { self.project.managedObjectContext?.undoManager?.endUndoGrouping() }
+		self.project.managedObjectContext?.undoGroupWithOperations({ context in
 
-		if let context = self.project.managedObjectContext {
-			let state: TaskState = NSEntityDescription.insertNewObject(forEntityName: TaskState.entityName, into: context) as! TaskState
+			let state: TaskState = context.insertObject()
 			state.name = NSLocalizedString("Untitled", comment: "Untitled tasks tate")
 			self.lastAddedIndex = self.project.taskStates?.count
 			self.project.addToTaskStates(state)
-		}
+		})
 	}
 
 	let showTaskDeleteDialog = Observable<DeleteTaskStateConfirmationViewModel?>(nil)
@@ -97,23 +95,23 @@ class KanbanViewModel: NSObject, CollectionDragAndDropViewModel {
 
 	func doDeleteTaskState(_ taskState: TaskState, insertingTasksInto otherTaskState: TaskState?) {
 
-		self.project.managedObjectContext?.undoManager?.beginUndoGrouping()
-		defer { self.project.managedObjectContext?.undoManager?.endUndoGrouping() }
+		self.project.managedObjectContext?.undoGroupWithOperations({ context in
 
-		if let otherTaskState = otherTaskState, let tasks = taskState.tasks {
-			otherTaskState.addToTasks(tasks)
-		} else if let tasks = taskState.tasks {
-			for task in tasks {
-				if let task = task as? Task {
-					taskState.managedObjectContext?.delete(task)
+			if let otherTaskState = otherTaskState, let tasks = taskState.tasks {
+				otherTaskState.addToTasks(tasks)
+			} else if let tasks = taskState.tasks {
+				for task in tasks {
+					if let task = task as? Task {
+						context.delete(task)
+					}
 				}
 			}
-		}
 
-		let project = taskState.project
-		taskState.project?.removeFromTaskStates(taskState)
-		taskState.managedObjectContext?.delete(taskState)
-		project?.purgeUnusedLabels()
+			let project = taskState.project
+			taskState.project?.removeFromTaskStates(taskState)
+			context.delete(taskState)
+			project?.purgeUnusedLabels()
+		})
 	}
 
 	func taskStateViewModel(for index: Int) -> KanbanTaskStateItemViewModel? {

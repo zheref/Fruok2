@@ -50,17 +50,13 @@ class SubtasksViewModel: NSObject, CollectionViewModel {
 
 	func userWantsAddSubtask() {
 
-		guard let context = self.task.managedObjectContext else {
-			return
-		}
+		self.task.managedObjectContext?.undoGroupWithOperations({ context in
 
-		self.task.managedObjectContext?.undoManager?.beginUndoGrouping()
-		defer { self.task.managedObjectContext?.undoManager?.endUndoGrouping() }
-
-		let subtask: Subtask = context.insertObject() as Subtask
-		subtask.name = NSLocalizedString("Untitled", comment: "Untitled Subtask")
-		self.editableIndex = self.task.subtasks?.count
-		self.task.addToSubtasks(subtask)
+			let subtask: Subtask = context.insertObject() as Subtask
+			subtask.name = NSLocalizedString("Untitled", comment: "Untitled Subtask")
+			self.editableIndex = self.task.subtasks?.count
+			self.task.addToSubtasks(subtask)
+		})
 	}
 
 	func userWantsEditSubtask(at index: Int) {
@@ -71,12 +67,12 @@ class SubtasksViewModel: NSObject, CollectionViewModel {
 
 	func userWantsDeleteSubtask(at index: Int) {
 
-		self.task.managedObjectContext?.undoManager?.beginUndoGrouping()
-		defer { self.task.managedObjectContext?.undoManager?.endUndoGrouping() }
+		self.task.managedObjectContext?.undoGroupWithOperations({ context in
 
-		guard let subtask = self.task.subtasks?[index] as? Subtask else { return }
-		self.task.removeFromSubtasks(subtask)
-		subtask.managedObjectContext?.delete(subtask)
+			guard let subtask = self.task.subtasks?[index] as? Subtask else { return }
+			self.task.removeFromSubtasks(subtask)
+			context.delete(subtask)
+		})
 	}
 
 	func userWantsCancelEdit() {

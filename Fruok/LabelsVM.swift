@@ -111,43 +111,39 @@ class LabelsViewModel: NSObject, CollectionDragAndDropViewModel {
 
 	func userWantsCommitEditLabel(with viewModel: LabelEditingItemViewModel) {
 
-		self.task.managedObjectContext?.undoManager?.beginUndoGrouping()
-		defer { self.task.managedObjectContext?.undoManager?.endUndoGrouping() }
+		self.task.managedObjectContext?.undoGroupWithOperations({ context in
 
-		guard let context = self.task.managedObjectContext else {
-			return
-		}
+			guard let editingIndex = self.indexBeingEdited.value, let labels = self.task.labels else {
+				return
+			}
 
-		guard let editingIndex = self.indexBeingEdited.value, let labels = self.task.labels else {
-			return
-		}
+			let label: Label
+			if editingIndex < self.numCollectionObjects.value {
 
-		let label: Label
-		if editingIndex < self.numCollectionObjects.value {
+				label = labels[editingIndex] as! Label
+			} else {
 
-			label = labels[editingIndex] as! Label
-		} else {
+				label = context.insertObject()
+			}
 
-			label = context.insertObject()
-		}
+			label.name = viewModel.currentEditingString.value ?? NSLocalizedString("Untitled", comment: "Untitled Label")
 
-		label.name = viewModel.currentEditingString.value ?? NSLocalizedString("Untitled", comment: "Untitled Label")
+			let color: LabelColor = label.color ?? {
 
-		let color: LabelColor = label.color ?? {
+				let color = context.insertObject() as LabelColor
+				label.color = color
+				return color
+				}()
 
-			let color = context.insertObject() as LabelColor
-			label.color = color
-			return color
-		}()
+			color.rgbaColorValues = viewModel.labelColor.value
 
-		color.rgbaColorValues = viewModel.labelColor.value
-
-		self.indexBeingEdited.value = nil
-		self.supressTaskStateObservation = true
-		self.task.insertIntoLabels(label, at: editingIndex)
-		self.numCollectionObjects.value = self.task.labels?.count ?? 0
-		self.supressTaskStateObservation = false
-		self.viewActions.value = .refreshTaskStates
+			self.indexBeingEdited.value = nil
+			self.supressTaskStateObservation = true
+			self.task.insertIntoLabels(label, at: editingIndex)
+			self.numCollectionObjects.value = self.task.labels?.count ?? 0
+			self.supressTaskStateObservation = false
+			self.viewActions.value = .refreshTaskStates
+		})
 	}
 
 	func userWantsDeleteLabel(at index: Int) {
@@ -156,12 +152,12 @@ class LabelsViewModel: NSObject, CollectionDragAndDropViewModel {
 			return
 		}
 
-		self.task.managedObjectContext?.undoManager?.beginUndoGrouping()
-		defer { self.task.managedObjectContext?.undoManager?.endUndoGrouping() }
+		label.managedObjectContext?.undoGroupWithOperations({ context in
 
-		let project = self.task.state?.project
-		self.task.removeFromLabels(label)
-		project?.purgeUnusedLabels()
+			let project = self.task.state?.project
+			self.task.removeFromLabels(label)
+			project?.purgeUnusedLabels()
+		})
 	}
 
 	func userWantsSetExisintLabelAtEditingPosition(editViewModel: LabelEditingItemViewModel) {
@@ -170,15 +166,15 @@ class LabelsViewModel: NSObject, CollectionDragAndDropViewModel {
 			return
 		}
 
-		self.task.managedObjectContext?.undoManager?.beginUndoGrouping()
-		defer { self.task.managedObjectContext?.undoManager?.endUndoGrouping() }
+		label.managedObjectContext?.undoGroupWithOperations({ context in
 
-		self.indexBeingEdited.value = nil
-		self.supressTaskStateObservation = true
-		self.task.insertIntoLabels(label, at: editingIndex)
-		self.numCollectionObjects.value = self.task.labels?.count ?? 0
-		self.supressTaskStateObservation = false
-		self.viewActions.value = .refreshTaskStates
+			self.indexBeingEdited.value = nil
+			self.supressTaskStateObservation = true
+			self.task.insertIntoLabels(label, at: editingIndex)
+			self.numCollectionObjects.value = self.task.labels?.count ?? 0
+			self.supressTaskStateObservation = false
+			self.viewActions.value = .refreshTaskStates
+		})
 	}
 }
 

@@ -47,12 +47,14 @@ class TaskDetailViewModel: NSObject, MVVMViewModel {
 
 				self?.dismiss.value = true
 				let project = thisTask.state?.project
-				project?.managedObjectContext?.undoManager?.beginUndoGrouping()
-				defer { project?.managedObjectContext?.undoManager?.endUndoGrouping() }
-				thisTask.state?.removeFromTasks(thisTask)
-				thisTask.managedObjectContext?.delete(thisTask)
-				project?.purgeUnusedLabels()
-				self?.dismiss.value = true
+
+				project?.managedObjectContext?.undoGroupWithOperations({ context in
+
+					thisTask.state?.removeFromTasks(thisTask)
+					thisTask.managedObjectContext?.delete(thisTask)
+					project?.purgeUnusedLabels()
+					self?.dismiss.value = true
+				})
 		})
 
 		self.taskDeleteConfirmation.value = info

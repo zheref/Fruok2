@@ -15,12 +15,13 @@ extension RGBAColor {
 			return RGBAColorValues(r: self.r, g: self.g, b: self.b, a: self.a)
 		} set {
 
-			self.managedObjectContext?.undoManager?.beginUndoGrouping()
-			self.r = newValue.r
-			self.g = newValue.g
-			self.b = newValue.b
-			self.a = newValue.a
-			self.managedObjectContext?.undoManager?.endUndoGrouping()
+			self.managedObjectContext?.undoGroupWithOperations({ context in
+
+				self.r = newValue.r
+				self.g = newValue.g
+				self.b = newValue.b
+				self.a = newValue.a
+			})
 		}
 	}
 }

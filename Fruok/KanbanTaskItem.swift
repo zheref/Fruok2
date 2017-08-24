@@ -23,6 +23,7 @@ class KanbanTaskItem: NSCollectionViewItem, MVVMView {
 		self.connectVMIfReady()
 	}
 
+	@IBOutlet weak var subtasksIndicator: NSImageView!
 	@IBOutlet weak var nameLabel: NSTextField!
 	@IBOutlet weak var descriptionLabel: NSTextField!
 
@@ -50,7 +51,7 @@ class KanbanTaskItem: NSCollectionViewItem, MVVMView {
 
 	func connectVM() {
 
-		self.viewModel!.showTaskDetails.observeNext { show in
+		self.viewModel?.showTaskDetails.observeNext { show in
 
 			if show {
 
@@ -58,8 +59,9 @@ class KanbanTaskItem: NSCollectionViewItem, MVVMView {
 			}
 		}.dispose(in: reuseBag)
 
-		self.viewModel!.taskName.map({$0 ?? ""}).bind(to: self.nameLabel.reactive.editingString).dispose(in: reuseBag)
-		self.viewModel!.taskDescription.bind(to: self.descriptionLabel).dispose(in: reuseBag)
+		self.viewModel?.taskName.map({$0 ?? ""}).bind(to: self.nameLabel.reactive.editingString).dispose(in: reuseBag)
+		self.viewModel?.taskDescription.bind(to: self.descriptionLabel).dispose(in: reuseBag)
+		self.viewModel?.numSubtasks.map { $0 == 0 }.bind(to: self.subtasksIndicator.reactive.isHidden).dispose(in: reuseBag)
 	}
 	@IBAction func showTaskDetailAction(_ sender: Any) {
 

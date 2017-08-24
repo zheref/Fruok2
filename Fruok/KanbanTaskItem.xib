@@ -3,6 +3,7 @@
     <dependencies>
         <deployment identifier="macosx"/>
         <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="11762"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -17,35 +18,28 @@
                     <rect key="frame" x="0.0" y="234" width="290" height="38"/>
                     <subviews>
                         <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="1s1-G3-lq1">
-                            <rect key="frame" x="18" y="10" width="40" height="17"/>
+                            <rect key="frame" x="31" y="10" width="40" height="17"/>
                             <textFieldCell key="cell" lineBreakMode="truncatingTail" sendsActionOnEndEditing="YES" title="Label" id="GTu-Rb-Ki5">
                                 <font key="font" metaFont="systemBold"/>
                                 <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                                 <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                             </textFieldCell>
                         </textField>
-                        <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="ejo-Kj-dSO">
-                            <rect key="frame" x="248" y="3" width="36" height="32"/>
+                        <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="wXA-Ic-xjg">
+                            <rect key="frame" x="5" y="10" width="23" height="23"/>
                             <constraints>
-                                <constraint firstAttribute="height" constant="32" id="MZl-Mm-hU9"/>
-                                <constraint firstAttribute="width" constant="36" id="oND-Np-hFB"/>
+                                <constraint firstAttribute="width" secondItem="wXA-Ic-xjg" secondAttribute="height" multiplier="1:1" id="j7U-Bk-8fM"/>
                             </constraints>
-                            <buttonCell key="cell" type="bevel" bezelStyle="rounded" image="NSEnterFullScreenTemplate" imagePosition="overlaps" alignment="center" imageScaling="proportionallyDown" inset="2" id="sTa-O5-J6c">
-                                <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                                <font key="font" metaFont="system"/>
-                            </buttonCell>
-                            <connections>
-                                <action selector="showTaskDetailAction:" target="5Gx-wo-5TF" id="p0O-lk-ro4"/>
-                            </connections>
-                        </button>
+                            <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageAlignment="bottom" imageScaling="proportionallyDown" image="SubtaskIcon" id="ai5-Q3-at7"/>
+                        </imageView>
                     </subviews>
                     <constraints>
-                        <constraint firstItem="1s1-G3-lq1" firstAttribute="leading" secondItem="lyQ-Hs-66d" secondAttribute="leading" constant="20" id="7I3-3N-mQZ"/>
-                        <constraint firstItem="ejo-Kj-dSO" firstAttribute="centerY" secondItem="lyQ-Hs-66d" secondAttribute="centerY" id="GPo-ld-9ob"/>
+                        <constraint firstItem="wXA-Ic-xjg" firstAttribute="top" secondItem="lyQ-Hs-66d" secondAttribute="top" constant="5" id="33T-Ey-gfi"/>
                         <constraint firstAttribute="height" constant="38" id="KUD-N9-Cfd"/>
-                        <constraint firstItem="ejo-Kj-dSO" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="1s1-G3-lq1" secondAttribute="trailing" constant="10" id="MhO-qk-sKG"/>
+                        <constraint firstItem="wXA-Ic-xjg" firstAttribute="leading" secondItem="lyQ-Hs-66d" secondAttribute="leading" constant="5" id="Nra-Qd-Bil"/>
+                        <constraint firstItem="wXA-Ic-xjg" firstAttribute="bottom" secondItem="1s1-G3-lq1" secondAttribute="bottom" id="ah0-Rd-70i"/>
+                        <constraint firstItem="1s1-G3-lq1" firstAttribute="leading" secondItem="wXA-Ic-xjg" secondAttribute="trailing" constant="5" id="c2M-t1-bfP"/>
                         <constraint firstItem="1s1-G3-lq1" firstAttribute="centerY" secondItem="lyQ-Hs-66d" secondAttribute="centerY" id="tg9-DA-AfP"/>
-                        <constraint firstAttribute="trailing" secondItem="ejo-Kj-dSO" secondAttribute="trailing" constant="6" id="yFF-90-iLd"/>
                     </constraints>
                 </customView>
                 <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" translatesAutoresizingMaskIntoConstraints="NO" id="SE9-fb-AIW">
@@ -71,11 +65,12 @@
             <connections>
                 <outlet property="descriptionLabel" destination="SE9-fb-AIW" id="rdg-vd-3ey"/>
                 <outlet property="nameLabel" destination="1s1-G3-lq1" id="u0M-n4-gHx"/>
+                <outlet property="subtasksIndicator" destination="wXA-Ic-xjg" id="D4P-GO-KlS"/>
                 <outlet property="view" destination="Hz6-mo-xeY" id="Eja-bx-id6"/>
             </connections>
         </collectionViewItem>
     </objects>
     <resources>
-        <image name="NSEnterFullScreenTemplate" width="15" height="15"/>
+        <image name="SubtaskIcon" width="20" height="20"/>
     </resources>
 </document>

@@ -28,6 +28,12 @@ class KanbanTaskItemViewModel: NSObject, MVVMViewModel {
 			}
 			.bind(to: self.taskDescription)
 			.dispose(in: bag)
+
+		self.reactive.keyPath(#keyPath(KanbanTaskItemViewModel.task.subtasks), ofType: Optional<NSOrderedSet>.self, context: .immediateOnMain)
+			.map { $0?.count ?? 0 }
+			.bind(to: self.numSubtasks)
+			.dispose(in: bag)
+
 	}
 
 	func userRequestedTaskDetails() {
@@ -41,6 +47,7 @@ class KanbanTaskItemViewModel: NSObject, MVVMViewModel {
 	}
 
 	let taskName = Observable<String?>("")
+	let numSubtasks = Observable<Int>(0)
 	let taskDescription = Observable<String>("")
 	let showTaskDetails = Observable<Bool>(false)
 }

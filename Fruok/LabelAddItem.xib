@@ -18,7 +18,7 @@
             <subviews>
                 <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="aIn-PV-Rka">
                     <rect key="frame" x="0.0" y="0.0" width="100" height="17"/>
-                    <buttonCell key="cell" type="square" title="Add Label..." bezelStyle="shadowlessSquare" alignment="center" imageScaling="proportionallyDown" inset="2" id="hCL-P1-IdH">
+                    <buttonCell key="cell" type="square" title="Add Label..." bezelStyle="shadowlessSquare" alignment="left" imageScaling="proportionallyDown" inset="2" id="hCL-P1-IdH">
                         <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                         <font key="font" metaFont="system"/>
                     </buttonCell>

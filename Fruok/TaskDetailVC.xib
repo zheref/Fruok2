@@ -26,7 +26,7 @@
                     <rect key="frame" x="0.0" y="635" width="480" height="38"/>
                     <subviews>
                         <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="DCG-sv-8N3">
-                            <rect key="frame" x="18" y="8" width="444" height="24"/>
+                            <rect key="frame" x="18" y="7" width="444" height="24"/>
                             <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" title="Label" placeholderString="Untitled" id="ZXb-VS-o90">
                                 <font key="font" metaFont="systemBold" size="20"/>
                                 <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
@@ -137,7 +137,6 @@
                 </customView>
             </subviews>
             <constraints>
-                <constraint firstItem="vVC-2D-b6X" firstAttribute="leading" secondItem="DvX-Vn-Tn6" secondAttribute="leading" id="3i3-07-Mbi"/>
                 <constraint firstItem="vVC-2D-b6X" firstAttribute="top" secondItem="ngC-M0-C3s" secondAttribute="bottom" id="3v9-KO-NdX"/>
                 <constraint firstItem="tNJ-hI-t07" firstAttribute="trailing" secondItem="dWT-j5-noC" secondAttribute="trailing" id="6Vq-qd-1yh"/>
                 <constraint firstItem="HwW-og-lMZ" firstAttribute="top" secondItem="2wk-cn-QXa" secondAttribute="bottom" id="6g3-jN-kty"/>
@@ -156,6 +155,7 @@
                 <constraint firstItem="ngC-M0-C3s" firstAttribute="leading" secondItem="Hz6-mo-xeY" secondAttribute="leading" id="fSQ-on-btI"/>
                 <constraint firstItem="DvX-Vn-Tn6" firstAttribute="leading" secondItem="Hz6-mo-xeY" secondAttribute="leading" constant="20" id="gDk-2V-rmp"/>
                 <constraint firstItem="2wk-cn-QXa" firstAttribute="leading" secondItem="Hz6-mo-xeY" secondAttribute="leading" id="h2C-NZ-gQG"/>
+                <constraint firstItem="vVC-2D-b6X" firstAttribute="leading" secondItem="DCG-sv-8N3" secondAttribute="leading" id="kaw-TF-uz3"/>
                 <constraint firstItem="xau-bX-rfq" firstAttribute="top" secondItem="HwW-og-lMZ" secondAttribute="bottom" id="pGJ-XW-jmB"/>
                 <constraint firstItem="ngC-M0-C3s" firstAttribute="top" secondItem="Hz6-mo-xeY" secondAttribute="top" constant="15" id="pU4-0f-bfa"/>
                 <constraint firstItem="Ue8-wh-s5Y" firstAttribute="leading" secondItem="tNJ-hI-t07" secondAttribute="leading" id="re1-25-03u"/>

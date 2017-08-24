@@ -13,7 +13,7 @@ class TasksCollectionLayout: VerticalFittingCollectionLayout {
 	convenience init() {
 
 		self.init(
-			withItemIdension: 130.0,
+			withItemIdension: 80.0,
 			interItemMargin: 10.0,
 			leadingEdgeMargin: 10.0,
 			trailingEdgeMargin: 10.0)

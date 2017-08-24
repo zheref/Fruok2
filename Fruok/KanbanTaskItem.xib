@@ -15,10 +15,10 @@
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
             <subviews>
                 <customView translatesAutoresizingMaskIntoConstraints="NO" id="lyQ-Hs-66d">
-                    <rect key="frame" x="0.0" y="234" width="290" height="38"/>
+                    <rect key="frame" x="0.0" y="242" width="290" height="30"/>
                     <subviews>
                         <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="1s1-G3-lq1">
-                            <rect key="frame" x="31" y="10" width="40" height="17"/>
+                            <rect key="frame" x="28" y="5" width="40" height="17"/>
                             <textFieldCell key="cell" lineBreakMode="truncatingTail" sendsActionOnEndEditing="YES" title="Label" id="GTu-Rb-Ki5">
                                 <font key="font" metaFont="systemBold"/>
                                 <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
@@ -26,7 +26,7 @@
                             </textFieldCell>
                         </textField>
                         <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="wXA-Ic-xjg">
-                            <rect key="frame" x="5" y="10" width="23" height="23"/>
+                            <rect key="frame" x="5" y="5" width="20" height="20"/>
                             <constraints>
                                 <constraint firstAttribute="width" secondItem="wXA-Ic-xjg" secondAttribute="height" multiplier="1:1" id="j7U-Bk-8fM"/>
                             </constraints>
@@ -35,16 +35,15 @@
                     </subviews>
                     <constraints>
                         <constraint firstItem="wXA-Ic-xjg" firstAttribute="top" secondItem="lyQ-Hs-66d" secondAttribute="top" constant="5" id="33T-Ey-gfi"/>
-                        <constraint firstAttribute="height" constant="38" id="KUD-N9-Cfd"/>
+                        <constraint firstAttribute="height" constant="30" id="KUD-N9-Cfd"/>
                         <constraint firstItem="wXA-Ic-xjg" firstAttribute="leading" secondItem="lyQ-Hs-66d" secondAttribute="leading" constant="5" id="Nra-Qd-Bil"/>
                         <constraint firstItem="wXA-Ic-xjg" firstAttribute="bottom" secondItem="1s1-G3-lq1" secondAttribute="bottom" id="ah0-Rd-70i"/>
                         <constraint firstItem="1s1-G3-lq1" firstAttribute="leading" secondItem="wXA-Ic-xjg" secondAttribute="trailing" constant="5" id="c2M-t1-bfP"/>
-                        <constraint firstItem="1s1-G3-lq1" firstAttribute="centerY" secondItem="lyQ-Hs-66d" secondAttribute="centerY" id="tg9-DA-AfP"/>
                     </constraints>
                 </customView>
                 <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" translatesAutoresizingMaskIntoConstraints="NO" id="SE9-fb-AIW">
-                    <rect key="frame" x="18" y="209" width="254" height="17"/>
-                    <textFieldCell key="cell" controlSize="mini" sendsActionOnEndEditing="YES" title="Multiline Label" id="QhK-gq-pga">
+                    <rect key="frame" x="18" y="225" width="254" height="17"/>
+                    <textFieldCell key="cell" controlSize="mini" lineBreakMode="truncatingTail" sendsActionOnEndEditing="YES" title="Multiline Label" id="QhK-gq-pga">
                         <font key="font" metaFont="system"/>
                         <color key="textColor" white="0.5" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
@@ -53,11 +52,12 @@
             </subviews>
             <constraints>
                 <constraint firstAttribute="trailing" secondItem="SE9-fb-AIW" secondAttribute="trailing" constant="20" id="BaD-b5-xrz"/>
-                <constraint firstItem="SE9-fb-AIW" firstAttribute="top" secondItem="lyQ-Hs-66d" secondAttribute="bottom" constant="8" id="Fur-cs-fZJ"/>
+                <constraint firstItem="SE9-fb-AIW" firstAttribute="top" secondItem="lyQ-Hs-66d" secondAttribute="bottom" id="Fur-cs-fZJ"/>
                 <constraint firstAttribute="trailing" secondItem="lyQ-Hs-66d" secondAttribute="trailing" id="HeC-rh-GaC"/>
                 <constraint firstItem="SE9-fb-AIW" firstAttribute="leading" secondItem="Hz6-mo-xeY" secondAttribute="leading" constant="20" id="V2O-49-SZj"/>
                 <constraint firstItem="lyQ-Hs-66d" firstAttribute="top" secondItem="Hz6-mo-xeY" secondAttribute="top" id="XLk-kv-J9A"/>
                 <constraint firstItem="lyQ-Hs-66d" firstAttribute="leading" secondItem="Hz6-mo-xeY" secondAttribute="leading" id="scW-as-K4L"/>
+                <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="SE9-fb-AIW" secondAttribute="bottom" id="zNq-X0-1P6"/>
             </constraints>
             <point key="canvasLocation" x="234" y="168"/>
         </customView>

@@ -43,6 +43,7 @@ class SubtasksViewController: NSViewController, MVVMView {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+		self.tableView.action = #selector(SubtasksViewController.tableAction(_ :))
 		self.tableView.doubleAction = #selector(SubtasksViewController.edit(_ :))
 		self.connectVMIfReady()
     }
@@ -83,6 +84,13 @@ class SubtasksViewController: NSViewController, MVVMView {
 			break
 		}
 	}
+
+	@IBAction func tableAction(_ sender: Any) {
+
+		if self.tableView.clickedRow == self.viewModel?.addButtonIndex {
+			self.viewModel?.userWantsAddSubtask()
+		}
+	}
 	
 	@IBAction func addSubtask(_ sender: Any) {
 
@@ -119,6 +127,7 @@ extension SubtasksViewController: NSTableViewDataSource, NSTableViewDelegate {
 
 	enum CellName: String {
 		case SubtaskCell
+		case AddSubtaskCell
 	}
 
 	func numberOfRows(in tableView: NSTableView) -> Int {
@@ -128,9 +137,19 @@ extension SubtasksViewController: NSTableViewDataSource, NSTableViewDelegate {
 
 	func tableView(_ tableView: NSTableView, viewFor tableColumn: NSTableColumn?, row: Int) -> NSView? {
 
+		if self.viewModel?.addButtonIndex == row {
+
+			let cell = self.tableView.make(withIdentifier: CellName.AddSubtaskCell.rawValue, owner: self)
+			return cell
+		}
+
 		let cell = self.tableView.make(withIdentifier: CellName.SubtaskCell.rawValue, owner: self) as! SubtaskCell
 		let viewModel = self.viewModel!.subtaskViewModel(for: row)
 		cell.set(viewModel: viewModel)
 		return cell
+	}
+
+	func tableView(_ tableView: NSTableView, shouldSelectRow row: Int) -> Bool {
+		return false
 	}
 }

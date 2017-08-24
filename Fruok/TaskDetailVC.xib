@@ -94,26 +94,16 @@
                 <customView translatesAutoresizingMaskIntoConstraints="NO" id="2wk-cn-QXa">
                     <rect key="frame" x="0.0" y="205" width="480" height="219"/>
                     <subviews>
-                        <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="sBD-ig-KXs">
-                            <rect key="frame" x="18" y="182" width="64" height="17"/>
-                            <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Subtasks:" id="0WQ-HK-n6K">
-                                <font key="font" metaFont="system"/>
-                                <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
-                                <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
-                            </textFieldCell>
-                        </textField>
                         <customView translatesAutoresizingMaskIntoConstraints="NO" id="tNJ-hI-t07">
-                            <rect key="frame" x="20" y="0.0" width="440" height="174"/>
+                            <rect key="frame" x="20" y="0.0" width="440" height="209"/>
                             <constraints>
                                 <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="100" id="17K-zw-fSr"/>
                             </constraints>
                         </customView>
                     </subviews>
                     <constraints>
-                        <constraint firstItem="tNJ-hI-t07" firstAttribute="top" secondItem="sBD-ig-KXs" secondAttribute="bottom" constant="8" id="7DK-uc-E44"/>
                         <constraint firstAttribute="bottom" secondItem="tNJ-hI-t07" secondAttribute="bottom" id="Jnk-LI-nRV"/>
-                        <constraint firstItem="sBD-ig-KXs" firstAttribute="top" secondItem="2wk-cn-QXa" secondAttribute="top" constant="20" id="fzr-yZ-fXP"/>
-                        <constraint firstItem="sBD-ig-KXs" firstAttribute="leading" secondItem="2wk-cn-QXa" secondAttribute="leading" constant="20" id="vSN-bX-FAE"/>
+                        <constraint firstItem="tNJ-hI-t07" firstAttribute="top" secondItem="2wk-cn-QXa" secondAttribute="top" constant="10" id="aUL-b3-zdz"/>
                     </constraints>
                 </customView>
                 <customView translatesAutoresizingMaskIntoConstraints="NO" id="vVC-2D-b6X">
@@ -142,6 +132,7 @@
                         <constraint firstAttribute="bottom" secondItem="Ue8-wh-s5Y" secondAttribute="bottom" id="FHd-yz-Nza"/>
                         <constraint firstItem="Ue8-wh-s5Y" firstAttribute="top" secondItem="r1U-EX-ZYv" secondAttribute="bottom" constant="8" id="SDG-Uf-YHe"/>
                         <constraint firstItem="r1U-EX-ZYv" firstAttribute="top" secondItem="HwW-og-lMZ" secondAttribute="top" constant="20" id="Sxu-V9-zdZ"/>
+                        <constraint firstItem="r1U-EX-ZYv" firstAttribute="leading" secondItem="Ue8-wh-s5Y" secondAttribute="leading" id="Tgt-zL-ty2"/>
                     </constraints>
                 </customView>
             </subviews>
@@ -152,14 +143,11 @@
                 <constraint firstItem="HwW-og-lMZ" firstAttribute="top" secondItem="2wk-cn-QXa" secondAttribute="bottom" id="6g3-jN-kty"/>
                 <constraint firstItem="Ue8-wh-s5Y" firstAttribute="trailing" secondItem="tNJ-hI-t07" secondAttribute="trailing" id="6i3-sJ-838"/>
                 <constraint firstAttribute="trailing" secondItem="HwW-og-lMZ" secondAttribute="trailing" id="835-SW-zeJ"/>
-                <constraint firstItem="r1U-EX-ZYv" firstAttribute="leading" secondItem="sBD-ig-KXs" secondAttribute="leading" id="Gqf-bn-eAd"/>
                 <constraint firstItem="HwW-og-lMZ" firstAttribute="leading" secondItem="Hz6-mo-xeY" secondAttribute="leading" id="Ja6-h3-GKG"/>
-                <constraint firstItem="tNJ-hI-t07" firstAttribute="top" secondItem="sBD-ig-KXs" secondAttribute="bottom" constant="8" id="Nh3-hs-XeN"/>
                 <constraint firstAttribute="trailing" secondItem="xau-bX-rfq" secondAttribute="trailing" id="PBc-gT-ija"/>
                 <constraint firstItem="xau-bX-rfq" firstAttribute="leading" secondItem="Hz6-mo-xeY" secondAttribute="leading" id="POb-5T-ENj"/>
                 <constraint firstItem="DvX-Vn-Tn6" firstAttribute="top" secondItem="vVC-2D-b6X" secondAttribute="bottom" constant="20" id="RRB-oZ-m98"/>
                 <constraint firstItem="tNJ-hI-t07" firstAttribute="leading" secondItem="dWT-j5-noC" secondAttribute="leading" id="SZ1-sD-RBC"/>
-                <constraint firstItem="sBD-ig-KXs" firstAttribute="leading" secondItem="Hz6-mo-xeY" secondAttribute="leading" constant="20" id="YRF-9i-uyH"/>
                 <constraint firstItem="2wk-cn-QXa" firstAttribute="top" secondItem="DvX-Vn-Tn6" secondAttribute="bottom" id="aQZ-0C-xcS"/>
                 <constraint firstAttribute="trailing" secondItem="ngC-M0-C3s" secondAttribute="trailing" id="c6F-fA-mfy"/>
                 <constraint firstAttribute="trailing" secondItem="2wk-cn-QXa" secondAttribute="trailing" id="cj4-a2-4rw"/>

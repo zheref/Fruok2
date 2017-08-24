@@ -46,7 +46,36 @@ class SubtasksViewModel: NSObject, CollectionViewModel {
 		}
 	}
 
+	func reactToCoreDataKVOMessage(_ change: [NSKeyValueChangeKey : Any]?) {
+
+		if !self.supressTaskStateObservation {
+
+			var action: CollectionViewModelActions? = nil
+			switch NSKeyValueChange(optionalRawValue: change?[.kindKey] as? UInt) {
+
+			case .insertion?:
+				if let indexSet = change?[.indexesKey] as? IndexSet {
+					action = .addTasksAtIndexes(indexSet)
+				}
+			case .removal?:
+				if let indexSet = change?[.indexesKey] as? IndexSet {
+					action = .deleteTasksAtIndexes(indexSet)
+				}
+			default:
+				action = .refreshTaskStates
+			}
+
+
+			self.numCollectionObjects.value = self.model.mutableOrderedSetValue(forKeyPath: self.modelCollectionKeyPath).count + 1
+			self.viewActions.value = action ?? .refreshTaskStates
+		}
+	}
+
+
 	var editableIndex: Int?
+	var addButtonIndex: Int? {
+		return self.task.subtasks?.count ?? 0
+	}
 
 	func userWantsAddSubtask() {
 

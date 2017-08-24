@@ -18,20 +18,20 @@
             <rect key="frame" x="0.0" y="0.0" width="480" height="272"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
             <subviews>
-                <scrollView autohidesScrollers="YES" horizontalLineScroll="27" horizontalPageScroll="10" verticalLineScroll="27" verticalPageScroll="10" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TQD-aL-ojE">
-                    <rect key="frame" x="0.0" y="38" width="480" height="234"/>
+                <scrollView borderType="none" autohidesScrollers="YES" horizontalLineScroll="27" horizontalPageScroll="10" verticalLineScroll="27" verticalPageScroll="10" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TQD-aL-ojE">
+                    <rect key="frame" x="0.0" y="0.0" width="480" height="272"/>
                     <clipView key="contentView" id="5Xi-2R-9j6">
-                        <rect key="frame" x="1" y="1" width="478" height="232"/>
+                        <rect key="frame" x="0.0" y="0.0" width="480" height="272"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnAutoresizingStyle="lastColumnOnly" columnReordering="NO" columnSelection="YES" multipleSelection="NO" autosaveColumns="NO" rowHeight="25" rowSizeStyle="automatic" viewBased="YES" id="OHj-aP-tXM" customClass="SubtasksTableView" customModule="Fruok" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="0.0" width="478" height="232"/>
+                                <rect key="frame" x="0.0" y="0.0" width="480" height="272"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <size key="intercellSpacing" width="3" height="2"/>
                                 <color key="backgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
                                 <color key="gridColor" name="gridColor" catalog="System" colorSpace="catalog"/>
                                 <tableColumns>
-                                    <tableColumn width="475" minWidth="40" maxWidth="1000" id="3TD-eD-SXd">
+                                    <tableColumn width="477" minWidth="40" maxWidth="1000" id="3TD-eD-SXd">
                                         <tableHeaderCell key="headerCell" lineBreakMode="truncatingTail" borderStyle="border">
                                             <font key="font" metaFont="smallSystem"/>
                                             <color key="textColor" name="headerTextColor" catalog="System" colorSpace="catalog"/>
@@ -45,7 +45,7 @@
                                         <tableColumnResizingMask key="resizingMask" resizeWithTable="YES" userResizable="YES"/>
                                         <prototypeCellViews>
                                             <tableCellView identifier="SubtaskCell" id="wfk-qk-pm9" customClass="SubtaskCell" customModule="Fruok" customModuleProvider="target">
-                                                <rect key="frame" x="1" y="1" width="475" height="25"/>
+                                                <rect key="frame" x="1" y="1" width="477" height="25"/>
                                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                 <subviews>
                                                     <button translatesAutoresizingMaskIntoConstraints="NO" id="LVg-Og-bxl">
@@ -64,7 +64,7 @@
                                                         </textFieldCell>
                                                     </textField>
                                                     <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="b83-y0-rH8">
-                                                        <rect key="frame" x="32" y="2" width="414" height="22"/>
+                                                        <rect key="frame" x="32" y="2" width="416" height="22"/>
                                                         <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" state="on" borderStyle="bezel" drawsBackground="YES" id="aED-c6-Z49">
                                                             <font key="font" metaFont="system"/>
                                                             <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
@@ -90,6 +90,24 @@
                                                     <outlet property="nameLabel" destination="38l-Ug-sAG" id="1KU-Yz-bZ2"/>
                                                 </connections>
                                             </tableCellView>
+                                            <tableCellView identifier="AddSubtaskCell" id="nSF-zZ-5eJ">
+                                                <rect key="frame" x="1" y="28" width="477" height="17"/>
+                                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                                <subviews>
+                                                    <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="lhi-Fg-EOI">
+                                                        <rect key="frame" x="0.0" y="0.0" width="477" height="17"/>
+                                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                                                        <textFieldCell key="cell" lineBreakMode="truncatingTail" sendsActionOnEndEditing="YES" title="Add subtask..." id="dqJ-UO-uzc">
+                                                            <font key="font" metaFont="system"/>
+                                                            <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                                        </textFieldCell>
+                                                    </textField>
+                                                </subviews>
+                                                <connections>
+                                                    <outlet property="textField" destination="lhi-Fg-EOI" id="8Zz-c8-WZf"/>
+                                                </connections>
+                                            </tableCellView>
                                         </prototypeCellViews>
                                     </tableColumn>
                                 </tableColumns>
@@ -110,39 +128,12 @@
                         <autoresizingMask key="autoresizingMask"/>
                     </scroller>
                 </scrollView>
-                <customView translatesAutoresizingMaskIntoConstraints="NO" id="NpN-Lx-LdL">
-                    <rect key="frame" x="0.0" y="0.0" width="480" height="38"/>
-                    <subviews>
-                        <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="dzh-I8-Q5U">
-                            <rect key="frame" x="0.0" y="18" width="20" height="20"/>
-                            <constraints>
-                                <constraint firstAttribute="height" constant="20" id="21j-p9-4ai"/>
-                                <constraint firstAttribute="width" constant="20" id="fYa-Yh-Zwy"/>
-                            </constraints>
-                            <buttonCell key="cell" type="square" bezelStyle="shadowlessSquare" image="NSAddTemplate" imagePosition="only" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="GRb-yQ-ryx">
-                                <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                                <font key="font" metaFont="system"/>
-                            </buttonCell>
-                            <connections>
-                                <action selector="addSubtask:" target="-2" id="4Pi-oU-3dl"/>
-                            </connections>
-                        </button>
-                    </subviews>
-                    <constraints>
-                        <constraint firstItem="dzh-I8-Q5U" firstAttribute="leading" secondItem="NpN-Lx-LdL" secondAttribute="leading" id="4f6-E8-LeU"/>
-                        <constraint firstItem="dzh-I8-Q5U" firstAttribute="top" secondItem="NpN-Lx-LdL" secondAttribute="top" id="YWo-Af-3Bv"/>
-                        <constraint firstAttribute="height" constant="38" id="aq6-9Q-3Uo"/>
-                    </constraints>
-                </customView>
             </subviews>
             <constraints>
-                <constraint firstItem="NpN-Lx-LdL" firstAttribute="leading" secondItem="Hz6-mo-xeY" secondAttribute="leading" id="PtO-e9-aW7"/>
+                <constraint firstAttribute="bottom" secondItem="TQD-aL-ojE" secondAttribute="bottom" id="DH7-Sf-uYS"/>
                 <constraint firstItem="TQD-aL-ojE" firstAttribute="top" secondItem="Hz6-mo-xeY" secondAttribute="top" id="So7-us-GoG"/>
-                <constraint firstAttribute="bottom" secondItem="NpN-Lx-LdL" secondAttribute="bottom" id="TNN-Te-phQ"/>
                 <constraint firstAttribute="trailing" secondItem="TQD-aL-ojE" secondAttribute="trailing" id="bMm-2c-ZTD"/>
-                <constraint firstItem="NpN-Lx-LdL" firstAttribute="top" secondItem="TQD-aL-ojE" secondAttribute="bottom" id="kPo-xS-MHU"/>
                 <constraint firstItem="TQD-aL-ojE" firstAttribute="leading" secondItem="Hz6-mo-xeY" secondAttribute="leading" id="lc2-t4-8aB"/>
-                <constraint firstAttribute="trailing" secondItem="NpN-Lx-LdL" secondAttribute="trailing" id="qWB-xT-PTX"/>
             </constraints>
         </customView>
         <menu id="i6j-XI-Qf3">
@@ -162,7 +153,4 @@
             </items>
         </menu>
     </objects>
-    <resources>
-        <image name="NSAddTemplate" width="11" height="11"/>
-    </resources>
 </document>

@@ -105,6 +105,7 @@ class TasksCollectionViewController: NSViewController, CollectionViewModelClient
 				let actionBlock: (NSCollectionViewItem?) -> Void = { item in
 
 					if item != nil {
+						self.view.window?.makeFirstResponder(self)
 						NSApp.sendAction(#selector(KanbanViewController.showTaskDetails(_:)), to: nil, from: item)
 					}
 				}

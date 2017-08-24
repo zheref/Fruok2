@@ -22,7 +22,11 @@ class KanbanTaskItemViewModel: NSObject, MVVMViewModel {
 			.bind(to: self.taskName)
 		.dispose(in: bag)
 
-		self.reactive.keyPath(#keyPath(KanbanTaskItemViewModel.task.descriptionString.string), ofType: Optional<String>.self, context: .immediateOnMain).bind(to: self.taskDescription)
+		self.reactive.keyPath(#keyPath(KanbanTaskItemViewModel.task.descriptionString), ofType: Optional<NSAttributedString>.self, context: .immediateOnMain)
+			.map {
+				$0?.string ?? ""
+			}
+			.bind(to: self.taskDescription)
 			.dispose(in: bag)
 	}
 
@@ -37,6 +41,6 @@ class KanbanTaskItemViewModel: NSObject, MVVMViewModel {
 	}
 
 	let taskName = Observable<String?>("")
-	let taskDescription = Observable<String?>("")
+	let taskDescription = Observable<String>("")
 	let showTaskDetails = Observable<Bool>(false)
 }

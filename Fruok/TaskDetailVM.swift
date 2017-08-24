@@ -20,12 +20,15 @@ class TaskDetailViewModel: NSObject, MVVMViewModel {
 			.dispose(in: bag)
 
 		self.reactive.keyPath(#keyPath(TaskDetailViewModel.task.descriptionString), ofType: Optional<NSAttributedString>.self, context: .immediateOnMain)
+			.map {
+				$0 ?? NSAttributedString()
+			}
 			.bind(to: self.descriptionText)
 		.dispose(in: bag)
 	}
 
 	let name = Observable<String?>("")
-	let descriptionText = Observable<NSAttributedString?>(NSAttributedString(string:""))
+	let descriptionText = Observable<NSAttributedString>(NSAttributedString(string:""))
 	let dismiss = Observable<Bool>(false)
 
 	struct TaskDeleteConfirmationInfo {

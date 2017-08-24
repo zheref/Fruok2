@@ -47,8 +47,6 @@ class TaskDetailViewController: NSViewController, MVVMView {
 		self.connectVMIfReady()
     }
 
-	var suppressTextChange = false // HACK
-
 	func connectVM() {
 
 		self.viewModel!.name.map({$0 ?? ""}).bind(to: self.nameLabel.reactive.stringValue)
@@ -57,14 +55,9 @@ class TaskDetailViewController: NSViewController, MVVMView {
 			self?.viewModel?.userWantsChangeName(name: textField.stringValue)
 		}.dispose(in: bag)
 
-		self.viewModel!.descriptionText.map({$0 ?? NSAttributedString()}).observeNext { [weak self] (attrString) in
+		self.viewModel!.descriptionText.observeNext { [weak self] (attrString) in
 
-			guard let strongSelf = self else {return}
-
-			if strongSelf.suppressTextChange {
-				return
-			}
-			strongSelf.descriptionField.insertText(attrString, replacementRange: NSMakeRange(0, strongSelf.descriptionField.textStorage?.length ?? 0))
+			self?.descriptionField.insertText(attrString, replacementRange: NSMakeRange(0, self?.descriptionField.textStorage?.length ?? 0))
 		}.dispose(in: bag)
 
 		self.viewModel?.taskDeleteConfirmation.observeNext { [weak self] info in
@@ -86,12 +79,10 @@ class TaskDetailViewController: NSViewController, MVVMView {
 			
 		}.dispose(in: bag)
 
-		NotificationCenter.default.reactive.notification(name: Notification.Name.NSTextDidChange, object:self.descriptionField).observeNext { [weak self] notification in
+		NotificationCenter.default.reactive.notification(name: Notification.Name.NSTextDidEndEditing, object:self.descriptionField).observeNext { [weak self] notification in
 
 			if let mySelf = self {
-				mySelf.suppressTextChange = true
 				mySelf.viewModel?.userWantsChangeDescriptionText(attributedString: mySelf.descriptionField.attributedString())
-				mySelf.suppressTextChange = false
 			}
 		}.dispose(in: bag)
 
@@ -114,6 +105,13 @@ class TaskDetailViewController: NSViewController, MVVMView {
 		let attachmentsController = AttachmentsViewController()
 		attachmentsController.set(viewModel: self.viewModel!.attachmentsViewModel())
 		self.attachmentsController = attachmentsController
+	}
+
+	override func viewWillDisappear() {
+		super.viewWillDisappear()
+
+		// This will cause text views being edited to send NSTextDidEndEditing notification:
+		self.view.window?.makeFirstResponder(self.view)
 	}
 
 	var subtasksController: SubtasksViewController? {

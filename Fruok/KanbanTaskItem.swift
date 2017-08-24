@@ -53,7 +53,7 @@ class KanbanTaskItem: NSCollectionViewItem, MVVMView {
 		}.dispose(in: reuseBag)
 
 		self.viewModel!.taskName.map({$0 ?? ""}).bind(to: self.nameLabel.reactive.editingString).dispose(in: reuseBag)
-		self.viewModel!.taskDescription.map{$0 ?? ""}.bind(to: self.descriptionLabel).dispose(in: reuseBag)
+		self.viewModel!.taskDescription.bind(to: self.descriptionLabel).dispose(in: reuseBag)
 	}
 	@IBAction func showTaskDetailAction(_ sender: Any) {
 

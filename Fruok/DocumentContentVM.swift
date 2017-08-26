@@ -30,12 +30,27 @@ class DocumentContentViewModel: MVVMViewModel {
 
 	private(set) var currentChildView: Observable<ChildView?> = Observable(.project)
 
-	func changeCurrentChildView(to childView: ChildView?) {
+	func changeCurrentChildView(to childView: ChildView) {
 
-		if let childView = childView {
+		if self.document.fileURL == nil {
 
-			self.currentChildView.value = childView
+			let context = UnsafeMutableRawPointer(bitPattern: childView.rawValue)!
+			self.document.runModalSavePanel(for: .saveOperation, delegate: self, didSave: #selector(DocumentContentViewModel.changeCurrentChildViewAfterAveOperationOfDocument(_:didSave:context:)), contextInfo: context)
+			return
 		}
+
+		self.currentChildView.value = childView
+	}
+
+	@objc func changeCurrentChildViewAfterAveOperationOfDocument(_ document: NSDocument, didSave: Bool, context: UnsafeMutableRawPointer) {
+
+		if didSave {
+			let rawValue = Int(bitPattern: context)
+			if let view = ChildView(rawValue: Int(rawValue)) {
+				self.changeCurrentChildView(to: view)
+			}
+		}
+
 	}
 
 	func viewModelForProjectMetadata() -> ProjectMetadataViewModel? {

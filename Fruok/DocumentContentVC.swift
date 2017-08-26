@@ -97,7 +97,9 @@ class DocumentContentViewController: NSViewController, MVVMView {
 
 	@IBAction func currentChildViewControllerAction(_ sender: NSSegmentedControl?) {
 
-		let value = DocumentContentViewModel.ChildView(optionalRawValue: sender?.selectedSegment)
+		guard let value = DocumentContentViewModel.ChildView(optionalRawValue: sender?.selectedSegment) else {
+			return
+		}
 		self.viewModel?.changeCurrentChildView(to: value)
 	}
 

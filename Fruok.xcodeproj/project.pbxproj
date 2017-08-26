@@ -208,6 +208,7 @@
 		D84E45BA1F49BD3200C7891F /* RGBAColorsMarshalling+NSColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "RGBAColorsMarshalling+NSColor.swift"; sourceTree = "<group>"; };
 		D84E45BC1F4A15EE00C7891F /* LabelEditingColorWell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LabelEditingColorWell.swift; sourceTree = "<group>"; };
 		D85D52641F4F0482009B34FE /* LabelAddItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LabelAddItem.swift; sourceTree = "<group>"; };
+		D85D52661F501B52009B34FE /* Fruok.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Fruok.entitlements; sourceTree = "<group>"; };
 		D86441071F4EA9EE00884D49 /* NSManagedContext+UndoGroup.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSManagedContext+UndoGroup.swift"; sourceTree = "<group>"; };
 		D864410B1F4EE3E000884D49 /* TaskDescriptionTextView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaskDescriptionTextView.swift; sourceTree = "<group>"; };
 		D864410E1F4EFBEA00884D49 /* LabelAddItem.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LabelAddItem.xib; sourceTree = "<group>"; };
@@ -470,6 +471,7 @@
 		D8388E3E1F37905B004A2DA3 /* Fruok */ = {
 			isa = PBXGroup;
 			children = (
+				D85D52661F501B52009B34FE /* Fruok.entitlements */,
 				D8C2AD201F3A56DA002D75B2 /* Utilities */,
 				D82ECF141F37985D008251C2 /* CoreData */,
 				D8388E3F1F37905B004A2DA3 /* AppDelegate.swift */,
@@ -734,6 +736,11 @@
 						DevelopmentTeam = V85GBYB7B9;
 						LastSwiftMigration = 0820;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.iCloud = {
+								enabled = 1;
+							};
+						};
 					};
 					D8388E511F37905B004A2DA3 = {
 						CreatedOnToolsVersion = 8.2.1;
@@ -1173,6 +1180,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = Fruok/Fruok.entitlements;
 				CODE_SIGN_IDENTITY = "Mac Developer";
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = V85GBYB7B9;
@@ -1192,6 +1200,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = Fruok/Fruok.entitlements;
 				CODE_SIGN_IDENTITY = "Mac Developer";
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = V85GBYB7B9;

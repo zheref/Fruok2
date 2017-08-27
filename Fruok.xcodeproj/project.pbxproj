@@ -71,6 +71,10 @@
 		D8388E4C1F37905B004A2DA3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D8388E4A1F37905B004A2DA3 /* Main.storyboard */; };
 		D8388E571F37905B004A2DA3 /* FruokTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8388E561F37905B004A2DA3 /* FruokTests.swift */; };
 		D8388E621F37905B004A2DA3 /* FruokUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8388E611F37905B004A2DA3 /* FruokUITests.swift */; };
+		D83BF7C91F52F3D900339637 /* PomodoroSession+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = D83BF7C71F52F3D900339637 /* PomodoroSession+CoreDataProperties.swift */; };
+		D83BF7CA1F52F3D900339637 /* PomodoroLog+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = D83BF7C81F52F3D900339637 /* PomodoroLog+CoreDataProperties.swift */; };
+		D83BF7CD1F52F3EB00339637 /* PomodoroSession+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = D83BF7CB1F52F3EB00339637 /* PomodoroSession+CoreDataClass.swift */; };
+		D83BF7CE1F52F3EB00339637 /* PomodoroLog+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = D83BF7CC1F52F3EB00339637 /* PomodoroLog+CoreDataClass.swift */; };
 		D84E45B61F49BB3B00C7891F /* RGBAColorsMarshalling.swift in Sources */ = {isa = PBXBuildFile; fileRef = D84E45B51F49BB3B00C7891F /* RGBAColorsMarshalling.swift */; };
 		D84E45B91F49BC4E00C7891F /* RGBAColorsMarshalling+CoreData.swift in Sources */ = {isa = PBXBuildFile; fileRef = D84E45B81F49BC4E00C7891F /* RGBAColorsMarshalling+CoreData.swift */; };
 		D84E45BB1F49BD3200C7891F /* RGBAColorsMarshalling+NSColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = D84E45BA1F49BD3200C7891F /* RGBAColorsMarshalling+NSColor.swift */; };
@@ -203,6 +207,10 @@
 		D8388E5D1F37905B004A2DA3 /* FruokUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FruokUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D8388E611F37905B004A2DA3 /* FruokUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FruokUITests.swift; sourceTree = "<group>"; };
 		D8388E631F37905B004A2DA3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D83BF7C71F52F3D900339637 /* PomodoroSession+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "PomodoroSession+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		D83BF7C81F52F3D900339637 /* PomodoroLog+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "PomodoroLog+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		D83BF7CB1F52F3EB00339637 /* PomodoroSession+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "PomodoroSession+CoreDataClass.swift"; sourceTree = "<group>"; };
+		D83BF7CC1F52F3EB00339637 /* PomodoroLog+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "PomodoroLog+CoreDataClass.swift"; sourceTree = "<group>"; };
 		D84E45B51F49BB3B00C7891F /* RGBAColorsMarshalling.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RGBAColorsMarshalling.swift; sourceTree = "<group>"; };
 		D84E45B81F49BC4E00C7891F /* RGBAColorsMarshalling+CoreData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "RGBAColorsMarshalling+CoreData.swift"; sourceTree = "<group>"; };
 		D84E45BA1F49BD3200C7891F /* RGBAColorsMarshalling+NSColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "RGBAColorsMarshalling+NSColor.swift"; sourceTree = "<group>"; };
@@ -351,6 +359,8 @@
 		D82ECF171F37985D008251C2 /* GeneratedClasses */ = {
 			isa = PBXGroup;
 			children = (
+				D83BF7C71F52F3D900339637 /* PomodoroSession+CoreDataProperties.swift */,
+				D83BF7C81F52F3D900339637 /* PomodoroLog+CoreDataProperties.swift */,
 				D834BD3B1F4C0FEA001B99D2 /* Attachment+CoreDataProperties.swift */,
 				D82E215F1F3C5CE400F601DD /* BaseTask+CoreDataProperties.swift */,
 				D82E21601F3C5CE400F601DD /* Label+CoreDataProperties.swift */,
@@ -367,6 +377,8 @@
 		D82ECF391F37AC96008251C2 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				D83BF7CB1F52F3EB00339637 /* PomodoroSession+CoreDataClass.swift */,
+				D83BF7CC1F52F3EB00339637 /* PomodoroLog+CoreDataClass.swift */,
 				D834BD3D1F4C0FF9001B99D2 /* Attachment+CoreDataClass.swift */,
 				D82ECF181F37985D008251C2 /* BaseTask+CoreDataClass.swift */,
 				D82ECF1A1F37985D008251C2 /* Label+CoreDataClass.swift */,
@@ -976,6 +988,8 @@
 				D82ECF291F37985D008251C2 /* BaseTask+CoreDataClass.swift in Sources */,
 				D82E216C1F3C5CE400F601DD /* Subtask+CoreDataProperties.swift in Sources */,
 				D86441081F4EA9EE00884D49 /* NSManagedContext+UndoGroup.swift in Sources */,
+				D83BF7CA1F52F3D900339637 /* PomodoroLog+CoreDataProperties.swift in Sources */,
+				D83BF7C91F52F3D900339637 /* PomodoroSession+CoreDataProperties.swift in Sources */,
 				D8FC65131F48C2420065D566 /* LabelEditingItem.swift in Sources */,
 				D82E217F1F40F2F700F601DD /* CollectionViewModel.swift in Sources */,
 				D8C2AD291F3A7EBC002D75B2 /* KanbanTaskStateItem.swift in Sources */,
@@ -999,11 +1013,13 @@
 				D82E216A1F3C5CE400F601DD /* Project+CoreDataProperties.swift in Sources */,
 				D8339DE61F46FA9700EA5617 /* LabelsVC.swift in Sources */,
 				D8C2AD3D1F3BD284002D75B2 /* FirstResponderView.swift in Sources */,
+				D83BF7CE1F52F3EB00339637 /* PomodoroLog+CoreDataClass.swift in Sources */,
 				D834BD4C1F4C851A001B99D2 /* DetailPresentationAnimator.swift in Sources */,
 				D85D52651F4F0482009B34FE /* LabelAddItem.swift in Sources */,
 				D8C2AD381F3BABE6002D75B2 /* KanbanCollectionLayout.swift in Sources */,
 				D834BD491F4C5376001B99D2 /* AttachmentCell.swift in Sources */,
 				D8339DE91F46FB0500EA5617 /* LabelsVM.swift in Sources */,
+				D83BF7CD1F52F3EB00339637 /* PomodoroSession+CoreDataClass.swift in Sources */,
 				D82ECF371F37985D008251C2 /* TaskState+CoreDataClass.swift in Sources */,
 				D834BD4F1F4CA17D001B99D2 /* PresentationViewController.swift in Sources */,
 				D8C2AD0F1F39007E002D75B2 /* DocumentContentVM.swift in Sources */,

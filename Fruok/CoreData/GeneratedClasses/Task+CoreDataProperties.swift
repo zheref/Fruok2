@@ -2,7 +2,7 @@
 //  Task+CoreDataProperties.swift
 //  
 //
-//  Created by Matthias Keiser on 22.08.17.
+//  Created by Matthias Keiser on 27.08.17.
 //
 //
 
@@ -16,10 +16,46 @@ extension Task {
         return NSFetchRequest<Task>(entityName: "Task");
     }
 
+    @NSManaged public var attachments: NSOrderedSet?
     @NSManaged public var labels: NSOrderedSet?
     @NSManaged public var state: TaskState?
     @NSManaged public var subtasks: NSOrderedSet?
-    @NSManaged public var attachments: NSOrderedSet?
+    @NSManaged public var pomodoroSessions: PomodoroSession?
+
+}
+
+// MARK: Generated accessors for attachments
+extension Task {
+
+    @objc(insertObject:inAttachmentsAtIndex:)
+    @NSManaged public func insertIntoAttachments(_ value: Attachment, at idx: Int)
+
+    @objc(removeObjectFromAttachmentsAtIndex:)
+    @NSManaged public func removeFromAttachments(at idx: Int)
+
+    @objc(insertAttachments:atIndexes:)
+    @NSManaged public func insertIntoAttachments(_ values: [Attachment], at indexes: NSIndexSet)
+
+    @objc(removeAttachmentsAtIndexes:)
+    @NSManaged public func removeFromAttachments(at indexes: NSIndexSet)
+
+    @objc(replaceObjectInAttachmentsAtIndex:withObject:)
+    @NSManaged public func replaceAttachments(at idx: Int, with value: Attachment)
+
+    @objc(replaceAttachmentsAtIndexes:withAttachments:)
+    @NSManaged public func replaceAttachments(at indexes: NSIndexSet, with values: [Attachment])
+
+    @objc(addAttachmentsObject:)
+    @NSManaged public func addToAttachments(_ value: Attachment)
+
+    @objc(removeAttachmentsObject:)
+    @NSManaged public func removeFromAttachments(_ value: Attachment)
+
+    @objc(addAttachments:)
+    @NSManaged public func addToAttachments(_ values: NSOrderedSet)
+
+    @objc(removeAttachments:)
+    @NSManaged public func removeFromAttachments(_ values: NSOrderedSet)
 
 }
 
@@ -90,40 +126,5 @@ extension Task {
 
     @objc(removeSubtasks:)
     @NSManaged public func removeFromSubtasks(_ values: NSOrderedSet)
-
-}
-
-// MARK: Generated accessors for attachments
-extension Task {
-
-    @objc(insertObject:inAttachmentsAtIndex:)
-    @NSManaged public func insertIntoAttachments(_ value: Attachment, at idx: Int)
-
-    @objc(removeObjectFromAttachmentsAtIndex:)
-    @NSManaged public func removeFromAttachments(at idx: Int)
-
-    @objc(insertAttachments:atIndexes:)
-    @NSManaged public func insertIntoAttachments(_ values: [Attachment], at indexes: NSIndexSet)
-
-    @objc(removeAttachmentsAtIndexes:)
-    @NSManaged public func removeFromAttachments(at indexes: NSIndexSet)
-
-    @objc(replaceObjectInAttachmentsAtIndex:withObject:)
-    @NSManaged public func replaceAttachments(at idx: Int, with value: Attachment)
-
-    @objc(replaceAttachmentsAtIndexes:withAttachments:)
-    @NSManaged public func replaceAttachments(at indexes: NSIndexSet, with values: [Attachment])
-
-    @objc(addAttachmentsObject:)
-    @NSManaged public func addToAttachments(_ value: Attachment)
-
-    @objc(removeAttachmentsObject:)
-    @NSManaged public func removeFromAttachments(_ value: Attachment)
-
-    @objc(addAttachments:)
-    @NSManaged public func addToAttachments(_ values: NSOrderedSet)
-
-    @objc(removeAttachments:)
-    @NSManaged public func removeFromAttachments(_ values: NSOrderedSet)
 
 }

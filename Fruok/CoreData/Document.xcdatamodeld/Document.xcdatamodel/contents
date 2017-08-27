@@ -17,6 +17,17 @@
     <entity name="LabelColor" representedClassName="LabelColor" parentEntity="RGBAColor" syncable="YES">
         <relationship name="label" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Label" inverseName="color" inverseEntity="Label" syncable="YES"/>
     </entity>
+    <entity name="PomodoroLog" representedClassName="PomodoroLog" syncable="YES">
+        <attribute name="duration" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES" syncable="YES"/>
+        <relationship name="session" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="PomodoroSession" inverseName="logs" inverseEntity="PomodoroSession" syncable="YES"/>
+        <relationship name="subtask" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Subtask" inverseName="pomodoroLogs" inverseEntity="Subtask" syncable="YES"/>
+    </entity>
+    <entity name="PomodoroSession" representedClassName="PomodoroSession" syncable="YES">
+        <attribute name="duration" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="startDate" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
+        <relationship name="logs" optional="YES" toMany="YES" deletionRule="Nullify" ordered="YES" destinationEntity="PomodoroLog" inverseName="session" inverseEntity="PomodoroLog" syncable="YES"/>
+        <relationship name="task" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Task" inverseName="pomodoroSessions" inverseEntity="Task" syncable="YES"/>
+    </entity>
     <entity name="Project" representedClassName="Project" syncable="YES">
         <attribute name="client" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="codeName" optional="YES" attributeType="String" syncable="YES"/>
@@ -34,11 +45,13 @@
     </entity>
     <entity name="Subtask" representedClassName="Subtask" parentEntity="BaseTask" syncable="YES">
         <attribute name="done" optional="YES" attributeType="Boolean" defaultValueString="NO" usesScalarValueType="YES" syncable="YES"/>
+        <relationship name="pomodoroLogs" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="PomodoroLog" inverseName="subtask" inverseEntity="PomodoroLog" syncable="YES"/>
         <relationship name="task" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Task" inverseName="subtasks" inverseEntity="Task" syncable="YES"/>
     </entity>
     <entity name="Task" representedClassName="Task" parentEntity="BaseTask" syncable="YES">
         <relationship name="attachments" optional="YES" toMany="YES" deletionRule="Nullify" ordered="YES" destinationEntity="Attachment" inverseName="task" inverseEntity="Attachment" syncable="YES"/>
         <relationship name="labels" optional="YES" toMany="YES" deletionRule="Nullify" ordered="YES" destinationEntity="Label" inverseName="tasks" inverseEntity="Label" syncable="YES"/>
+        <relationship name="pomodoroSessions" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="PomodoroSession" inverseName="task" inverseEntity="PomodoroSession" syncable="YES"/>
         <relationship name="state" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="TaskState" inverseName="tasks" inverseEntity="TaskState" syncable="YES"/>
         <relationship name="subtasks" optional="YES" toMany="YES" deletionRule="Nullify" ordered="YES" destinationEntity="Subtask" inverseName="task" inverseEntity="Subtask" syncable="YES"/>
     </entity>
@@ -52,10 +65,12 @@
         <element name="BaseTask" positionX="-27" positionY="36" width="128" height="75"/>
         <element name="Label" positionX="-9" positionY="45" width="128" height="90"/>
         <element name="LabelColor" positionX="-18" positionY="63" width="128" height="60"/>
+        <element name="PomodoroLog" positionX="-9" positionY="81" width="128" height="90"/>
+        <element name="PomodoroSession" positionX="-18" positionY="72" width="128" height="105"/>
         <element name="Project" positionX="-63" positionY="-18" width="128" height="150"/>
         <element name="RGBAColor" positionX="18" positionY="72" width="128" height="105"/>
-        <element name="Subtask" positionX="9" positionY="90" width="128" height="75"/>
-        <element name="Task" positionX="0" positionY="81" width="128" height="105"/>
+        <element name="Subtask" positionX="9" positionY="90" width="128" height="90"/>
+        <element name="Task" positionX="0" positionY="81" width="128" height="120"/>
         <element name="TaskState" positionX="-45" positionY="27" width="128" height="90"/>
     </elements>
 </model>

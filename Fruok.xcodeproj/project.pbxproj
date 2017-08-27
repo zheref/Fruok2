@@ -471,7 +471,6 @@
 		D8388E3E1F37905B004A2DA3 /* Fruok */ = {
 			isa = PBXGroup;
 			children = (
-				D85D52661F501B52009B34FE /* Fruok.entitlements */,
 				D8C2AD201F3A56DA002D75B2 /* Utilities */,
 				D82ECF141F37985D008251C2 /* CoreData */,
 				D8388E3F1F37905B004A2DA3 /* AppDelegate.swift */,
@@ -482,6 +481,7 @@
 				D8388E481F37905B004A2DA3 /* Assets.xcassets */,
 				D8388E4A1F37905B004A2DA3 /* Main.storyboard */,
 				D8388E4D1F37905B004A2DA3 /* Info.plist */,
+				D85D52661F501B52009B34FE /* Fruok.entitlements */,
 			);
 			path = Fruok;
 			sourceTree = "<group>";

@@ -17,5 +17,11 @@ extension NSManagedObjectContext {
 		operations(self)
 		self.processPendingChanges()
 		self.undoManager?.endUndoGrouping()
+
+		do {
+			try self.save()
+		} catch {
+			Swift.print(error)
+		}
 	}
 }

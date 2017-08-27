@@ -25,7 +25,14 @@ class FruokDocumentObjectContext: NSManagedObjectContext {
 
 	weak var delegate: FruokDocumentObjectContextDelegate?
 
+	// We divert save requests to the document.
 	override func save() throws {
+
+		self.delegate?.save(context: self)
+	}
+
+	// This actually saves the context.
+	func actuallySave() throws {
 
 		if (self.persistentStoreCoordinator?.persistentStores.count ?? 0)  == 0 {
 
@@ -37,6 +44,7 @@ class FruokDocumentObjectContext: NSManagedObjectContext {
 
 protocol FruokDocumentObjectContextDelegate: class {
 
+	func save(context: NSManagedObjectContext)
 	func contextCreatePersistenStore(_ context: NSManagedObjectContext) throws
 	func context(_ context: NSManagedObjectContext, urlForExistingAttachmentWithIdentifier identifier: String, name: String) -> URL?
 	func context(_ context: NSManagedObjectContext, copyFileURLSToInbox urls: [URL], callback: @escaping ([Result<AttachmentCopyResult, NSError>]) -> Void)
@@ -127,7 +135,7 @@ class FruokDocument: NSDocument, FruokDocumentObjectContextDelegate {
 		self.managedObjectContext = context
 	}
 
-	var managedObjectContext: NSManagedObjectContext?
+	var managedObjectContext: FruokDocumentObjectContext?
 
 	override class func autosavesInPlace() -> Bool {
 		return true
@@ -160,7 +168,8 @@ class FruokDocument: NSDocument, FruokDocumentObjectContextDelegate {
 	override func write(to url: URL, ofType typeName: String, for saveOperation: NSSaveOperationType, originalContentsURL absoluteOriginalContentsURL: URL?) throws {
 
 		do {
-		try self.managedObjectContext?.save()
+
+		try self.managedObjectContext?.actuallySave()
 
 		let tempDataURL = FruokDocument.databaseURLFor(documentURL: self.temporaryDirectory)
 		let destinationDataURL = FruokDocument.databaseURLFor(documentURL: url)
@@ -364,6 +373,10 @@ class FruokDocument: NSDocument, FruokDocumentObjectContextDelegate {
 		}
 	}
 
+	func save(context: NSManagedObjectContext) {
+
+		self.save(nil)
+	}
 }
 
 struct AttachmentCopyResult {

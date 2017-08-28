@@ -2,17 +2,22 @@ PODS:
   - Bond (6.2.6):
     - Diff (~> 0.4)
     - ReactiveKit (~> 3.5.3)
+  - Charts (3.0.2):
+    - Charts/Core (= 3.0.2)
+  - Charts/Core (3.0.2)
   - Diff (0.5.3)
-  - ReactiveKit (3.5.4)
+  - ReactiveKit (3.5.5)
 
 DEPENDENCIES:
-  - Bond
+  - Bond (= 6.2.6)
+  - Charts (~> 3.0.2)
 
 SPEC CHECKSUMS:
   Bond: 0d7a52e9aec644c3b4985ceeb224a402b1efd691
+  Charts: 236d6ccdd0ce6feae151d89e829a7397381a21fd
   Diff: befa1d19c32726b2b36ce915d98793e2fbde8dcc
-  ReactiveKit: 4fc2a23db33777358abe93453ece3a69011adeec
+  ReactiveKit: ced30f9647912f74510bd8179790cf2dfc9454c8
 
-PODFILE CHECKSUM: 300a3b364760b8262669370dd3c1a21bafbcb00d
+PODFILE CHECKSUM: 707f8760b0f0deec634eda22987b61557f6eb21d
 
 COCOAPODS: 1.2.0

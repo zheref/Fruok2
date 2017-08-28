@@ -9,6 +9,11 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>Charts.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>Diff.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -47,12 +52,12 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>46D1E269447CE765E9249E27FC7F1F09</key>
+		<key>6C9545F4130D42DC9140D3FDEBABA82E</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>6C9545F4130D42DC9140D3FDEBABA82E</key>
+		<key>A47E96B082F504FCD546E193BE6B8D15</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -63,6 +68,11 @@
 			<true/>
 		</dict>
 		<key>EA86C11D22264BBA17C402F802C39ADE</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>F307B842FF76B2DE6C55DB67C0885325</key>
 		<dict>
 			<key>primary</key>
 			<true/>

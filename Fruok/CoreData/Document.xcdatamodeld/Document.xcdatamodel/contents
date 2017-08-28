@@ -19,6 +19,7 @@
     </entity>
     <entity name="PomodoroLog" representedClassName="PomodoroLog" syncable="YES">
         <attribute name="duration" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="startDate" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
         <relationship name="session" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="PomodoroSession" inverseName="logs" inverseEntity="PomodoroSession" syncable="YES"/>
         <relationship name="subtask" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Subtask" inverseName="pomodoroLogs" inverseEntity="Subtask" syncable="YES"/>
     </entity>
@@ -65,7 +66,7 @@
         <element name="BaseTask" positionX="-27" positionY="36" width="128" height="75"/>
         <element name="Label" positionX="-9" positionY="45" width="128" height="90"/>
         <element name="LabelColor" positionX="-18" positionY="63" width="128" height="60"/>
-        <element name="PomodoroLog" positionX="-9" positionY="81" width="128" height="90"/>
+        <element name="PomodoroLog" positionX="-9" positionY="81" width="128" height="105"/>
         <element name="PomodoroSession" positionX="-18" positionY="72" width="128" height="105"/>
         <element name="Project" positionX="-63" positionY="-18" width="128" height="150"/>
         <element name="RGBAColor" positionX="18" positionY="72" width="128" height="105"/>

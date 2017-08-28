@@ -27,19 +27,31 @@
                     <rect key="frame" x="0.0" y="635" width="480" height="38"/>
                     <subviews>
                         <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="DCG-sv-8N3">
-                            <rect key="frame" x="18" y="7" width="444" height="24"/>
+                            <rect key="frame" x="18" y="7" width="300" height="24"/>
                             <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" title="Label" placeholderString="Untitled" id="ZXb-VS-o90">
                                 <font key="font" metaFont="systemBold" size="20"/>
                                 <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                                 <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                             </textFieldCell>
                         </textField>
+                        <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="YXx-D8-xbn">
+                            <rect key="frame" x="330" y="1" width="136" height="32"/>
+                            <buttonCell key="cell" type="push" title="Start Pomodoro" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="BFF-4g-iqn">
+                                <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                <font key="font" metaFont="system"/>
+                            </buttonCell>
+                            <connections>
+                                <action selector="startPomodoroSession:" target="-2" id="fvC-3Q-kXo"/>
+                            </connections>
+                        </button>
                     </subviews>
                     <constraints>
+                        <constraint firstItem="YXx-D8-xbn" firstAttribute="centerY" secondItem="ngC-M0-C3s" secondAttribute="centerY" id="4eh-Sr-8L2"/>
+                        <constraint firstAttribute="trailing" secondItem="YXx-D8-xbn" secondAttribute="trailing" constant="20" id="IhY-Xf-Sjl"/>
                         <constraint firstItem="DCG-sv-8N3" firstAttribute="leading" secondItem="ngC-M0-C3s" secondAttribute="leading" constant="20" id="bEN-EG-fUs"/>
-                        <constraint firstAttribute="trailing" secondItem="DCG-sv-8N3" secondAttribute="trailing" priority="100" constant="20" id="fTY-tI-OjD"/>
                         <constraint firstAttribute="height" constant="38" id="tuV-qW-XbB"/>
                         <constraint firstItem="DCG-sv-8N3" firstAttribute="centerY" secondItem="ngC-M0-C3s" secondAttribute="centerY" id="vvf-vi-sCA"/>
+                        <constraint firstItem="YXx-D8-xbn" firstAttribute="leading" secondItem="DCG-sv-8N3" secondAttribute="trailing" constant="20" id="wtr-Uo-y0M"/>
                     </constraints>
                 </customView>
                 <customView translatesAutoresizingMaskIntoConstraints="NO" id="xau-bX-rfq">

@@ -14,3 +14,8 @@ import CoreData
 public class PomodoroLog: NSManagedObject {
 
 }
+
+extension PomodoroLog: ManagedObjectType {
+
+	@nonobjc static let entityName = "PomodoroLog"
+}

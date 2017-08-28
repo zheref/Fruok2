@@ -79,6 +79,9 @@
 		D84E45B91F49BC4E00C7891F /* RGBAColorsMarshalling+CoreData.swift in Sources */ = {isa = PBXBuildFile; fileRef = D84E45B81F49BC4E00C7891F /* RGBAColorsMarshalling+CoreData.swift */; };
 		D84E45BB1F49BD3200C7891F /* RGBAColorsMarshalling+NSColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = D84E45BA1F49BD3200C7891F /* RGBAColorsMarshalling+NSColor.swift */; };
 		D84E45BD1F4A15EE00C7891F /* LabelEditingColorWell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D84E45BC1F4A15EE00C7891F /* LabelEditingColorWell.swift */; };
+		D84FB9F21F5304CD0080FC28 /* PomodoroVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D84FB9F01F5304CD0080FC28 /* PomodoroVC.swift */; };
+		D84FB9F31F5304CD0080FC28 /* PomodoroVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = D84FB9F11F5304CD0080FC28 /* PomodoroVC.xib */; };
+		D84FB9F51F534B720080FC28 /* PomodoroVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = D84FB9F41F534B720080FC28 /* PomodoroVM.swift */; };
 		D85D52651F4F0482009B34FE /* LabelAddItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = D85D52641F4F0482009B34FE /* LabelAddItem.swift */; };
 		D86441081F4EA9EE00884D49 /* NSManagedContext+UndoGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = D86441071F4EA9EE00884D49 /* NSManagedContext+UndoGroup.swift */; };
 		D864410C1F4EE3E000884D49 /* TaskDescriptionTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D864410B1F4EE3E000884D49 /* TaskDescriptionTextView.swift */; };
@@ -215,6 +218,9 @@
 		D84E45B81F49BC4E00C7891F /* RGBAColorsMarshalling+CoreData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "RGBAColorsMarshalling+CoreData.swift"; sourceTree = "<group>"; };
 		D84E45BA1F49BD3200C7891F /* RGBAColorsMarshalling+NSColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "RGBAColorsMarshalling+NSColor.swift"; sourceTree = "<group>"; };
 		D84E45BC1F4A15EE00C7891F /* LabelEditingColorWell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LabelEditingColorWell.swift; sourceTree = "<group>"; };
+		D84FB9F01F5304CD0080FC28 /* PomodoroVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PomodoroVC.swift; sourceTree = "<group>"; };
+		D84FB9F11F5304CD0080FC28 /* PomodoroVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PomodoroVC.xib; sourceTree = "<group>"; };
+		D84FB9F41F534B720080FC28 /* PomodoroVM.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PomodoroVM.swift; sourceTree = "<group>"; };
 		D85D52641F4F0482009B34FE /* LabelAddItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LabelAddItem.swift; sourceTree = "<group>"; };
 		D85D52661F501B52009B34FE /* Fruok.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Fruok.entitlements; sourceTree = "<group>"; };
 		D86441071F4EA9EE00884D49 /* NSManagedContext+UndoGroup.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSManagedContext+UndoGroup.swift"; sourceTree = "<group>"; };
@@ -526,6 +532,16 @@
 			name = Colors;
 			sourceTree = "<group>";
 		};
+		D84FB9EF1F5304330080FC28 /* Pomodoro */ = {
+			isa = PBXGroup;
+			children = (
+				D84FB9F01F5304CD0080FC28 /* PomodoroVC.swift */,
+				D84FB9F41F534B720080FC28 /* PomodoroVM.swift */,
+				D84FB9F11F5304CD0080FC28 /* PomodoroVC.xib */,
+			);
+			name = Pomodoro;
+			sourceTree = "<group>";
+		};
 		D864410D1F4EFBBC00884D49 /* LabelAddItem */ = {
 			isa = PBXGroup;
 			children = (
@@ -538,6 +554,7 @@
 		D8C2AD051F38F530002D75B2 /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				D84FB9EF1F5304330080FC28 /* Pomodoro */,
 				D8C2AD3B1F3BD271002D75B2 /* Shared */,
 				D82E214A1F3BEC5D00F601DD /* DocumentWindow */,
 				D82ECF3A1F37AECE008251C2 /* DocumentContent */,
@@ -801,6 +818,7 @@
 				D8388E491F37905B004A2DA3 /* Assets.xcassets in Resources */,
 				D8C2AD2A1F3A7EBC002D75B2 /* KanbanTaskStateItem.xib in Resources */,
 				D834BD431F4C12AC001B99D2 /* AttachmentsVC.xib in Resources */,
+				D84FB9F31F5304CD0080FC28 /* PomodoroVC.xib in Resources */,
 				D8F7B4721F423C4E00060F08 /* DeleteTaskStateConfirmationDialog.xib in Resources */,
 				D864410F1F4EFBEA00884D49 /* LabelAddItem.xib in Resources */,
 				D8388E4C1F37905B004A2DA3 /* Main.storyboard in Resources */,
@@ -997,6 +1015,7 @@
 				D82E217B1F3F822000F601DD /* NSManagedObjectContext+URI.swift in Sources */,
 				D82E21811F40FAAD00F601DD /* CollectionViewModelClientView.swift in Sources */,
 				D82ECF2D1F37985D008251C2 /* LabelColor+CoreDataClass.swift in Sources */,
+				D84FB9F51F534B720080FC28 /* PomodoroVM.swift in Sources */,
 				D8C2AD2C1F3BA249002D75B2 /* ManagedObjectType.swift in Sources */,
 				D8C2AD111F390305002D75B2 /* KVVM.swift in Sources */,
 				D82E21531F3C540100F601DD /* TasksCollectionVC.swift in Sources */,
@@ -1004,6 +1023,7 @@
 				D8339DF11F47127800EA5617 /* LabelItem.swift in Sources */,
 				D8339DED1F47111300EA5617 /* LabelItemVM.swift in Sources */,
 				D8F7B4761F4364B200060F08 /* NestedScrollView.swift in Sources */,
+				D84FB9F21F5304CD0080FC28 /* PomodoroVC.swift in Sources */,
 				D8388E421F37905B004A2DA3 /* DocumentContentVC.swift in Sources */,
 				D8F7B4821F44F03C00060F08 /* SubtaskCell.swift in Sources */,
 				D82ECF2B1F37985D008251C2 /* Label+CoreDataClass.swift in Sources */,

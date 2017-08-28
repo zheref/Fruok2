@@ -13,6 +13,7 @@ import CoreData
 @objc(Project)
 public class Project: NSManagedObject {
 
+	var currentPomodoroSession: PomodoroSession?
 }
 
 extension Project: ManagedObjectType {

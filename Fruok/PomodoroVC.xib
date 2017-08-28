@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="11762" systemVersion="15G1611" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
+    <dependencies>
+        <deployment identifier="macosx"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="11762"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <customObject id="-2" userLabel="File's Owner" customClass="PomodoroViewController" customModule="Fruok" customModuleProvider="target">
+            <connections>
+                <outlet property="cancelButton" destination="JRc-NZ-8Q1" id="Occ-rx-Uih"/>
+                <outlet property="startButton" destination="UvT-oM-nFA" id="bzZ-0H-sCR"/>
+                <outlet property="statusLabel" destination="XSi-1L-5rj" id="Bct-lv-tIR"/>
+                <outlet property="subtasksPopup" destination="Xhx-AI-yP7" id="CXd-TS-5xi"/>
+                <outlet property="taskNameLabel" destination="V5w-KI-rfX" id="8Q0-IC-6PQ"/>
+                <outlet property="view" destination="Hz6-mo-xeY" id="0bl-1N-x8E"/>
+            </connections>
+        </customObject>
+        <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
+        <customObject id="-3" userLabel="Application" customClass="NSObject"/>
+        <customView id="Hz6-mo-xeY">
+            <rect key="frame" x="0.0" y="0.0" width="735" height="80"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+            <subviews>
+                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="XSi-1L-5rj">
+                    <rect key="frame" x="18" y="10" width="154" height="60"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="150" id="raT-xW-Lm2"/>
+                    </constraints>
+                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Label" id="Ucm-fb-Tw3">
+                        <font key="font" metaFont="system" size="50"/>
+                        <color key="textColor" red="1" green="0.24170712569787656" blue="0.22201189528299337" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                    </textFieldCell>
+                </textField>
+                <customView translatesAutoresizingMaskIntoConstraints="NO" id="VHW-Cv-qQo">
+                    <rect key="frame" x="211" y="0.0" width="363" height="80"/>
+                    <subviews>
+                        <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="3hO-ab-EpV">
+                            <rect key="frame" x="48" y="44" width="49" height="23"/>
+                            <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="right" title="Task:" id="0fd-uC-HPn">
+                                <font key="font" metaFont="system" size="19"/>
+                                <color key="textColor" red="1" green="0.24170712569787656" blue="0.22201189528299337" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                            </textFieldCell>
+                        </textField>
+                        <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Nj8-ao-Xcv">
+                            <rect key="frame" x="18" y="10" width="79" height="23"/>
+                            <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="right" title="Subtask:" id="x5R-dI-TMv">
+                                <font key="font" metaFont="system" size="19"/>
+                                <color key="textColor" red="1" green="0.24170712569787656" blue="0.22201189528299337" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                            </textFieldCell>
+                        </textField>
+                        <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="V5w-KI-rfX">
+                            <rect key="frame" x="101" y="44" width="31" height="23"/>
+                            <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="left" title="Bla" id="9GC-qH-DoT">
+                                <font key="font" metaFont="system" size="19"/>
+                                <color key="textColor" red="1" green="0.24170712569787656" blue="0.22201189528299337" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                            </textFieldCell>
+                        </textField>
+                        <popUpButton verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Xhx-AI-yP7">
+                            <rect key="frame" x="101" y="8" width="152" height="26"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="147" id="CvB-Z3-6pK"/>
+                            </constraints>
+                            <popUpButtonCell key="cell" type="push" title="Item 1AAAAAAAAA" bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" selectedItem="GMT-d5-0mt" id="yup-UH-sMo">
+                                <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
+                                <font key="font" metaFont="menu"/>
+                                <menu key="menu" id="UXO-OS-f0I">
+                                    <items>
+                                        <menuItem title="Item 1AAAAAAAAA" state="on" id="GMT-d5-0mt"/>
+                                        <menuItem title="Item 2" id="hNl-qM-1Py"/>
+                                        <menuItem title="Item 3" id="9AU-2z-b6l"/>
+                                    </items>
+                                </menu>
+                            </popUpButtonCell>
+                            <connections>
+                                <action selector="subtaskAction:" target="-2" id="ge0-cT-ybO"/>
+                            </connections>
+                        </popUpButton>
+                    </subviews>
+                    <constraints>
+                        <constraint firstItem="3hO-ab-EpV" firstAttribute="top" secondItem="VHW-Cv-qQo" secondAttribute="top" constant="13" id="2Wo-7j-beV"/>
+                        <constraint firstItem="V5w-KI-rfX" firstAttribute="baseline" secondItem="3hO-ab-EpV" secondAttribute="baseline" id="336-AH-SK9"/>
+                        <constraint firstItem="Xhx-AI-yP7" firstAttribute="centerY" secondItem="Nj8-ao-Xcv" secondAttribute="centerY" id="3uN-nT-8cu"/>
+                        <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="V5w-KI-rfX" secondAttribute="trailing" constant="20" id="4gd-vh-WR1"/>
+                        <constraint firstItem="Nj8-ao-Xcv" firstAttribute="leading" secondItem="VHW-Cv-qQo" secondAttribute="leading" constant="20" id="Gka-0L-SWP"/>
+                        <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="Xhx-AI-yP7" secondAttribute="trailing" constant="20" id="NvW-RW-dK1"/>
+                        <constraint firstAttribute="bottom" secondItem="Nj8-ao-Xcv" secondAttribute="bottom" constant="10" id="VSp-7H-bEa"/>
+                        <constraint firstItem="V5w-KI-rfX" firstAttribute="leading" secondItem="3hO-ab-EpV" secondAttribute="trailing" constant="8" id="idS-yJ-e2O"/>
+                        <constraint firstItem="Nj8-ao-Xcv" firstAttribute="trailing" secondItem="3hO-ab-EpV" secondAttribute="trailing" id="rec-Z4-7b6"/>
+                        <constraint firstItem="Xhx-AI-yP7" firstAttribute="leading" secondItem="V5w-KI-rfX" secondAttribute="leading" id="wTo-Yf-YRM"/>
+                    </constraints>
+                </customView>
+                <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="JRc-NZ-8Q1">
+                    <rect key="frame" x="655" y="0.0" width="80" height="80"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="80" id="PWc-PN-umX"/>
+                        <constraint firstAttribute="height" constant="80" id="hwh-hd-f9Z"/>
+                    </constraints>
+                    <buttonCell key="cell" type="square" title="Cancel" bezelStyle="shadowlessSquare" image="StopPomodoro" imagePosition="above" alignment="center" imageScaling="proportionallyDown" inset="2" id="DWZ-mx-ERZ">
+                        <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                        <font key="font" metaFont="system" size="16"/>
+                    </buttonCell>
+                    <connections>
+                        <action selector="rightAction:" target="-2" id="3sG-u3-4p0"/>
+                    </connections>
+                </button>
+                <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="UvT-oM-nFA">
+                    <rect key="frame" x="575" y="0.0" width="80" height="80"/>
+                    <buttonCell key="cell" type="square" title="Start" bezelStyle="shadowlessSquare" image="StartPomodoro" imagePosition="above" alignment="center" imageScaling="proportionallyDown" inset="2" id="Sn4-zw-eym">
+                        <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                        <font key="font" metaFont="system" size="30"/>
+                    </buttonCell>
+                    <connections>
+                        <action selector="startAction:" target="-2" id="aAU-bE-Y5G"/>
+                    </connections>
+                </button>
+            </subviews>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="JRc-NZ-8Q1" secondAttribute="trailing" id="4ja-zc-Wg5"/>
+                <constraint firstItem="UvT-oM-nFA" firstAttribute="leading" secondItem="VHW-Cv-qQo" secondAttribute="trailing" constant="1" id="Ahx-JK-XcI"/>
+                <constraint firstItem="VHW-Cv-qQo" firstAttribute="leading" secondItem="XSi-1L-5rj" secondAttribute="trailing" constant="41" id="Cd7-vd-Ram"/>
+                <constraint firstItem="JRc-NZ-8Q1" firstAttribute="leading" secondItem="UvT-oM-nFA" secondAttribute="trailing" id="DJW-J1-7Uk"/>
+                <constraint firstItem="XSi-1L-5rj" firstAttribute="leading" secondItem="Hz6-mo-xeY" secondAttribute="leading" constant="20" id="Dje-Tf-Pk9"/>
+                <constraint firstItem="UvT-oM-nFA" firstAttribute="height" secondItem="JRc-NZ-8Q1" secondAttribute="height" id="H59-FI-2Xq"/>
+                <constraint firstItem="XSi-1L-5rj" firstAttribute="centerY" secondItem="Hz6-mo-xeY" secondAttribute="centerY" id="L67-bq-WyT"/>
+                <constraint firstItem="UvT-oM-nFA" firstAttribute="width" secondItem="JRc-NZ-8Q1" secondAttribute="width" id="P6d-rK-fvS"/>
+                <constraint firstAttribute="bottom" secondItem="VHW-Cv-qQo" secondAttribute="bottom" id="Shg-2I-0EH"/>
+                <constraint firstAttribute="bottom" secondItem="JRc-NZ-8Q1" secondAttribute="bottom" id="TD8-ko-AGm"/>
+                <constraint firstItem="VHW-Cv-qQo" firstAttribute="top" secondItem="Hz6-mo-xeY" secondAttribute="top" id="VgX-SC-p3e"/>
+                <constraint firstItem="UvT-oM-nFA" firstAttribute="centerY" secondItem="JRc-NZ-8Q1" secondAttribute="centerY" id="h0W-ci-GZy"/>
+                <constraint firstItem="JRc-NZ-8Q1" firstAttribute="top" secondItem="Hz6-mo-xeY" secondAttribute="top" id="qTJ-ci-jk0"/>
+            </constraints>
+            <point key="canvasLocation" x="225.5" y="46"/>
+        </customView>
+    </objects>
+    <resources>
+        <image name="StartPomodoro" width="50" height="50"/>
+        <image name="StopPomodoro" width="50" height="50"/>
+    </resources>
+</document>

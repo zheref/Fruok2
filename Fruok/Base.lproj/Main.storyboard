@@ -717,18 +717,29 @@
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
                             <containerView translatesAutoresizingMaskIntoConstraints="NO" id="pEL-mv-W1c">
-                                <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
+                                <rect key="frame" x="0.0" y="0.0" width="1024" height="688"/>
                             </containerView>
+                            <customView translatesAutoresizingMaskIntoConstraints="NO" id="hn0-jn-5gD">
+                                <rect key="frame" x="0.0" y="688" width="1024" height="80"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="80" id="cG0-YK-8CU"/>
+                                </constraints>
+                            </customView>
                         </subviews>
                         <constraints>
+                            <constraint firstItem="pEL-mv-W1c" firstAttribute="top" secondItem="hn0-jn-5gD" secondAttribute="bottom" id="HBI-CH-HGc"/>
+                            <constraint firstItem="hn0-jn-5gD" firstAttribute="leading" secondItem="ERx-hH-rdd" secondAttribute="leading" id="IMY-bc-Af7"/>
+                            <constraint firstItem="hn0-jn-5gD" firstAttribute="top" secondItem="ERx-hH-rdd" secondAttribute="top" id="Lub-zD-phQ"/>
                             <constraint firstAttribute="bottom" secondItem="pEL-mv-W1c" secondAttribute="bottom" id="PFf-wA-5Pk"/>
-                            <constraint firstItem="pEL-mv-W1c" firstAttribute="top" secondItem="ERx-hH-rdd" secondAttribute="top" id="Rb5-lE-qa4"/>
+                            <constraint firstAttribute="trailing" secondItem="hn0-jn-5gD" secondAttribute="trailing" id="Ro0-T1-gMW"/>
                             <constraint firstAttribute="trailing" secondItem="pEL-mv-W1c" secondAttribute="trailing" id="VWc-wh-M0N"/>
                             <constraint firstItem="pEL-mv-W1c" firstAttribute="leading" secondItem="ERx-hH-rdd" secondAttribute="leading" id="ihj-e8-YXe"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="containerView" destination="pEL-mv-W1c" id="WGJ-qw-l40"/>
+                        <outlet property="pomodoroContainerView" destination="hn0-jn-5gD" id="ix7-tq-YVm"/>
+                        <outlet property="pomodoroTopConstraint" destination="Lub-zD-phQ" id="hjn-gA-31J"/>
                     </connections>
                 </viewController>
                 <customObject id="2Tp-Fl-jBw" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>

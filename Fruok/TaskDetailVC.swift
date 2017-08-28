@@ -172,4 +172,8 @@ class TaskDetailViewController: NSViewController, MVVMView {
 		self.viewModel?.userRequestsTaskDeletion()
 	}
 	
+	@IBAction func startPomodoroSession(_ sender: Any) {
+		self.view.window?.makeFirstResponder(self.nextResponder)
+		NSApp.sendAction(#selector(DocumentContentViewController.startPomodoroSession(_:)), to: nil, from: self)
+	}
 }

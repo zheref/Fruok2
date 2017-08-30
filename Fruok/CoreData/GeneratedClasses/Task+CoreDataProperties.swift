@@ -2,7 +2,7 @@
 //  Task+CoreDataProperties.swift
 //  
 //
-//  Created by Matthias Keiser on 27.08.17.
+//  Created by Matthias Keiser on 30.08.17.
 //
 //
 
@@ -18,9 +18,9 @@ extension Task {
 
     @NSManaged public var attachments: NSOrderedSet?
     @NSManaged public var labels: NSOrderedSet?
+    @NSManaged public var pomodoroSessions: NSSet?
     @NSManaged public var state: TaskState?
     @NSManaged public var subtasks: NSOrderedSet?
-    @NSManaged public var pomodoroSessions: PomodoroSession?
 
 }
 
@@ -91,6 +91,23 @@ extension Task {
 
     @objc(removeLabels:)
     @NSManaged public func removeFromLabels(_ values: NSOrderedSet)
+
+}
+
+// MARK: Generated accessors for pomodoroSessions
+extension Task {
+
+    @objc(addPomodoroSessionsObject:)
+    @NSManaged public func addToPomodoroSessions(_ value: PomodoroSession)
+
+    @objc(removePomodoroSessionsObject:)
+    @NSManaged public func removeFromPomodoroSessions(_ value: PomodoroSession)
+
+    @objc(addPomodoroSessions:)
+    @NSManaged public func addToPomodoroSessions(_ values: NSSet)
+
+    @objc(removePomodoroSessions:)
+    @NSManaged public func removeFromPomodoroSessions(_ values: NSSet)
 
 }
 

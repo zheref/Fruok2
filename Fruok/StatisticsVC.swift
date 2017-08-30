@@ -54,10 +54,36 @@ extension NSColor {
 	}
 }
 
+extension StatisticsViewModel.ChartGroupMode {
+
+	var chartPopupIndex: Int {
+
+		switch self {
+		case .date:
+			return 0
+		case .task:
+			return 1
+		}
+	}
+
+	init(withChartPopupIndex index: Int) {
+
+		switch index {
+		case 0:
+			self = .date(nil)
+		case 1:
+			self = .task(nil)
+		default:
+			preconditionFailure()
+		}
+	}
+}
+
 class StatisticsViewController: NSViewController, MVVMView {
 
 	@IBOutlet var datePicker: NSDatePicker!
 	@IBOutlet var tasksPopup: NSPopUpButton!
+	@IBOutlet var modePopup: NSPopUpButton!
 	@IBOutlet var chartView: BarChartView!
 	@IBOutlet var chartViewWidthConstraint: NSLayoutConstraint! // low precedence
 
@@ -96,7 +122,6 @@ class StatisticsViewController: NSViewController, MVVMView {
 			self?.datePicker.dateValue = dateRange.date
 			self?.datePicker.timeInterval = dateRange.interval
 
-			self?.datePicker.timeInterval = TimeInterval(60 * 60 * 24 * 7)
 		}).dispose(in: bag)
 
 		self.viewModel?.taskNames.observeNext(with: { [weak self] (selectedIndex, names) in
@@ -106,59 +131,86 @@ class StatisticsViewController: NSViewController, MVVMView {
 			self?.tasksPopup.selectItem(at: selectedIndex)
 		}).dispose(in: bag)
 
-		self.viewModel?.chartData.observeNext(with: { [weak self] chartData in
+		self.viewModel?.groupMode.observeNext(with: { [weak self] mode in
 
-			guard !chartData.isEmpty else {
-				self?.chartView.data = nil
-				self?.chartViewWidthConstraint.constant = 0
-				self?.chartView.notifyDataSetChanged()
-				return
+			switch mode {
+			case .date:
+				self?.modePopup.selectItem(at: mode.chartPopupIndex)
+			case .task:
+				self?.modePopup.selectItem(at: mode.chartPopupIndex)
 			}
-			let data = BarChartData()
-
-			let entries = chartData.yValues.enumerated().map { (index, ys) in
-
-				return BarChartDataEntry(x: Double(index), yValues: ys.map { $0 ?? 0.0 })
-			}
-
-			let dataSet = BarChartDataSet(values: entries, label: chartData.dataSetLabels.count == 1 ?  chartData.dataSetLabels.first?.name : nil)
-			dataSet.stackLabels = chartData.dataSetLabels.map { $0.name }
-			dataSet.valueFormatter = TimeFormatter.shared
-			dataSet.valueFont = NSFont.systemFont(ofSize: 12)
-			dataSet.colors = chartData.dataSetLabels.map { NSColor.chartColorForIndex($0.identifier) }
-			data.addDataSet(dataSet)
-
-			self?.chartView.xAxis.valueFormatter = IndexAxisValueFormatter(values: chartData.xAxisLabels)
-			self?.chartView.xAxis.granularity = 1
-			let setupYAxis = { (axis: YAxis?) in
-				axis?.granularity = 60
-				axis?.axisMinimum = 0
-				axis?.axisMaximum = Double((Int(data.yMax / 60) + 10) * 60)
-				axis?.valueFormatter = TimeFormatter.shared
-			}
-			setupYAxis(self?.chartView.leftAxis)
-			setupYAxis(self?.chartView.rightAxis)
-
-			if chartData.xAxisLabels.count > 7 {
-
-				self?.chartViewWidthConstraint.constant = CGFloat(max((Double(chartData.xAxisLabels.count) * 50.0), (Double)(self!.chartView.enclosingScrollView!.frame.width)))
-			} else {
-				self?.chartViewWidthConstraint.constant = 0
-			}
-
-			self?.chartView.enclosingScrollView?.reflectScrolledClipView((self?.chartView.enclosingScrollView?.contentView)!)
-			self?.chartView.data = data
-			//self?.chartView.notifyDataSetChanged()
-			self?.chartView.needsDisplay = true
-			self?.chartView.displayIfNeeded()
 		}).dispose(in: bag)
 
+
+		self.viewModel?.chartDataMode.observeNext(with: { [weak self] chartDataMode in
+
+			switch chartDataMode {
+
+			case .date(let chartData):
+				self?.handleChartDate(chartData)
+			case .task(let chartData):
+				self?.handleChartDate(chartData)
+			}
+
+		}).dispose(in: bag)
 	}
 
-	
+	func handleChartDate<X,Y>(_ chartData: ChartData<X,Y>?) {
+
+		guard let chartData = chartData, !chartData.isEmpty else {
+			self.chartView.data = nil
+			self.chartViewWidthConstraint.constant = 0
+			self.chartView.notifyDataSetChanged()
+			return
+		}
+
+		let data = BarChartData()
+
+		let entries = chartData.yValues.enumerated().map { (index, ys) in
+
+			return BarChartDataEntry(x: Double(index), yValues: ys.map { $0 ?? 0.0 })
+		}
+
+		let dataSet = BarChartDataSet(values: entries, label: chartData.dataSetLabels.count == 1 ?  chartData.dataSetLabels.first?.name : nil)
+		dataSet.stackLabels = chartData.dataSetLabels.map { $0.name }
+		dataSet.valueFormatter = TimeFormatter.shared
+		dataSet.valueFont = NSFont.systemFont(ofSize: 12)
+		dataSet.colors = chartData.dataSetLabels.map { NSColor.chartColorForIndex($0.identifier) }
+		data.addDataSet(dataSet)
+
+		self.chartView.xAxis.valueFormatter = IndexAxisValueFormatter(values: chartData.xAxisLabels)
+		self.chartView.xAxis.granularity = 1
+		let setupYAxis = { (axis: YAxis?) in
+			axis?.granularity = 60
+			axis?.axisMinimum = 0
+			axis?.axisMaximum = Double((Int(data.yMax / 60) + 10) * 60)
+			axis?.valueFormatter = TimeFormatter.shared
+		}
+		setupYAxis(self.chartView.leftAxis)
+		setupYAxis(self.chartView.rightAxis)
+
+		if chartData.xAxisLabels.count > 7 {
+
+			self.chartViewWidthConstraint.constant = CGFloat(max((Double(chartData.xAxisLabels.count) * 50.0), (Double)(self.chartView.enclosingScrollView!.frame.width)))
+		} else {
+			self.chartViewWidthConstraint.constant = 0
+		}
+
+		self.chartView.enclosingScrollView?.reflectScrolledClipView((self.chartView.enclosingScrollView?.contentView)!)
+		self.chartView.data = data
+		//self?.chartView.notifyDataSetChanged()
+		self.chartView.needsDisplay = true
+		self.chartView.displayIfNeeded()
+	}
+
+
 	@IBAction func tasksPopupAction(_ sender: Any) {
 
 		self.viewModel?.userWantsSelectTaskAtIndex(self.tasksPopup.indexOfSelectedItem)
+	}
+
+	@IBAction func groupByAction(_ sender: Any) {
+		self.viewModel?.userWantsSetGroupMode(StatisticsViewModel.ChartGroupMode(withChartPopupIndex: self.modePopup.indexOfSelectedItem))
 	}
 
 	@IBAction func dateAction(_ sender: Any) {

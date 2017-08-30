@@ -45,6 +45,16 @@ extension Array {
 	}
 }
 
+extension DateFormatter {
+
+	static let chartFormatter: DateFormatter = {
+
+		let formatter = DateFormatter()
+		formatter.timeStyle = .none
+		formatter.dateStyle = .short
+		return formatter
+	}()
+}
 
 struct DateRange {
 
@@ -86,7 +96,13 @@ struct DateRange {
 		return dayStarts
 	}
 }
+
 class StatisticsViewModel: NSObject, MVVMViewModel {
+
+	enum ChartGroupMode {
+		case date(ChartData<Date, Task>?)
+		case task(ChartData<Task, Task>?)
+	}
 
 	typealias MODEL = Project
 	@objc private let project: Project
@@ -142,8 +158,6 @@ class StatisticsViewModel: NSObject, MVVMViewModel {
 
 		do { tasks = try NSOrderedSet(array:(self.project.managedObjectContext?.fetch(taskFetchRequest) ?? [])) } catch { tasks = NSOrderedSet() }
 
-//		let tasks: NSOrderedSet = (self.project.value(forKeyPath: "taskStates.tasks") as? NSOrderedSet) ?? NSOrderedSet()
-
 		let fetchRequest: NSFetchRequest<PomodoroSession> = PomodoroSession.fetchRequest()
 
 		var subpredicates: [NSPredicate] = []
@@ -163,38 +177,86 @@ class StatisticsViewModel: NSObject, MVVMViewModel {
 
 		do { sessions = try self.project.managedObjectContext?.fetch(fetchRequest) ?? [] } catch { sessions = [] }
 
-		let dayStarts = self.dateRange.value.dayStarts
+		switch self.groupMode.value {
 
-		let perDay: [Date:[PomodoroSession]] = sessions.grouping(by: { session in
+		case .date:
 
-			let index = dayStarts.binaryInsertion(search: session.startDate as! Date, options: .last)
+			let dayStarts = self.dateRange.value.dayStarts
 
-			precondition(index > 0)
+			let perDay: [Date:[PomodoroSession]] = sessions.grouping(by: { session in
 
-			return dayStarts[index - 1]
-		})
+				let index = dayStarts.binaryInsertion(search: session.startDate as! Date, options: .last)
 
-		var perDayPerTask: [Date:[Task: [PomodoroSession]]] = [:]
+				precondition(index > 0)
 
-		for day in dayStarts {
-
-			let perTask: [Task: [PomodoroSession]] = (perDay[day] ?? []).grouping(by: { session in
-
-				return session.task!
+				return dayStarts[index - 1]
 			})
 
-			perDayPerTask[day] = perTask
-		}
+			var perDayPerTask: [Date:[Task: [PomodoroSession]]] = [:]
 
-		self.chartData.value = ChartData(data: perDayPerTask, globalKeySet: tasks)
+			for day in dayStarts {
+
+				let perTask: [Task: [PomodoroSession]] = (perDay[day] ?? []).grouping(by: { session in
+
+					return session.task!
+				})
+
+				perDayPerTask[day] = perTask
+			}
+
+			self.chartDataMode.value = .date(ChartData(
+				data: perDayPerTask,
+				globalKeySet: tasks,
+				xKeySorter: <,
+				yKeySorter: { ($0.name ?? "") < ($1.name ?? "") },
+				xKeyLabelProvider: { DateFormatter.chartFormatter.string(from: $0) },
+				yKeyLabelProvider: { $0.name ?? "" }
+			))
+		case .task:
+
+			let perTask: [Task:[PomodoroSession]] = sessions.grouping(by: { session in
+
+				if let task = session.task {
+					return task
+				} else {
+					return tasks[0] as! Task
+				}
+			})
+
+			var perTaskPerTask: [Task: [Task:[PomodoroSession]]] = [:]
+
+			for (task, sessions) in perTask {
+				perTaskPerTask[task] = [task: sessions]
+			}
+
+			let chartData = ChartData(
+				data: perTaskPerTask,
+				globalKeySet: tasks,
+				xKeySorter: {
+					(perTaskPerTask[$0]![$0]!.reduce(0.0, {
+						sum, session in
+						return sum + session.totalDuration
+					})) > (perTaskPerTask[$1]![$1]!.reduce(0.0, {
+						sum, session in
+						return sum + session.totalDuration
+					}))
+				},
+				yKeySorter: { ($0.name ?? "") < ($1.name ?? "") },
+				xKeyLabelProvider: { $0.name ?? "" },
+				yKeyLabelProvider: { $0.name ?? "" }
+				)
+			self.chartDataMode.value = .task(chartData)
+		}
 	}
 
 	private var sortedTasks: [Task] = []
 	private var selectedTask: Task? = nil
 
 	let dateRange = Property<DateRange>(DateRange.today)
+	let groupMode = Property<ChartGroupMode>(.date(nil))
 	let taskNames = Property<(selectedIndex: Int, names: [String])>(selectedIndex: 0, names: [""])
-	let chartData = Property<ChartData>(ChartData(data: [:], globalKeySet: NSOrderedSet()))
+	//let chartData = Property<ChartData<Date, Task>?>(nil)
+	let chartDataMode = Property<ChartGroupMode>(.date(nil))
 
 	func userWantsSetDateRange(_ range: DateRange) {
 
@@ -215,6 +277,12 @@ class StatisticsViewModel: NSObject, MVVMViewModel {
 
 		self.selectedTask = self.sortedTasks[index - 1]
 		self.updateTaskNames()
+	}
+
+	func userWantsSetGroupMode(_ mode: ChartGroupMode) {
+
+		self.groupMode.value = mode
+		self.collectData()
 	}
 
 	func userWantsDateRangeValidation(_ dateRange: (date: Date, timeInterval: TimeInterval)) -> (date: Date, timeInterval: TimeInterval) {

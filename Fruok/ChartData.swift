@@ -8,30 +8,36 @@
 
 import Foundation
 
-class ChartData {
+class ChartData<XKey: Hashable, YKey: Hashable> {
 
-	private static let dateFormatter: DateFormatter = {
+	init(data: [XKey:[YKey: [PomodoroSession]]],
+	     globalKeySet: NSOrderedSet,
+	     xKeySorter: @escaping (XKey, XKey) -> Bool,
+	     yKeySorter: @escaping (YKey, YKey) -> Bool,
+	     xKeyLabelProvider: @escaping (XKey) -> String,
+	     yKeyLabelProvider: @escaping (YKey) -> String ){
 
-		let formatter = DateFormatter()
-		formatter.timeStyle = .none
-		formatter.dateStyle = .short
-		return formatter
-	}()
-
-	init(data: [Date:[Task: [PomodoroSession]]], globalKeySet: NSOrderedSet) {
 		self.data = data
 		self.globalKeySet = globalKeySet
+		self.xKeySorter = xKeySorter
+		self.yKeySorter = yKeySorter
+		self.xKeyLabelProvider = xKeyLabelProvider
+		self.yKeyLabelProvider = yKeyLabelProvider
 	}
 
-	private let data: [Date:[Task: [PomodoroSession]]]
+	private let data: [XKey:[YKey: [PomodoroSession]]]
 	private let globalKeySet: NSOrderedSet
+	private let xKeySorter: (XKey, XKey) -> Bool
+	private let yKeySorter: (YKey, YKey) -> Bool
+	private let xKeyLabelProvider: (XKey) -> String
+	private let yKeyLabelProvider: (YKey) -> String
 
-	private var sortedXKeys: [Date] {
-		return self.data.keys.sorted()
+	private var sortedXKeys: [XKey] {
+		return self.data.keys.sorted(by: self.xKeySorter)
 	}
 	var xAxisLabels: [String] {
 
-		return self.sortedXKeys.map { ChartData.dateFormatter.string(from: $0)}
+		return self.sortedXKeys.map { self.xKeyLabelProvider($0) }
 	}
 
 	func sortedYValues(at index: Int) -> [TimeInterval?] {
@@ -51,19 +57,16 @@ class ChartData {
 		return sortedValues
 	}
 
-	private lazy var orderedDataSetKeys: [Task] = {
+	private lazy var orderedDataSetKeys: [YKey] = {
 
-		var keys: Set<Task> = []
+		var keys: Set<YKey> = []
 
 		for dict in self.data.values {
 
 			keys.formUnion(Set(dict.keys))
 		}
 
-		let sorted = keys.sorted { task1, task2 in
-
-			return (task1.name ?? "") < (task2.name ?? "")
-		}
+		let sorted = keys.sorted(by: self.yKeySorter)
 
 		return sorted
 	}()
@@ -72,7 +75,7 @@ class ChartData {
 
 		return self.orderedDataSetKeys.map {
 			let identifier = self.globalIndexForKey($0)
-			return (identifier: identifier, name: $0.name ?? "")
+			return (identifier: identifier, name: self.yKeyLabelProvider($0))
 		}
 	}()
 

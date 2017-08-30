@@ -80,6 +80,13 @@ class DocumentContentViewModel: NSObject, MVVMViewModel {
 		return KanbanViewModel(with: project)
 	}
 
+	func viewModelForStatistics() -> StatisticsViewModel? {
+
+		guard let project = self.document.project else { return nil }
+		return StatisticsViewModel(with: project)
+	}
+
+
 	struct SessionCancelConfirmationInfo {
 
 		let question: String

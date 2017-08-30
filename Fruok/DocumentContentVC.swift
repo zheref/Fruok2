@@ -101,7 +101,11 @@ class DocumentContentViewController: NSViewController, MVVMView {
 				}
 				return controller
 			case .statistics?:
-				return nil
+				let controller = StatisticsViewController()
+				if let viewModel = self.viewModel?.viewModelForStatistics() {
+					controller.set(viewModel: viewModel)
+				}
+				return controller
 			case .billing?:
 				return nil
 			case nil:

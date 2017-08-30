@@ -86,6 +86,11 @@
 		D86441081F4EA9EE00884D49 /* NSManagedContext+UndoGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = D86441071F4EA9EE00884D49 /* NSManagedContext+UndoGroup.swift */; };
 		D864410C1F4EE3E000884D49 /* TaskDescriptionTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D864410B1F4EE3E000884D49 /* TaskDescriptionTextView.swift */; };
 		D864410F1F4EFBEA00884D49 /* LabelAddItem.xib in Resources */ = {isa = PBXBuildFile; fileRef = D864410E1F4EFBEA00884D49 /* LabelAddItem.xib */; };
+		D86F68831F54875F00B89BB6 /* StatisticsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D86F68811F54875F00B89BB6 /* StatisticsVC.swift */; };
+		D86F68841F54875F00B89BB6 /* StatisticsVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = D86F68821F54875F00B89BB6 /* StatisticsVC.xib */; };
+		D86F68861F5489A000B89BB6 /* StatisticsVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = D86F68851F5489A000B89BB6 /* StatisticsVM.swift */; };
+		D87858E01F5548B7004FF111 /* BinarySearch.swift in Sources */ = {isa = PBXBuildFile; fileRef = D87858DF1F5548B7004FF111 /* BinarySearch.swift */; };
+		D87858E21F569B78004FF111 /* ChartData.swift in Sources */ = {isa = PBXBuildFile; fileRef = D87858E11F569B78004FF111 /* ChartData.swift */; };
 		D8C2AD0D1F38FB97002D75B2 /* KanbanVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8C2AD0C1F38FB97002D75B2 /* KanbanVC.swift */; };
 		D8C2AD0F1F39007E002D75B2 /* DocumentContentVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8C2AD0E1F39007E002D75B2 /* DocumentContentVM.swift */; };
 		D8C2AD111F390305002D75B2 /* KVVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8C2AD101F390305002D75B2 /* KVVM.swift */; };
@@ -226,6 +231,11 @@
 		D86441071F4EA9EE00884D49 /* NSManagedContext+UndoGroup.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSManagedContext+UndoGroup.swift"; sourceTree = "<group>"; };
 		D864410B1F4EE3E000884D49 /* TaskDescriptionTextView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaskDescriptionTextView.swift; sourceTree = "<group>"; };
 		D864410E1F4EFBEA00884D49 /* LabelAddItem.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LabelAddItem.xib; sourceTree = "<group>"; };
+		D86F68811F54875F00B89BB6 /* StatisticsVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatisticsVC.swift; sourceTree = "<group>"; };
+		D86F68821F54875F00B89BB6 /* StatisticsVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = StatisticsVC.xib; sourceTree = "<group>"; };
+		D86F68851F5489A000B89BB6 /* StatisticsVM.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatisticsVM.swift; sourceTree = "<group>"; };
+		D87858DF1F5548B7004FF111 /* BinarySearch.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BinarySearch.swift; sourceTree = "<group>"; };
+		D87858E11F569B78004FF111 /* ChartData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChartData.swift; sourceTree = "<group>"; };
 		D8C2AD0C1F38FB97002D75B2 /* KanbanVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KanbanVC.swift; sourceTree = "<group>"; };
 		D8C2AD0E1F39007E002D75B2 /* DocumentContentVM.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DocumentContentVM.swift; sourceTree = "<group>"; };
 		D8C2AD101F390305002D75B2 /* KVVM.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KVVM.swift; sourceTree = "<group>"; };
@@ -551,6 +561,17 @@
 			name = LabelAddItem;
 			sourceTree = "<group>";
 		};
+		D86F68801F5486F300B89BB6 /* Statistics */ = {
+			isa = PBXGroup;
+			children = (
+				D87858E11F569B78004FF111 /* ChartData.swift */,
+				D86F68811F54875F00B89BB6 /* StatisticsVC.swift */,
+				D86F68821F54875F00B89BB6 /* StatisticsVC.xib */,
+				D86F68851F5489A000B89BB6 /* StatisticsVM.swift */,
+			);
+			name = Statistics;
+			sourceTree = "<group>";
+		};
 		D8C2AD051F38F530002D75B2 /* UI */ = {
 			isa = PBXGroup;
 			children = (
@@ -567,6 +588,7 @@
 				D8F7B4791F44E63400060F08 /* Subtasks */,
 				D8339DE31F46FA4B00EA5617 /* Labels */,
 				D834BD3F1F4C1290001B99D2 /* Attachments */,
+				D86F68801F5486F300B89BB6 /* Statistics */,
 			);
 			name = UI;
 			sourceTree = "<group>";
@@ -596,6 +618,7 @@
 				D8C2AD1C1F3A4E20002D75B2 /* NSView+SubviewHelpers.h */,
 				D8C2AD1D1F3A4E20002D75B2 /* NSView+SubviewHelpers.m */,
 				D82E21781F3E6C5300F601DD /* UTI.swift */,
+				D87858DF1F5548B7004FF111 /* BinarySearch.swift */,
 			);
 			path = Thirdparty;
 			sourceTree = "<group>";
@@ -825,6 +848,7 @@
 				D8339DEF1F4711E000EA5617 /* LabelItem.xib in Resources */,
 				D834BD381F4B0D58001B99D2 /* ProjectMetadataVC.xib in Resources */,
 				D8F7B47F1F44EE2800060F08 /* SubtasksVC.xib in Resources */,
+				D86F68841F54875F00B89BB6 /* StatisticsVC.xib in Resources */,
 				D834BD501F4CA17D001B99D2 /* PresentationViewController.xib in Resources */,
 				D8339DE71F46FA9700EA5617 /* LabelsVC.xib in Resources */,
 			);
@@ -992,6 +1016,7 @@
 				D84E45BB1F49BD3200C7891F /* RGBAColorsMarshalling+NSColor.swift in Sources */,
 				D82E216D1F3C5CE400F601DD /* Task+CoreDataProperties.swift in Sources */,
 				D82E21551F3C541800F601DD /* TasksCollectionVM.swift in Sources */,
+				D86F68831F54875F00B89BB6 /* StatisticsVC.swift in Sources */,
 				D834BD3C1F4C0FEA001B99D2 /* Attachment+CoreDataProperties.swift in Sources */,
 				D82ECF281F37985D008251C2 /* Document.xcdatamodeld in Sources */,
 				D82ECF351F37985D008251C2 /* Task+CoreDataClass.swift in Sources */,
@@ -1033,6 +1058,7 @@
 				D82E216A1F3C5CE400F601DD /* Project+CoreDataProperties.swift in Sources */,
 				D8339DE61F46FA9700EA5617 /* LabelsVC.swift in Sources */,
 				D8C2AD3D1F3BD284002D75B2 /* FirstResponderView.swift in Sources */,
+				D87858E21F569B78004FF111 /* ChartData.swift in Sources */,
 				D83BF7CE1F52F3EB00339637 /* PomodoroLog+CoreDataClass.swift in Sources */,
 				D834BD4C1F4C851A001B99D2 /* DetailPresentationAnimator.swift in Sources */,
 				D85D52651F4F0482009B34FE /* LabelAddItem.swift in Sources */,
@@ -1040,6 +1066,7 @@
 				D834BD491F4C5376001B99D2 /* AttachmentCell.swift in Sources */,
 				D8339DE91F46FB0500EA5617 /* LabelsVM.swift in Sources */,
 				D83BF7CD1F52F3EB00339637 /* PomodoroSession+CoreDataClass.swift in Sources */,
+				D86F68861F5489A000B89BB6 /* StatisticsVM.swift in Sources */,
 				D82ECF371F37985D008251C2 /* TaskState+CoreDataClass.swift in Sources */,
 				D834BD4F1F4CA17D001B99D2 /* PresentationViewController.swift in Sources */,
 				D8C2AD0F1F39007E002D75B2 /* DocumentContentVM.swift in Sources */,
@@ -1067,6 +1094,7 @@
 				D8388E441F37905B004A2DA3 /* FruokDocument.swift in Sources */,
 				D84E45BD1F4A15EE00C7891F /* LabelEditingColorWell.swift in Sources */,
 				D8339DF31F477FE400EA5617 /* LabelsCollectionLayout.swift in Sources */,
+				D87858E01F5548B7004FF111 /* BinarySearch.swift in Sources */,
 				D82E217D1F40B57F00F601DD /* CollectionDelegateDragAndDrop.swift in Sources */,
 				D8C2AD3A1F3BB753002D75B2 /* KanbanTaskStateItemVM.swift in Sources */,
 				D82E21701F3C616000F601DD /* TasksCollectionLayout.swift in Sources */,

@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="11762" systemVersion="15G1611" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
+    <dependencies>
+        <deployment identifier="macosx"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="11762"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <customObject id="-2" userLabel="File's Owner" customClass="StatisticsViewController" customModule="Fruok" customModuleProvider="target">
+            <connections>
+                <outlet property="chartView" destination="0O4-Gv-E4u" id="CyI-BR-AE2"/>
+                <outlet property="chartViewWidthConstraint" destination="y3W-b5-K4X" id="5kr-3a-tOQ"/>
+                <outlet property="datePicker" destination="2iY-32-PNI" id="o3M-M7-V9f"/>
+                <outlet property="tasksPopup" destination="gmi-dR-zHR" id="1Ee-uP-QRn"/>
+                <outlet property="view" destination="Hz6-mo-xeY" id="0bl-1N-x8E"/>
+            </connections>
+        </customObject>
+        <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
+        <customObject id="-3" userLabel="Application" customClass="NSObject"/>
+        <customView id="Hz6-mo-xeY">
+            <rect key="frame" x="0.0" y="0.0" width="480" height="482"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+            <subviews>
+                <customView translatesAutoresizingMaskIntoConstraints="NO" id="PHx-D1-tHL">
+                    <rect key="frame" x="0.0" y="253" width="480" height="229"/>
+                    <subviews>
+                        <datePicker verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="2iY-32-PNI">
+                            <rect key="frame" x="171" y="61" width="139" height="148"/>
+                            <datePickerCell key="cell" borderStyle="bezel" alignment="left" datePickerMode="range" datePickerStyle="clockAndCalendar" id="6YL-EF-W09">
+                                <font key="font" metaFont="system"/>
+                                <calendarDate key="date" timeIntervalSinceReferenceDate="-595929600" calendarFormat="%Y-%m-%d %H:%M:%S %z">
+                                    <!--1982-02-12 08:00:00 -0800-->
+                                    <timeZone key="timeZone" name="US/Pacific"/>
+                                </calendarDate>
+                                <color key="backgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                <connections>
+                                    <outlet property="delegate" destination="-2" id="XHH-Ip-bwW"/>
+                                </connections>
+                            </datePickerCell>
+                            <connections>
+                                <action selector="dateAction:" target="-2" id="CU9-YO-iLu"/>
+                            </connections>
+                        </datePicker>
+                        <popUpButton verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="gmi-dR-zHR">
+                            <rect key="frame" x="169" y="17" width="76" height="26"/>
+                            <popUpButtonCell key="cell" type="push" title="Item 1" bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" state="on" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" selectedItem="TBa-VI-I86" id="hYB-9G-Veh">
+                                <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
+                                <font key="font" metaFont="menu"/>
+                                <menu key="menu" id="uMg-Ik-6Zk">
+                                    <items>
+                                        <menuItem title="Item 1" state="on" id="TBa-VI-I86"/>
+                                        <menuItem title="Item 2" id="OWp-gy-UJX"/>
+                                        <menuItem title="Item 3" id="0jj-Cu-3jl"/>
+                                    </items>
+                                </menu>
+                            </popUpButtonCell>
+                            <connections>
+                                <action selector="tasksPopupAction:" target="-2" id="8xE-cn-Rb4"/>
+                            </connections>
+                        </popUpButton>
+                        <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Lio-zP-P1y">
+                            <rect key="frame" x="129" y="22" width="36" height="17"/>
+                            <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Task:" id="0pl-4W-BeX">
+                                <font key="font" metaFont="system"/>
+                                <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                            </textFieldCell>
+                        </textField>
+                        <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="S2v-eh-x6q">
+                            <rect key="frame" x="90" y="61" width="75" height="17"/>
+                            <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Date range:" id="jcF-I0-q55">
+                                <font key="font" metaFont="system"/>
+                                <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                            </textFieldCell>
+                        </textField>
+                    </subviews>
+                    <constraints>
+                        <constraint firstItem="gmi-dR-zHR" firstAttribute="leading" secondItem="2iY-32-PNI" secondAttribute="leading" id="0IF-sU-RCj"/>
+                        <constraint firstItem="2iY-32-PNI" firstAttribute="centerX" secondItem="PHx-D1-tHL" secondAttribute="centerX" id="9FA-YO-E8W"/>
+                        <constraint firstItem="2iY-32-PNI" firstAttribute="top" secondItem="PHx-D1-tHL" secondAttribute="top" constant="20" id="M2H-sM-tBv"/>
+                        <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="2iY-32-PNI" secondAttribute="trailing" constant="20" id="Nw4-Ps-aV5"/>
+                        <constraint firstItem="2iY-32-PNI" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="PHx-D1-tHL" secondAttribute="leading" constant="20" id="QBR-85-KGu"/>
+                        <constraint firstItem="gmi-dR-zHR" firstAttribute="leading" secondItem="Lio-zP-P1y" secondAttribute="trailing" constant="8" id="cMG-AO-7D2"/>
+                        <constraint firstItem="S2v-eh-x6q" firstAttribute="trailing" secondItem="Lio-zP-P1y" secondAttribute="trailing" id="fMk-rp-JYh"/>
+                        <constraint firstItem="S2v-eh-x6q" firstAttribute="bottom" secondItem="2iY-32-PNI" secondAttribute="bottom" id="jbe-MF-gqo"/>
+                        <constraint firstItem="gmi-dR-zHR" firstAttribute="top" secondItem="2iY-32-PNI" secondAttribute="bottom" constant="20" id="kC4-70-X9v"/>
+                        <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="gmi-dR-zHR" secondAttribute="trailing" constant="20" id="s4k-Wq-Yk8"/>
+                        <constraint firstItem="Lio-zP-P1y" firstAttribute="centerY" secondItem="gmi-dR-zHR" secondAttribute="centerY" id="uNc-B1-Qhw"/>
+                        <constraint firstAttribute="bottom" secondItem="gmi-dR-zHR" secondAttribute="bottom" constant="20" id="vvN-Ib-OVE"/>
+                    </constraints>
+                </customView>
+                <scrollView horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" hasVerticalScroller="NO" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jx7-Bk-yIT">
+                    <rect key="frame" x="0.0" y="0.0" width="480" height="255"/>
+                    <clipView key="contentView" id="yiK-9Y-sg4">
+                        <rect key="frame" x="1" y="1" width="478" height="253"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view translatesAutoresizingMaskIntoConstraints="NO" id="0O4-Gv-E4u" customClass="BarChartView" customModule="Charts">
+                                <rect key="frame" x="0.0" y="-31" width="480" height="255"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" priority="100" constant="480" id="y3W-b5-K4X"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                    </clipView>
+                    <constraints>
+                        <constraint firstItem="0O4-Gv-E4u" firstAttribute="height" secondItem="Jx7-Bk-yIT" secondAttribute="height" id="3rw-iy-GxF"/>
+                        <constraint firstItem="0O4-Gv-E4u" firstAttribute="top" secondItem="Jx7-Bk-yIT" secondAttribute="top" constant="30" id="9NT-M0-VNb"/>
+                        <constraint firstItem="0O4-Gv-E4u" firstAttribute="leading" secondItem="Jx7-Bk-yIT" secondAttribute="leading" constant="1" id="Ann-xc-mZl"/>
+                        <constraint firstItem="0O4-Gv-E4u" firstAttribute="width" relation="greaterThanOrEqual" secondItem="Jx7-Bk-yIT" secondAttribute="width" id="G4t-04-eAl"/>
+                    </constraints>
+                    <scroller key="horizontalScroller" verticalHuggingPriority="750" horizontal="YES" id="ASM-3N-JO9">
+                        <rect key="frame" x="1" y="238" width="478" height="16"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </scroller>
+                    <scroller key="verticalScroller" hidden="YES" verticalHuggingPriority="750" doubleValue="1" horizontal="NO" id="CUk-mT-xaH">
+                        <rect key="frame" x="-100" y="-100" width="16" height="253"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </scroller>
+                </scrollView>
+            </subviews>
+            <constraints>
+                <constraint firstAttribute="bottom" secondItem="Jx7-Bk-yIT" secondAttribute="bottom" id="LD6-MI-R8X"/>
+                <constraint firstAttribute="trailing" secondItem="PHx-D1-tHL" secondAttribute="trailing" id="TtT-Te-nmo"/>
+                <constraint firstItem="Jx7-Bk-yIT" firstAttribute="top" secondItem="PHx-D1-tHL" secondAttribute="bottom" constant="-2" id="YJM-dy-d9S"/>
+                <constraint firstItem="PHx-D1-tHL" firstAttribute="leading" secondItem="Hz6-mo-xeY" secondAttribute="leading" id="ff8-Cj-Kaw"/>
+                <constraint firstAttribute="trailing" secondItem="Jx7-Bk-yIT" secondAttribute="trailing" id="nFz-fS-ne4"/>
+                <constraint firstItem="PHx-D1-tHL" firstAttribute="top" secondItem="Hz6-mo-xeY" secondAttribute="top" id="pal-Ni-Djp"/>
+                <constraint firstItem="Jx7-Bk-yIT" firstAttribute="leading" secondItem="Hz6-mo-xeY" secondAttribute="leading" id="uqW-du-FPs"/>
+            </constraints>
+            <point key="canvasLocation" x="139" y="274"/>
+        </customView>
+    </objects>
+</document>

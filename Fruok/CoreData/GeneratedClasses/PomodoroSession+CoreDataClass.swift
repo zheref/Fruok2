@@ -102,4 +102,17 @@ extension PomodoroSession {
 		}
 
 	}
+
+	var totalDuration: TimeInterval {
+
+		var sum: TimeInterval = 0
+
+		for log in (self.logs?.array ?? []) {
+
+			if let log = log as? PomodoroLog {
+				sum += log.duration
+			}
+		}
+		return sum
+	}
 }

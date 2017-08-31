@@ -9,6 +9,7 @@
         <customObject id="-2" userLabel="File's Owner" customClass="SessionFilterViewController" customModule="Fruok" customModuleProvider="target">
             <connections>
                 <outlet property="datePicker" destination="D4S-nQ-vsE" id="T5w-3K-uM1"/>
+                <outlet property="modeLabel" destination="23e-jm-nip" id="WPn-mb-Cvn"/>
                 <outlet property="modePopup" destination="m9E-al-xgs" id="hOv-2y-MxG"/>
                 <outlet property="tasksPopup" destination="eYL-gH-DcE" id="rJk-GI-m21"/>
                 <outlet property="view" destination="soh-Av-1h1" id="VlL-Pn-1sS"/>

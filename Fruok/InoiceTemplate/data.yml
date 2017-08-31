@@ -1,0 +1,42 @@
+
+{
+"INVOICE_NAME": "INVOICE",
+
+"COMPANY_NAME": "ACME CORP",
+"COMPANY_ADDRESS1": "Mean Street 12",
+"COMPANY_PHONE": "001 239 44 88",
+"COMPANY_EMAIL": "mike@acme.com",
+
+"PROJECT_NAME": "Fruok App development",
+"CLIENT_NAME": "Fruok Corp.",
+"CLIENT_ADDRESS1": "Massachusets Ave. 4",
+"CLIENT_ADDRESS2": "Apt. 1245",
+"CLIENT_EMAIL": "client@fruok.com",
+"INVOICE_DATE": "3/3/2017",
+"DUE_DATE": "3/4/2017",
+
+"TASKS": [
+		{
+        "NAME": "Task1",
+        "DESCRIPTION": "subtask1, subtask2, subtask3",
+        "PRICE": "$40",
+        "QTY": "4.6",
+        "TOTAL": "$184"
+    }, {
+        "NAME": "Task2",
+        "DESCRIPTION": "subtask1, subtask2, subtask3",
+        "PRICE": "$40",
+        "QTY": "10.0",
+        "TOTAL": "$400"
+    }
+],
+
+"SUBTOTAL": "$3030.30",
+"TAX": {
+   "PERCENT": "Tax 10%",
+   "AMOUNT": "$1220"
+   },
+"GRAND_TOTAL": "$12009309",
+"FOOTER_TEXT": "Whatever"
+}
+

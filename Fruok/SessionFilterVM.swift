@@ -82,6 +82,7 @@ class SessionFilterViewModel: NSObject, MVVMViewModel {
 	let dateRange = Property<DateRange>(DateRange.today)
 	let groupMode = Property<GroupMode>(.date)
 	let taskNames = Property<(selectedIndex: Int, names: [String])>(selectedIndex: 0, names: [""])
+	let groupControlVisible = Property<Bool>(true)
 
 	var sessions: [PomodoroSession] = []
 

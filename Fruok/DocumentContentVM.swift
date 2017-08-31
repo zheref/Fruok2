@@ -85,6 +85,11 @@ class DocumentContentViewModel: NSObject, MVVMViewModel {
 		guard let project = self.document.project else { return nil }
 		return StatisticsViewModel(with: project)
 	}
+	func viewModelForInvoice() -> InvoiceViewModel? {
+
+		guard let project = self.document.project else { return nil }
+		return InvoiceViewModel(with: project)
+	}
 
 
 	struct SessionCancelConfirmationInfo {

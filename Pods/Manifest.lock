@@ -6,18 +6,21 @@ PODS:
     - Charts/Core (= 3.0.2)
   - Charts/Core (3.0.2)
   - Diff (0.5.3)
+  - GRMustache.swift (2.0.0)
   - ReactiveKit (3.5.5)
 
 DEPENDENCIES:
   - Bond (= 6.2.6)
   - Charts (~> 3.0.2)
+  - GRMustache.swift
 
 SPEC CHECKSUMS:
   Bond: 0d7a52e9aec644c3b4985ceeb224a402b1efd691
   Charts: 236d6ccdd0ce6feae151d89e829a7397381a21fd
   Diff: befa1d19c32726b2b36ce915d98793e2fbde8dcc
+  GRMustache.swift: 8a547c12bea16052071b2b540af83d770075f0eb
   ReactiveKit: ced30f9647912f74510bd8179790cf2dfc9454c8
 
-PODFILE CHECKSUM: 707f8760b0f0deec634eda22987b61557f6eb21d
+PODFILE CHECKSUM: d8e936373189bdde2042aa72fb0cd25a5cf7bd59
 
 COCOAPODS: 1.2.0

@@ -11,6 +11,7 @@ target 'Fruok' do
   # Pods for Fruok
   pod 'Bond', '6.2.6'
   pod 'Charts', '~> 3.0.2'
+  pod 'GRMustache.swift', '~> 2.0.0'
 
   target 'FruokTests' do
     inherit! :search_paths

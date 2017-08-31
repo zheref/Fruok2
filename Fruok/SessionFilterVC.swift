@@ -13,6 +13,7 @@ class SessionFilterViewController: NSViewController, MVVMView {
 	@IBOutlet var datePicker: NSDatePicker!
 	@IBOutlet var tasksPopup: NSPopUpButton!
 	@IBOutlet var modePopup: NSPopUpButton!
+	@IBOutlet var modeLabel: NSTextField!
 
 	typealias VIEWMODEL = SessionFilterViewModel
 	private(set) var viewModel: SessionFilterViewModel?
@@ -53,6 +54,11 @@ class SessionFilterViewController: NSViewController, MVVMView {
 
 		}).dispose(in: bag)
 
+		self.viewModel?.groupControlVisible.observeNext(with: { [weak self] visible in
+
+			self?.modePopup.isHidden = !visible
+			self?.modeLabel.isHidden = !visible
+		}).dispose(in: bag)
 	}
 
 	@IBAction func tasksPopupAction(_ sender: Any) {

@@ -62,6 +62,7 @@ class DocumentContentViewController: NSViewController, MVVMView {
 			if let currentChildViewController = self.currentChildViewController {
 				self.addChildViewController(currentChildViewController)
 				self.containerView.tr_addFillingSubview(currentChildViewController.view)
+				self.view.window?.makeFirstResponder(currentChildViewController.view)
 			}
 			self.view.window?.toolbar?.validateVisibleItems()
 		}
@@ -107,7 +108,11 @@ class DocumentContentViewController: NSViewController, MVVMView {
 				}
 				return controller
 			case .billing?:
-				return nil
+				let controller = InvoiceViewController()
+				if let viewModel = self.viewModel?.viewModelForInvoice() {
+					controller.set(viewModel: viewModel)
+				}
+				return controller
 			case nil:
 				return nil
 			}

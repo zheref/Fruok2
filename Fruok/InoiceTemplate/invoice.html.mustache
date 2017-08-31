@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Example 1</title>
+    <link rel="stylesheet" href="style.css" media="all" />
+  </head>
+  <body>
+    <header class="clearfix">
+      {{#INVOICE_NAME}}<h1>{{INVOICE_NAME}}</h1>{{/INVOICE_NAME}}
+      <div id="company" class="clearfix">
+        {{#COMPANY_NAME}}<div>{{COMPANY_NAME}}</div>{{/COMPANY_NAME}}
+        {{#COMPANY_ADDRESS1}}<div>{{COMPANY_ADDRESS1}}</div>{{/COMPANY_ADDRESS1}}
+        {{#COMPANY_ADDRESS2}}<div>{{COMPANY_ADDRESS2}}</div>{{/COMPANY_ADDRESS2}}
+        {{#COMPANY_PHONE}}<div>{{COMPANY_PHONE}}</div>{{/COMPANY_PHONE}}
+        {{#COMPANY_EMAIL}}<div><a href="mailto:{{COMPANY_EMAIL}}">{{COMPANY_EMAIL}}</a></div>{{/COMPANY_EMAIL}}
+
+      </div>
+      <div id="project">
+        {{#PROJECT_NAME}}<div><span>PROJECT</span>{{PROJECT_NAME}}</div>{{/PROJECT_NAME}}
+        {{#CLIENT_NAME}}<div><span>CLIENT</span>{{CLIENT_NAME}}</div>{{/CLIENT_NAME}}
+        {{#CLIENT_ADDRESS1}}<div><span>ADDRESS</span>{{CLIENT_ADDRESS1}}</div>{{/CLIENT_ADDRESS1}}
+		{{#CLIENT_ADDRESS2}}<div><span>ADDRESS2</span>{{CLIENT_ADDRESS2}}</div>{{/CLIENT_ADDRESS2}}
+       	{{#CLIENT_EMAIL}}<div><span>EMAIL</span> <a href="mailto:{{CLIENT_EMAIL}}">{{CLIENT_EMAIL}}</a></div>{{/CLIENT_EMAIL}}
+		{{#INVOICE_DATE}}<div><span>DATE</span>{{INVOICE_DATE}}</div>{{/INVOICE_DATE}}
+		{{#DUE_DATE}}<div><span>DUE DATE</span>{{DUE_DATE}}</div>{{/DUE_DATE}}
+      </div>
+    </header>
+    <main>
+      <table>
+        <thead>
+          <tr>
+            <th class="service">SERVICE</th>
+            <th class="desc">DESCRIPTION</th>
+            <th>PRICE</th>
+            <th>QTY</th>
+            <th>TOTAL</th>
+          </tr>
+        </thead>
+        <tbody>
+        {{#TASKS}}
+          <tr>
+            <td class="service">{{NAME}}</td>
+            <td class="desc">{{DESCRIPTION}}</td>
+            <td class="unit">{{PRICE}}</td>
+            <td class="qty">{{QTY}}</td>
+            <td class="total">{{TOTAL}}</td>
+          </tr>
+		 {{/TASKS}}
+		 {{#SUBTOTAL}}
+          <tr>
+            <td colspan="4">SUBTOTAL</td>
+            <td class="total">{{SUBTOTAL}}</td>
+          </tr>
+          {{/SUBTOTAL}}
+          {{#TAX}}
+          <tr>
+            <td colspan="4">{{PERCENT}}</td>
+            <td class="total">{{AMOUNT}}</td>
+          </tr>
+          {{/TAX}}
+          <tr>
+            <td colspan="4" class="grand total">GRAND TOTAL</td>
+            <td class="grand total">{{GRAND_TOTAL}}</td>
+          </tr>
+        </tbody>
+      </table>
+      {{#FOORTER_TEXT}}
+      <div id="notices">
+        <div class="notice">{{FOOTER_TEXT}}</div>
+      </div>
+      {{/FOORTER_TEXT}}
+    </main>
+  </body>
+</html>

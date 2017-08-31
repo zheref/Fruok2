@@ -22,6 +22,7 @@ class PomodoroViewController: NSViewController, MVVMView {
 	@IBOutlet var statusLabel: NSTextField!
 	@IBOutlet var taskNameLabel: NSTextField!
 	@IBOutlet var subtasksPopup: NSPopUpButton!
+	@IBOutlet var initialStartButton: NSButton!
 	@IBOutlet var startButton: NSButton!
 	@IBOutlet var cancelButton: NSButton!
 
@@ -42,45 +43,56 @@ class PomodoroViewController: NSViewController, MVVMView {
 		self.view.wantsLayer = true
 		self.view.layer?.backgroundColor = NSColor.black.withAlphaComponent(0.5).cgColor
 
-		let style = NSMutableParagraphStyle()
-		style.alignment = .center
-		let attrs = [NSFontAttributeName : NSFont.systemFont(ofSize: 13.0), NSForegroundColorAttributeName: NSColor.pomodoroColor, NSParagraphStyleAttributeName: style]
-
-		let cancelString = NSMutableAttributedString(string: NSLocalizedString("Abort", comment: "Cancel pomodoro button"), attributes:attrs)
-		self.cancelButton.attributedTitle = cancelString
-
-		let startString = NSMutableAttributedString(string: NSLocalizedString("Start", comment: "Start pomodoro button"), attributes:attrs)
-		self.startButton.attributedTitle = startString
-
 		self.connectVMIfReady()
     }
 
 	func connectVM() {
 
-		self.viewModel?.subtaskNames.observeNext(with: { info in
+		self.viewModel?.subtaskNames.observeNext(with: { [weak self] info in
 
-			self.subtasksPopup.removeAllItems()
-			self.subtasksPopup.addItems(withTitles: info.names)
-			self.subtasksPopup.selectItem(at: info.selected)
+			self?.subtasksPopup.removeAllItems()
+			self?.subtasksPopup.addItems(withTitles: info.names)
+			self?.subtasksPopup.selectItem(at: info.selected)
 			
 		}).dispose(in: bag)
 
-		self.viewModel?.startButtonVisible.observeNext { [weak self] visible in
+		self.viewModel?.uiState.observeNext(with: { [weak self] uiState in
 
-			self?.startButton.isHidden = !visible
-		}.dispose(in: bag)
+			self?.startButton.isHidden = !uiState.startNewSessionButtonVisible
+			self?.initialStartButton.isHidden = !uiState.initialStartButtonVisisble
+			self?.statusLabel.stringValue = uiState.progressLabesString
 
-		self.viewModel?.timeString.bind(to: self, setter: { (me, timeString) in
+			let style = NSMutableParagraphStyle()
+			style.alignment = .center
+			let attrs = [NSFontAttributeName : NSFont.systemFont(ofSize: 13.0), NSForegroundColorAttributeName: NSColor.pomodoroColor, NSParagraphStyleAttributeName: style]
 
-			me.statusLabel.stringValue = timeString
-		})
+			let cancelString = NSMutableAttributedString(string: uiState.cancelButtonText, attributes:attrs)
+			self?.cancelButton.attributedTitle = cancelString
 
-		self.viewModel?.taskName.observeNext { taskName in
-			self.taskNameLabel.stringValue = taskName
+			let startString = NSMutableAttributedString(string: NSLocalizedString("Start", comment: "Start pomodoro button"), attributes:attrs)
+			self?.startButton.attributedTitle = startString
+
+		}).dispose(in: bag)
+
+//		self.viewModel?.startButtonVisible.observeNext { [weak self] visible in
+//
+//			self?.startButton.isHidden = !visible
+//		}.dispose(in: bag)
+//
+//		self.viewModel?.timeString.bind(to: self, setter: { (me, timeString) in
+//
+//			me.statusLabel.stringValue = timeString
+//		})
+
+		self.viewModel?.taskName.observeNext { [weak self] taskName in
+			self?.taskNameLabel.stringValue = taskName
 		}.dispose(in: bag)
 
 	}
 
+	@IBAction func initialStartAction(_ sender: Any) {
+		self.viewModel?.userWantsStartPomodorSession()
+	}
 	@IBAction func startAction(_ sender: Any) {
 		self.viewModel?.userWantsStartPomodorSession()
 	}

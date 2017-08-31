@@ -101,7 +101,7 @@ class DocumentContentViewModel: NSObject, MVVMViewModel {
 
 	func userWantsStartPomodoroSession(for taskDetailViewModel: TaskDetailViewModel) {
 
-		if !(self.pomodoroVisible.value?.sessionIsRunning ?? false) {
+		if !(self.pomodoroVisible.value?.sessionRunning ?? false) {
 			self.doStartPomodoroSession(task: taskDetailViewModel.task)
 			return
 		}
@@ -129,7 +129,7 @@ class DocumentContentViewModel: NSObject, MVVMViewModel {
 
 	func userWantsHidePomodoroSession(pomodoroViewModel: PomodoroViewModel) {
 
-		if !pomodoroViewModel.sessionIsRunning {
+		if !pomodoroViewModel.sessionRunning {
 			self.doAbortAndHidePomodoroSession()
 			return
 		}

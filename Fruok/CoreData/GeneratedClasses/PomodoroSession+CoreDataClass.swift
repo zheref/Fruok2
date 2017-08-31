@@ -20,7 +20,7 @@ extension PomodoroSession: ManagedObjectType {
 }
 
 extension PomodoroSession {
-	static let defaultDuration: TimeInterval = 60 * 25
+	static let defaultDuration: TimeInterval = 5//60 * 25
 }
 
 extension PomodoroSession {

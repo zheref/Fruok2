@@ -81,9 +81,7 @@ extension StatisticsViewModel.ChartGroupMode {
 
 class StatisticsViewController: NSViewController, MVVMView {
 
-	@IBOutlet var datePicker: NSDatePicker!
-	@IBOutlet var tasksPopup: NSPopUpButton!
-	@IBOutlet var modePopup: NSPopUpButton!
+	@IBOutlet var filterContainerView: NSView!
 	@IBOutlet var chartView: BarChartView!
 	@IBOutlet var chartViewWidthConstraint: NSLayoutConstraint! // low precedence
 
@@ -98,10 +96,28 @@ class StatisticsViewController: NSViewController, MVVMView {
 
 		self.init(nibName: "StatisticsVC", bundle: nil)!
 	}
+
+	var filterViewController: SessionFilterViewController? {
+		willSet {
+			if let old = self.filterViewController {
+				old.removeFromParentViewController()
+				old.view.removeFromSuperview()
+			}
+		} didSet {
+			if let new = self.filterViewController {
+				self.addChildViewController(new)
+				new.view.translatesAutoresizingMaskIntoConstraints = false
+				self.filterContainerView.addSubview(new.view)
+				self.filterContainerView.addConstraints( NSLayoutConstraint.tr_fit(new.view))
+			}
+		}
+	}
 	
     override func viewDidLoad() {
 
 		super.viewDidLoad()
+
+		self.filterViewController = SessionFilterViewController()
 
 		self.chartView.noDataText = NSLocalizedString("No data for the current Selection", comment: "No data for the current Selection")
 		self.chartView.noDataTextColor = NSColor.lightGray
@@ -117,30 +133,7 @@ class StatisticsViewController: NSViewController, MVVMView {
 
 	func connectVM() {
 
-		self.viewModel?.dateRange.observeNext(with: { [weak self] dateRange in
-
-			self?.datePicker.dateValue = dateRange.date
-			self?.datePicker.timeInterval = dateRange.interval
-
-		}).dispose(in: bag)
-
-		self.viewModel?.taskNames.observeNext(with: { [weak self] (selectedIndex, names) in
-
-			self?.tasksPopup.removeAllItems()
-			self?.tasksPopup.addItems(withTitles: names)
-			self?.tasksPopup.selectItem(at: selectedIndex)
-		}).dispose(in: bag)
-
-		self.viewModel?.groupMode.observeNext(with: { [weak self] mode in
-
-			switch mode {
-			case .date:
-				self?.modePopup.selectItem(at: mode.chartPopupIndex)
-			case .task:
-				self?.modePopup.selectItem(at: mode.chartPopupIndex)
-			}
-		}).dispose(in: bag)
-
+		self.filterViewController?.set(viewModel: self.viewModel!.sessionFilterViewModel)
 
 		self.viewModel?.chartDataMode.observeNext(with: { [weak self] chartDataMode in
 
@@ -202,39 +195,6 @@ class StatisticsViewController: NSViewController, MVVMView {
 		self.chartView.needsDisplay = true
 		self.chartView.displayIfNeeded()
 	}
-
-
-	@IBAction func tasksPopupAction(_ sender: Any) {
-
-		self.viewModel?.userWantsSelectTaskAtIndex(self.tasksPopup.indexOfSelectedItem)
-	}
-
-	@IBAction func groupByAction(_ sender: Any) {
-		self.viewModel?.userWantsSetGroupMode(StatisticsViewModel.ChartGroupMode(withChartPopupIndex: self.modePopup.indexOfSelectedItem))
-	}
-
-	@IBAction func dateAction(_ sender: Any) {
-
-		let date = self.datePicker.dateValue
-		let timeInterval = self.datePicker.timeInterval
-		self.viewModel?.userWantsSetDateRange(DateRange(date: date, interval: timeInterval))
-	}
 }
-
-extension StatisticsViewController: NSDatePickerCellDelegate {
-
-	public func datePickerCell(_ datePickerCell: NSDatePickerCell, validateProposedDateValue proposedDateValue: AutoreleasingUnsafeMutablePointer<NSDate>, timeInterval proposedTimeInterval: UnsafeMutablePointer<TimeInterval>?) {
-
-		let proposedDate = proposedDateValue.pointee as Date
-		let proposedInterval = proposedTimeInterval?.pointee ?? 0
-
-		if let (date, interval) = self.viewModel?.userWantsDateRangeValidation((date: proposedDate, timeInterval: proposedInterval)) {
-
-			proposedDateValue.pointee = date as NSDate
-			proposedTimeInterval?.pointee = interval
-		}
-	}
-}
-
 
 

@@ -91,9 +91,18 @@
 		D86F68861F5489A000B89BB6 /* StatisticsVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = D86F68851F5489A000B89BB6 /* StatisticsVM.swift */; };
 		D87858E01F5548B7004FF111 /* BinarySearch.swift in Sources */ = {isa = PBXBuildFile; fileRef = D87858DF1F5548B7004FF111 /* BinarySearch.swift */; };
 		D87858E21F569B78004FF111 /* ChartData.swift in Sources */ = {isa = PBXBuildFile; fileRef = D87858E11F569B78004FF111 /* ChartData.swift */; };
+		D87858E61F56DB0B004FF111 /* InvoiceVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D87858E41F56DB0B004FF111 /* InvoiceVC.swift */; };
+		D87858E71F56DB0B004FF111 /* InvoiceVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = D87858E51F56DB0B004FF111 /* InvoiceVC.xib */; };
+		D87858ED1F56E397004FF111 /* data.yml in Resources */ = {isa = PBXBuildFile; fileRef = D87858E91F56E397004FF111 /* data.yml */; };
+		D87858EE1F56E397004FF111 /* invoice.html.mustache in Resources */ = {isa = PBXBuildFile; fileRef = D87858EA1F56E397004FF111 /* invoice.html.mustache */; };
+		D87858F01F56E397004FF111 /* style.css in Resources */ = {isa = PBXBuildFile; fileRef = D87858EC1F56E397004FF111 /* style.css */; };
+		D87858F21F56E90F004FF111 /* InvoiceVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = D87858F11F56E90F004FF111 /* InvoiceVM.swift */; };
 		D87858FD1F575030004FF111 /* SessionFilterVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D87858FB1F575030004FF111 /* SessionFilterVC.swift */; };
 		D87858FE1F575030004FF111 /* SessionFilterVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = D87858FC1F575030004FF111 /* SessionFilterVC.xib */; };
 		D87859001F575056004FF111 /* SessionFilterVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = D87858FF1F575056004FF111 /* SessionFilterVM.swift */; };
+		D88968411F57FBF000226F7F /* InvoiceData.swift in Sources */ = {isa = PBXBuildFile; fileRef = D88968401F57FBF000226F7F /* InvoiceData.swift */; };
+		D8B746B31F59892F006B9D13 /* Client+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8B746B21F59892F006B9D13 /* Client+CoreDataClass.swift */; };
+		D8B746B51F59893C006B9D13 /* Client+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8B746B41F59893C006B9D13 /* Client+CoreDataProperties.swift */; };
 		D8C2AD0D1F38FB97002D75B2 /* KanbanVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8C2AD0C1F38FB97002D75B2 /* KanbanVC.swift */; };
 		D8C2AD0F1F39007E002D75B2 /* DocumentContentVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8C2AD0E1F39007E002D75B2 /* DocumentContentVM.swift */; };
 		D8C2AD111F390305002D75B2 /* KVVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8C2AD101F390305002D75B2 /* KVVM.swift */; };
@@ -239,9 +248,18 @@
 		D86F68851F5489A000B89BB6 /* StatisticsVM.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatisticsVM.swift; sourceTree = "<group>"; };
 		D87858DF1F5548B7004FF111 /* BinarySearch.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BinarySearch.swift; sourceTree = "<group>"; };
 		D87858E11F569B78004FF111 /* ChartData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChartData.swift; sourceTree = "<group>"; };
+		D87858E41F56DB0B004FF111 /* InvoiceVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InvoiceVC.swift; sourceTree = "<group>"; };
+		D87858E51F56DB0B004FF111 /* InvoiceVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = InvoiceVC.xib; sourceTree = "<group>"; };
+		D87858E91F56E397004FF111 /* data.yml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = data.yml; sourceTree = "<group>"; };
+		D87858EA1F56E397004FF111 /* invoice.html.mustache */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = invoice.html.mustache; sourceTree = "<group>"; };
+		D87858EC1F56E397004FF111 /* style.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = style.css; sourceTree = "<group>"; };
+		D87858F11F56E90F004FF111 /* InvoiceVM.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InvoiceVM.swift; sourceTree = "<group>"; };
 		D87858FB1F575030004FF111 /* SessionFilterVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SessionFilterVC.swift; sourceTree = "<group>"; };
 		D87858FC1F575030004FF111 /* SessionFilterVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SessionFilterVC.xib; sourceTree = "<group>"; };
 		D87858FF1F575056004FF111 /* SessionFilterVM.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SessionFilterVM.swift; sourceTree = "<group>"; };
+		D88968401F57FBF000226F7F /* InvoiceData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InvoiceData.swift; sourceTree = "<group>"; };
+		D8B746B21F59892F006B9D13 /* Client+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Client+CoreDataClass.swift"; sourceTree = "<group>"; };
+		D8B746B41F59893C006B9D13 /* Client+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Client+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		D8C2AD0C1F38FB97002D75B2 /* KanbanVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KanbanVC.swift; sourceTree = "<group>"; };
 		D8C2AD0E1F39007E002D75B2 /* DocumentContentVM.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DocumentContentVM.swift; sourceTree = "<group>"; };
 		D8C2AD101F390305002D75B2 /* KVVM.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KVVM.swift; sourceTree = "<group>"; };
@@ -381,6 +399,7 @@
 		D82ECF171F37985D008251C2 /* GeneratedClasses */ = {
 			isa = PBXGroup;
 			children = (
+				D8B746B41F59893C006B9D13 /* Client+CoreDataProperties.swift */,
 				D83BF7C71F52F3D900339637 /* PomodoroSession+CoreDataProperties.swift */,
 				D83BF7C81F52F3D900339637 /* PomodoroLog+CoreDataProperties.swift */,
 				D834BD3B1F4C0FEA001B99D2 /* Attachment+CoreDataProperties.swift */,
@@ -399,6 +418,7 @@
 		D82ECF391F37AC96008251C2 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				D8B746B21F59892F006B9D13 /* Client+CoreDataClass.swift */,
 				D83BF7CB1F52F3EB00339637 /* PomodoroSession+CoreDataClass.swift */,
 				D83BF7CC1F52F3EB00339637 /* PomodoroLog+CoreDataClass.swift */,
 				D834BD3D1F4C0FF9001B99D2 /* Attachment+CoreDataClass.swift */,
@@ -514,6 +534,7 @@
 				D8C2AD171F3A4CC7002D75B2 /* Fruok-Bridging-Header.h */,
 				D8388E481F37905B004A2DA3 /* Assets.xcassets */,
 				D8388E4A1F37905B004A2DA3 /* Main.storyboard */,
+				D87858E81F56E397004FF111 /* InoiceTemplate */,
 				D8388E4D1F37905B004A2DA3 /* Info.plist */,
 				D85D52661F501B52009B34FE /* Fruok.entitlements */,
 			);
@@ -578,6 +599,27 @@
 			name = Statistics;
 			sourceTree = "<group>";
 		};
+		D87858E31F56DAF0004FF111 /* Invoice */ = {
+			isa = PBXGroup;
+			children = (
+				D87858E41F56DB0B004FF111 /* InvoiceVC.swift */,
+				D87858E51F56DB0B004FF111 /* InvoiceVC.xib */,
+				D87858F11F56E90F004FF111 /* InvoiceVM.swift */,
+				D88968401F57FBF000226F7F /* InvoiceData.swift */,
+			);
+			name = Invoice;
+			sourceTree = "<group>";
+		};
+		D87858E81F56E397004FF111 /* InoiceTemplate */ = {
+			isa = PBXGroup;
+			children = (
+				D87858E91F56E397004FF111 /* data.yml */,
+				D87858EA1F56E397004FF111 /* invoice.html.mustache */,
+				D87858EC1F56E397004FF111 /* style.css */,
+			);
+			path = InoiceTemplate;
+			sourceTree = "<group>";
+		};
 		D87858FA1F574FF6004FF111 /* SessionFilter */ = {
 			isa = PBXGroup;
 			children = (
@@ -592,6 +634,7 @@
 			isa = PBXGroup;
 			children = (
 				D87858FA1F574FF6004FF111 /* SessionFilter */,
+				D87858E31F56DAF0004FF111 /* Invoice */,
 				D84FB9EF1F5304330080FC28 /* Pomodoro */,
 				D8C2AD3B1F3BD271002D75B2 /* Shared */,
 				D82E214A1F3BEC5D00F601DD /* DocumentWindow */,
@@ -855,6 +898,7 @@
 				D8C2AD321F3BA78B002D75B2 /* .gitignore in Resources */,
 				D82E21751F3CFFFD00F601DD /* TaskDetailVC.xib in Resources */,
 				D82E215C1F3C587D00F601DD /* KanbanTaskItem.xib in Resources */,
+				D87858F01F56E397004FF111 /* style.css in Resources */,
 				D8388E491F37905B004A2DA3 /* Assets.xcassets in Resources */,
 				D8C2AD2A1F3A7EBC002D75B2 /* KanbanTaskStateItem.xib in Resources */,
 				D834BD431F4C12AC001B99D2 /* AttachmentsVC.xib in Resources */,
@@ -864,8 +908,11 @@
 				D8388E4C1F37905B004A2DA3 /* Main.storyboard in Resources */,
 				D8339DEF1F4711E000EA5617 /* LabelItem.xib in Resources */,
 				D834BD381F4B0D58001B99D2 /* ProjectMetadataVC.xib in Resources */,
+				D87858ED1F56E397004FF111 /* data.yml in Resources */,
+				D87858EE1F56E397004FF111 /* invoice.html.mustache in Resources */,
 				D8F7B47F1F44EE2800060F08 /* SubtasksVC.xib in Resources */,
 				D86F68841F54875F00B89BB6 /* StatisticsVC.xib in Resources */,
+				D87858E71F56DB0B004FF111 /* InvoiceVC.xib in Resources */,
 				D834BD501F4CA17D001B99D2 /* PresentationViewController.xib in Resources */,
 				D8339DE71F46FA9700EA5617 /* LabelsVC.xib in Resources */,
 				D87858FE1F575030004FF111 /* SessionFilterVC.xib in Resources */,
@@ -1046,10 +1093,12 @@
 				D8C2AD1B1F3A4CC8002D75B2 /* NSLayoutConstraint+utilities.m in Sources */,
 				D8F7B4841F45D16900060F08 /* SubtaskVM.swift in Sources */,
 				D82E215E1F3C59BE00F601DD /* KanbanTaskItemVM.swift in Sources */,
+				D87858E61F56DB0B004FF111 /* InvoiceVC.swift in Sources */,
 				D84E45B61F49BB3B00C7891F /* RGBAColorsMarshalling.swift in Sources */,
 				D82ECF291F37985D008251C2 /* BaseTask+CoreDataClass.swift in Sources */,
 				D82E216C1F3C5CE400F601DD /* Subtask+CoreDataProperties.swift in Sources */,
 				D86441081F4EA9EE00884D49 /* NSManagedContext+UndoGroup.swift in Sources */,
+				D8B746B51F59893C006B9D13 /* Client+CoreDataProperties.swift in Sources */,
 				D83BF7CA1F52F3D900339637 /* PomodoroLog+CoreDataProperties.swift in Sources */,
 				D83BF7C91F52F3D900339637 /* PomodoroSession+CoreDataProperties.swift in Sources */,
 				D8FC65131F48C2420065D566 /* LabelEditingItem.swift in Sources */,
@@ -1080,6 +1129,7 @@
 				D87858E21F569B78004FF111 /* ChartData.swift in Sources */,
 				D83BF7CE1F52F3EB00339637 /* PomodoroLog+CoreDataClass.swift in Sources */,
 				D834BD4C1F4C851A001B99D2 /* DetailPresentationAnimator.swift in Sources */,
+				D87858F21F56E90F004FF111 /* InvoiceVM.swift in Sources */,
 				D85D52651F4F0482009B34FE /* LabelAddItem.swift in Sources */,
 				D8C2AD381F3BABE6002D75B2 /* KanbanCollectionLayout.swift in Sources */,
 				D834BD491F4C5376001B99D2 /* AttachmentCell.swift in Sources */,
@@ -1108,12 +1158,14 @@
 				D864410C1F4EE3E000884D49 /* TaskDescriptionTextView.swift in Sources */,
 				D82ECF311F37985D008251C2 /* RGBAColor+CoreDataClass.swift in Sources */,
 				D82E216B1F3C5CE400F601DD /* RGBAColor+CoreDataProperties.swift in Sources */,
+				D8B746B31F59892F006B9D13 /* Client+CoreDataClass.swift in Sources */,
 				D82ECF2F1F37985D008251C2 /* Project+CoreDataClass.swift in Sources */,
 				D87858FD1F575030004FF111 /* SessionFilterVC.swift in Sources */,
 				D8F7B4741F423C7000060F08 /* DeleteTaskStateConfirmationVM.swift in Sources */,
 				D8388E441F37905B004A2DA3 /* FruokDocument.swift in Sources */,
 				D84E45BD1F4A15EE00C7891F /* LabelEditingColorWell.swift in Sources */,
 				D8339DF31F477FE400EA5617 /* LabelsCollectionLayout.swift in Sources */,
+				D88968411F57FBF000226F7F /* InvoiceData.swift in Sources */,
 				D87858E01F5548B7004FF111 /* BinarySearch.swift in Sources */,
 				D82E217D1F40B57F00F601DD /* CollectionDelegateDragAndDrop.swift in Sources */,
 				D8C2AD3A1F3BB753002D75B2 /* KanbanTaskStateItemVM.swift in Sources */,

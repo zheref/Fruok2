@@ -44,6 +44,8 @@ class ProjectMetadataViewModel: NSObject, MVVMViewModel {
 				me.clientLastName.value = client?.lastName ?? ""
 				me.clientAddress1.value = client?.address1 ?? ""
 				me.clientAddress2.value = client?.address2 ?? ""
+				me.clientZIP.value = client?.zip ?? ""
+				me.clientCity.value = client?.city ?? ""
 				me.clientPhone.value = client?.phone ?? ""
 				me.clientEmail.value = client?.email ?? ""
 			}
@@ -75,6 +77,8 @@ class ProjectMetadataViewModel: NSObject, MVVMViewModel {
 	let clientLastName = Property<String>("")
 	let clientAddress1 = Property<String>("")
 	let clientAddress2 = Property<String>("")
+	let clientZIP = Property<String>("")
+	let clientCity = Property<String>("")
 	let clientPhone = Property<String>("")
 	let clientEmail = Property<String>("")
 
@@ -98,32 +102,42 @@ class ProjectMetadataViewModel: NSObject, MVVMViewModel {
 
 
 	func userWantsSetClientFirstName(_ string: String) {
-		self.project.managedObjectContext?.undoGroupWithOperations({ context in
+		self.project.managedObjectContext?.undoGroupWithOperationsNoSaving({ context in
 			self.getOrCreateClient().firstName = string
 		})
 	}
 	func userWantsSetClientLastName(_ string: String) {
-		self.project.managedObjectContext?.undoGroupWithOperations({ context in
+		self.project.managedObjectContext?.undoGroupWithOperationsNoSaving({ context in
 			self.getOrCreateClient().lastName = string
 		})
 	}
 	func userWantsSetClientAddress1(_ string: String) {
-		self.project.managedObjectContext?.undoGroupWithOperations({ context in
+		self.project.managedObjectContext?.undoGroupWithOperationsNoSaving({ context in
 			self.getOrCreateClient().address1 = string
 		})
 	}
 	func userWantsSetClientAddress2(_ string: String) {
-		self.project.managedObjectContext?.undoGroupWithOperations({ context in
+		self.project.managedObjectContext?.undoGroupWithOperationsNoSaving({ context in
 			self.getOrCreateClient().address2 = string
 		})
 	}
+	func userWantsSetClientZIP(_ string: String) {
+		self.project.managedObjectContext?.undoGroupWithOperationsNoSaving({ context in
+			self.getOrCreateClient().zip = string
+		})
+	}
+	func userWantsSetClientCity(_ string: String) {
+		self.project.managedObjectContext?.undoGroupWithOperationsNoSaving({ context in
+			self.getOrCreateClient().city = string
+		})
+	}
 	func userWantsSetClientPhone(_ string: String) {
-		self.project.managedObjectContext?.undoGroupWithOperations({ context in
+		self.project.managedObjectContext?.undoGroupWithOperationsNoSaving({ context in
 			self.getOrCreateClient().phone = string
 		})
 	}
 	func userWantsSetClientEmail(_ string: String) {
-		self.project.managedObjectContext?.undoGroupWithOperations({ context in
+		self.project.managedObjectContext?.undoGroupWithOperationsNoSaving({ context in
 			self.getOrCreateClient().email = string
 		})
 	}

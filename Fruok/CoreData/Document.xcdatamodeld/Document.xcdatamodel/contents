@@ -12,10 +12,12 @@
     <entity name="Client" representedClassName="Client" syncable="YES">
         <attribute name="address1" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="address2" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="city" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="email" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="firstName" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="lastName" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="phone" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="zip" optional="YES" attributeType="String" syncable="YES"/>
         <relationship name="projects" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Project" inverseName="client" inverseEntity="Project" syncable="YES"/>
     </entity>
     <entity name="Label" representedClassName="Label" syncable="YES">
@@ -82,6 +84,6 @@
         <element name="Subtask" positionX="9" positionY="90" width="128" height="90"/>
         <element name="Task" positionX="0" positionY="81" width="128" height="120"/>
         <element name="TaskState" positionX="-45" positionY="27" width="128" height="90"/>
-        <element name="Client" positionX="-18" positionY="81" width="128" height="150"/>
+        <element name="Client" positionX="-18" positionY="81" width="128" height="180"/>
     </elements>
 </model>

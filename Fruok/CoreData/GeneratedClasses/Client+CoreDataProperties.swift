@@ -22,6 +22,8 @@ extension Client {
     @NSManaged public var address2: String?
     @NSManaged public var phone: String?
     @NSManaged public var email: String?
+    @NSManaged public var zip: String?
+    @NSManaged public var city: String?
     @NSManaged public var projects: NSSet?
 
 }

@@ -55,6 +55,14 @@ class InvoiceViewModel: NSObject, MVVMViewModel {
 		invoiceData.projectName.set(self.project.commercialName)
 		invoiceData.invoiceDate.set(DateFormatter.invoiceDateFormatter.string(from: Date()))
 
+		invoiceData.clientName.set( (self.project.client?.firstName ?? "") + " " + (self.project.client?.lastName ?? ""))
+		invoiceData.clientAddress1.set(self.project.client?.address1)
+		invoiceData.clientAddress2.set(self.project.client?.address2)
+		invoiceData.clientZIP.set(self.project.client?.zip)
+		invoiceData.clientCity.set(self.project.client?.city)
+		invoiceData.clientPhone.set(self.project.client?.phone)
+		invoiceData.clientEmail.set(self.project.client?.email)
+
 		let perTask = self.sessionFilterViewModel.sessions.grouping(by: { $0.task! })
 		var tasks: [InvoiceDataTask] = []
 

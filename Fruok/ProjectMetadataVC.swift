@@ -21,6 +21,9 @@ class ProjectMetadataViewController: NSViewController, MVVMView {
 	@IBOutlet var clientLastNameField: NSTextField!
 	@IBOutlet var clientAddress1Field: NSTextField!
 	@IBOutlet var clientAddress2Field: NSTextField!
+	@IBOutlet var clientZIPField: NSTextField!
+	@IBOutlet var clientCityField: NSTextField!
+
 	@IBOutlet var clientPhoneField: NSTextField!
 	@IBOutlet var clientEmailField: NSTextField!
 
@@ -65,6 +68,8 @@ class ProjectMetadataViewController: NSViewController, MVVMView {
 		self.viewModel?.clientLastName.bind(to: self.clientLastNameField.reactive.stringValue)
 		self.viewModel?.clientAddress1.bind(to: self.clientAddress1Field.reactive.stringValue)
 		self.viewModel?.clientAddress2.bind(to: self.clientAddress2Field.reactive.stringValue)
+		self.viewModel?.clientZIP.bind(to: self.clientZIPField.reactive.stringValue)
+		self.viewModel?.clientCity.bind(to: self.clientCityField.reactive.stringValue)
 		self.viewModel?.clientPhone.bind(to: self.clientPhoneField.reactive.stringValue)
 		self.viewModel?.clientEmail.bind(to: self.clientEmailField.reactive.stringValue)
 
@@ -103,6 +108,12 @@ class ProjectMetadataViewController: NSViewController, MVVMView {
 	}
 	@IBAction func clientAddress2Action(_ sender: NSTextField) {
 		self.viewModel?.userWantsSetClientAddress2(sender.stringValue)
+	}
+	@IBAction func clientZIPAction(_ sender: NSTextField) {
+		self.viewModel?.userWantsSetClientZIP(sender.stringValue)
+	}
+	@IBAction func clientCityAction(_ sender: NSTextField) {
+		self.viewModel?.userWantsSetClientCity(sender.stringValue)
 	}
 	@IBAction func clientPhoneAction(_ sender: NSTextField) {
 		self.viewModel?.userWantsSetClientPhone(sender.stringValue)

@@ -10,7 +10,11 @@ import Foundation
 
 extension NSManagedObjectContext {
 
-	func undoGroupWithOperations(_ operations: (_ context: NSManagedObjectContext) -> Void) {
+	func undoGroupWithOperationsNoSaving(_ operations: (_ context: NSManagedObjectContext) -> Void) {
+
+		self.undoGroupWithOperations(saving: false, operations)
+	}
+	func undoGroupWithOperations(saving: Bool = true, _ operations: (_ context: NSManagedObjectContext) -> Void) {
 
 		self.processPendingChanges()
 		self.undoManager?.beginUndoGrouping()
@@ -18,10 +22,12 @@ extension NSManagedObjectContext {
 		self.processPendingChanges()
 		self.undoManager?.endUndoGrouping()
 
-		do {
-			try self.save()
-		} catch {
-			Swift.print(error)
+		if saving {
+			do {
+				try self.save()
+			} catch {
+				Swift.print(error)
+			}
 		}
 	}
 }

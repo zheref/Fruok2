@@ -154,6 +154,33 @@ class DocumentContentViewController: NSViewController, MVVMView {
 			})
 		}).dispose(in: bag)
 
+		self.viewModel?.action.observeNext(with: { [weak self] action in
+
+			let endNoteActionHandler = { (_ title: String) in
+
+				NSSound(named: "Glass")?.play()
+
+				if self?.view.window?.isMainWindow == false {
+
+					let note = NSUserNotification()
+					note.title = title
+					NSUserNotificationCenter.default.deliver(note)
+				}
+			}
+
+			switch action {
+
+			case .notifySessionEnded(let noteTitle)?:
+				endNoteActionHandler(noteTitle)
+
+			case .notifyBreakEnded(let noteTitle)?:
+				endNoteActionHandler(noteTitle)
+
+			case nil:
+				break
+			}
+
+		}).dispose(in: bag)
 	}
 
 	@IBAction func currentChildViewControllerAction(_ sender: NSSegmentedControl?) {

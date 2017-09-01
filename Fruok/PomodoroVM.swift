@@ -15,13 +15,11 @@ class PomodoroViewModel: NSObject, MVVMViewModel {
 		case beforeFirstRun
 		case sessionRunning(pomodoroLog: PomodoroLog)
 		case sessionFinished(session: PomodoroSession)
-		case sessionCanceled
-		case pauseRunning
-		case pauseFinished
+		case pauseRunning(startDate: Date, duration: TimeInterval)
 
 		var canStartSession: Bool {
 			switch self {
-			case .beforeFirstRun, .sessionFinished, .pauseFinished, .sessionCanceled:
+			case .beforeFirstRun, .sessionFinished:
 				return true
 			case .sessionRunning, .pauseRunning:
 				return false
@@ -31,18 +29,31 @@ class PomodoroViewModel: NSObject, MVVMViewModel {
 
 	struct UIState {
 		enum Color {
-			case red; case blue
+			case pomodoro; case pause
 		}
-		let progressLabesString: String
-		let initialStartButtonVisisble: Bool
-		let startNewSessionButtonVisible: Bool
-		let startPauseButtonVisible: Bool
-		let cancelButtonText: String
-		let startButtonText: String = NSLocalizedString("Start Again", comment: "Start new session")
+		enum TextControlState {
+			case visible(String)
+			case hidden
+		}
+		let progressLabel: TextControlState
+		let startButton: TextControlState
+		let pauseButton: TextControlState
+		let cancelButton: TextControlState
+		let takeBreakLabelVisible: Bool
+		let taskInfoVisible: Bool
 		let color: UIState.Color
 
 		static var initial: UIState {
-			return UIState(progressLabesString: "", initialStartButtonVisisble: true, startNewSessionButtonVisible: false, startPauseButtonVisible: false, cancelButtonText: "", color: .red)
+
+			return UIState(
+				progressLabel: .hidden,
+				startButton: .hidden,
+				pauseButton: .hidden,
+				cancelButton: .hidden,
+				takeBreakLabelVisible: false,
+				taskInfoVisible: false,
+				color: .pomodoro
+			)
 		}
 	}
 
@@ -96,6 +107,13 @@ class PomodoroViewModel: NSObject, MVVMViewModel {
 		self.reflectLifeCycleChange(oldValue: nil) // property observers not getting called in init
 	}
 
+	private func formatTime(seconds: TimeInterval) -> String {
+
+		let minutes: Int = Int(floor(seconds / 60))
+		let remainingSeconds: Int = Int(seconds) - minutes * 60
+		return String(format: "%02u:%02u", minutes, remainingSeconds) as String
+	}
+
 	private func reflectLifeCycleChange(oldValue: LifeCycle?) {
 
 		let uiState: UIState
@@ -105,13 +123,14 @@ class PomodoroViewModel: NSObject, MVVMViewModel {
 		case .beforeFirstRun:
 
 			uiState = UIState(
-				progressLabesString: NSLocalizedString("Start", comment: "Start pomodoro sesion status"),
-				initialStartButtonVisisble: true,
-				startNewSessionButtonVisible: false,
-				startPauseButtonVisible: false,
-				cancelButtonText: NSLocalizedString("Cancel", comment: "Cancel pomodoro view"),
-				color: .red
-			)
+				progressLabel: .visible(self.formatTime(seconds: PomodoroSession.defaultDuration)),
+				startButton: .visible(NSLocalizedString("START", comment: "Start pomodoro sesion status")),
+				pauseButton: .hidden,
+				cancelButton: .visible(NSLocalizedString("CANCEL", comment: "Cancel pomodoro view")),
+				takeBreakLabelVisible: false,
+				taskInfoVisible: true,
+				color: .pomodoro
+		)
 
 		case .sessionRunning(pomodoroLog: let log):
 
@@ -119,67 +138,51 @@ class PomodoroViewModel: NSObject, MVVMViewModel {
 			if let session = log.session, let startDate = session.startDate as? Date {
 
 				let displaySeconds = max(session.duration - Date().timeIntervalSince(startDate), 0.0)
-				let minutes: Int = Int(floor(displaySeconds / 60))
-				let seconds: Int = Int(displaySeconds) - minutes * 60
-				timeString = String(format: "%02u:%02u", minutes, seconds) as String
+				timeString = self.formatTime(seconds: displaySeconds)
 			} else {
 				timeString = "??:??"
 			}
 
 			uiState = UIState(
-				progressLabesString: timeString,
-				initialStartButtonVisisble: false,
-				startNewSessionButtonVisible: false,
-				startPauseButtonVisible: false,
-				cancelButtonText: NSLocalizedString("Abort", comment: "Abort pomodoro session"),
-				color: .red
+				progressLabel: .visible(timeString),
+				startButton: .hidden,
+				pauseButton: .visible(NSLocalizedString("PAUSE", comment: "Pause pomodoro session")),
+				cancelButton: .visible(NSLocalizedString("ABORT", comment: "Abort pomodoro session")),
+				takeBreakLabelVisible: false,
+				taskInfoVisible: true,
+				color: .pomodoro
 			)
 
-		case .sessionFinished,
-		     .sessionCanceled:
-			uiState = UIState(
-				progressLabesString: NSLocalizedString("Done", comment: "Pomodoro session finished status"),
-				initialStartButtonVisisble: false,
-				startNewSessionButtonVisible: true,
-				startPauseButtonVisible: true,
-				cancelButtonText: NSLocalizedString("Done", comment: "Pomodoro view dismiss"),
-				color: .red)
-		case .pauseRunning:
-
-			let timeString: String
-			if let (startDate, duration) = self.pauseInfo {
-
-				let displaySeconds = max(duration - Date().timeIntervalSince(startDate), 0.0)
-				let minutes: Int = Int(floor(displaySeconds / 60))
-				let seconds: Int = Int(displaySeconds) - minutes * 60
-				timeString = String(format: "%02u:%02u", minutes, seconds) as String
-			} else {
-				timeString = "??:??"
-			}
+		case .sessionFinished:
 
 			uiState = UIState(
-				progressLabesString: timeString,
-				initialStartButtonVisisble: false,
-				startNewSessionButtonVisible: false,
-				startPauseButtonVisible: false,
-				cancelButtonText: NSLocalizedString("Cancel", comment: "Cancel pomodoro pause"),
-				color: .blue
+				progressLabel: .visible(self.formatTime(seconds: PomodoroSession.defaultShortBreakDuration)),
+				startButton: .visible(NSLocalizedString("START", comment: "Start pomodoro break")),
+				pauseButton: .hidden,
+				cancelButton: .visible(NSLocalizedString("SKIP", comment: "Skip pomodoro break")),
+				takeBreakLabelVisible: true,
+				taskInfoVisible: false,
+				color: .pause
 			)
-		case .pauseFinished:
+
+		case .pauseRunning(let startDate, let duration):
+
+			let displaySeconds = max(duration - Date().timeIntervalSince(startDate), 0.0)
+			let timeString = self.formatTime(seconds: displaySeconds)
 
 			uiState = UIState(
-				progressLabesString: NSLocalizedString("Done", comment: "Pomodoro pause finished status"),
-				initialStartButtonVisisble: false,
-				startNewSessionButtonVisible: true,
-				startPauseButtonVisible: false,
-				cancelButtonText: NSLocalizedString("Done", comment: "Pomodoro view dismiss"),
-				color: .red)
+				progressLabel: .visible(timeString),
+				startButton: .hidden,
+				pauseButton: .hidden,
+				cancelButton: .visible(NSLocalizedString("Skip", comment: "Skip pomodoro break")),
+				takeBreakLabelVisible: true,
+				taskInfoVisible: false,
+				color: .pause
+			)
 		}
 
 		self.uiState.value = uiState
 	}
-
-	var pauseInfo: (startDate: Date, duration: TimeInterval)? = nil
 
 	func subtasksDidChange() {
 
@@ -253,7 +256,7 @@ class PomodoroViewModel: NSObject, MVVMViewModel {
 			if let session = log.session {
 				self.lifeCyclePhase = .sessionFinished(session: session)
 			} else {
-				self.lifeCyclePhase = .sessionCanceled // should not happen
+				self.lifeCyclePhase = .beforeFirstRun // should not happen
 			}
 		}
 		do { try self.task.managedObjectContext?.save()} catch {}
@@ -263,7 +266,47 @@ class PomodoroViewModel: NSObject, MVVMViewModel {
 	let taskName = Property<String>("")
 	let subtaskNames = Property<(selected: Int, names:[String])>(selected: 0, names:[""])
 
-	func userWantsStartPomodorSession() {
+	func timerFunction() {
+
+		switch self.lifeCyclePhase {
+
+		case .sessionRunning(pomodoroLog: let log):
+
+			guard
+				let session = log.session,
+				let startDate = session.startDate as? Date else {
+
+					self.lifeCyclePhase = .beforeFirstRun // should not happen
+				return
+			}
+			guard
+				NSDate().timeIntervalSince(startDate) < session.duration else {
+
+				NotificationCenter.default.post(name: .TRPomodoroSessionEndedRegularly, object: self)
+				self.finishSession()
+				return
+			}
+
+			self.lifeCyclePhase = .sessionRunning(pomodoroLog: log)
+			DispatchQueue.main.after(when: 0.1, block: self.timerFunction)
+
+		case .pauseRunning(let startDate, let duration):
+
+			guard NSDate().timeIntervalSince(startDate) < duration else {
+				NotificationCenter.default.post(name: .TRPomodoroBreakEndedRegularly, object: self)
+				self.lifeCyclePhase = .beforeFirstRun
+				return
+			}
+
+			self.lifeCyclePhase = .pauseRunning(startDate: startDate, duration: duration)
+			DispatchQueue.main.after(when: 0.1, block: self.timerFunction)
+
+		default:
+			break
+		}
+	}
+
+	private func userWantsStartPomodorSession() {
 
 		if !self.lifeCyclePhase.canStartSession {
 			return
@@ -279,44 +322,12 @@ class PomodoroViewModel: NSObject, MVVMViewModel {
 		self.timerFunction()
 	}
 
-	func timerFunction() {
+	private func userWantsStartBreak() {
 
-		switch self.lifeCyclePhase {
-
-		case .sessionRunning(pomodoroLog: let log):
-
-			guard let session = log.session else {
-				self.lifeCyclePhase = .beforeFirstRun // should not happen
-				return
-			}
-			guard
-				let startDate = session.startDate as? Date,
-				NSDate().timeIntervalSince(startDate) < session.duration else {
-				self.finishSession()
-				return
-			}
-
-			self.lifeCyclePhase = .sessionRunning(pomodoroLog: log)
-			DispatchQueue.main.after(when: 0.1, block: self.timerFunction)
-
-		case .pauseRunning:
-			guard let (startDate, duration) = self.pauseInfo else {
-				self.lifeCyclePhase = .pauseFinished // should not happen
-				return
-			}
-
-			guard NSDate().timeIntervalSince(startDate) < duration else {
-				self.lifeCyclePhase = .pauseFinished
-				return
-			}
-
-			self.lifeCyclePhase = .pauseRunning
-			DispatchQueue.main.after(when: 0.1, block: self.timerFunction)
-
-		default:
-			break
-		}
+		self.lifeCyclePhase = .pauseRunning(startDate: Date(), duration: PomodoroSession.defaultShortBreakDuration)
+		self.timerFunction()
 	}
+
 	func userWantsChangeSubtask(_ index: Int) {
 
 		let newSelectedSubtask: Subtask? = index < self.subtasksToDo.count ? self.subtasksToDo[index] : nil
@@ -324,9 +335,39 @@ class PomodoroViewModel: NSObject, MVVMViewModel {
 		self.changeSelectedSubtask(to: newSelectedSubtask)
 	}
 
-	func userWantsCancelPomodoroSession() {
+	private func userWantsCancelPomodoroSession() {
 
-		self.lifeCyclePhase = .sessionCanceled
+		// The document handles this, and will call finishSession()
 		NotificationCenter.default.post(name: .TRHidePomodoroSession, object: self)
+	}
+
+	func userWantsStart() {
+
+		switch self.lifeCyclePhase {
+
+		case .beforeFirstRun:
+				self.userWantsStartPomodorSession()
+				return
+		case .sessionFinished:
+			self.userWantsStartBreak()
+			return
+		case .pauseRunning,
+		     .sessionRunning:
+			break
+
+		}
+	}
+
+	func userWantsCancel() {
+
+		switch self.lifeCyclePhase {
+
+		case .pauseRunning,
+		     .sessionFinished:
+			self.lifeCyclePhase = .beforeFirstRun
+		case .sessionRunning,
+		     .beforeFirstRun:
+			self.userWantsCancelPomodoroSession()
+		}
 	}
 }

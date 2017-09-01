@@ -13,9 +13,17 @@ import Bond
 extension Notification.Name {
 
 	static let TRHidePomodoroSession = Notification.Name("TRHidePomodoroSession")
+	static let TRPomodoroSessionEndedRegularly = Notification.Name("TRPomodoroSessionEndedRegularly")
+	static let TRPomodoroBreakEndedRegularly = Notification.Name("TRPomodoroBreakEndedRegularly")
+
 }
 
 class DocumentContentViewModel: NSObject, MVVMViewModel {
+
+	enum Action {
+		case notifySessionEnded(notification: String)
+		case notifyBreakEnded(notification: String)
+	}
 
 	typealias MODEL = FruokDocument
 
@@ -26,10 +34,40 @@ class DocumentContentViewModel: NSObject, MVVMViewModel {
 
 		NotificationCenter.default.reactive.notification(name: .TRHidePomodoroSession, object: nil).observeNext { note in
 
-			if let viewModel = note.object as? PomodoroViewModel {
-				self.userWantsHidePomodoroSession(pomodoroViewModel: viewModel)
+			guard
+				let viewModel = note.object as? PomodoroViewModel,
+				viewModel == self.pomodoroVisible.value else {
+					return
 			}
+
+			self.userWantsHidePomodoroSession(pomodoroViewModel: viewModel)
+
 		}.dispose(in: bag)
+
+		NotificationCenter.default.reactive.notification(name: .TRPomodoroSessionEndedRegularly, object: nil).observeNext { note in
+
+			guard
+				let viewModel = note.object as? PomodoroViewModel,
+				viewModel == self.pomodoroVisible.value else {
+					return
+			}
+
+			self.action.value = .notifySessionEnded(notification: NSLocalizedString("Pomodoro Session Ended", comment: "Pomodoro Session Ended user notification"))
+
+			}.dispose(in: bag)
+
+		NotificationCenter.default.reactive.notification(name: .TRPomodoroBreakEndedRegularly, object: nil).observeNext { note in
+
+			guard
+				let viewModel = note.object as? PomodoroViewModel,
+				viewModel == self.pomodoroVisible.value else {
+					return
+			}
+
+			self.action.value = .notifyBreakEnded(notification: NSLocalizedString("Break Ended", comment: "Pomodoro Break Ended user notification"))
+
+		}.dispose(in: bag)
+		
 	}
 
 	let document: FruokDocument
@@ -44,6 +82,7 @@ class DocumentContentViewModel: NSObject, MVVMViewModel {
 
 	private(set) var currentChildView: Observable<ChildView?> = Observable(.project)
 	let pomodoroVisible = Property<PomodoroViewModel?>(nil)
+	let action = Property<Action?>(nil)
 
 	func changeCurrentChildView(to childView: ChildView) {
 

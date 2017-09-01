@@ -16,8 +16,13 @@ class ProjectMetadataViewController: NSViewController, MVVMView {
 	@IBOutlet var durationField: NSTextField!
 	@IBOutlet var durationStepper: NSStepper!
 	@IBOutlet var deadlinePicker: NSDatePicker!
-	@IBOutlet var clientField: NSTextField!
 
+	@IBOutlet var clientFirstNameField: NSTextField!
+	@IBOutlet var clientLastNameField: NSTextField!
+	@IBOutlet var clientAddress1Field: NSTextField!
+	@IBOutlet var clientAddress2Field: NSTextField!
+	@IBOutlet var clientPhoneField: NSTextField!
+	@IBOutlet var clientEmailField: NSTextField!
 
 	@IBOutlet var controlsEmbeddingView: NSView!
 
@@ -34,7 +39,7 @@ class ProjectMetadataViewController: NSViewController, MVVMView {
 	}
 
 	override func viewDidLoad() {
-        super.viewDidLoad()
+		super.viewDidLoad()
 
 		let formatter = NumberFormatter()
 		formatter.generatesDecimalNumbers = false
@@ -44,7 +49,7 @@ class ProjectMetadataViewController: NSViewController, MVVMView {
 		self.controlsEmbeddingView.wantsLayer = true
 		self.controlsEmbeddingView.layer?.backgroundColor = NSColor.white.cgColor
 		self.connectVMIfReady()
-    }
+	}
 
 	func connectVM() {
 
@@ -55,11 +60,22 @@ class ProjectMetadataViewController: NSViewController, MVVMView {
 
 			me.deadlinePicker.dateValue = date ?? Date().addingTimeInterval(30 * 24 * 60 * 60)
 		}
-		
-		self.viewModel?.client.bind(to: self.clientField.reactive.stringValue)
+
+		self.viewModel?.clientFirstName.bind(to: self.clientFirstNameField.reactive.stringValue)
+		self.viewModel?.clientLastName.bind(to: self.clientLastNameField.reactive.stringValue)
+		self.viewModel?.clientAddress1.bind(to: self.clientAddress1Field.reactive.stringValue)
+		self.viewModel?.clientAddress2.bind(to: self.clientAddress2Field.reactive.stringValue)
+		self.viewModel?.clientPhone.bind(to: self.clientPhoneField.reactive.stringValue)
+		self.viewModel?.clientEmail.bind(to: self.clientEmailField.reactive.stringValue)
 
 	}
 
+	@IBAction func projectKindAction(_ sender: Any) {
+
+		if let type = FruokProjectType(rawValue: self.projectKindPopup.indexOfSelectedItem) {
+			self.viewModel?.userWantsSetProjectType(type)
+		}
+	}
 	@IBAction func codeNameAction(_ sender: Any) {
 		self.viewModel?.userWantsSetCodeName(self.codeNameField.stringValue)
 	}
@@ -75,17 +91,27 @@ class ProjectMetadataViewController: NSViewController, MVVMView {
 	@IBAction func deadlineAction(_ sender: Any) {
 		self.viewModel?.userWantsSetDeadline(self.deadlinePicker.dateValue)
 	}
-	@IBAction func clientAction(_ sender: Any) {
-		self.viewModel?.userWantsSetClient(self.clientField.stringValue)
+
+	@IBAction func clientFirstNameAction(_ sender: NSTextField) {
+		self.viewModel?.userWantsSetClientFirstName(sender.stringValue)
 	}
-	@IBAction func projectKindAction(_ sender: Any) {
-
-		if let type = FruokProjectType(rawValue: self.projectKindPopup.indexOfSelectedItem) {
-			self.viewModel?.userWantsSetProjectType(type)
-		}
+	@IBAction func clientLastNameAction(_ sender: NSTextField) {
+		self.viewModel?.userWantsSetClientLastName(sender.stringValue)
 	}
-
-
+	@IBAction func clientAddress1Action(_ sender: NSTextField) {
+		self.viewModel?.userWantsSetClientAddress1(sender.stringValue)
+	}
+	@IBAction func clientAddress2Action(_ sender: NSTextField) {
+		self.viewModel?.userWantsSetClientAddress2(sender.stringValue)
+	}
+	@IBAction func clientPhoneAction(_ sender: NSTextField) {
+		self.viewModel?.userWantsSetClientPhone(sender.stringValue)
+	}
+	@IBAction func clientEmailAction(_ sender: NSTextField) {
+		self.viewModel?.userWantsSetClientEmail(sender.stringValue)
+	}
+	
+	
 }
 
 extension ProjectMetadataViewController: NSTextFieldDelegate {

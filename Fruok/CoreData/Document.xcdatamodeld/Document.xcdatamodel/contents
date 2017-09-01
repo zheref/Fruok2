@@ -9,6 +9,15 @@
         <attribute name="descriptionString" optional="YES" attributeType="Transformable" customClassName="NSAttributedString" syncable="YES"/>
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
+    <entity name="Client" representedClassName="Client" syncable="YES">
+        <attribute name="address1" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="address2" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="email" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="firstName" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="lastName" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="phone" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="projects" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Project" inverseName="client" inverseEntity="Project" syncable="YES"/>
+    </entity>
     <entity name="Label" representedClassName="Label" syncable="YES">
         <attribute name="name" attributeType="String" defaultValueString="&quot;&quot;" syncable="YES"/>
         <relationship name="color" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="LabelColor" inverseName="label" inverseEntity="LabelColor" syncable="YES"/>
@@ -30,12 +39,12 @@
         <relationship name="task" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Task" inverseName="pomodoroSessions" inverseEntity="Task" syncable="YES"/>
     </entity>
     <entity name="Project" representedClassName="Project" syncable="YES">
-        <attribute name="client" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="codeName" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="commercialName" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="deadLine" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
         <attribute name="duration" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="kind" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <relationship name="client" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Client" inverseName="projects" inverseEntity="Client" syncable="YES"/>
         <relationship name="taskStates" optional="YES" toMany="YES" deletionRule="Nullify" ordered="YES" destinationEntity="TaskState" inverseName="project" inverseEntity="TaskState" syncable="YES"/>
     </entity>
     <entity name="RGBAColor" representedClassName="RGBAColor" isAbstract="YES" syncable="YES">
@@ -73,5 +82,6 @@
         <element name="Subtask" positionX="9" positionY="90" width="128" height="90"/>
         <element name="Task" positionX="0" positionY="81" width="128" height="120"/>
         <element name="TaskState" positionX="-45" positionY="27" width="128" height="90"/>
+        <element name="Client" positionX="-18" positionY="81" width="128" height="150"/>
     </elements>
 </model>

@@ -20,6 +20,15 @@ extension DateFormatter {
 	}()
 }
 
+extension NumberFormatter {
+
+	static let feeFormatter: NumberFormatter = {
+		let formatter = NumberFormatter()
+		formatter.numberStyle = .currency
+		return formatter
+	}()
+}
+
 class InvoiceViewModel: NSObject, MVVMViewModel {
 
 	typealias MODEL = Project
@@ -48,6 +57,20 @@ class InvoiceViewModel: NSObject, MVVMViewModel {
 		return template
 	}()
 
+	func localeForCurrency(_ currency: String?) -> NSLocale? {
+
+		guard let currency = currency else {return nil}
+
+		for identifier in NSLocale.availableLocaleIdentifiers {
+
+			let locale = NSLocale(localeIdentifier: identifier)
+			if (CFLocaleGetValue((locale as CFLocale), CFLocaleKey.currencyCode) as? String) == currency {
+				return locale
+			}
+		}
+
+		return nil
+	}
 	func updateInvoice() {
 
 		let invoiceData = InvoiceData()
@@ -66,6 +89,36 @@ class InvoiceViewModel: NSObject, MVVMViewModel {
 		let perTask = self.sessionFilterViewModel.sessions.grouping(by: { $0.task! })
 		var tasks: [InvoiceDataTask] = []
 
+		let currency = self.project.currency
+		let currenyLocale = self.localeForCurrency(currency)
+
+		let feeString: (NSDecimalNumber?) -> String? = { (_ number: NSDecimalNumber?) in
+
+			guard let number = number else { return nil }
+
+			if let theCurrenyLocale = currenyLocale {
+
+				NumberFormatter.feeFormatter.locale = theCurrenyLocale as Locale
+				if let string = NumberFormatter.feeFormatter.string(from: number) {
+					return string
+				}
+			}
+			if let currency = currency {
+				return String(format: "%@ %@", currency, number.stringValue)
+			}
+			else {
+				return number.stringValue
+			}
+		}
+
+		let oneHundred = NSDecimalNumber(mantissa: 100, exponent: 1, isNegative: false)
+		let hourHandler = NSDecimalNumberHandler(roundingMode: .bankers, scale: 1, raiseOnExactness: false, raiseOnOverflow: false, raiseOnUnderflow: false, raiseOnDivideByZero: false)
+		let feeHandler = NSDecimalNumberHandler(roundingMode: .bankers, scale: 2, raiseOnExactness: false, raiseOnOverflow: false, raiseOnUnderflow: false, raiseOnDivideByZero: false)
+		let oneHour = NSDecimalNumber(mantissa: 60, exponent: 1, isNegative: false)
+		let feePerHour = self.project.fee ?? NSDecimalNumber.zero
+		var totalHours = NSDecimalNumber.zero
+		var totalFee = NSDecimalNumber.zero
+
 		for task in perTask.keys.sorted(by: {($0.name ?? "") < ($1.name ?? "") }) {
 
 			let taskData = InvoiceDataTask()
@@ -82,18 +135,42 @@ class InvoiceViewModel: NSObject, MVVMViewModel {
 				}))
 			}
 
-			taskData.quantity.set(
-				{
-				let totalSeconds = perTask[task]!.reduce(0.0, {  (result, session) in return result + session.totalDuration })
-				let totalHours = totalSeconds / (60 * 60)
-				return NSString(format: "%.1f", totalHours) as String
-				}()
-			)
+			let totalSeconds = perTask[task]!.reduce(0.0, {  (result, session) in return result + session.totalDuration })
+			let seconds = NSDecimalNumber(mantissa: UInt64(abs(floor(totalSeconds))), exponent: 1, isNegative: false)
+			let hours = seconds.dividing(by: oneHour, withBehavior: hourHandler)
+			let taskFee = feePerHour.multiplying(by: hours, withBehavior: feeHandler)
+
+			totalHours = totalHours.adding(hours, withBehavior: hourHandler)
+			totalFee = totalFee.adding(taskFee, withBehavior: feeHandler)
+
+
+			taskData.quantity.set(hours.stringValue)
+			taskData.price.set(feeString(feePerHour))
+			taskData.total.set(feeString(taskFee))
 
 			tasks.append(taskData)
 		}
 
 		invoiceData.tasks.set(tasks)
+
+		invoiceData.subtotal.set(feeString(totalFee))
+
+		let taxPercent: NSDecimalNumber? = self.project.tax
+		let taxName: String? = self.project.taxName
+
+		if taxPercent != nil || taxName != nil {
+
+			let taxData = InvoiceDataTax()
+			let taxAmount = taxPercent?.multiplying(by: totalFee, withBehavior: feeHandler).dividing(by: oneHundred)
+			totalFee = totalFee.adding(taxAmount ?? NSDecimalNumber.zero, withBehavior: feeHandler)
+
+			taxData.percent.set(String(format: "%@: %@%%", taxName ?? "", taxPercent ?? ""))
+
+			taxData.amount.set(feeString(taxAmount))
+			invoiceData.tax.set(taxData)
+		}
+
+		invoiceData.grandTotal.set(feeString(totalFee))
 
 		let htmlString: String
 		do {

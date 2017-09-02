@@ -7,6 +7,7 @@
 //
 
 import Cocoa
+import CoreFoundation
 
 class ProjectMetadataViewController: NSViewController, MVVMView {
 
@@ -16,16 +17,30 @@ class ProjectMetadataViewController: NSViewController, MVVMView {
 	@IBOutlet var durationField: NSTextField!
 	@IBOutlet var durationStepper: NSStepper!
 	@IBOutlet var deadlinePicker: NSDatePicker!
+	@IBOutlet var currencyComboBox: NSComboBox!
+	@IBOutlet var feeField: NSTextField!
+	@IBOutlet var taxNameComboBox: NSComboBox!
+	@IBOutlet var taxField: NSTextField!
 
+	@IBOutlet var taxFieldFormatter: NumberFormatter!
+	@IBOutlet var feeFieldFormatter: NumberFormatter!
 	@IBOutlet var clientFirstNameField: NSTextField!
 	@IBOutlet var clientLastNameField: NSTextField!
 	@IBOutlet var clientAddress1Field: NSTextField!
 	@IBOutlet var clientAddress2Field: NSTextField!
 	@IBOutlet var clientZIPField: NSTextField!
 	@IBOutlet var clientCityField: NSTextField!
-
 	@IBOutlet var clientPhoneField: NSTextField!
 	@IBOutlet var clientEmailField: NSTextField!
+
+	@IBOutlet var devFirstNameField: NSTextField!
+	@IBOutlet var devLastNameField: NSTextField!
+	@IBOutlet var devAddress1Field: NSTextField!
+	@IBOutlet var devAddress2Field: NSTextField!
+	@IBOutlet var devZIPField: NSTextField!
+	@IBOutlet var devCityField: NSTextField!
+	@IBOutlet var devPhoneField: NSTextField!
+	@IBOutlet var devEmailField: NSTextField!
 
 	@IBOutlet var controlsEmbeddingView: NSView!
 
@@ -49,8 +64,15 @@ class ProjectMetadataViewController: NSViewController, MVVMView {
 		formatter.maximumFractionDigits = 0
 		self.durationField.formatter = formatter
 
+		self.feeFieldFormatter.roundingMode = .halfDown
+		self.feeFieldFormatter.roundingIncrement = NSNumber(floatLiteral: 0.05)
+
+		self.taxFieldFormatter.roundingMode = .halfDown
+		self.taxFieldFormatter.roundingIncrement = NSNumber(floatLiteral: 0.001)
+
 		self.controlsEmbeddingView.wantsLayer = true
 		self.controlsEmbeddingView.layer?.backgroundColor = NSColor.white.cgColor
+
 		self.connectVMIfReady()
 	}
 
@@ -63,6 +85,10 @@ class ProjectMetadataViewController: NSViewController, MVVMView {
 
 			me.deadlinePicker.dateValue = date ?? Date().addingTimeInterval(30 * 24 * 60 * 60)
 		}
+		self.viewModel?.currencyString.bind(to: self.currencyComboBox.reactive.stringValue)
+		self.viewModel?.fee.map { $0.stringValue }.bind(to: self.feeField.reactive.stringValue)
+		self.viewModel?.taxString.bind(to: self.taxNameComboBox.reactive.stringValue)
+		self.viewModel?.tax.map { $0.stringValue }.bind(to: self.taxField.reactive.stringValue)
 
 		self.viewModel?.clientFirstName.bind(to: self.clientFirstNameField.reactive.stringValue)
 		self.viewModel?.clientLastName.bind(to: self.clientLastNameField.reactive.stringValue)
@@ -121,8 +147,64 @@ class ProjectMetadataViewController: NSViewController, MVVMView {
 	@IBAction func clientEmailAction(_ sender: NSTextField) {
 		self.viewModel?.userWantsSetClientEmail(sender.stringValue)
 	}
+
+	@IBAction func currencyAction(_ sender: Any) {
+		self.viewModel?.userWantsSetCurrency(self.currencyComboBox.stringValue)
+	}
+	@IBAction func feeAction(_ sender: Any) {
+
+		let decimal = NSDecimalNumber(floatLiteral:feeField.doubleValue)
+		self.viewModel?.userWantsSetFee(decimal)
+	}
+	@IBAction func taxNameAction(_ sender: Any) {
+		self.viewModel?.userWantsSetTaxName(self.taxNameComboBox.stringValue)
+	}
+	@IBAction func taxAction(_ sender: Any) {
+		let decimal = NSDecimalNumber(floatLiteral:taxField.doubleValue)
+		self.viewModel?.userWantsSetTax(decimal)
+	}
 	
+//	@IBAction func currencyAction(_ sender: NSPopUpButton) {
+//
+//	}
 	
+}
+
+extension ProjectMetadataViewController: NSComboBoxDataSource {
+
+	func numberOfItems(in comboBox: NSComboBox) -> Int {
+
+		if comboBox == self.currencyComboBox {
+			return self.viewModel?.currencies.value.currencies.count ?? 0
+		}
+		if comboBox == self.taxNameComboBox {
+			return self.viewModel?.taxes.value.taxes.count ?? 0
+		}
+		return 0
+	}
+
+	func comboBox(_ comboBox: NSComboBox, objectValueForItemAt index: Int) -> Any? {
+
+		if comboBox == self.currencyComboBox {
+			return self.viewModel?.currencies.value.currencies[index]
+		}
+		if comboBox == self.taxNameComboBox {
+			return self.viewModel?.taxes.value.taxes[index]
+		}
+		return nil
+	}
+
+	func comboBox(_ comboBox: NSComboBox, completedString string: String) -> String? {
+
+		if comboBox == self.currencyComboBox {
+			return self.viewModel?.currencies.value.currencies.filter { $0.uppercased().hasPrefix(string.uppercased()) }.first
+		}
+		if comboBox == self.taxNameComboBox {
+			return self.viewModel?.taxes.value.taxes.filter { $0.uppercased().hasPrefix(string.uppercased()) }.first
+		}
+		return nil
+	}
+
 }
 
 extension ProjectMetadataViewController: NSTextFieldDelegate {

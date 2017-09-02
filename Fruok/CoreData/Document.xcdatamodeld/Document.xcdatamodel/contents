@@ -43,9 +43,13 @@
     <entity name="Project" representedClassName="Project" syncable="YES">
         <attribute name="codeName" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="commercialName" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="currency" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="deadLine" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
         <attribute name="duration" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="fee" optional="YES" attributeType="Decimal" defaultValueString="0.0" syncable="YES"/>
         <attribute name="kind" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="tax" optional="YES" attributeType="Decimal" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="taxName" optional="YES" attributeType="String" syncable="YES"/>
         <relationship name="client" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Client" inverseName="projects" inverseEntity="Client" syncable="YES"/>
         <relationship name="taskStates" optional="YES" toMany="YES" deletionRule="Nullify" ordered="YES" destinationEntity="TaskState" inverseName="project" inverseEntity="TaskState" syncable="YES"/>
     </entity>
@@ -75,15 +79,15 @@
     <elements>
         <element name="Attachment" positionX="-18" positionY="63" width="128" height="90"/>
         <element name="BaseTask" positionX="-27" positionY="36" width="128" height="75"/>
+        <element name="Client" positionX="-18" positionY="81" width="128" height="180"/>
         <element name="Label" positionX="-9" positionY="45" width="128" height="90"/>
         <element name="LabelColor" positionX="-18" positionY="63" width="128" height="60"/>
         <element name="PomodoroLog" positionX="-9" positionY="81" width="128" height="105"/>
         <element name="PomodoroSession" positionX="-18" positionY="72" width="128" height="105"/>
-        <element name="Project" positionX="-63" positionY="-18" width="128" height="150"/>
+        <element name="Project" positionX="-63" positionY="-18" width="128" height="210"/>
         <element name="RGBAColor" positionX="18" positionY="72" width="128" height="105"/>
         <element name="Subtask" positionX="9" positionY="90" width="128" height="90"/>
         <element name="Task" positionX="0" positionY="81" width="128" height="120"/>
         <element name="TaskState" positionX="-45" positionY="27" width="128" height="90"/>
-        <element name="Client" positionX="-18" positionY="81" width="128" height="180"/>
     </elements>
 </model>

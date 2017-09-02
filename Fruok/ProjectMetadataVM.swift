@@ -50,7 +50,51 @@ class ProjectMetadataViewModel: NSObject, MVVMViewModel {
 				me.clientEmail.value = client?.email ?? ""
 			}
 		}
+
+		self.reactive.keyPath(#keyPath(ProjectMetadataViewModel.project.currency), ofType: Optional<String>.self, context: .immediateOnMain).bind(to: self, context: .immediateOnMain) { (me, currency) in
+
+			var theCurrency = currency
+
+			if theCurrency == nil {
+				theCurrency = NSLocale.current.currencyCode
+			}
+
+			let currencyList: [String] = ProjectMetadataViewModel.allCurrencies
+
+			var index: Int? = nil
+			if let theCurrency = theCurrency {
+				index = currencyList.index(of: theCurrency)
+			}
+			//self.currencyList = currencyList
+			self.currencies.value = (selected: index, currencies: currencyList)
+			self.currencyString.value = theCurrency ?? "USD"
+		}
+
+		self.reactive.keyPath(#keyPath(ProjectMetadataViewModel.project.fee), ofType: Optional<NSDecimalNumber>.self, context: .immediateOnMain).bind(to: self, context: .immediateOnMain) { (me, fee) in
+
+			self.fee.value = fee ?? NSDecimalNumber()
+		}
+
+		self.reactive.keyPath(#keyPath(ProjectMetadataViewModel.project.taxName), ofType: Optional<String>.self, context: .immediateOnMain).bind(to: self, context: .immediateOnMain) { (me, taxString) in
+
+			self.taxString.value = taxString ?? ""
+		}
+
+		self.reactive.keyPath(#keyPath(ProjectMetadataViewModel.project.tax), ofType: Optional<NSDecimalNumber>.self, context: .immediateOnMain).bind(to: self, context: .immediateOnMain) { (me, tax) in
+
+			self.tax.value = tax ?? NSDecimalNumber()
+		}
+
+
+
 	}
+
+	//var currencyList: [String] = []
+
+	static let allCurrencies: [String] = Array(Set(NSLocale.availableLocaleIdentifiers.map {
+
+		return CFLocaleGetValue((NSLocale(localeIdentifier: $0) as CFLocale), CFLocaleKey.currencyCode) as? String
+		}.flatMap { $0 }))
 
 	private func getOrCreateClient() -> Client {
 
@@ -72,6 +116,15 @@ class ProjectMetadataViewModel: NSObject, MVVMViewModel {
 	let commercialName = Property<String>("")
 	let durationDays = Property<Int>(0)
 	let deadline = Property<Date?>(nil)
+	let currencies = Property<(selected: Int?, currencies: [String])>(selected:nil, currencies: [])
+	let currencyString = Property<String>(NSLocale.current.currencyCode ?? "USD")
+	let fee = Property<NSDecimalNumber>(0)
+	let taxes = Property<(selected: Int?, taxes: [String])>(selected: nil, taxes: [
+		NSLocalizedString("VAT", comment: "VAT tax name"),
+		NSLocalizedString("Tax", comment: "Tax tax name")
+		])
+	let taxString = Property<String>(NSLocale.current.currencyCode ?? "USD")
+	let tax = Property<NSDecimalNumber>(0)
 
 	let clientFirstName = Property<String>("")
 	let clientLastName = Property<String>("")
@@ -98,7 +151,18 @@ class ProjectMetadataViewModel: NSObject, MVVMViewModel {
 	func userWantsSetDeadline(_ deadline: Date) {
 		self.project.deadLine = deadline as NSDate
 	}
-
+	func userWantsSetCurrency(_ string: String) {
+		self.project.currency = string
+	}
+	func userWantsSetFee(_ fee: NSDecimalNumber) {
+		self.project.fee = fee
+	}
+	func userWantsSetTaxName(_ tax: String) {
+		self.project.taxName = tax
+	}
+	func userWantsSetTax(_ tax: NSDecimalNumber) {
+		self.project.tax = tax
+	}
 
 
 	func userWantsSetClientFirstName(_ string: String) {

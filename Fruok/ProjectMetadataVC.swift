@@ -88,7 +88,12 @@ class ProjectMetadataViewController: NSViewController, MVVMView {
 		self.viewModel?.currencyString.bind(to: self.currencyComboBox.reactive.stringValue)
 		self.viewModel?.fee.map { $0.stringValue }.bind(to: self.feeField.reactive.stringValue)
 		self.viewModel?.taxString.bind(to: self.taxNameComboBox.reactive.stringValue)
-		self.viewModel?.tax.map { $0.stringValue }.bind(to: self.taxField.reactive.stringValue)
+		self.viewModel?.tax.bind(to: self, context: .immediateOnMain) { (me, tax: NSDecimalNumber) in
+
+			me.taxField.objectValue = tax
+			//me.taxField.numberValue = date
+		}
+
 
 		self.viewModel?.clientFirstName.bind(to: self.clientFirstNameField.reactive.stringValue)
 		self.viewModel?.clientLastName.bind(to: self.clientLastNameField.reactive.stringValue)

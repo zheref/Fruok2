@@ -27,6 +27,12 @@ extension NumberFormatter {
 		formatter.numberStyle = .currency
 		return formatter
 	}()
+
+	static let percentFormatter: NumberFormatter = {
+		let formatter = NumberFormatter()
+		formatter.numberStyle = .percent
+		return formatter
+	}()
 }
 
 class InvoiceViewModel: NSObject, MVVMViewModel {
@@ -111,7 +117,6 @@ class InvoiceViewModel: NSObject, MVVMViewModel {
 			}
 		}
 
-		let oneHundred = NSDecimalNumber(mantissa: 100, exponent: 1, isNegative: false)
 		let hourHandler = NSDecimalNumberHandler(roundingMode: .bankers, scale: 1, raiseOnExactness: false, raiseOnOverflow: false, raiseOnUnderflow: false, raiseOnDivideByZero: false)
 		let feeHandler = NSDecimalNumberHandler(roundingMode: .bankers, scale: 2, raiseOnExactness: false, raiseOnOverflow: false, raiseOnUnderflow: false, raiseOnDivideByZero: false)
 		let oneHour = NSDecimalNumber(mantissa: 60, exponent: 1, isNegative: false)
@@ -161,10 +166,10 @@ class InvoiceViewModel: NSObject, MVVMViewModel {
 		if taxPercent != nil || taxName != nil {
 
 			let taxData = InvoiceDataTax()
-			let taxAmount = taxPercent?.multiplying(by: totalFee, withBehavior: feeHandler).dividing(by: oneHundred)
+			let taxAmount = taxPercent?.multiplying(by: totalFee, withBehavior: feeHandler)
 			totalFee = totalFee.adding(taxAmount ?? NSDecimalNumber.zero, withBehavior: feeHandler)
 
-			taxData.percent.set(String(format: "%@: %@%%", taxName ?? "", taxPercent ?? ""))
+			taxData.percent.set(String(format: "%@: %@", taxName ?? "", taxPercent != nil ? NumberFormatter.percentFormatter.string(from: taxPercent!)! : ""))
 
 			taxData.amount.set(feeString(taxAmount))
 			invoiceData.tax.set(taxData)

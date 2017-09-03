@@ -18,15 +18,16 @@ extension Project {
 
     @NSManaged public var codeName: String?
     @NSManaged public var commercialName: String?
+    @NSManaged public var currency: String?
     @NSManaged public var deadLine: NSDate?
     @NSManaged public var duration: Int32
-    @NSManaged public var kind: Int32
-    @NSManaged public var currency: String?
     @NSManaged public var fee: NSDecimalNumber?
-    @NSManaged public var taxName: String?
+    @NSManaged public var kind: Int32
     @NSManaged public var tax: NSDecimalNumber?
+    @NSManaged public var taxName: String?
     @NSManaged public var client: Client?
     @NSManaged public var taskStates: NSOrderedSet?
+    @NSManaged public var developer: Developer?
 
 }
 

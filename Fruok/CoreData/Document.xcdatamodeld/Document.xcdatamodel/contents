@@ -9,16 +9,11 @@
         <attribute name="descriptionString" optional="YES" attributeType="Transformable" customClassName="NSAttributedString" syncable="YES"/>
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
-    <entity name="Client" representedClassName="Client" syncable="YES">
-        <attribute name="address1" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="address2" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="city" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="email" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="firstName" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="lastName" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="phone" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="zip" optional="YES" attributeType="String" syncable="YES"/>
+    <entity name="Client" representedClassName="Client" parentEntity="PersonInfo" syncable="YES">
         <relationship name="projects" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Project" inverseName="client" inverseEntity="Project" syncable="YES"/>
+    </entity>
+    <entity name="Developer" representedClassName="Developer" parentEntity="PersonInfo" syncable="YES">
+        <relationship name="projects" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Project" inverseName="developer" inverseEntity="Project" syncable="YES"/>
     </entity>
     <entity name="Label" representedClassName="Label" syncable="YES">
         <attribute name="name" attributeType="String" defaultValueString="&quot;&quot;" syncable="YES"/>
@@ -27,6 +22,16 @@
     </entity>
     <entity name="LabelColor" representedClassName="LabelColor" parentEntity="RGBAColor" syncable="YES">
         <relationship name="label" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Label" inverseName="color" inverseEntity="Label" syncable="YES"/>
+    </entity>
+    <entity name="PersonInfo" representedClassName="PersonInfo" isAbstract="YES" syncable="YES">
+        <attribute name="address1" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="address2" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="city" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="email" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="firstName" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="lastName" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="phone" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="zip" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
     <entity name="PomodoroLog" representedClassName="PomodoroLog" syncable="YES">
         <attribute name="duration" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES" syncable="YES"/>
@@ -51,6 +56,7 @@
         <attribute name="tax" optional="YES" attributeType="Decimal" defaultValueString="0.0" syncable="YES"/>
         <attribute name="taxName" optional="YES" attributeType="String" syncable="YES"/>
         <relationship name="client" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Client" inverseName="projects" inverseEntity="Client" syncable="YES"/>
+        <relationship name="developer" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Developer" inverseName="projects" inverseEntity="Developer" syncable="YES"/>
         <relationship name="taskStates" optional="YES" toMany="YES" deletionRule="Nullify" ordered="YES" destinationEntity="TaskState" inverseName="project" inverseEntity="TaskState" syncable="YES"/>
     </entity>
     <entity name="RGBAColor" representedClassName="RGBAColor" isAbstract="YES" syncable="YES">
@@ -79,12 +85,14 @@
     <elements>
         <element name="Attachment" positionX="-18" positionY="63" width="128" height="90"/>
         <element name="BaseTask" positionX="-27" positionY="36" width="128" height="75"/>
-        <element name="Client" positionX="-18" positionY="81" width="128" height="180"/>
+        <element name="Client" positionX="-18" positionY="81" width="128" height="60"/>
+        <element name="Developer" positionX="-18" positionY="108" width="128" height="60"/>
         <element name="Label" positionX="-9" positionY="45" width="128" height="90"/>
         <element name="LabelColor" positionX="-18" positionY="63" width="128" height="60"/>
+        <element name="PersonInfo" positionX="-9" positionY="117" width="128" height="165"/>
         <element name="PomodoroLog" positionX="-9" positionY="81" width="128" height="105"/>
         <element name="PomodoroSession" positionX="-18" positionY="72" width="128" height="105"/>
-        <element name="Project" positionX="-63" positionY="-18" width="128" height="210"/>
+        <element name="Project" positionX="-63" positionY="-18" width="128" height="225"/>
         <element name="RGBAColor" positionX="18" positionY="72" width="128" height="105"/>
         <element name="Subtask" positionX="9" positionY="90" width="128" height="90"/>
         <element name="Task" positionX="0" positionY="81" width="128" height="120"/>

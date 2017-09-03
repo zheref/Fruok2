@@ -8,6 +8,7 @@
 
 import Foundation
 import ReactiveKit
+import AddressBook
 
 class ProjectMetadataViewModel: NSObject, MVVMViewModel {
 
@@ -51,6 +52,20 @@ class ProjectMetadataViewModel: NSObject, MVVMViewModel {
 			}
 		}
 
+		self.reactive.keyPath(#keyPath(ProjectMetadataViewModel.project.developer), ofType: Optional<Developer>.self, context: .immediateOnMain).bind(to: self, context: .immediateOnMain) { (me, client) in
+
+			DispatchQueue.main.async {
+				me.devFirstName.value = client?.firstName ?? ""
+				me.devLastName.value = client?.lastName ?? ""
+				me.devAddress1.value = client?.address1 ?? ""
+				me.devAddress2.value = client?.address2 ?? ""
+				me.devZIP.value = client?.zip ?? ""
+				me.devCity.value = client?.city ?? ""
+				me.devPhone.value = client?.phone ?? ""
+				me.devEmail.value = client?.email ?? ""
+			}
+		}
+
 		self.reactive.keyPath(#keyPath(ProjectMetadataViewModel.project.currency), ofType: Optional<String>.self, context: .immediateOnMain).bind(to: self, context: .immediateOnMain) { (me, currency) in
 
 			var theCurrency = currency
@@ -85,8 +100,48 @@ class ProjectMetadataViewModel: NSObject, MVVMViewModel {
 			self.tax.value = tax ?? NSDecimalNumber()
 		}
 
+		if self.project.developer == nil {
 
+			if let addressBook = ABAddressBook.shared() {
 
+				if let me = addressBook.me() {
+
+					let developer = self.getOrCreateDeveloper()
+					developer.firstName = (me.value(forProperty: kABFirstNameProperty) as? String)
+					developer.lastName = (me.value(forProperty: kABLastNameProperty) as? String)
+
+					if let allAddresses = me.value(forProperty:kABAddressProperty) as? ABMultiValue {
+
+						let primaryIndex = allAddresses.index(forIdentifier: allAddresses.primaryIdentifier() )
+						if primaryIndex != NSNotFound {
+							if let address = allAddresses.value(at: primaryIndex) as? NSDictionary {
+
+								developer.address1 = ( address[kABAddressStreetKey] as? String)
+								developer.zip = ( address[kABAddressZIPKey] as? String)
+								developer.city = ( address[kABAddressCityKey] as? String)
+							}
+						}
+					}
+
+					if let allEmails = me.value(forProperty:kABEmailProperty) as? ABMultiValue {
+
+						let primaryIndex = allEmails.index(forIdentifier: allEmails.primaryIdentifier() )
+						if primaryIndex != NSNotFound {
+							let email = allEmails.value(at: primaryIndex)
+							developer.email = ( email as? String)
+						}
+					}
+
+					if let allPhones = me.value(forProperty:kABPhoneProperty) as? ABMultiValue {
+						let primaryIndex = allPhones.index(forIdentifier: allPhones.primaryIdentifier() )
+						if primaryIndex != NSNotFound {
+							let phone = allPhones.value(at: primaryIndex)
+							developer.phone = ( phone as? String )
+						}
+					}
+				}
+			}
+		}
 	}
 
 	//var currencyList: [String] = []
@@ -110,6 +165,22 @@ class ProjectMetadataViewModel: NSObject, MVVMViewModel {
 		self.project.client = client
 		return client
 	}
+
+	private func getOrCreateDeveloper() -> Developer {
+
+		if let developer = self.project.developer {
+			return developer
+		}
+
+		guard let context = self.project.managedObjectContext else {
+			preconditionFailure()
+		}
+
+		let developer: Developer = context.insertObject()
+		self.project.developer = developer
+		return developer
+	}
+
 
 	let type = Property<FruokProjectType>(.software)
 	let codeName = Property<String>("")
@@ -135,6 +206,14 @@ class ProjectMetadataViewModel: NSObject, MVVMViewModel {
 	let clientPhone = Property<String>("")
 	let clientEmail = Property<String>("")
 
+	let devFirstName = Property<String>("")
+	let devLastName = Property<String>("")
+	let devAddress1 = Property<String>("")
+	let devAddress2 = Property<String>("")
+	let devZIP = Property<String>("")
+	let devCity = Property<String>("")
+	let devPhone = Property<String>("")
+	let devEmail = Property<String>("")
 
 	func userWantsSetProjectType(_ projectType: FruokProjectType) {
 		self.project.kind = Int32(projectType.rawValue)
@@ -205,4 +284,46 @@ class ProjectMetadataViewModel: NSObject, MVVMViewModel {
 			self.getOrCreateClient().email = string
 		})
 	}
+
+	func userWantsSetDevFirstName(_ string: String) {
+		self.project.managedObjectContext?.undoGroupWithOperationsNoSaving({ context in
+			self.getOrCreateDeveloper().firstName = string
+		})
+	}
+	func userWantsSetDevLastName(_ string: String) {
+		self.project.managedObjectContext?.undoGroupWithOperationsNoSaving({ context in
+			self.getOrCreateDeveloper().lastName = string
+		})
+	}
+	func userWantsSetDevAddress1(_ string: String) {
+		self.project.managedObjectContext?.undoGroupWithOperationsNoSaving({ context in
+			self.getOrCreateDeveloper().address1 = string
+		})
+	}
+	func userWantsSetDevAddress2(_ string: String) {
+		self.project.managedObjectContext?.undoGroupWithOperationsNoSaving({ context in
+			self.getOrCreateDeveloper().address2 = string
+		})
+	}
+	func userWantsSetDevZIP(_ string: String) {
+		self.project.managedObjectContext?.undoGroupWithOperationsNoSaving({ context in
+			self.getOrCreateDeveloper().zip = string
+		})
+	}
+	func userWantsSetDevCity(_ string: String) {
+		self.project.managedObjectContext?.undoGroupWithOperationsNoSaving({ context in
+			self.getOrCreateDeveloper().city = string
+		})
+	}
+	func userWantsSetDevPhone(_ string: String) {
+		self.project.managedObjectContext?.undoGroupWithOperationsNoSaving({ context in
+			self.getOrCreateDeveloper().phone = string
+		})
+	}
+	func userWantsSetDevEmail(_ string: String) {
+		self.project.managedObjectContext?.undoGroupWithOperationsNoSaving({ context in
+			self.getOrCreateDeveloper().email = string
+		})
+	}
+
 }

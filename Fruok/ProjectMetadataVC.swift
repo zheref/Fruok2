@@ -104,6 +104,15 @@ class ProjectMetadataViewController: NSViewController, MVVMView {
 		self.viewModel?.clientPhone.bind(to: self.clientPhoneField.reactive.stringValue)
 		self.viewModel?.clientEmail.bind(to: self.clientEmailField.reactive.stringValue)
 
+		self.viewModel?.devFirstName.bind(to: self.devFirstNameField.reactive.stringValue)
+		self.viewModel?.devLastName.bind(to: self.devLastNameField.reactive.stringValue)
+		self.viewModel?.devAddress1.bind(to: self.devAddress1Field.reactive.stringValue)
+		self.viewModel?.devAddress2.bind(to: self.devAddress2Field.reactive.stringValue)
+		self.viewModel?.devZIP.bind(to: self.devZIPField.reactive.stringValue)
+		self.viewModel?.devCity.bind(to: self.devCityField.reactive.stringValue)
+		self.viewModel?.devPhone.bind(to: self.devPhoneField.reactive.stringValue)
+		self.viewModel?.devEmail.bind(to: self.devEmailField.reactive.stringValue)
+
 	}
 
 	@IBAction func projectKindAction(_ sender: Any) {
@@ -127,6 +136,23 @@ class ProjectMetadataViewController: NSViewController, MVVMView {
 	@IBAction func deadlineAction(_ sender: Any) {
 		self.viewModel?.userWantsSetDeadline(self.deadlinePicker.dateValue)
 	}
+
+	@IBAction func currencyAction(_ sender: Any) {
+		self.viewModel?.userWantsSetCurrency(self.currencyComboBox.stringValue)
+	}
+	@IBAction func feeAction(_ sender: Any) {
+
+		let decimal = NSDecimalNumber(floatLiteral:feeField.doubleValue)
+		self.viewModel?.userWantsSetFee(decimal)
+	}
+	@IBAction func taxNameAction(_ sender: Any) {
+		self.viewModel?.userWantsSetTaxName(self.taxNameComboBox.stringValue)
+	}
+	@IBAction func taxAction(_ sender: Any) {
+		let decimal = NSDecimalNumber(floatLiteral:taxField.doubleValue)
+		self.viewModel?.userWantsSetTax(decimal)
+	}
+
 
 	@IBAction func clientFirstNameAction(_ sender: NSTextField) {
 		self.viewModel?.userWantsSetClientFirstName(sender.stringValue)
@@ -153,22 +179,32 @@ class ProjectMetadataViewController: NSViewController, MVVMView {
 		self.viewModel?.userWantsSetClientEmail(sender.stringValue)
 	}
 
-	@IBAction func currencyAction(_ sender: Any) {
-		self.viewModel?.userWantsSetCurrency(self.currencyComboBox.stringValue)
+	@IBAction func devFirstNameAction(_ sender: NSTextField) {
+		self.viewModel?.userWantsSetDevFirstName(sender.stringValue)
 	}
-	@IBAction func feeAction(_ sender: Any) {
+	@IBAction func devLastNameAction(_ sender: NSTextField) {
+		self.viewModel?.userWantsSetDevLastName(sender.stringValue)
+	}
+	@IBAction func devAddress1Action(_ sender: NSTextField) {
+		self.viewModel?.userWantsSetDevAddress1(sender.stringValue)
+	}
+	@IBAction func devAddress2Action(_ sender: NSTextField) {
+		self.viewModel?.userWantsSetDevAddress2(sender.stringValue)
+	}
+	@IBAction func devZIPAction(_ sender: NSTextField) {
+		self.viewModel?.userWantsSetDevZIP(sender.stringValue)
+	}
+	@IBAction func devCityAction(_ sender: NSTextField) {
+		self.viewModel?.userWantsSetDevCity(sender.stringValue)
+	}
+	@IBAction func devPhoneAction(_ sender: NSTextField) {
+		self.viewModel?.userWantsSetDevPhone(sender.stringValue)
+	}
+	@IBAction func devEmailAction(_ sender: NSTextField) {
+		self.viewModel?.userWantsSetDevEmail(sender.stringValue)
+	}
 
-		let decimal = NSDecimalNumber(floatLiteral:feeField.doubleValue)
-		self.viewModel?.userWantsSetFee(decimal)
-	}
-	@IBAction func taxNameAction(_ sender: Any) {
-		self.viewModel?.userWantsSetTaxName(self.taxNameComboBox.stringValue)
-	}
-	@IBAction func taxAction(_ sender: Any) {
-		let decimal = NSDecimalNumber(floatLiteral:taxField.doubleValue)
-		self.viewModel?.userWantsSetTax(decimal)
-	}
-	
+
 //	@IBAction func currencyAction(_ sender: NSPopUpButton) {
 //
 //	}

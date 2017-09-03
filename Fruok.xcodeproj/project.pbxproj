@@ -75,6 +75,11 @@
 		D83BF7CA1F52F3D900339637 /* PomodoroLog+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = D83BF7C81F52F3D900339637 /* PomodoroLog+CoreDataProperties.swift */; };
 		D83BF7CD1F52F3EB00339637 /* PomodoroSession+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = D83BF7CB1F52F3EB00339637 /* PomodoroSession+CoreDataClass.swift */; };
 		D83BF7CE1F52F3EB00339637 /* PomodoroLog+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = D83BF7CC1F52F3EB00339637 /* PomodoroLog+CoreDataClass.swift */; };
+		D83C15981F5B475C0063D1A1 /* PersonInfo+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = D83C15951F5B475C0063D1A1 /* PersonInfo+CoreDataProperties.swift */; };
+		D83C15991F5B475C0063D1A1 /* Client+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = D83C15961F5B475C0063D1A1 /* Client+CoreDataProperties.swift */; };
+		D83C159A1F5B475C0063D1A1 /* Developer+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = D83C15971F5B475C0063D1A1 /* Developer+CoreDataProperties.swift */; };
+		D83C159D1F5B476A0063D1A1 /* PersonInfo+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = D83C159B1F5B476A0063D1A1 /* PersonInfo+CoreDataClass.swift */; };
+		D83C159E1F5B476A0063D1A1 /* Developer+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = D83C159C1F5B476A0063D1A1 /* Developer+CoreDataClass.swift */; };
 		D84E45B61F49BB3B00C7891F /* RGBAColorsMarshalling.swift in Sources */ = {isa = PBXBuildFile; fileRef = D84E45B51F49BB3B00C7891F /* RGBAColorsMarshalling.swift */; };
 		D84E45B91F49BC4E00C7891F /* RGBAColorsMarshalling+CoreData.swift in Sources */ = {isa = PBXBuildFile; fileRef = D84E45B81F49BC4E00C7891F /* RGBAColorsMarshalling+CoreData.swift */; };
 		D84E45BB1F49BD3200C7891F /* RGBAColorsMarshalling+NSColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = D84E45BA1F49BD3200C7891F /* RGBAColorsMarshalling+NSColor.swift */; };
@@ -102,7 +107,6 @@
 		D87859001F575056004FF111 /* SessionFilterVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = D87858FF1F575056004FF111 /* SessionFilterVM.swift */; };
 		D88968411F57FBF000226F7F /* InvoiceData.swift in Sources */ = {isa = PBXBuildFile; fileRef = D88968401F57FBF000226F7F /* InvoiceData.swift */; };
 		D8B746B31F59892F006B9D13 /* Client+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8B746B21F59892F006B9D13 /* Client+CoreDataClass.swift */; };
-		D8B746B51F59893C006B9D13 /* Client+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8B746B41F59893C006B9D13 /* Client+CoreDataProperties.swift */; };
 		D8C2AD0D1F38FB97002D75B2 /* KanbanVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8C2AD0C1F38FB97002D75B2 /* KanbanVC.swift */; };
 		D8C2AD0F1F39007E002D75B2 /* DocumentContentVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8C2AD0E1F39007E002D75B2 /* DocumentContentVM.swift */; };
 		D8C2AD111F390305002D75B2 /* KVVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8C2AD101F390305002D75B2 /* KVVM.swift */; };
@@ -231,6 +235,11 @@
 		D83BF7C81F52F3D900339637 /* PomodoroLog+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "PomodoroLog+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		D83BF7CB1F52F3EB00339637 /* PomodoroSession+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "PomodoroSession+CoreDataClass.swift"; sourceTree = "<group>"; };
 		D83BF7CC1F52F3EB00339637 /* PomodoroLog+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "PomodoroLog+CoreDataClass.swift"; sourceTree = "<group>"; };
+		D83C15951F5B475C0063D1A1 /* PersonInfo+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "PersonInfo+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		D83C15961F5B475C0063D1A1 /* Client+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Client+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		D83C15971F5B475C0063D1A1 /* Developer+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Developer+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		D83C159B1F5B476A0063D1A1 /* PersonInfo+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "PersonInfo+CoreDataClass.swift"; sourceTree = "<group>"; };
+		D83C159C1F5B476A0063D1A1 /* Developer+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Developer+CoreDataClass.swift"; sourceTree = "<group>"; };
 		D84E45B51F49BB3B00C7891F /* RGBAColorsMarshalling.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RGBAColorsMarshalling.swift; sourceTree = "<group>"; };
 		D84E45B81F49BC4E00C7891F /* RGBAColorsMarshalling+CoreData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "RGBAColorsMarshalling+CoreData.swift"; sourceTree = "<group>"; };
 		D84E45BA1F49BD3200C7891F /* RGBAColorsMarshalling+NSColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "RGBAColorsMarshalling+NSColor.swift"; sourceTree = "<group>"; };
@@ -259,7 +268,6 @@
 		D87858FF1F575056004FF111 /* SessionFilterVM.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SessionFilterVM.swift; sourceTree = "<group>"; };
 		D88968401F57FBF000226F7F /* InvoiceData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InvoiceData.swift; sourceTree = "<group>"; };
 		D8B746B21F59892F006B9D13 /* Client+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Client+CoreDataClass.swift"; sourceTree = "<group>"; };
-		D8B746B41F59893C006B9D13 /* Client+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Client+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		D8C2AD0C1F38FB97002D75B2 /* KanbanVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KanbanVC.swift; sourceTree = "<group>"; };
 		D8C2AD0E1F39007E002D75B2 /* DocumentContentVM.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DocumentContentVM.swift; sourceTree = "<group>"; };
 		D8C2AD101F390305002D75B2 /* KVVM.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KVVM.swift; sourceTree = "<group>"; };
@@ -399,7 +407,9 @@
 		D82ECF171F37985D008251C2 /* GeneratedClasses */ = {
 			isa = PBXGroup;
 			children = (
-				D8B746B41F59893C006B9D13 /* Client+CoreDataProperties.swift */,
+				D83C15951F5B475C0063D1A1 /* PersonInfo+CoreDataProperties.swift */,
+				D83C15961F5B475C0063D1A1 /* Client+CoreDataProperties.swift */,
+				D83C15971F5B475C0063D1A1 /* Developer+CoreDataProperties.swift */,
 				D83BF7C71F52F3D900339637 /* PomodoroSession+CoreDataProperties.swift */,
 				D83BF7C81F52F3D900339637 /* PomodoroLog+CoreDataProperties.swift */,
 				D834BD3B1F4C0FEA001B99D2 /* Attachment+CoreDataProperties.swift */,
@@ -418,6 +428,8 @@
 		D82ECF391F37AC96008251C2 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				D83C159B1F5B476A0063D1A1 /* PersonInfo+CoreDataClass.swift */,
+				D83C159C1F5B476A0063D1A1 /* Developer+CoreDataClass.swift */,
 				D8B746B21F59892F006B9D13 /* Client+CoreDataClass.swift */,
 				D83BF7CB1F52F3EB00339637 /* PomodoroSession+CoreDataClass.swift */,
 				D83BF7CC1F52F3EB00339637 /* PomodoroLog+CoreDataClass.swift */,
@@ -1078,6 +1090,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D83C159D1F5B476A0063D1A1 /* PersonInfo+CoreDataClass.swift in Sources */,
 				D84E45BB1F49BD3200C7891F /* RGBAColorsMarshalling+NSColor.swift in Sources */,
 				D82E216D1F3C5CE400F601DD /* Task+CoreDataProperties.swift in Sources */,
 				D82E21551F3C541800F601DD /* TasksCollectionVM.swift in Sources */,
@@ -1088,9 +1101,11 @@
 				D834BD421F4C12AC001B99D2 /* AttachmentsVC.swift in Sources */,
 				D82E21831F4111BD00F601DD /* OneDimensionalFittingCollectionViewLayout.swift in Sources */,
 				D82E216E1F3C5CE400F601DD /* TaskState+CoreDataProperties.swift in Sources */,
+				D83C159A1F5B475C0063D1A1 /* Developer+CoreDataProperties.swift in Sources */,
 				D87859001F575056004FF111 /* SessionFilterVM.swift in Sources */,
 				D82E21741F3CFFFD00F601DD /* TaskDetailVC.swift in Sources */,
 				D8C2AD1B1F3A4CC8002D75B2 /* NSLayoutConstraint+utilities.m in Sources */,
+				D83C159E1F5B476A0063D1A1 /* Developer+CoreDataClass.swift in Sources */,
 				D8F7B4841F45D16900060F08 /* SubtaskVM.swift in Sources */,
 				D82E215E1F3C59BE00F601DD /* KanbanTaskItemVM.swift in Sources */,
 				D87858E61F56DB0B004FF111 /* InvoiceVC.swift in Sources */,
@@ -1098,7 +1113,6 @@
 				D82ECF291F37985D008251C2 /* BaseTask+CoreDataClass.swift in Sources */,
 				D82E216C1F3C5CE400F601DD /* Subtask+CoreDataProperties.swift in Sources */,
 				D86441081F4EA9EE00884D49 /* NSManagedContext+UndoGroup.swift in Sources */,
-				D8B746B51F59893C006B9D13 /* Client+CoreDataProperties.swift in Sources */,
 				D83BF7CA1F52F3D900339637 /* PomodoroLog+CoreDataProperties.swift in Sources */,
 				D83BF7C91F52F3D900339637 /* PomodoroSession+CoreDataProperties.swift in Sources */,
 				D8FC65131F48C2420065D566 /* LabelEditingItem.swift in Sources */,
@@ -1108,6 +1122,7 @@
 				D82E217B1F3F822000F601DD /* NSManagedObjectContext+URI.swift in Sources */,
 				D82E21811F40FAAD00F601DD /* CollectionViewModelClientView.swift in Sources */,
 				D82ECF2D1F37985D008251C2 /* LabelColor+CoreDataClass.swift in Sources */,
+				D83C15991F5B475C0063D1A1 /* Client+CoreDataProperties.swift in Sources */,
 				D84FB9F51F534B720080FC28 /* PomodoroVM.swift in Sources */,
 				D8C2AD2C1F3BA249002D75B2 /* ManagedObjectType.swift in Sources */,
 				D8C2AD111F390305002D75B2 /* KVVM.swift in Sources */,
@@ -1145,6 +1160,7 @@
 				D8C2AD1F1F3A4E20002D75B2 /* NSView+SubviewHelpers.m in Sources */,
 				D8FC65171F48C2FA0065D566 /* LabelEditingItemVM.swift in Sources */,
 				D82E21791F3E6C5300F601DD /* UTI.swift in Sources */,
+				D83C15981F5B475C0063D1A1 /* PersonInfo+CoreDataProperties.swift in Sources */,
 				D834BD3A1F4B3594001B99D2 /* ProjectMetadataVM.swift in Sources */,
 				D8C2AD341F3BA78B002D75B2 /* NSManagedObjectModel+KCOrderedAccessorFix.m in Sources */,
 				D8C2AD221F3A571D002D75B2 /* OptionalRawValueInitializer.swift in Sources */,

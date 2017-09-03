@@ -949,6 +949,9 @@
                                                     <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
                                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                                 </textFieldCell>
+                                                <connections>
+                                                    <action selector="devFirstNameAction:" target="-2" id="WpA-Oq-5hl"/>
+                                                </connections>
                                             </textField>
                                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="qDN-xR-IN0">
                                                 <rect key="frame" x="59" y="247" width="74" height="17"/>
@@ -965,6 +968,9 @@
                                                     <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
                                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                                 </textFieldCell>
+                                                <connections>
+                                                    <action selector="devLastNameAction:" target="-2" id="uDq-qq-frW"/>
+                                                </connections>
                                             </textField>
                                             <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Nwy-Zv-IZw">
                                                 <rect key="frame" x="139" y="180" width="184" height="22"/>
@@ -973,6 +979,9 @@
                                                     <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
                                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                                 </textFieldCell>
+                                                <connections>
+                                                    <action selector="devAddress1Action:" target="-2" id="w43-fG-c7J"/>
+                                                </connections>
                                             </textField>
                                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="ceJ-IZ-sHU">
                                                 <rect key="frame" x="64" y="215" width="69" height="17"/>
@@ -989,6 +998,9 @@
                                                     <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
                                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                                 </textFieldCell>
+                                                <connections>
+                                                    <action selector="devAddress2Action:" target="-2" id="YJl-VC-V1x"/>
+                                                </connections>
                                             </textField>
                                             <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="UFn-ZA-Hx9">
                                                 <rect key="frame" x="139" y="20" width="184" height="22"/>
@@ -997,6 +1009,9 @@
                                                     <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
                                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                                 </textFieldCell>
+                                                <connections>
+                                                    <action selector="devEmailAction:" target="-2" id="LIP-6V-fX7"/>
+                                                </connections>
                                             </textField>
                                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="tVf-Db-hg8">
                                                 <rect key="frame" x="73" y="183" width="60" height="17"/>
@@ -1037,6 +1052,9 @@
                                                     <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
                                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                                 </textFieldCell>
+                                                <connections>
+                                                    <action selector="devZIPAction:" target="-2" id="znX-FB-q8K"/>
+                                                </connections>
                                             </textField>
                                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="LLi-z9-RVs">
                                                 <rect key="frame" x="105" y="119" width="28" height="17"/>
@@ -1053,6 +1071,9 @@
                                                     <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
                                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                                 </textFieldCell>
+                                                <connections>
+                                                    <action selector="devCityAction:" target="-2" id="xMj-u5-Yo9"/>
+                                                </connections>
                                             </textField>
                                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="xpt-on-c8x">
                                                 <rect key="frame" x="101" y="87" width="32" height="17"/>
@@ -1069,6 +1090,9 @@
                                                     <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
                                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                                 </textFieldCell>
+                                                <connections>
+                                                    <action selector="devPhoneAction:" target="-2" id="qth-3k-bGQ"/>
+                                                </connections>
                                             </textField>
                                         </subviews>
                                         <constraints>

@@ -1,5 +1,5 @@
 //
-//  Client+CoreDataProperties.swift
+//  Developer+CoreDataProperties.swift
 //  
 //
 //  Created by Matthias Keiser on 02.09.17.
@@ -10,10 +10,10 @@ import Foundation
 import CoreData
 
 
-extension Client {
+extension Developer {
 
-    @nonobjc public class func fetchRequest() -> NSFetchRequest<Client> {
-        return NSFetchRequest<Client>(entityName: "Client");
+    @nonobjc public class func fetchRequest() -> NSFetchRequest<Developer> {
+        return NSFetchRequest<Developer>(entityName: "Developer");
     }
 
     @NSManaged public var projects: NSSet?
@@ -21,7 +21,7 @@ extension Client {
 }
 
 // MARK: Generated accessors for projects
-extension Client {
+extension Developer {
 
     @objc(addProjectsObject:)
     @NSManaged public func addToProjects(_ value: Project)

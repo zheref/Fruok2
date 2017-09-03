@@ -84,6 +84,12 @@ class InvoiceViewModel: NSObject, MVVMViewModel {
 		invoiceData.projectName.set(self.project.commercialName)
 		invoiceData.invoiceDate.set(DateFormatter.invoiceDateFormatter.string(from: Date()))
 
+		invoiceData.companyName.set( (self.project.developer?.firstName ?? "") + " " + (self.project.developer?.lastName ?? ""))
+		invoiceData.companyAddress1.set(self.project.developer?.address1)
+		invoiceData.companyAddress2.set(self.project.developer?.address2)
+		invoiceData.companyPhone.set(self.project.developer?.phone)
+		invoiceData.companyEmail.set(self.project.developer?.email)
+
 		invoiceData.clientName.set( (self.project.client?.firstName ?? "") + " " + (self.project.client?.lastName ?? ""))
 		invoiceData.clientAddress1.set(self.project.client?.address1)
 		invoiceData.clientAddress2.set(self.project.client?.address2)

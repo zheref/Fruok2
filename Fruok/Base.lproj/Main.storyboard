@@ -717,10 +717,10 @@
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
                             <containerView translatesAutoresizingMaskIntoConstraints="NO" id="pEL-mv-W1c">
-                                <rect key="frame" x="0.0" y="0.0" width="1024" height="688"/>
+                                <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
                             </containerView>
                             <customView translatesAutoresizingMaskIntoConstraints="NO" id="hn0-jn-5gD">
-                                <rect key="frame" x="0.0" y="688" width="1024" height="80"/>
+                                <rect key="frame" x="0.0" y="768" width="1024" height="80"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="80" id="cG0-YK-8CU"/>
                                 </constraints>
@@ -729,7 +729,7 @@
                         <constraints>
                             <constraint firstItem="pEL-mv-W1c" firstAttribute="top" secondItem="hn0-jn-5gD" secondAttribute="bottom" id="HBI-CH-HGc"/>
                             <constraint firstItem="hn0-jn-5gD" firstAttribute="leading" secondItem="ERx-hH-rdd" secondAttribute="leading" id="IMY-bc-Af7"/>
-                            <constraint firstItem="hn0-jn-5gD" firstAttribute="top" secondItem="ERx-hH-rdd" secondAttribute="top" id="Lub-zD-phQ"/>
+                            <constraint firstItem="hn0-jn-5gD" firstAttribute="top" secondItem="ERx-hH-rdd" secondAttribute="top" constant="-80" id="Lub-zD-phQ"/>
                             <constraint firstAttribute="bottom" secondItem="pEL-mv-W1c" secondAttribute="bottom" id="PFf-wA-5Pk"/>
                             <constraint firstAttribute="trailing" secondItem="hn0-jn-5gD" secondAttribute="trailing" id="Ro0-T1-gMW"/>
                             <constraint firstAttribute="trailing" secondItem="pEL-mv-W1c" secondAttribute="trailing" id="VWc-wh-M0N"/>

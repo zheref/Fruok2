@@ -58,9 +58,7 @@ class SubtasksViewController: NSViewController, MVVMView {
 
 			if let scrollView = mySelf.tableView.enclosingScrollView {
 
-				// This is a bit of a hack, I can't figure out how to get the exact height:
-				let kHeightPadding = mySelf.tableView.rowHeight
-				let size = NSSize(width: mySelf.tableView.frame.size.width, height: CGFloat(mySelf.tableView.numberOfRows) * mySelf.tableView.rowHeight + kHeightPadding)
+				let size = NSSize(width: mySelf.tableView.frame.size.width, height: CGFloat(mySelf.tableView.numberOfRows) * (mySelf.tableView.rowHeight + mySelf.tableView.intercellSpacing.height))
 				let scrollViewSize = scrollView.tr_sizeThatFits(contentSize: size, controlSize: .regular)
 				mySelf.tableViewHeightConstraint.constant = scrollViewSize.height
 			}

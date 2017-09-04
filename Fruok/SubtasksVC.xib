@@ -9,6 +9,7 @@
         <customObject id="-2" userLabel="File's Owner" customClass="SubtasksViewController" customModule="Fruok" customModuleProvider="target">
             <connections>
                 <outlet property="tableView" destination="OHj-aP-tXM" id="Cgr-u9-MRt"/>
+                <outlet property="tableViewHeightConstraint" destination="Mmn-on-y1P" id="kyS-XQ-MiV"/>
                 <outlet property="view" destination="Hz6-mo-xeY" id="0bl-1N-x8E"/>
             </connections>
         </customObject>
@@ -119,6 +120,9 @@
                             </tableView>
                         </subviews>
                     </clipView>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="272" id="Mmn-on-y1P"/>
+                    </constraints>
                     <scroller key="horizontalScroller" hidden="YES" verticalHuggingPriority="750" horizontal="YES" id="VHo-am-CIV">
                         <rect key="frame" x="1" y="-15" width="0.0" height="16"/>
                         <autoresizingMask key="autoresizingMask"/>

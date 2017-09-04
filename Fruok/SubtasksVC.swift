@@ -28,6 +28,7 @@ class SubtasksViewController: NSViewController, MVVMView {
 
 	@IBOutlet var tableView: NSTableView!
 
+	@IBOutlet var tableViewHeightConstraint: NSLayoutConstraint!
 
 	typealias MVVMViewModel = SubtasksViewModel
 	private(set) var viewModel: SubtasksViewModel?
@@ -52,8 +53,18 @@ class SubtasksViewController: NSViewController, MVVMView {
 
 		self.viewModel?.viewActions.observeNext(with: { [weak self] action in
 
-			self?.executeCollectionViewModelAction(action)
+			guard let mySelf = self else { return }
+			mySelf.executeCollectionViewModelAction(action)
 
+			if let scrollView = mySelf.tableView.enclosingScrollView {
+
+				// This is a bit of a hack, I can't figure out how to get the exact height:
+				let kHeightPadding = mySelf.tableView.rowHeight
+				let size = NSSize(width: mySelf.tableView.frame.size.width, height: CGFloat(mySelf.tableView.numberOfRows) * mySelf.tableView.rowHeight + kHeightPadding)
+				let scrollViewSize = scrollView.tr_sizeThatFits(contentSize: size, controlSize: .regular)
+				mySelf.tableViewHeightConstraint.constant = scrollViewSize.height
+			}
+			
 		}).dispose(in: bag)
 	}
 

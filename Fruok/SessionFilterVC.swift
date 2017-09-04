@@ -8,12 +8,68 @@
 
 import Cocoa
 
+enum PresetPopUpIndex: Int {
+
+	case custom
+	case thisWeek
+	case lastWeek
+	case thisMonth
+	case lastMonth
+	case thisYear
+	case allData
+}
+
+extension DateRangePreset {
+
+	var popUpIndex: PresetPopUpIndex {
+
+		switch self {
+		case .custom:
+			return .custom
+		case .thisWeek:
+			return .thisWeek
+		case .lastWeek:
+			return .lastWeek
+		case .thisMonth:
+			return .thisMonth
+		case .lastMonth:
+			return .lastMonth
+		case .thisYear:
+			return .thisYear
+		case .allData:
+			return .allData
+		}
+	}
+
+	init(popUpIndex: PresetPopUpIndex, dateRange: DateRange? = nil) {
+
+		switch popUpIndex {
+		case .custom:
+			self = .custom(dateRange!)
+		case .thisWeek:
+			self = .thisWeek
+		case .lastWeek:
+			self = .lastWeek
+		case .thisMonth:
+			self = .thisMonth
+		case .lastMonth:
+			self = .lastMonth
+		case .thisYear:
+			self = .thisYear
+		case .allData:
+			self = .allData(dateRange!)
+		}
+	}
+}
+
 class SessionFilterViewController: NSViewController, MVVMView {
 
 	@IBOutlet var datePicker: NSDatePicker!
+	@IBOutlet var endDatePicker: NSDatePicker!
 	@IBOutlet var tasksPopup: NSPopUpButton!
 	@IBOutlet var modePopup: NSPopUpButton!
 	@IBOutlet var modeLabel: NSTextField!
+	@IBOutlet var periodPopUp: NSPopUpButton!
 
 	typealias VIEWMODEL = SessionFilterViewModel
 	private(set) var viewModel: SessionFilterViewModel?
@@ -34,10 +90,11 @@ class SessionFilterViewController: NSViewController, MVVMView {
 
 	func connectVM() {
 
-		self.viewModel?.dateRange.observeNext(with: { [weak self] dateRange in
+		self.viewModel?.selectedDatePreset.observeNext(with: { [weak self] preset in
 
-			self?.datePicker.dateValue = dateRange.date
-			self?.datePicker.timeInterval = dateRange.interval
+			self?.periodPopUp.selectItem(at: preset.popUpIndex.rawValue)
+			self?.datePicker.dateValue = preset.dateRange.date
+			self?.endDatePicker.dateValue = preset.dateRange.endDate
 
 		}).dispose(in: bag)
 
@@ -72,23 +129,53 @@ class SessionFilterViewController: NSViewController, MVVMView {
 
 	@IBAction func dateAction(_ sender: Any) {
 
-		let date = self.datePicker.dateValue
-		let timeInterval = self.datePicker.timeInterval
-		self.viewModel?.userWantsSetDateRange(DateRange(date: date, interval: timeInterval))
+		let dateRange = DateRange(startDate: self.datePicker.dateValue, endDate: self.endDatePicker.dateValue)
+		self.viewModel?.userWantsSetDateRange(dateRange)
 	}
+
+	@IBAction func endDateAction(_ sender: Any) {
+
+		let dateRange = DateRange(startDate: self.datePicker.dateValue, endDate: self.endDatePicker.dateValue)
+		self.viewModel?.userWantsSetDateRange(dateRange)
+
+	}
+	
+	@IBAction func periodPopUpAction(_ sender: Any) {
+
+		guard let popUpIndex = PresetPopUpIndex(rawValue: self.periodPopUp.indexOfSelectedItem) else { return }
+
+		let dateRange: DateRange
+
+		if case .allData = popUpIndex {
+			dateRange = self.viewModel?.allDataDateRange() ?? DateRange(startDate: Date().startOfDay, endDate: Date().endOfDay!)
+		} else {
+			dateRange = DateRange(startDate: self.datePicker.dateValue, endDate: self.endDatePicker.dateValue)
+		}
+		self.viewModel?.userWantsSetPeriodPreset(DateRangePreset(popUpIndex: popUpIndex, dateRange: dateRange))
+	}
+
+	fileprivate var isSettingValidatedDateRange = false
 }
 
 extension SessionFilterViewController: NSDatePickerCellDelegate {
 
 	public func datePickerCell(_ datePickerCell: NSDatePickerCell, validateProposedDateValue proposedDateValue: AutoreleasingUnsafeMutablePointer<NSDate>, timeInterval proposedTimeInterval: UnsafeMutablePointer<TimeInterval>?) {
 
-		let proposedDate = proposedDateValue.pointee as Date
-		let proposedInterval = proposedTimeInterval?.pointee ?? 0
-
-		if let (date, interval) = self.viewModel?.userWantsDateRangeValidation((date: proposedDate, timeInterval: proposedInterval)) {
-
-			proposedDateValue.pointee = date as NSDate
-			proposedTimeInterval?.pointee = interval
+		if self.isSettingValidatedDateRange {
+			return
 		}
+		let dateRange = DateRange(startDate: self.datePicker.dateValue, endDate: self.endDatePicker.dateValue)
+		let adjustedRange: DateRange
+
+		if datePickerCell == self.datePicker.cell {
+			adjustedRange = self.viewModel?.validateStartDateWithRange(dateRange) ?? dateRange
+		} else {
+			adjustedRange = self.viewModel?.validateEndDateWithRange(dateRange) ?? dateRange
+		}
+
+		self.isSettingValidatedDateRange = true
+		self.datePicker.dateValue = adjustedRange.date
+		self.endDatePicker.dateValue = adjustedRange.endDate
+		self.isSettingValidatedDateRange = false
 	}
 }

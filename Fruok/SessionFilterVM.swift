@@ -12,11 +12,21 @@ import ReactiveKit
 struct DateRange {
 
 	let date: Date
-	let interval: TimeInterval
+	let endDate: Date
 
-	var endDate: Date {
+	init(date: Date, interval: TimeInterval) {
 
-		return date.addingTimeInterval(self.interval)
+		self.init(startDate: date, endDate: date.addingTimeInterval(interval))
+	}
+
+	init(startDate: Date, endDate: Date) {
+
+		self.date = startDate
+		self.endDate = endDate
+	}
+
+	var interval: TimeInterval {
+		return self.endDate.timeIntervalSince(self.date)
 	}
 
 	static var today: DateRange {
@@ -50,6 +60,56 @@ struct DateRange {
 	}
 }
 
+enum DateRangePreset {
+	case custom(DateRange)
+	case thisWeek
+	case thisMonth
+	case lastWeek
+	case lastMonth
+	case thisYear
+	case allData(DateRange)
+
+	var dateRange: DateRange {
+
+		switch self {
+		case .custom(let range):
+			return range
+		case .allData(let range):
+			return range
+		case .thisWeek:
+			var start = Date()
+			var interval: TimeInterval = 0
+			_ = Calendar.current.dateInterval(of: .weekOfYear, start: &start, interval: &interval, for: Date())
+			return DateRange(date: start, interval: interval)
+		case .thisMonth:
+			var start = Date()
+			var interval: TimeInterval = 0
+			_ = Calendar.current.dateInterval(of: .month, start: &start, interval: &interval, for: Date())
+			return DateRange(date: start, interval: interval)
+		case .thisYear:
+			var start = Date()
+			var interval: TimeInterval = 0
+			_ = Calendar.current.dateInterval(of: .year, start: &start, interval: &interval, for: Date())
+			return DateRange(date: start, interval: interval)
+		case .lastWeek:
+			var start = Date()
+			var interval: TimeInterval = 0
+			_ = Calendar.current.dateInterval(of: .weekOfYear, start: &start, interval: &interval, for: Date())
+			start  = start.addingTimeInterval(-4 * 60 * 60)
+			_ = Calendar.current.dateInterval(of: .weekOfYear, start: &start, interval: &interval, for: start)
+			return DateRange(date: start, interval: interval)
+		case .lastMonth:
+			var start = Date()
+			var interval: TimeInterval = 0
+			_ = Calendar.current.dateInterval(of: .month, start: &start, interval: &interval, for: Date())
+			start  = start.addingTimeInterval(-4 * 60 * 60)
+			_ = Calendar.current.dateInterval(of: .month, start: &start, interval: &interval, for: start)
+			return DateRange(date: start, interval: interval)
+		}
+	}
+}
+
+
 protocol SessionFilterViewModelDelegate: class {
 
 	func sessionFilterViewModelDidChangeSessions(_ sessionFilter: SessionFilterViewModel)
@@ -64,8 +124,6 @@ class SessionFilterViewModel: NSObject, MVVMViewModel {
 		self.project = model
 		super.init()
 
-		self.dateRange.value = DateRange.today
-
 		self.update()
 	}
 
@@ -79,13 +137,17 @@ class SessionFilterViewModel: NSObject, MVVMViewModel {
 	private var sortedTasks: [Task] = []
 	private var selectedTask: Task? = nil
 
-	let dateRange = Property<DateRange>(DateRange.today)
+	let selectedDatePreset = Property<DateRangePreset>(.thisWeek)
 	let groupMode = Property<GroupMode>(.date)
 	let taskNames = Property<(selectedIndex: Int, names: [String])>(selectedIndex: 0, names: [""])
 	let groupControlVisible = Property<Bool>(true)
 
 	var sessions: [PomodoroSession] = []
 
+	var dateRange: DateRange {
+		return self.selectedDatePreset.value.dateRange
+	}
+	
 	func update() {
 
 		let fetchRequest: NSFetchRequest<Task> = Task.fetchRequest()
@@ -108,7 +170,7 @@ class SessionFilterViewModel: NSObject, MVVMViewModel {
 
 		var subpredicates: [NSPredicate] = []
 
-		subpredicates.append(NSPredicate(format: "startDate >= %@ && startDate <= %@", self.dateRange.value.date as NSDate, self.dateRange.value.endDate as NSDate))
+		subpredicates.append(NSPredicate(format: "startDate >= %@ && startDate <= %@", self.selectedDatePreset.value.dateRange.date as NSDate, self.selectedDatePreset.value.dateRange.endDate as NSDate))
 
 		subpredicates.append(NSPredicate(format: "task != nil"))
 
@@ -141,9 +203,16 @@ class SessionFilterViewModel: NSObject, MVVMViewModel {
 		
 	}
 
+	func userWantsSetPeriodPreset(_ preset: DateRangePreset) {
+
+		self.selectedDatePreset.value = preset
+		self.collectData()
+		self.delegate?.sessionFilterViewModelDidChangeSessions(self)
+	}
+
 	func userWantsSetDateRange(_ range: DateRange) {
 
-		self.dateRange.value = range
+		self.selectedDatePreset.value = .custom(range)
 		self.collectData()
 		self.delegate?.sessionFilterViewModelDidChangeSessions(self)
 	}
@@ -170,13 +239,42 @@ class SessionFilterViewModel: NSObject, MVVMViewModel {
 		self.delegate?.sessionFilterViewModelDidChangeGroupMode(self)
 	}
 
-	func userWantsDateRangeValidation(_ dateRange: (date: Date, timeInterval: TimeInterval)) -> (date: Date, timeInterval: TimeInterval) {
+	func validateStartDateWithRange(_ range: DateRange) -> DateRange {
 
-		let adjustedDate = dateRange.date.startOfDay
-		let proposedEndDate = dateRange.date.addingTimeInterval(dateRange.timeInterval)
-		let adjustedEndDate = proposedEndDate.endOfDay ?? proposedEndDate
-		let interval = adjustedEndDate.timeIntervalSince(adjustedDate)
+		let adjustedDate = range.date.startOfDay
+		var adjustedEndDate = dateRange.endDate.endOfDay ?? dateRange.endDate
 
-		return (date: adjustedDate, timeInterval: interval)
+		if adjustedEndDate <= adjustedDate {
+			adjustedEndDate = adjustedDate.endOfDay ?? adjustedDate.addingTimeInterval(60 * 60 * 24)
+		}
+		return DateRange(startDate: adjustedDate, endDate: adjustedEndDate)
+	}
+
+	func validateEndDateWithRange(_ range: DateRange) -> DateRange {
+
+		var adjustedDate = range.date.startOfDay
+		let adjustedEndDate = dateRange.endDate.endOfDay ?? dateRange.endDate
+
+		if adjustedEndDate <= adjustedDate {
+			adjustedDate = adjustedEndDate.startOfDay
+		}
+		return DateRange(startDate: adjustedDate, endDate: adjustedEndDate)
+	}
+
+	func allDataDateRange() -> DateRange {
+
+		var sessions: [PomodoroSession]
+		let fetchRequest: NSFetchRequest<PomodoroSession> = PomodoroSession.fetchRequest()
+		do { sessions = try self.project.managedObjectContext?.fetch(fetchRequest) ?? [] } catch { sessions = [] }
+
+		sessions.sort { (session1, session2) in
+
+			return (session1.startDate as Date? ?? Date()) < (session2.startDate as Date? ?? Date())
+		}
+
+		let start = (sessions.first?.startDate as? Date)?.startOfDay ?? Date().startOfDay
+		let end = (sessions.last?.startDate as? Date)?.endOfDay ?? Date()
+
+		return DateRange(startDate: start, endDate: end)
 	}
 }

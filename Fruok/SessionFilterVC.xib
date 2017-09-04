@@ -9,8 +9,10 @@
         <customObject id="-2" userLabel="File's Owner" customClass="SessionFilterViewController" customModule="Fruok" customModuleProvider="target">
             <connections>
                 <outlet property="datePicker" destination="D4S-nQ-vsE" id="T5w-3K-uM1"/>
+                <outlet property="endDatePicker" destination="M73-qj-Z4j" id="9uY-81-tiI"/>
                 <outlet property="modeLabel" destination="23e-jm-nip" id="WPn-mb-Cvn"/>
                 <outlet property="modePopup" destination="m9E-al-xgs" id="hOv-2y-MxG"/>
+                <outlet property="periodPopUp" destination="R2b-LV-w25" id="1vq-be-qZq"/>
                 <outlet property="tasksPopup" destination="eYL-gH-DcE" id="rJk-GI-m21"/>
                 <outlet property="view" destination="soh-Av-1h1" id="VlL-Pn-1sS"/>
             </connections>
@@ -18,13 +20,13 @@
         <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
         <customObject id="-3" userLabel="Application" customClass="NSObject"/>
         <customView id="soh-Av-1h1">
-            <rect key="frame" x="0.0" y="0.0" width="515" height="188"/>
+            <rect key="frame" x="0.0" y="0.0" width="515" height="95"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <subviews>
                 <datePicker verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="D4S-nQ-vsE">
-                    <rect key="frame" x="99" y="20" width="139" height="148"/>
-                    <datePickerCell key="cell" borderStyle="bezel" alignment="left" datePickerMode="range" datePickerStyle="clockAndCalendar" id="Yge-rL-1WN">
-                        <font key="font" metaFont="system"/>
+                    <rect key="frame" x="189" y="52" width="82" height="22"/>
+                    <datePickerCell key="cell" controlSize="small" borderStyle="bezel" alignment="left" id="Yge-rL-1WN">
+                        <font key="font" metaFont="smallSystem"/>
                         <calendarDate key="date" timeIntervalSinceReferenceDate="-595929600" calendarFormat="%Y-%m-%d %H:%M:%S %z">
                             <!--1982-02-12 08:00:00 -0800-->
                             <timeZone key="timeZone" name="US/Pacific"/>
@@ -40,26 +42,26 @@
                     </connections>
                 </datePicker>
                 <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="4FA-ac-beb">
-                    <rect key="frame" x="18" y="20" width="75" height="17"/>
-                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Date range:" id="9B9-JY-rtR">
-                        <font key="font" metaFont="system"/>
+                    <rect key="frame" x="18" y="55" width="42" height="14"/>
+                    <textFieldCell key="cell" controlSize="small" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Period:" id="9B9-JY-rtR">
+                        <font key="font" metaFont="smallSystem"/>
                         <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                         <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                     </textFieldCell>
                 </textField>
                 <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="hbo-Bj-1ha">
-                    <rect key="frame" x="244" y="20" width="36" height="17"/>
-                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Task:" id="Wye-GT-pn9">
-                        <font key="font" metaFont="system"/>
+                    <rect key="frame" x="28" y="22" width="32" height="14"/>
+                    <textFieldCell key="cell" controlSize="small" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Task:" id="Wye-GT-pn9">
+                        <font key="font" metaFont="smallSystem"/>
                         <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                         <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                     </textFieldCell>
                 </textField>
                 <popUpButton verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="eYL-gH-DcE">
-                    <rect key="frame" x="284" y="15" width="76" height="26"/>
-                    <popUpButtonCell key="cell" type="push" title="Item 1" bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" state="on" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" selectedItem="KJF-2v-CXb" id="2n7-xg-bEP">
+                    <rect key="frame" x="63" y="17" width="109" height="22"/>
+                    <popUpButtonCell key="cell" type="push" title="Item 1" bezelStyle="rounded" alignment="left" controlSize="small" lineBreakMode="truncatingTail" state="on" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" selectedItem="KJF-2v-CXb" id="2n7-xg-bEP">
                         <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
-                        <font key="font" metaFont="menu"/>
+                        <font key="font" metaFont="smallSystem"/>
                         <menu key="menu" id="llO-AZ-Ai1">
                             <items>
                                 <menuItem title="Item 1" state="on" id="KJF-2v-CXb"/>
@@ -73,18 +75,18 @@
                     </connections>
                 </popUpButton>
                 <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="23e-jm-nip">
-                    <rect key="frame" x="370" y="20" width="65" height="17"/>
-                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Group By:" id="Z5S-dq-nUT">
-                        <font key="font" metaFont="system"/>
+                    <rect key="frame" x="182" y="22" width="57" height="14"/>
+                    <textFieldCell key="cell" controlSize="small" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Group By:" id="Z5S-dq-nUT">
+                        <font key="font" metaFont="smallSystem"/>
                         <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                         <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                     </textFieldCell>
                 </textField>
                 <popUpButton verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="m9E-al-xgs">
-                    <rect key="frame" x="439" y="15" width="66" height="26"/>
-                    <popUpButtonCell key="cell" type="push" title="Date" bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" state="on" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" selectedItem="QLL-GG-lZ7" id="1oQ-MO-nkH">
+                    <rect key="frame" x="242" y="17" width="59" height="22"/>
+                    <popUpButtonCell key="cell" type="push" title="Date" bezelStyle="rounded" alignment="left" controlSize="small" lineBreakMode="truncatingTail" state="on" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" selectedItem="QLL-GG-lZ7" id="1oQ-MO-nkH">
                         <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
-                        <font key="font" metaFont="menu"/>
+                        <font key="font" metaFont="smallSystem"/>
                         <menu key="menu" id="Jbh-SC-FZt">
                             <items>
                                 <menuItem title="Date" state="on" id="QLL-GG-lZ7"/>
@@ -96,23 +98,70 @@
                         <action selector="groupByAction:" target="-2" id="YRT-Dn-igY"/>
                     </connections>
                 </popUpButton>
+                <popUpButton verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="R2b-LV-w25">
+                    <rect key="frame" x="63" y="50" width="109" height="22"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="103" id="vSK-VV-aTJ"/>
+                    </constraints>
+                    <popUpButtonCell key="cell" type="push" title="Custom" bezelStyle="rounded" alignment="left" controlSize="small" lineBreakMode="truncatingTail" state="on" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" selectedItem="UVa-l0-Kfb" id="DUA-1B-eZU">
+                        <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
+                        <font key="font" metaFont="smallSystem"/>
+                        <menu key="menu" id="WpB-FC-iim">
+                            <items>
+                                <menuItem title="Custom" state="on" id="UVa-l0-Kfb"/>
+                                <menuItem title="This Week" id="JRG-Mc-xnS"/>
+                                <menuItem title="Previous Week" id="EzB-1E-Hpz"/>
+                                <menuItem title="This Month" id="0OU-5n-SAc"/>
+                                <menuItem title="Previous Month" id="Rm2-SC-5hm"/>
+                                <menuItem title="This Year" id="PJi-28-xtt"/>
+                                <menuItem title="All Data" id="Bvw-E8-e3d"/>
+                            </items>
+                        </menu>
+                    </popUpButtonCell>
+                    <connections>
+                        <action selector="periodPopUpAction:" target="-2" id="dZe-YQ-3tL"/>
+                    </connections>
+                </popUpButton>
+                <datePicker verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="M73-qj-Z4j">
+                    <rect key="frame" x="289" y="52" width="82" height="22"/>
+                    <datePickerCell key="cell" controlSize="small" borderStyle="bezel" alignment="left" id="2Bl-hR-s6E">
+                        <font key="font" metaFont="smallSystem"/>
+                        <calendarDate key="date" timeIntervalSinceReferenceDate="-595929600" calendarFormat="%Y-%m-%d %H:%M:%S %z">
+                            <!--1982-02-12 08:00:00 -0800-->
+                            <timeZone key="timeZone" name="US/Pacific"/>
+                        </calendarDate>
+                        <color key="backgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
+                        <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                        <connections>
+                            <action selector="endDateAction:" target="-2" id="c4i-5T-2rQ"/>
+                            <outlet property="delegate" destination="-2" id="gh5-09-oe4"/>
+                        </connections>
+                    </datePickerCell>
+                </datePicker>
             </subviews>
             <constraints>
                 <constraint firstItem="eYL-gH-DcE" firstAttribute="leading" secondItem="hbo-Bj-1ha" secondAttribute="trailing" constant="8" id="0ez-0C-9tN"/>
-                <constraint firstItem="D4S-nQ-vsE" firstAttribute="top" secondItem="soh-Av-1h1" secondAttribute="top" constant="20" id="4W4-M7-b7H"/>
-                <constraint firstItem="hbo-Bj-1ha" firstAttribute="leading" secondItem="D4S-nQ-vsE" secondAttribute="trailing" constant="8" id="9Jz-tX-7gP"/>
-                <constraint firstItem="D4S-nQ-vsE" firstAttribute="leading" secondItem="4FA-ac-beb" secondAttribute="trailing" constant="8" id="CXp-wO-2aA"/>
-                <constraint firstAttribute="trailing" secondItem="m9E-al-xgs" secondAttribute="trailing" constant="13" id="E8m-Ju-Xor"/>
+                <constraint firstItem="D4S-nQ-vsE" firstAttribute="leading" secondItem="R2b-LV-w25" secondAttribute="trailing" constant="20" id="3pr-QO-fag"/>
                 <constraint firstItem="4FA-ac-beb" firstAttribute="leading" secondItem="soh-Av-1h1" secondAttribute="leading" constant="20" id="Ea0-0Y-zPq"/>
                 <constraint firstItem="23e-jm-nip" firstAttribute="leading" secondItem="eYL-gH-DcE" secondAttribute="trailing" constant="15" id="HMQ-z5-VYV"/>
-                <constraint firstAttribute="bottom" secondItem="D4S-nQ-vsE" secondAttribute="bottom" constant="20" id="HUG-Xa-xQV"/>
                 <constraint firstItem="eYL-gH-DcE" firstAttribute="centerY" secondItem="hbo-Bj-1ha" secondAttribute="centerY" id="LMr-kb-eXu"/>
-                <constraint firstItem="hbo-Bj-1ha" firstAttribute="bottom" secondItem="4FA-ac-beb" secondAttribute="bottom" id="jHG-pq-qcX"/>
+                <constraint firstItem="4FA-ac-beb" firstAttribute="baseline" secondItem="R2b-LV-w25" secondAttribute="baseline" id="LiX-zP-SYf"/>
+                <constraint firstItem="eYL-gH-DcE" firstAttribute="top" secondItem="R2b-LV-w25" secondAttribute="bottom" constant="15" id="XIR-Q7-DYr"/>
+                <constraint firstItem="eYL-gH-DcE" firstAttribute="width" secondItem="R2b-LV-w25" secondAttribute="width" id="YqT-SG-6Ja"/>
+                <constraint firstItem="R2b-LV-w25" firstAttribute="leading" secondItem="4FA-ac-beb" secondAttribute="trailing" constant="8" id="cYc-4D-hq6"/>
+                <constraint firstItem="M73-qj-Z4j" firstAttribute="leading" secondItem="D4S-nQ-vsE" secondAttribute="trailing" constant="20" id="eyc-6g-ZUe"/>
+                <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="m9E-al-xgs" secondAttribute="trailing" constant="20" id="ijr-pf-rat"/>
+                <constraint firstItem="D4S-nQ-vsE" firstAttribute="baseline" secondItem="M73-qj-Z4j" secondAttribute="baseline" id="jlj-SA-YS6"/>
                 <constraint firstItem="m9E-al-xgs" firstAttribute="centerY" secondItem="eYL-gH-DcE" secondAttribute="centerY" id="ku0-38-hLr"/>
+                <constraint firstItem="R2b-LV-w25" firstAttribute="baseline" secondItem="D4S-nQ-vsE" secondAttribute="baseline" id="lEf-5p-Xbs"/>
                 <constraint firstItem="23e-jm-nip" firstAttribute="bottom" secondItem="hbo-Bj-1ha" secondAttribute="bottom" id="mkL-9y-J4X"/>
+                <constraint firstItem="4FA-ac-beb" firstAttribute="top" secondItem="soh-Av-1h1" secondAttribute="top" constant="26" id="nRq-Yo-Pz2"/>
                 <constraint firstItem="m9E-al-xgs" firstAttribute="leading" secondItem="23e-jm-nip" secondAttribute="trailing" constant="8" id="njM-78-M5l"/>
-                <constraint firstItem="D4S-nQ-vsE" firstAttribute="bottom" secondItem="4FA-ac-beb" secondAttribute="bottom" id="r3p-Cc-iTN"/>
+                <constraint firstItem="hbo-Bj-1ha" firstAttribute="trailing" secondItem="4FA-ac-beb" secondAttribute="trailing" id="t0v-n2-ufE"/>
+                <constraint firstAttribute="bottom" secondItem="m9E-al-xgs" secondAttribute="bottom" constant="20" id="vfz-0z-vp8"/>
+                <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="M73-qj-Z4j" secondAttribute="trailing" constant="20" id="xPV-oS-dH0"/>
             </constraints>
+            <point key="canvasLocation" x="140.5" y="203.5"/>
         </customView>
     </objects>
 </document>

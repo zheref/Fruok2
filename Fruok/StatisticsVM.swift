@@ -83,7 +83,7 @@ class StatisticsViewModel: NSObject, MVVMViewModel {
 
 		case .date:
 
-			let dayStarts = self.sessionFilterViewModel.dateRange.value.dayStarts
+			let dayStarts = self.sessionFilterViewModel.dateRange.dayStarts
 
 			let perDay: [Date:[PomodoroSession]] = self.sessionFilterViewModel.sessions.grouping(by: { session in
 

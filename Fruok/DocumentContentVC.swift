@@ -130,8 +130,13 @@ class DocumentContentViewController: NSViewController, MVVMView {
 				self?.pomodoroTopConstraint.animator().constant = 0
 
 			} else {
-				self?.pomodoroTopConstraint.animator().constant = -(self?.pomodoroContainerView.frame.size.height ?? 0)
-				self?.currentPomodoroViewController = nil
+
+				NSAnimationContext.runAnimationGroup({ current in
+
+					self?.pomodoroTopConstraint.animator().constant = -(self?.pomodoroContainerView.frame.size.height ?? 0)
+				}, completionHandler: { 
+					self?.currentPomodoroViewController = nil
+				})
 			}
 		}).dispose(in: bag)
 

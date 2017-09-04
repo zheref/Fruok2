@@ -11,6 +11,7 @@
                 <outlet property="attachmentsEmbeddingView" destination="Ue8-wh-s5Y" id="Yxw-kY-61g"/>
                 <outlet property="deleteButton" destination="2sT-8o-BVO" id="BKc-Jy-jLe"/>
                 <outlet property="descriptionField" destination="dWT-j5-noC" id="e6n-xN-foR"/>
+                <outlet property="descriptionHeightContraint" destination="4do-Ra-5gn" id="Nmq-mH-Pra"/>
                 <outlet property="labelsEmbeddingView" destination="vVC-2D-b6X" id="QYn-aj-wYi"/>
                 <outlet property="nameLabel" destination="DCG-sv-8N3" id="BvH-Np-Baa"/>
                 <outlet property="subtasksEmbeddingView" destination="tNJ-hI-t07" id="bCN-Sp-lj9"/>
@@ -76,16 +77,16 @@
                     </constraints>
                 </customView>
                 <scrollView borderType="none" horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" hasHorizontalScroller="NO" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DvX-Vn-Tn6">
-                    <rect key="frame" x="20" y="444" width="440" height="147"/>
+                    <rect key="frame" x="20" y="541" width="440" height="50"/>
                     <clipView key="contentView" drawsBackground="NO" copiesOnScroll="NO" id="pud-ed-cwa">
-                        <rect key="frame" x="0.0" y="0.0" width="440" height="147"/>
+                        <rect key="frame" x="0.0" y="0.0" width="440" height="50"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textView drawsBackground="NO" importsGraphics="NO" usesFontPanel="YES" findStyle="bar" continuousSpellChecking="YES" allowsUndo="YES" usesRuler="YES" allowsNonContiguousLayout="YES" quoteSubstitution="YES" linkDetection="YES" dataDetection="YES" dashSubstitution="YES" spellingCorrection="YES" smartInsertDelete="YES" id="dWT-j5-noC" customClass="TaskDescriptionTextView" customModule="Fruok" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="0.0" width="440" height="147"/>
+                                <rect key="frame" x="0.0" y="0.0" width="440" height="50"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <size key="minSize" width="440" height="147"/>
+                                <size key="minSize" width="440" height="50"/>
                                 <size key="maxSize" width="480" height="10000000"/>
                                 <color key="insertionPointColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
                             </textView>
@@ -93,22 +94,22 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </clipView>
                     <constraints>
-                        <constraint firstAttribute="height" constant="147" id="4do-Ra-5gn"/>
+                        <constraint firstAttribute="height" constant="50" id="4do-Ra-5gn"/>
                     </constraints>
                     <scroller key="horizontalScroller" hidden="YES" verticalHuggingPriority="750" doubleValue="1" horizontal="YES" id="MsO-o1-QMl">
                         <rect key="frame" x="-100" y="-100" width="87" height="18"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </scroller>
                     <scroller key="verticalScroller" verticalHuggingPriority="750" doubleValue="1" horizontal="NO" id="tnL-Gk-ke1">
-                        <rect key="frame" x="424" y="0.0" width="16" height="147"/>
+                        <rect key="frame" x="424" y="0.0" width="16" height="50"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </scroller>
                 </scrollView>
                 <customView translatesAutoresizingMaskIntoConstraints="NO" id="2wk-cn-QXa">
-                    <rect key="frame" x="0.0" y="205" width="480" height="239"/>
+                    <rect key="frame" x="0.0" y="205" width="480" height="336"/>
                     <subviews>
                         <customView translatesAutoresizingMaskIntoConstraints="NO" id="tNJ-hI-t07">
-                            <rect key="frame" x="20" y="0.0" width="440" height="229"/>
+                            <rect key="frame" x="20" y="0.0" width="440" height="326"/>
                             <constraints>
                                 <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="100" id="17K-zw-fSr"/>
                             </constraints>

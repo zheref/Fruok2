@@ -47,6 +47,7 @@ class PresentationViewController: NSViewController {
 
 			_ = self.view // HACK
 			wrappedController.view.frame = CGRect(origin: .zero, size: wrappedController.view.fittingSize)
+			wrappedController.view.translatesAutoresizingMaskIntoConstraints = false
 			self.scrollView.documentView = wrappedController.view
 
 			let width = NSLayoutConstraint(item: wrappedController.view, attribute: .width, relatedBy: .equal, toItem: self.scrollView.contentView, attribute: .width, multiplier: 1.0, constant: 0)

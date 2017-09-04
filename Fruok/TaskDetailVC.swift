@@ -10,6 +10,29 @@ import Cocoa
 import ReactiveKit
 import Bond
 
+extension NSScrollView {
+
+	func tr_sizeThatFits(contentSize: NSSize, controlSize: NSControlSize) -> NSSize{
+
+		let hScrollerClass: AnyClass? = {
+			if let scroller = self.horizontalScroller {
+				return type(of: scroller)
+			} else {
+				return nil
+			}
+		}()
+		let vScrollerClass: AnyClass? = {
+			if let scroller = self.verticalScroller {
+				return type(of: scroller)
+			} else {
+				return nil
+			}
+		}()
+
+		return NSScrollView.frameSize(forContentSize: contentSize, horizontalScrollerClass: hScrollerClass, verticalScrollerClass: vScrollerClass, borderType: self.borderType, controlSize: controlSize, scrollerStyle: self.scrollerStyle)
+	}
+}
+
 class TaskDetailViewController: NSViewController, MVVMView {
 
 	@IBOutlet var nameLabel: NSTextField!
@@ -18,7 +41,9 @@ class TaskDetailViewController: NSViewController, MVVMView {
 	@IBOutlet var labelsEmbeddingView: NSView!
 	@IBOutlet var attachmentsEmbeddingView: NSView!
 	@IBOutlet var deleteButton: NSButton!
+
 	
+	@IBOutlet var descriptionHeightContraint: NSLayoutConstraint!
 	typealias VIEWMODEL = TaskDetailViewModel
 	private(set) var viewModel: TaskDetailViewModel?
 	internal func set(viewModel: TaskDetailViewModel) {
@@ -36,6 +61,22 @@ class TaskDetailViewController: NSViewController, MVVMView {
 		self.connectVMIfReady()
     }
 
+	func adjustDescriptionContainerHeight() {
+
+		if let scrollView = self.descriptionField.enclosingScrollView {
+
+			let kMinTextHeight: CGFloat = 40
+			let kMaxTextHeight: CGFloat = 250
+
+			guard let textContainer = self.descriptionField.textContainer, let layoutManager = textContainer.layoutManager else {
+				return
+			}
+			let contentSize = layoutManager.usedRect(for: textContainer).size
+			let scrollViewSize = scrollView.tr_sizeThatFits(contentSize: contentSize, controlSize: .regular)
+			self.descriptionHeightContraint.constant = min(max(scrollViewSize.height, kMinTextHeight), kMaxTextHeight)
+		}
+	}
+
 	func connectVM() {
 
 		self.viewModel!.name.map({$0 ?? ""}).bind(to: self.nameLabel.reactive.stringValue)
@@ -47,8 +88,11 @@ class TaskDetailViewController: NSViewController, MVVMView {
 
 		self.viewModel!.descriptionText.observeNext { [weak self] (attrString) in
 
+
 			self?.descriptionField.insertText(attrString, replacementRange: NSMakeRange(0, self?.descriptionField.textStorage?.length ?? 0))
-		}.dispose(in: bag)
+			self?.adjustDescriptionContainerHeight()
+
+			}.dispose(in: bag)
 
 		self.viewModel?.taskDeleteConfirmation.observeNext { [weak self] info in
 
@@ -67,6 +111,11 @@ class TaskDetailViewController: NSViewController, MVVMView {
 				}
 			})
 			
+		}.dispose(in: bag)
+
+		NotificationCenter.default.reactive.notification(name: Notification.Name.NSTextDidChange, object:self.descriptionField).observeNext { [weak self] notification in
+
+			self?.adjustDescriptionContainerHeight()
 		}.dispose(in: bag)
 
 		NotificationCenter.default.reactive.notification(name: Notification.Name.NSTextDidEndEditing, object:self.descriptionField).observeNext { [weak self] notification in

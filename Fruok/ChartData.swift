@@ -32,9 +32,10 @@ class ChartData<XKey: Hashable, YKey: Hashable> {
 	private let xKeyLabelProvider: (XKey) -> String
 	private let yKeyLabelProvider: (YKey) -> String
 
-	private var sortedXKeys: [XKey] {
+	private lazy var sortedXKeys: [XKey] = {
 		return self.data.keys.sorted(by: self.xKeySorter)
-	}
+	}()
+
 	var xAxisLabels: [String] {
 
 		return self.sortedXKeys.map { self.xKeyLabelProvider($0) }

@@ -85,7 +85,12 @@ class AttachmentsViewModel: NSObject, MVVMViewModel, CollectionDragAndDropViewMo
 
 	func userWantsAddAttachments(_ urls: [URL]) {
 
-		self.task.importAttachments(urls)
+		self.userWantsAddAttachments(urls, at: self.task.attachments?.count ?? 0)
+	}
+
+	func userWantsAddAttachments(_ urls: [URL], at index: Int) {
+
+		self.task.importAttachments(urls, at: index)
 
 		do { try self.task.managedObjectContext?.save() } catch {}
 	}

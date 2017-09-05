@@ -23,7 +23,7 @@ extension Task: ManagedObjectType {
 
 extension Task {
 
-	func importAttachments(_ urls: [URL]) {
+	func importAttachments(_ urls: [URL], at index: Int) {
 
 		guard let fruokDocumentContext = self.managedObjectContext as? FruokDocumentObjectContext else {
 			return
@@ -46,6 +46,8 @@ extension Task {
 				context.undoManager?.enableUndoRegistration()
 			}
 
+			var attachments: [Attachment] = []
+
 			for result in results {
 
 				switch result {
@@ -54,12 +56,15 @@ extension Task {
 					let attachment: Attachment = context.insertObject()
 					attachment.identifier = copyResult.identifier
 					attachment.filename = copyResult.filename
-					self?.addToAttachments(attachment)
+					attachments.append(attachment)
 
 				case .failure(let error):
 					NSLog("Error copying an attachment: %@", error)
 				}
 			}
+
+			let indexes = IndexSet(integersIn: (index + 0)..<(index + attachments.count))
+			self?.insertIntoAttachments(attachments, at: indexes as NSIndexSet)
 		}
 	}
 

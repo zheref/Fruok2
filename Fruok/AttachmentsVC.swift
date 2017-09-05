@@ -22,6 +22,7 @@ class AttachmentsViewController: NSViewController, MVVMView {
 		super.viewDidLoad()
 		self.tableView.doubleAction = #selector(AttachmentsViewController.openAttachment(_:))
 		self.tableView.target = self
+		self.tableView.register(forDraggedTypes: [kUTTypeFileURL as String])
 		self.connectVMIfReady()
 	}
 
@@ -152,5 +153,31 @@ extension AttachmentsViewController: NSTableViewDataSource, NSTableViewDelegate 
 		}
 	}
 
+	func tableView(_ tableView: NSTableView, acceptDrop info: NSDraggingInfo, row: Int, dropOperation: NSTableViewDropOperation) -> Bool {
 
+		let urls = info.draggingPasteboard().pasteboardItems?
+			.map { $0.propertyList(forType: kUTTypeFileURL as String) }
+			.flatMap{ $0 }
+			.map { NSURL(pasteboardPropertyList: $0, ofType: kUTTypeFileURL as String) as? URL }
+			.flatMap{ $0 }
+
+		if let urls = urls, urls.count > 0 {
+
+			self.viewModel?.userWantsAddAttachments(urls, at: row)
+			return true
+		}
+
+		return false
+	}
+
+	func tableView(_ tableView: NSTableView, validateDrop info: NSDraggingInfo, proposedRow row: Int, proposedDropOperation dropOperation: NSTableViewDropOperation) -> NSDragOperation {
+
+		if info.draggingPasteboard().availableType(from: [kUTTypeFileURL as String]) != nil {
+			if dropOperation == .on {
+				tableView.setDropRow(row, dropOperation: .above)
+			}
+			return .copy
+		}
+		return []
+	}
 }

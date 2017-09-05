@@ -115,7 +115,6 @@ class SubtasksViewModel: NSObject, CollectionViewModel {
 		let viewModel = SubtaskViewModel(with: self.task.subtasks![index] as! Subtask)
 		if index == self.editableIndex {
 			viewModel.editable.value = true
-			self.editableIndex = nil
 		}
 		return viewModel
 	}

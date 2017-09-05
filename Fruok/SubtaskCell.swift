@@ -53,8 +53,13 @@ class SubtaskCell: NSTableCellView, MVVMView {
 
 		self.reactive.keyPath(#keyPath(SubtaskCell.window), ofType: Optional<NSWindow>.self).bind(to: self, context: .immediateOnMain) { (me, window) in
 
-			if (me.viewModel?.editable.value ?? false) {
-				window?.makeFirstResponder(me.nameEditingField)
+			if window != nil {
+				if (me.viewModel?.editable.value ?? false) {
+					if window?.firstResponder != me.nameEditingField &&
+						window?.firstResponder != window?.fieldEditor(false, for: me.nameEditingField) {
+						window?.makeFirstResponder(me.nameEditingField)
+					}
+				}
 			}
 		}
 	}

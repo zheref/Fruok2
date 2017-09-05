@@ -200,41 +200,10 @@ class FruokDocument: NSDocument, FruokDocumentObjectContextDelegate {
 				}
 			}
 
-			let inboxFileOp: FileOp
-			let savedFileOp: FileOp
-
-			switch saveOperation {
-
-			case .saveOperation:
-
-				inboxFileOp = .copy
-				savedFileOp = .none
-
-			case .autosaveInPlaceOperation:
-
-				inboxFileOp = .move
-				savedFileOp = .move // since we write to a temp dir, we *need* to move
-
-			case .saveAsOperation:
-
-				inboxFileOp = .move
-				savedFileOp = .copy
-
-			case .saveToOperation:
-
-				inboxFileOp = .copy
-				savedFileOp = .copy
-
-			case .autosaveAsOperation:
-
-				inboxFileOp = .move
-				savedFileOp = .copy
-
-			case .autosaveElsewhereOperation:
-
-				inboxFileOp = .copy
-				savedFileOp = .copy
-			}
+			// The file op could be optimized according to the save operation,
+			// but it is tricky to get right.
+			let inboxFileOp: FileOp = .copy
+			let savedFileOp: FileOp = .copy
 
 			for state in taskStates {
 

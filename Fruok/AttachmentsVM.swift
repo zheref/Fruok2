@@ -86,6 +86,8 @@ class AttachmentsViewModel: NSObject, MVVMViewModel, CollectionDragAndDropViewMo
 	func userWantsAddAttachments(_ urls: [URL]) {
 
 		self.task.importAttachments(urls)
+
+		do { try self.task.managedObjectContext?.save() } catch {}
 	}
 
 	struct AttachmentDeleteConfirmationInfo {

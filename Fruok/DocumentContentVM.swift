@@ -76,6 +76,7 @@ class DocumentContentViewModel: NSObject, MVVMViewModel {
 
 		case project
 		case kanban
+		case attachments
 		case statistics
 		case billing
 	}
@@ -117,6 +118,12 @@ class DocumentContentViewModel: NSObject, MVVMViewModel {
 
 		guard let project = self.document.project else { return nil }
 		return KanbanViewModel(with: project)
+	}
+
+	func viewModelForAttachments() -> AttachmentOverviewViewModel? {
+
+		guard let project = self.document.project else { return nil }
+		return AttachmentOverviewViewModel(with: project)
 	}
 
 	func viewModelForStatistics() -> StatisticsViewModel? {

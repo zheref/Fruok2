@@ -71,6 +71,8 @@
 		D8388E4C1F37905B004A2DA3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D8388E4A1F37905B004A2DA3 /* Main.storyboard */; };
 		D8388E571F37905B004A2DA3 /* FruokTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8388E561F37905B004A2DA3 /* FruokTests.swift */; };
 		D8388E621F37905B004A2DA3 /* FruokUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8388E611F37905B004A2DA3 /* FruokUITests.swift */; };
+		D8396CBF1F5DEF9800C9D0C4 /* TableCells.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8396CBE1F5DEF9800C9D0C4 /* TableCells.swift */; };
+		D8396CC11F5DF00A00C9D0C4 /* TableCellsViewModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8396CC01F5DF00A00C9D0C4 /* TableCellsViewModels.swift */; };
 		D83BF7C91F52F3D900339637 /* PomodoroSession+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = D83BF7C71F52F3D900339637 /* PomodoroSession+CoreDataProperties.swift */; };
 		D83BF7CA1F52F3D900339637 /* PomodoroLog+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = D83BF7C81F52F3D900339637 /* PomodoroLog+CoreDataProperties.swift */; };
 		D83BF7CD1F52F3EB00339637 /* PomodoroSession+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = D83BF7CB1F52F3EB00339637 /* PomodoroSession+CoreDataClass.swift */; };
@@ -123,6 +125,9 @@
 		D8C2AD381F3BABE6002D75B2 /* KanbanCollectionLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8C2AD371F3BABE6002D75B2 /* KanbanCollectionLayout.swift */; };
 		D8C2AD3A1F3BB753002D75B2 /* KanbanTaskStateItemVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8C2AD391F3BB753002D75B2 /* KanbanTaskStateItemVM.swift */; };
 		D8C2AD3D1F3BD284002D75B2 /* FirstResponderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8C2AD3C1F3BD284002D75B2 /* FirstResponderView.swift */; };
+		D8EB13991F5DCE07000EA5AC /* AttachmentOverviewVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8EB13971F5DCE07000EA5AC /* AttachmentOverviewVC.swift */; };
+		D8EB139A1F5DCE07000EA5AC /* AttachmentOverviewVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = D8EB13981F5DCE07000EA5AC /* AttachmentOverviewVC.xib */; };
+		D8EB139C1F5DCE8A000EA5AC /* AttachmentOverviewVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8EB139B1F5DCE8A000EA5AC /* AttachmentOverviewVM.swift */; };
 		D8F7B4711F423C4E00060F08 /* DeleteTaskStateConfirmationDialog.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8F7B46F1F423C4E00060F08 /* DeleteTaskStateConfirmationDialog.swift */; };
 		D8F7B4721F423C4E00060F08 /* DeleteTaskStateConfirmationDialog.xib in Resources */ = {isa = PBXBuildFile; fileRef = D8F7B4701F423C4E00060F08 /* DeleteTaskStateConfirmationDialog.xib */; };
 		D8F7B4741F423C7000060F08 /* DeleteTaskStateConfirmationVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8F7B4731F423C7000060F08 /* DeleteTaskStateConfirmationVM.swift */; };
@@ -231,6 +236,8 @@
 		D8388E5D1F37905B004A2DA3 /* FruokUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FruokUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D8388E611F37905B004A2DA3 /* FruokUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FruokUITests.swift; sourceTree = "<group>"; };
 		D8388E631F37905B004A2DA3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D8396CBE1F5DEF9800C9D0C4 /* TableCells.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableCells.swift; sourceTree = "<group>"; };
+		D8396CC01F5DF00A00C9D0C4 /* TableCellsViewModels.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableCellsViewModels.swift; sourceTree = "<group>"; };
 		D83BF7C71F52F3D900339637 /* PomodoroSession+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "PomodoroSession+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		D83BF7C81F52F3D900339637 /* PomodoroLog+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "PomodoroLog+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		D83BF7CB1F52F3EB00339637 /* PomodoroSession+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "PomodoroSession+CoreDataClass.swift"; sourceTree = "<group>"; };
@@ -289,6 +296,9 @@
 		D8C2AD371F3BABE6002D75B2 /* KanbanCollectionLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KanbanCollectionLayout.swift; sourceTree = "<group>"; };
 		D8C2AD391F3BB753002D75B2 /* KanbanTaskStateItemVM.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KanbanTaskStateItemVM.swift; sourceTree = "<group>"; };
 		D8C2AD3C1F3BD284002D75B2 /* FirstResponderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirstResponderView.swift; sourceTree = "<group>"; };
+		D8EB13971F5DCE07000EA5AC /* AttachmentOverviewVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AttachmentOverviewVC.swift; sourceTree = "<group>"; };
+		D8EB13981F5DCE07000EA5AC /* AttachmentOverviewVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AttachmentOverviewVC.xib; sourceTree = "<group>"; };
+		D8EB139B1F5DCE8A000EA5AC /* AttachmentOverviewVM.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AttachmentOverviewVM.swift; sourceTree = "<group>"; };
 		D8F7B46F1F423C4E00060F08 /* DeleteTaskStateConfirmationDialog.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeleteTaskStateConfirmationDialog.swift; sourceTree = "<group>"; };
 		D8F7B4701F423C4E00060F08 /* DeleteTaskStateConfirmationDialog.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DeleteTaskStateConfirmationDialog.xib; sourceTree = "<group>"; };
 		D8F7B4731F423C7000060F08 /* DeleteTaskStateConfirmationVM.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeleteTaskStateConfirmationVM.swift; sourceTree = "<group>"; };
@@ -645,10 +655,10 @@
 		D8C2AD051F38F530002D75B2 /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				D8C2AD3B1F3BD271002D75B2 /* Shared */,
 				D87858FA1F574FF6004FF111 /* SessionFilter */,
 				D87858E31F56DAF0004FF111 /* Invoice */,
 				D84FB9EF1F5304330080FC28 /* Pomodoro */,
-				D8C2AD3B1F3BD271002D75B2 /* Shared */,
 				D82E214A1F3BEC5D00F601DD /* DocumentWindow */,
 				D82ECF3A1F37AECE008251C2 /* DocumentContent */,
 				D834BD341F4B0C9C001B99D2 /* ProjectOverview */,
@@ -661,6 +671,7 @@
 				D8339DE31F46FA4B00EA5617 /* Labels */,
 				D834BD3F1F4C1290001B99D2 /* Attachments */,
 				D86F68801F5486F300B89BB6 /* Statistics */,
+				D8EB13921F5DA9B5000EA5AC /* AttachmentOverview */,
 			);
 			name = UI;
 			sourceTree = "<group>";
@@ -735,8 +746,20 @@
 				D82E21801F40FAAD00F601DD /* CollectionViewModelClientView.swift */,
 				D82E217E1F40F2F700F601DD /* CollectionViewModel.swift */,
 				D82E21821F4111BC00F601DD /* OneDimensionalFittingCollectionViewLayout.swift */,
+				D8396CBE1F5DEF9800C9D0C4 /* TableCells.swift */,
+				D8396CC01F5DF00A00C9D0C4 /* TableCellsViewModels.swift */,
 			);
 			name = Shared;
+			sourceTree = "<group>";
+		};
+		D8EB13921F5DA9B5000EA5AC /* AttachmentOverview */ = {
+			isa = PBXGroup;
+			children = (
+				D8EB13971F5DCE07000EA5AC /* AttachmentOverviewVC.swift */,
+				D8EB13981F5DCE07000EA5AC /* AttachmentOverviewVC.xib */,
+				D8EB139B1F5DCE8A000EA5AC /* AttachmentOverviewVM.swift */,
+			);
+			name = AttachmentOverview;
 			sourceTree = "<group>";
 		};
 		D8F7B46E1F423C2400060F08 /* DeleteTaskStateConfirmation */ = {
@@ -909,6 +932,7 @@
 				D8FC65151F48C2670065D566 /* LabelEditingItem.xib in Resources */,
 				D8C2AD321F3BA78B002D75B2 /* .gitignore in Resources */,
 				D82E21751F3CFFFD00F601DD /* TaskDetailVC.xib in Resources */,
+				D8EB139A1F5DCE07000EA5AC /* AttachmentOverviewVC.xib in Resources */,
 				D82E215C1F3C587D00F601DD /* KanbanTaskItem.xib in Resources */,
 				D87858F01F56E397004FF111 /* style.css in Resources */,
 				D8388E491F37905B004A2DA3 /* Assets.xcassets in Resources */,
@@ -1096,6 +1120,7 @@
 				D82E21551F3C541800F601DD /* TasksCollectionVM.swift in Sources */,
 				D86F68831F54875F00B89BB6 /* StatisticsVC.swift in Sources */,
 				D834BD3C1F4C0FEA001B99D2 /* Attachment+CoreDataProperties.swift in Sources */,
+				D8396CBF1F5DEF9800C9D0C4 /* TableCells.swift in Sources */,
 				D82ECF281F37985D008251C2 /* Document.xcdatamodeld in Sources */,
 				D82ECF351F37985D008251C2 /* Task+CoreDataClass.swift in Sources */,
 				D834BD421F4C12AC001B99D2 /* AttachmentsVC.swift in Sources */,
@@ -1117,6 +1142,7 @@
 				D83BF7C91F52F3D900339637 /* PomodoroSession+CoreDataProperties.swift in Sources */,
 				D8FC65131F48C2420065D566 /* LabelEditingItem.swift in Sources */,
 				D82E217F1F40F2F700F601DD /* CollectionViewModel.swift in Sources */,
+				D8EB13991F5DCE07000EA5AC /* AttachmentOverviewVC.swift in Sources */,
 				D8C2AD291F3A7EBC002D75B2 /* KanbanTaskStateItem.swift in Sources */,
 				D82E21681F3C5CE400F601DD /* Label+CoreDataProperties.swift in Sources */,
 				D82E217B1F3F822000F601DD /* NSManagedObjectContext+URI.swift in Sources */,
@@ -1127,6 +1153,7 @@
 				D8C2AD2C1F3BA249002D75B2 /* ManagedObjectType.swift in Sources */,
 				D8C2AD111F390305002D75B2 /* KVVM.swift in Sources */,
 				D82E21531F3C540100F601DD /* TasksCollectionVC.swift in Sources */,
+				D8EB139C1F5DCE8A000EA5AC /* AttachmentOverviewVM.swift in Sources */,
 				D82E215B1F3C587D00F601DD /* KanbanTaskItem.swift in Sources */,
 				D8339DF11F47127800EA5617 /* LabelItem.swift in Sources */,
 				D8339DED1F47111300EA5617 /* LabelItemVM.swift in Sources */,
@@ -1174,6 +1201,7 @@
 				D864410C1F4EE3E000884D49 /* TaskDescriptionTextView.swift in Sources */,
 				D82ECF311F37985D008251C2 /* RGBAColor+CoreDataClass.swift in Sources */,
 				D82E216B1F3C5CE400F601DD /* RGBAColor+CoreDataProperties.swift in Sources */,
+				D8396CC11F5DF00A00C9D0C4 /* TableCellsViewModels.swift in Sources */,
 				D8B746B31F59892F006B9D13 /* Client+CoreDataClass.swift in Sources */,
 				D82ECF2F1F37985D008251C2 /* Project+CoreDataClass.swift in Sources */,
 				D87858FD1F575030004FF111 /* SessionFilterVC.swift in Sources */,

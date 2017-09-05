@@ -34,4 +34,9 @@ extension Attachment {
 
 		return contextDelegate.context(fruokDocumentContext, urlForExistingAttachmentWithIdentifier: self.identifier, name: self.filename)
 	}
+
+	var name: String? {
+
+		return self.fileURL?.lastPathComponent
+	}
 }

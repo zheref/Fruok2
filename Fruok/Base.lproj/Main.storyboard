@@ -673,16 +673,17 @@
                             <allowedToolbarItems>
                                 <toolbarItem implicitItemIdentifier="4482835E-E367-44C0-B6C9-E87E0B3F4870" explicitItemIdentifier="view" label="View" paletteLabel="View" id="Ryo-ob-UDL" customClass="ValidatingCustomToolbarItem" customModule="Fruok" customModuleProvider="target">
                                     <nil key="toolTip"/>
-                                    <size key="minSize" width="273" height="24"/>
-                                    <size key="maxSize" width="273" height="26"/>
+                                    <size key="minSize" width="366" height="24"/>
+                                    <size key="maxSize" width="366" height="26"/>
                                     <segmentedControl key="view" verticalHuggingPriority="750" id="3UR-Q9-a7I">
-                                        <rect key="frame" x="0.0" y="14" width="273" height="25"/>
+                                        <rect key="frame" x="0.0" y="14" width="366" height="25"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                         <segmentedCell key="cell" borderStyle="border" alignment="left" style="texturedSquare" trackingMode="selectOne" id="kMM-O9-t1e">
                                             <font key="font" metaFont="system"/>
                                             <segments>
                                                 <segment label="Project"/>
                                                 <segment label="Kanban" selected="YES" tag="1"/>
+                                                <segment label="Attachments"/>
                                                 <segment label="Statistics"/>
                                                 <segment label="Billing"/>
                                             </segments>
@@ -695,6 +696,7 @@
                                 <toolbarItem implicitItemIdentifier="NSToolbarFlexibleSpaceItem" id="dkm-ZD-n9z"/>
                             </allowedToolbarItems>
                             <defaultToolbarItems>
+                                <toolbarItem reference="dkm-ZD-n9z"/>
                                 <toolbarItem reference="Ryo-ob-UDL"/>
                                 <toolbarItem reference="dkm-ZD-n9z"/>
                             </defaultToolbarItems>

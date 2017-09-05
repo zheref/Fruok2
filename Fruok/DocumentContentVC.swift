@@ -14,6 +14,7 @@ extension DocumentContentViewModel.ChildView {
 	public enum ChildViewIdentifier: String {
 		case project
 		case kanban
+		case attachments
 		case statistics
 		case billing
 	}
@@ -25,6 +26,8 @@ extension DocumentContentViewModel.ChildView {
 			return "none"
 		case .kanban:
 			return ChildViewIdentifier.kanban.rawValue
+		case .attachments:
+			return ChildViewIdentifier.attachments.rawValue
 		case .statistics:
 			return ChildViewIdentifier.statistics.rawValue
 		case .billing:
@@ -98,6 +101,12 @@ class DocumentContentViewController: NSViewController, MVVMView {
 			case .kanban?:
 				let controller = self.storyboard?.instantiateController(withIdentifier: DocumentContentViewModel.ChildView.kanban.storyboardIdentifier) as! KanbanViewController
 				if let viewModel = self.viewModel?.viewModelForKanBan() {
+					controller.set(viewModel: viewModel)
+				}
+				return controller
+			case .attachments?:
+				let controller = AttachmentOverviewController()
+				if let viewModel = self.viewModel?.viewModelForAttachments() {
 					controller.set(viewModel: viewModel)
 				}
 				return controller

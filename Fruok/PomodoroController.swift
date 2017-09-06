@@ -19,7 +19,7 @@ extension Notification.Name {
 
 class PomodoroController: NSObject {
 
-	var currentPomodoroObjects: (document: FruokDocument, viewModel: PomodoroViewModel)?
+	var currentPomodoroObjects: (document: FruokDocument, viewModel: PomodoroViewModel, statusItem: NSStatusItem)?
 
 	override init() {
 
@@ -92,15 +92,34 @@ class PomodoroController: NSObject {
 	}
 	private func doStartPomodoroSession(document: FruokDocument, task: Task) {
 
+		let statusItem = NSStatusBar.system().statusItem(withLength: NSSquareStatusItemLength)
+		statusItem.button?.title = ""
+		let icon = NSApp.applicationIconImage
+		icon?.size = NSSize(width: NSStatusBar.system().thickness, height: NSStatusBar.system().thickness)
+		statusItem.button?.image = icon
+		statusItem.button?.target = self
+		statusItem.button?.action = #selector(PomodoroController.bringPomodoroWindowToForeground(_:))
 		self.currentPomodoroObjects?.document.contentViewModel?.pomodoroVisible.value = nil
 		let pomodoroViewModel = PomodoroViewModel(with: task)
-		self.currentPomodoroObjects = (document: document, viewModel: pomodoroViewModel)
+		self.currentPomodoroObjects = (document: document, viewModel: pomodoroViewModel, statusItem: statusItem)
 		self.currentPomodoroObjects?.document.contentViewModel?.pomodoroVisible.value = pomodoroViewModel
 	}
 
+	func bringPomodoroWindowToForeground(_ sender: Any?) {
+
+		if let windowControllers = self.currentPomodoroObjects?.document.windowControllers {
+
+			for windowController in windowControllers {
+
+				windowController.window?.makeKeyAndOrderFront(nil)
+			}
+		}
+		NSApp.activate(ignoringOtherApps: true)
+	}
 	private func doAbortAndHidePomodoroSession() {
 
 		self.currentPomodoroObjects?.document.contentViewModel?.pomodoroVisible.value = nil
+		self.currentPomodoroObjects = nil
 	}
 
 	func userWantsHidePomodoroSession(pomodoroViewModel: PomodoroViewModel) {

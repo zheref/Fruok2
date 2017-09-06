@@ -34,4 +34,9 @@ class LabelEditingColorWell: NSColorWell {
 		self.color.set()
 		roundedRect.fill()
 	}
+
+	override func deactivate() {
+		super.deactivate()
+		NSColorPanel.shared().orderOut(nil)
+	}
 }

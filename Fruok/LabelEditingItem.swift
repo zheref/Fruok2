@@ -38,6 +38,7 @@ class LabelEditingCell: NSCollectionViewItem, MVVMView {
 
 	override func prepareForReuse() {
 		super.prepareForReuse()
+		self.colorWell.deactivate()
 		self.viewModel = nil
 		self.labelComboBox.stringValue = ""
 	}
@@ -58,6 +59,10 @@ class LabelEditingCell: NSCollectionViewItem, MVVMView {
 
 			self?.labelComboBox.reloadData()
 		}).dispose(in: reuseBag)
+
+//		self.reactive.keyPath(#keyPath(LabelEditingCell.view.window), ofType: Optional<NSWindow>.self, context: .immediateOnMain).bind(to: self, context: .immediateOnMain) { (me, window) in
+//			NSColorPanel.shared().orderOut(nil)
+//		}.dispose(in: reuseBag)
 	}
 
 	override func viewDidAppear() {
@@ -83,7 +88,6 @@ class LabelEditingCell: NSCollectionViewItem, MVVMView {
 			self.viewModel?.labelColor.value = colorValues
 		}
 	}
-	
 }
 
 extension LabelEditingCell: NSTextFieldDelegate {

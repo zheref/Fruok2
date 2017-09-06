@@ -87,12 +87,12 @@ class LabelsViewController: NSViewController, CollectionViewModelClientView {
 	}
 
 	@IBAction func cancelEditLabel(_ sender: Any?) {
-
+		NSColorPanel.shared().orderOut(nil)
 		self.viewModel?.userWantsCancelEditLabel()
 	}
 
 	@IBAction func commitEditLabel(_ sender: LabelEditingCell?) {
-
+		NSColorPanel.shared().orderOut(nil)
 		if let editViewModel = sender?.viewModel {
 			self.viewModel?.userWantsCommitEditLabel(with: editViewModel)
 		}

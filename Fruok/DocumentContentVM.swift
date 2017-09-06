@@ -42,13 +42,7 @@ class DocumentContentViewModel: NSObject, MVVMViewModel {
 
 	func changeCurrentChildView(to childView: ChildView) {
 
-		if self.document.fileURL == nil {
-
-			let context = UnsafeMutableRawPointer(bitPattern: childView.rawValue)!
-			self.document.runModalSavePanel(for: .saveOperation, delegate: self, didSave: #selector(DocumentContentViewModel.changeCurrentChildViewAfterAveOperationOfDocument(_:didSave:context:)), contextInfo: context)
-			return
-		}
-
+		self.document.save(nil)
 		self.currentChildView.value = childView
 	}
 

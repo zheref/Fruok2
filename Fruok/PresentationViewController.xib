@@ -23,13 +23,13 @@
                     <rect key="frame" x="50" y="50" width="420" height="212"/>
                     <subviews>
                         <scrollView horizontalHuggingPriority="1000" verticalHuggingPriority="1000" horizontalCompressionResistancePriority="751" verticalCompressionResistancePriority="751" borderType="none" autohidesScrollers="YES" horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" usesPredominantAxisScrolling="NO" horizontalScrollElasticity="allowed" verticalScrollElasticity="allowed" translatesAutoresizingMaskIntoConstraints="NO" id="M7H-DM-oZC">
-                            <rect key="frame" x="20" y="0.0" width="380" height="212"/>
+                            <rect key="frame" x="10" y="0.0" width="400" height="212"/>
                             <clipView key="contentView" id="ABs-6I-eNw">
-                                <rect key="frame" x="0.0" y="0.0" width="380" height="212"/>
+                                <rect key="frame" x="0.0" y="0.0" width="400" height="212"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <subviews>
                                     <view fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="XTq-qV-XmF">
-                                        <rect key="frame" x="0.0" y="0.0" width="365" height="197"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="385" height="197"/>
                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     </view>
                                 </subviews>
@@ -43,44 +43,44 @@
                                 <autoresizingMask key="autoresizingMask"/>
                             </scroller>
                         </scrollView>
-                        <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Erq-JF-mIe">
-                            <rect key="frame" x="395" y="187" width="20" height="20"/>
-                            <constraints>
-                                <constraint firstAttribute="height" constant="20" id="HgE-Bg-5in"/>
-                                <constraint firstAttribute="width" constant="20" id="gCx-Fr-6AX"/>
-                            </constraints>
-                            <buttonCell key="cell" type="square" bezelStyle="shadowlessSquare" image="NSStopProgressTemplate" imagePosition="only" alignment="center" imageScaling="proportionallyDown" inset="2" id="fqk-qv-yUs">
-                                <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                                <font key="font" metaFont="system"/>
-                            </buttonCell>
-                            <connections>
-                                <action selector="explicitelyDismiss:" target="-2" id="MYk-RD-VPc"/>
-                            </connections>
-                        </button>
                     </subviews>
                     <constraints>
                         <constraint firstItem="M7H-DM-oZC" firstAttribute="top" secondItem="PVe-WS-0yl" secondAttribute="top" id="Ryg-CK-bQH"/>
-                        <constraint firstAttribute="trailing" secondItem="Erq-JF-mIe" secondAttribute="trailing" constant="5" id="ZKz-BT-vvY"/>
                         <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="420" id="al3-fT-1gz"/>
-                        <constraint firstItem="Erq-JF-mIe" firstAttribute="top" secondItem="PVe-WS-0yl" secondAttribute="top" constant="5" id="dvk-a6-Muh"/>
-                        <constraint firstAttribute="trailing" secondItem="M7H-DM-oZC" secondAttribute="trailing" constant="20" id="fTV-vw-mqJ"/>
+                        <constraint firstAttribute="trailing" secondItem="M7H-DM-oZC" secondAttribute="trailing" constant="10" id="fTV-vw-mqJ"/>
                         <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="212" id="gqr-wu-ViP"/>
                         <constraint firstAttribute="bottom" secondItem="M7H-DM-oZC" secondAttribute="bottom" id="jcD-IZ-FQz"/>
-                        <constraint firstItem="M7H-DM-oZC" firstAttribute="leading" secondItem="PVe-WS-0yl" secondAttribute="leading" constant="20" id="pzK-yl-9PQ"/>
+                        <constraint firstItem="M7H-DM-oZC" firstAttribute="leading" secondItem="PVe-WS-0yl" secondAttribute="leading" constant="10" id="pzK-yl-9PQ"/>
                     </constraints>
                 </customView>
+                <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Erq-JF-mIe">
+                    <rect key="frame" x="460" y="252" width="20" height="20"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="20" id="HgE-Bg-5in"/>
+                        <constraint firstAttribute="width" constant="20" id="gCx-Fr-6AX"/>
+                    </constraints>
+                    <buttonCell key="cell" type="square" bezelStyle="shadowlessSquare" image="CloseDetail" imagePosition="only" alignment="center" imageScaling="proportionallyDown" inset="2" id="fqk-qv-yUs">
+                        <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                        <font key="font" metaFont="system"/>
+                    </buttonCell>
+                    <connections>
+                        <action selector="explicitelyDismiss:" target="-2" id="MYk-RD-VPc"/>
+                    </connections>
+                </button>
             </subviews>
             <constraints>
                 <constraint firstItem="PVe-WS-0yl" firstAttribute="centerX" secondItem="Hz6-mo-xeY" secondAttribute="centerX" id="2bF-2N-o4s"/>
                 <constraint firstItem="PVe-WS-0yl" firstAttribute="top" relation="greaterThanOrEqual" secondItem="Hz6-mo-xeY" secondAttribute="top" constant="50" id="83F-dq-Anb"/>
                 <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="PVe-WS-0yl" secondAttribute="bottom" constant="50" id="9GB-yv-eLU"/>
                 <constraint firstItem="PVe-WS-0yl" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="Hz6-mo-xeY" secondAttribute="leading" constant="50" id="Mbq-iW-sIB"/>
+                <constraint firstItem="Erq-JF-mIe" firstAttribute="top" secondItem="PVe-WS-0yl" secondAttribute="top" constant="-10" id="XXl-8i-iFY"/>
+                <constraint firstItem="Erq-JF-mIe" firstAttribute="trailing" secondItem="PVe-WS-0yl" secondAttribute="trailing" constant="10" id="bI4-UI-Rrm"/>
                 <constraint firstItem="PVe-WS-0yl" firstAttribute="centerY" secondItem="Hz6-mo-xeY" secondAttribute="centerY" id="bcu-pa-WUg"/>
                 <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="PVe-WS-0yl" secondAttribute="trailing" constant="50" id="dEb-YA-Lk8"/>
             </constraints>
         </customView>
     </objects>
     <resources>
-        <image name="NSStopProgressTemplate" width="11" height="11"/>
+        <image name="CloseDetail" width="20" height="20"/>
     </resources>
 </document>

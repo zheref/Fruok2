@@ -30,6 +30,7 @@ class KanbanTaskStateItemViewModel: NSObject, MVVMViewModel {
 
 		self.taskState.name = name
 		self.editable.value = false
+		do { try self.taskState.managedObjectContext?.save() } catch {}
 	}
 
 	func userWantsAddTask() {

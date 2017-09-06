@@ -83,6 +83,7 @@ class TaskDetailViewModel: NSObject, MVVMViewModel {
 	}
 	func userWantsChangeName(name: String) {
 		self.task.name = name
+		do { try self.task.managedObjectContext?.save() } catch {}
 	}
 
 }

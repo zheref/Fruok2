@@ -140,11 +140,15 @@ class DocumentContentViewController: NSViewController, MVVMView {
 
 			} else {
 
+				let animatedPomodoroViewController = self?.currentPomodoroViewController
+
 				NSAnimationContext.runAnimationGroup({ current in
 
 					self?.pomodoroTopConstraint.animator().constant = -(self?.pomodoroContainerView.frame.size.height ?? 0)
-				}, completionHandler: { 
-					self?.currentPomodoroViewController = nil
+				}, completionHandler: {
+					if animatedPomodoroViewController == self?.currentPomodoroViewController {
+						self?.currentPomodoroViewController = nil
+					}
 				})
 			}
 		}).dispose(in: bag)
@@ -216,13 +220,6 @@ class DocumentContentViewController: NSViewController, MVVMView {
 			return true
 		default:
 			return super.validateToolbarItem(item)
-		}
-	}
-
-	@IBAction func startPomodoroSession(_ sender: TaskDetailViewController) {
-
-		if let viewModel = sender.viewModel {
-			self.viewModel?.userWantsStartPomodoroSession(for: viewModel)
 		}
 	}
 }

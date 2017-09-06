@@ -223,6 +223,6 @@ class TaskDetailViewController: NSViewController, MVVMView {
 	
 	@IBAction func startPomodoroSession(_ sender: Any) {
 		self.view.window?.makeFirstResponder(self.nextResponder)
-		NSApp.sendAction(#selector(DocumentContentViewController.startPomodoroSession(_:)), to: nil, from: self)
+		NSApp.sendAction(#selector(FruokDocument.startPomodoroSession(_:)), to: nil, from: self)
 	}
 }

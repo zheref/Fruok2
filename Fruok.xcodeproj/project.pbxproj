@@ -73,6 +73,7 @@
 		D8388E621F37905B004A2DA3 /* FruokUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8388E611F37905B004A2DA3 /* FruokUITests.swift */; };
 		D8396CBF1F5DEF9800C9D0C4 /* TableCells.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8396CBE1F5DEF9800C9D0C4 /* TableCells.swift */; };
 		D8396CC11F5DF00A00C9D0C4 /* TableCellsViewModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8396CC01F5DF00A00C9D0C4 /* TableCellsViewModels.swift */; };
+		D8396CC41F5FC9F100C9D0C4 /* PomodoroController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8396CC31F5FC9F100C9D0C4 /* PomodoroController.swift */; };
 		D83BF7C91F52F3D900339637 /* PomodoroSession+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = D83BF7C71F52F3D900339637 /* PomodoroSession+CoreDataProperties.swift */; };
 		D83BF7CA1F52F3D900339637 /* PomodoroLog+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = D83BF7C81F52F3D900339637 /* PomodoroLog+CoreDataProperties.swift */; };
 		D83BF7CD1F52F3EB00339637 /* PomodoroSession+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = D83BF7CB1F52F3EB00339637 /* PomodoroSession+CoreDataClass.swift */; };
@@ -238,6 +239,7 @@
 		D8388E631F37905B004A2DA3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D8396CBE1F5DEF9800C9D0C4 /* TableCells.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableCells.swift; sourceTree = "<group>"; };
 		D8396CC01F5DF00A00C9D0C4 /* TableCellsViewModels.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableCellsViewModels.swift; sourceTree = "<group>"; };
+		D8396CC31F5FC9F100C9D0C4 /* PomodoroController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PomodoroController.swift; sourceTree = "<group>"; };
 		D83BF7C71F52F3D900339637 /* PomodoroSession+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "PomodoroSession+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		D83BF7C81F52F3D900339637 /* PomodoroLog+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "PomodoroLog+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		D83BF7CB1F52F3EB00339637 /* PomodoroSession+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "PomodoroSession+CoreDataClass.swift"; sourceTree = "<group>"; };
@@ -581,6 +583,14 @@
 			path = FruokUITests;
 			sourceTree = "<group>";
 		};
+		D8396CC21F5FC9DF00C9D0C4 /* PomodoroController */ = {
+			isa = PBXGroup;
+			children = (
+				D8396CC31F5FC9F100C9D0C4 /* PomodoroController.swift */,
+			);
+			name = PomodoroController;
+			sourceTree = "<group>";
+		};
 		D84E45B71F49BC3500C7891F /* Colors */ = {
 			isa = PBXGroup;
 			children = (
@@ -655,6 +665,7 @@
 		D8C2AD051F38F530002D75B2 /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				D8396CC21F5FC9DF00C9D0C4 /* PomodoroController */,
 				D8C2AD3B1F3BD271002D75B2 /* Shared */,
 				D87858FA1F574FF6004FF111 /* SessionFilter */,
 				D87858E31F56DAF0004FF111 /* Invoice */,
@@ -1198,6 +1209,7 @@
 				D8C2AD0D1F38FB97002D75B2 /* KanbanVC.swift in Sources */,
 				D82ECF331F37985D008251C2 /* Subtask+CoreDataClass.swift in Sources */,
 				D84E45B91F49BC4E00C7891F /* RGBAColorsMarshalling+CoreData.swift in Sources */,
+				D8396CC41F5FC9F100C9D0C4 /* PomodoroController.swift in Sources */,
 				D864410C1F4EE3E000884D49 /* TaskDescriptionTextView.swift in Sources */,
 				D82ECF311F37985D008251C2 /* RGBAColor+CoreDataClass.swift in Sources */,
 				D82E216B1F3C5CE400F601DD /* RGBAColor+CoreDataProperties.swift in Sources */,

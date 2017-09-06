@@ -247,6 +247,13 @@ class FruokDocument: NSDocument, FruokDocumentObjectContextDelegate {
 
 		self.save(nil)
 	}
+
+	var contentViewController: DocumentContentViewController? {
+		return self.windowControllers.first?.contentViewController as? DocumentContentViewController
+	}
+	var contentViewModel: DocumentContentViewModel? {
+		return self.contentViewController?.viewModel
+	}
 }
 
 // Attachments
@@ -295,7 +302,16 @@ extension FruokDocument {
 		.appendingPathComponent(filename)
 
 	}
+}
 
+extension FruokDocument {
+
+	@IBAction func startPomodoroSession(_ sender: TaskDetailViewController) {
+
+		if let viewModel = sender.viewModel {
+			(NSApp.delegate as? AppDelegate)?.pomodoroController.documentRequestPomodoroStart(self, forTask: viewModel.task)
+		}
+	}
 }
 
 struct AttachmentCopyResult {

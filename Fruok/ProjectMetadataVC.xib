@@ -430,20 +430,20 @@
             <point key="canvasLocation" x="-86" y="438"/>
         </customView>
         <customView id="mBg-7F-OFB">
-            <rect key="frame" x="0.0" y="0.0" width="455" height="658"/>
+            <rect key="frame" x="0.0" y="0.0" width="648" height="658"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
             <subviews>
-                <tabView translatesAutoresizingMaskIntoConstraints="NO" id="0ro-xL-xdA">
-                    <rect key="frame" x="-7" y="-10" width="469" height="654"/>
+                <tabView drawsBackground="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0ro-xL-xdA">
+                    <rect key="frame" x="13" y="10" width="622" height="634"/>
                     <font key="font" metaFont="system"/>
                     <tabViewItems>
                         <tabViewItem label="Project Details" identifier="1" id="nWc-7E-TEz">
                             <view key="view" id="gc4-Pa-0nU">
-                                <rect key="frame" x="10" y="33" width="449" height="608"/>
+                                <rect key="frame" x="10" y="33" width="602" height="588"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <subviews>
                                     <customView translatesAutoresizingMaskIntoConstraints="NO" id="cqr-t4-hZI" customClass="RoundedRectView" customModule="Fruok" customModuleProvider="target">
-                                        <rect key="frame" x="43" y="338" width="363" height="250"/>
+                                        <rect key="frame" x="120" y="318" width="363" height="250"/>
                                         <subviews>
                                             <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="ot2-m4-z14">
                                                 <rect key="frame" x="139" y="178" width="184" height="22"/>
@@ -718,11 +718,11 @@
                         </tabViewItem>
                         <tabViewItem label="Client Info" identifier="2" id="GtE-xs-Oag">
                             <view key="view" id="GG8-uA-cuq">
-                                <rect key="frame" x="10" y="33" width="449" height="608"/>
+                                <rect key="frame" x="10" y="33" width="602" height="588"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <subviews>
                                     <customView translatesAutoresizingMaskIntoConstraints="NO" id="92o-Zw-7Lc" customClass="RoundedRectView" customModule="Fruok" customModuleProvider="target">
-                                        <rect key="frame" x="43" y="304" width="363" height="284"/>
+                                        <rect key="frame" x="120" y="284" width="363" height="284"/>
                                         <subviews>
                                             <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="9At-p9-lsu">
                                                 <rect key="frame" x="139" y="244" width="184" height="22"/>
@@ -933,11 +933,11 @@
                         </tabViewItem>
                         <tabViewItem label="Developer Info" identifier="" id="qwP-SO-Naa">
                             <view key="view" id="mpX-Vg-1Jf">
-                                <rect key="frame" x="10" y="33" width="449" height="608"/>
+                                <rect key="frame" x="10" y="33" width="602" height="588"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <subviews>
                                     <customView translatesAutoresizingMaskIntoConstraints="NO" id="Nxt-8F-DZ8" customClass="RoundedRectView" customModule="Fruok" customModuleProvider="target">
-                                        <rect key="frame" x="43" y="304" width="363" height="284"/>
+                                        <rect key="frame" x="120" y="284" width="363" height="284"/>
                                         <subviews>
                                             <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="SBG-L8-bMb">
                                                 <rect key="frame" x="139" y="244" width="184" height="22"/>
@@ -1150,12 +1150,12 @@
                 </tabView>
             </subviews>
             <constraints>
-                <constraint firstAttribute="bottom" secondItem="0ro-xL-xdA" secondAttribute="bottom" id="M2T-Xr-JtZ"/>
-                <constraint firstAttribute="trailing" secondItem="0ro-xL-xdA" secondAttribute="trailing" id="QVw-Hh-hUx"/>
+                <constraint firstAttribute="bottom" secondItem="0ro-xL-xdA" secondAttribute="bottom" constant="20" id="M2T-Xr-JtZ"/>
+                <constraint firstAttribute="trailing" secondItem="0ro-xL-xdA" secondAttribute="trailing" constant="20" id="QVw-Hh-hUx"/>
                 <constraint firstItem="0ro-xL-xdA" firstAttribute="top" secondItem="mBg-7F-OFB" secondAttribute="top" constant="20" id="gCC-6v-Odf"/>
-                <constraint firstItem="0ro-xL-xdA" firstAttribute="leading" secondItem="mBg-7F-OFB" secondAttribute="leading" id="k6e-cf-xyu"/>
+                <constraint firstItem="0ro-xL-xdA" firstAttribute="leading" secondItem="mBg-7F-OFB" secondAttribute="leading" constant="20" id="k6e-cf-xyu"/>
             </constraints>
-            <point key="canvasLocation" x="329.5" y="207"/>
+            <point key="canvasLocation" x="426" y="207"/>
         </customView>
     </objects>
     <resources>

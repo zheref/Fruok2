@@ -254,6 +254,12 @@ class FruokDocument: NSDocument, FruokDocumentObjectContextDelegate {
 	var contentViewModel: DocumentContentViewModel? {
 		return self.contentViewController?.viewModel
 	}
+
+	override func close() {
+
+		(NSApp.delegate as? AppDelegate)?.pomodoroController.documentWillClose(self)
+		super.close()
+	}
 }
 
 // Attachments

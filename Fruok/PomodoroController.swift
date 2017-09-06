@@ -140,4 +140,10 @@ class PomodoroController: NSObject {
 		
 	}
 
+	func documentWillClose(_ document: FruokDocument) {
+
+		if self.currentPomodoroObjects?.document == document {
+			self.doAbortAndHidePomodoroSession()
+		}
+	}
 }

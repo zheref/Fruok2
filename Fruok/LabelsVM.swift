@@ -83,8 +83,9 @@ class LabelsViewModel: NSObject, CollectionDragAndDropViewModel {
 
 			if index < (self.task.labels?.count ?? 0) {
 
-				let initialString = (self.task.labels?[index] as? Label)?.name ?? ""
-				return LabelEditingItemViewModel(with: self.task, initialEditingString: initialString)
+				let label = self.task.labels?[index] as? Label
+				let initialString = label?.name ?? ""
+				return LabelEditingItemViewModel(with: self.task, initialEditingString: initialString, initialColor: label?.color?.rgbaColorValues ?? RGBAColorValues.defaultLabelColor)
 			}
 			return LabelEditingItemViewModel(with: self.task)
 		}
@@ -132,16 +133,23 @@ class LabelsViewModel: NSObject, CollectionDragAndDropViewModel {
 				return
 			}
 
+			let isNew: Bool
 			let label: Label
 			if editingIndex < self.numCollectionObjects.value {
 
 				label = labels[editingIndex] as! Label
+				isNew = false
 			} else {
 
 				label = context.insertObject()
+				isNew = true
 			}
 
+			if isNew {
 			label.name = viewModel.currentEditingString.value ?? NSLocalizedString("Untitled", comment: "Untitled Label")
+			} else if let editedString = viewModel.currentEditingString.value {
+				label.name = editedString
+			}
 
 			let color: LabelColor = label.color ?? {
 

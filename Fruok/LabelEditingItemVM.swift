@@ -15,9 +15,10 @@ class LabelEditingItemViewModel: NSObject, MVVMViewModel {
 	typealias MODEL = Task
 	@objc private let task: Task
 
-	convenience init(with model: Task, initialEditingString: String) {
+	convenience init(with model: Task, initialEditingString: String, initialColor: RGBAColorValues) {
 		self.init(with: model)
 		self.initialEditingString.value = initialEditingString
+		self.labelColor.value = initialColor
 	}
 
 	required init(with model: Task) {

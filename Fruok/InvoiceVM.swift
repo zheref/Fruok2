@@ -175,7 +175,8 @@ class InvoiceViewModel: NSObject, MVVMViewModel {
 			let taxAmount = taxPercent?.multiplying(by: totalFee, withBehavior: feeHandler)
 			totalFee = totalFee.adding(taxAmount ?? NSDecimalNumber.zero, withBehavior: feeHandler)
 
-			taxData.percent.set(String(format: "%@: %@", taxName ?? "", taxPercent != nil ? NumberFormatter.percentFormatter.string(from: taxPercent!)! : ""))
+			let taxNameString = taxName != nil ? (taxName! + ":") : ""
+			taxData.percent.set(String(format: "%@ %@", taxNameString, taxPercent != nil ? NumberFormatter.percentFormatter.string(from: taxPercent!)! : ""))
 
 			taxData.amount.set(feeString(taxAmount))
 			invoiceData.tax.set(taxData)

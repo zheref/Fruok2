@@ -78,6 +78,14 @@ class PresentationViewController: NSViewController {
 			wrapped.presenting?.dismissViewController(wrapped)
 		}
 	}
+
+	@IBAction func explicitelyDismiss(_ sender: Any?) {
+
+		if let wrapped = self.wrappedViewController {
+			wrapped.presenting?.dismissViewController(wrapped)
+		}
+	}
+
     
 }
 

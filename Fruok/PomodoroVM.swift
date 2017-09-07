@@ -284,6 +284,7 @@ class PomodoroViewModel: NSObject, MVVMViewModel {
 
 				NotificationCenter.default.post(name: .TRPomodoroSessionEndedRegularly, object: self)
 				self.finishSession()
+				self.userWantsStartBreak()
 				return
 			}
 

@@ -2,7 +2,7 @@
 //  Project+CoreDataProperties.swift
 //  
 //
-//  Created by Matthias Keiser on 02.09.17.
+//  Created by Matthias Keiser on 07.09.17.
 //
 //
 
@@ -25,9 +25,45 @@ extension Project {
     @NSManaged public var kind: Int32
     @NSManaged public var tax: NSDecimalNumber?
     @NSManaged public var taxName: String?
+    @NSManaged public var attachments: NSOrderedSet?
     @NSManaged public var client: Client?
-    @NSManaged public var taskStates: NSOrderedSet?
     @NSManaged public var developer: Developer?
+    @NSManaged public var taskStates: NSOrderedSet?
+
+}
+
+// MARK: Generated accessors for attachments
+extension Project {
+
+    @objc(insertObject:inAttachmentsAtIndex:)
+    @NSManaged public func insertIntoAttachments(_ value: Attachment, at idx: Int)
+
+    @objc(removeObjectFromAttachmentsAtIndex:)
+    @NSManaged public func removeFromAttachments(at idx: Int)
+
+    @objc(insertAttachments:atIndexes:)
+    @NSManaged public func insertIntoAttachments(_ values: [Attachment], at indexes: NSIndexSet)
+
+    @objc(removeAttachmentsAtIndexes:)
+    @NSManaged public func removeFromAttachments(at indexes: NSIndexSet)
+
+    @objc(replaceObjectInAttachmentsAtIndex:withObject:)
+    @NSManaged public func replaceAttachments(at idx: Int, with value: Attachment)
+
+    @objc(replaceAttachmentsAtIndexes:withAttachments:)
+    @NSManaged public func replaceAttachments(at indexes: NSIndexSet, with values: [Attachment])
+
+    @objc(addAttachmentsObject:)
+    @NSManaged public func addToAttachments(_ value: Attachment)
+
+    @objc(removeAttachmentsObject:)
+    @NSManaged public func removeFromAttachments(_ value: Attachment)
+
+    @objc(addAttachments:)
+    @NSManaged public func addToAttachments(_ values: NSOrderedSet)
+
+    @objc(removeAttachments:)
+    @NSManaged public func removeFromAttachments(_ values: NSOrderedSet)
 
 }
 

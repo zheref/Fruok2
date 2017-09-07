@@ -3,7 +3,8 @@
     <entity name="Attachment" representedClassName="Attachment" syncable="YES">
         <attribute name="filename" attributeType="String" syncable="YES"/>
         <attribute name="identifier" attributeType="String" syncable="YES"/>
-        <relationship name="task" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Task" inverseName="attachments" inverseEntity="Task" syncable="YES"/>
+        <relationship name="project" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Project" inverseName="attachments" inverseEntity="Project" syncable="YES"/>
+        <relationship name="tasks" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Task" inverseName="attachments" inverseEntity="Task" syncable="YES"/>
     </entity>
     <entity name="BaseTask" representedClassName="BaseTask" isAbstract="YES" syncable="YES">
         <attribute name="descriptionString" optional="YES" attributeType="Transformable" customClassName="NSAttributedString" syncable="YES"/>
@@ -55,6 +56,7 @@
         <attribute name="kind" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="tax" optional="YES" attributeType="Decimal" defaultValueString="0.0" syncable="YES"/>
         <attribute name="taxName" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="attachments" optional="YES" toMany="YES" deletionRule="Nullify" ordered="YES" destinationEntity="Attachment" inverseName="project" inverseEntity="Attachment" syncable="YES"/>
         <relationship name="client" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Client" inverseName="projects" inverseEntity="Client" syncable="YES"/>
         <relationship name="developer" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Developer" inverseName="projects" inverseEntity="Developer" syncable="YES"/>
         <relationship name="taskStates" optional="YES" toMany="YES" deletionRule="Nullify" ordered="YES" destinationEntity="TaskState" inverseName="project" inverseEntity="TaskState" syncable="YES"/>
@@ -71,7 +73,7 @@
         <relationship name="task" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Task" inverseName="subtasks" inverseEntity="Task" syncable="YES"/>
     </entity>
     <entity name="Task" representedClassName="Task" parentEntity="BaseTask" syncable="YES">
-        <relationship name="attachments" optional="YES" toMany="YES" deletionRule="Nullify" ordered="YES" destinationEntity="Attachment" inverseName="task" inverseEntity="Attachment" syncable="YES"/>
+        <relationship name="attachments" optional="YES" toMany="YES" deletionRule="Nullify" ordered="YES" destinationEntity="Attachment" inverseName="tasks" inverseEntity="Attachment" syncable="YES"/>
         <relationship name="labels" optional="YES" toMany="YES" deletionRule="Nullify" ordered="YES" destinationEntity="Label" inverseName="tasks" inverseEntity="Label" syncable="YES"/>
         <relationship name="pomodoroSessions" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="PomodoroSession" inverseName="task" inverseEntity="PomodoroSession" syncable="YES"/>
         <relationship name="state" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="TaskState" inverseName="tasks" inverseEntity="TaskState" syncable="YES"/>
@@ -83,7 +85,7 @@
         <relationship name="tasks" optional="YES" toMany="YES" deletionRule="Nullify" ordered="YES" destinationEntity="Task" inverseName="state" inverseEntity="Task" syncable="YES"/>
     </entity>
     <elements>
-        <element name="Attachment" positionX="-18" positionY="63" width="128" height="90"/>
+        <element name="Attachment" positionX="-18" positionY="63" width="128" height="105"/>
         <element name="BaseTask" positionX="-27" positionY="36" width="128" height="75"/>
         <element name="Client" positionX="-18" positionY="81" width="128" height="60"/>
         <element name="Developer" positionX="-18" positionY="108" width="128" height="60"/>
@@ -92,7 +94,7 @@
         <element name="PersonInfo" positionX="-9" positionY="117" width="128" height="165"/>
         <element name="PomodoroLog" positionX="-9" positionY="81" width="128" height="105"/>
         <element name="PomodoroSession" positionX="-18" positionY="72" width="128" height="105"/>
-        <element name="Project" positionX="-63" positionY="-18" width="128" height="225"/>
+        <element name="Project" positionX="-63" positionY="-18" width="128" height="240"/>
         <element name="RGBAColor" positionX="18" positionY="72" width="128" height="105"/>
         <element name="Subtask" positionX="9" positionY="90" width="128" height="90"/>
         <element name="Task" positionX="0" positionY="81" width="128" height="120"/>

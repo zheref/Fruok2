@@ -124,8 +124,7 @@ class AttachmentsViewModel: NSObject, MVVMViewModel, CollectionDragAndDropViewMo
 			detailString: NSLocalizedString("This action can not be undone", comment: "Attachment deletion warning"),
 
 			callback: { [weak self] in
-
-				self?.task.deleteAttachments(attachments)
+				self?.task.removeFromAttachments(NSOrderedSet(array: attachments))
 		})
 
 		self.attchmentDeleteConfirmation.value = info

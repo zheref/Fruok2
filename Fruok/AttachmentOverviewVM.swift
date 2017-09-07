@@ -72,7 +72,8 @@ class AttachmentOverviewViewModel: NSObject, MVVMViewModel {
 		case .Preview:
 			return ImageTableCellViewModel(with: attachment.fileURL) as! VIEWMODEL
 		case .Task:
-			return  LabelTableCellViewModel(with: attachment.task?.name) as! VIEWMODEL
+			let taskNames = attachment.tasks?.flatMap { ($0 as? Task)?.name }.sorted().joined(separator: " ") ?? ""
+			return  LabelTableCellViewModel(with: taskNames) as! VIEWMODEL
 		case .Name:
 			return LabelTableCellViewModel(with: attachment.name) as! VIEWMODEL
 		}
@@ -120,7 +121,7 @@ class AttachmentOverviewViewModel: NSObject, MVVMViewModel {
 
 			callback: { 
 				for attachment in attachments {
-					attachment.task?.deleteAttachments([attachment])
+					attachment.project?.deleteAttachments([attachment])
 				}
 		})
 

@@ -2,9 +2,8 @@
 //  Attachment+CoreDataProperties.swift
 //  
 //
-//  Created by Matthias Keiser on 22.08.17.
+//  Created by Matthias Keiser on 07.09.17.
 //
-//  This file was automatically generated and should not be edited.
 //
 
 import Foundation
@@ -19,6 +18,24 @@ extension Attachment {
 
     @NSManaged public var filename: String
     @NSManaged public var identifier: String
-    @NSManaged public var task: Task?
+    @NSManaged public var project: Project?
+    @NSManaged public var tasks: NSSet?
+
+}
+
+// MARK: Generated accessors for tasks
+extension Attachment {
+
+    @objc(addTasksObject:)
+    @NSManaged public func addToTasks(_ value: Task)
+
+    @objc(removeTasksObject:)
+    @NSManaged public func removeFromTasks(_ value: Task)
+
+    @objc(addTasks:)
+    @NSManaged public func addToTasks(_ values: NSSet)
+
+    @objc(removeTasks:)
+    @NSManaged public func removeFromTasks(_ values: NSSet)
 
 }

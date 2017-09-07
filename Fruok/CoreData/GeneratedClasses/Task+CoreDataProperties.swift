@@ -2,7 +2,7 @@
 //  Task+CoreDataProperties.swift
 //  
 //
-//  Created by Matthias Keiser on 30.08.17.
+//  Created by Matthias Keiser on 06.09.17.
 //
 //
 

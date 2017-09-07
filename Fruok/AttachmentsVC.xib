@@ -20,13 +20,13 @@
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
             <subviews>
                 <scrollView autohidesScrollers="YES" horizontalLineScroll="29" horizontalPageScroll="10" verticalLineScroll="29" verticalPageScroll="10" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0tq-Cj-ELZ">
-                    <rect key="frame" x="0.0" y="50" width="480" height="222"/>
+                    <rect key="frame" x="0.0" y="47" width="480" height="225"/>
                     <clipView key="contentView" id="lOY-VS-9CO">
-                        <rect key="frame" x="1" y="1" width="478" height="220"/>
+                        <rect key="frame" x="1" y="1" width="478" height="223"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnAutoresizingStyle="lastColumnOnly" columnReordering="NO" columnSelection="YES" columnResizing="NO" multipleSelection="NO" autosaveColumns="NO" rowHeight="27" viewBased="YES" id="gt4-ah-shb">
-                                <rect key="frame" x="0.0" y="0.0" width="478" height="220"/>
+                                <rect key="frame" x="0.0" y="0.0" width="478" height="223"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <size key="intercellSpacing" width="3" height="2"/>
                                 <color key="backgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
@@ -123,28 +123,40 @@
                     </scroller>
                 </scrollView>
                 <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="5TT-dJ-GGq">
-                    <rect key="frame" x="359" y="13" width="107" height="32"/>
-                    <buttonCell key="cell" type="push" title="Add Files..." bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="AIZ-55-wej">
+                    <rect key="frame" x="400" y="14" width="85" height="28"/>
+                    <buttonCell key="cell" type="push" title="Add Files..." bezelStyle="rounded" alignment="center" controlSize="small" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="AIZ-55-wej">
                         <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                        <font key="font" metaFont="system"/>
+                        <font key="font" metaFont="smallSystem"/>
                     </buttonCell>
                     <connections>
                         <action selector="addFiles:" target="-2" id="Bdt-G7-fda"/>
+                    </connections>
+                </button>
+                <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="xxW-65-FJR">
+                    <rect key="frame" x="263" y="14" width="135" height="28"/>
+                    <buttonCell key="cell" type="push" title="Assign Attachment..." bezelStyle="rounded" alignment="center" controlSize="small" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="qBq-VI-tr7">
+                        <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                        <font key="font" metaFont="smallSystem"/>
+                    </buttonCell>
+                    <connections>
+                        <action selector="assignAttachment:" target="-2" id="5jS-yY-0QD"/>
                     </connections>
                 </button>
             </subviews>
             <constraints>
                 <constraint firstItem="0tq-Cj-ELZ" firstAttribute="leading" secondItem="Hz6-mo-xeY" secondAttribute="leading" id="KUO-Op-wLx"/>
                 <constraint firstItem="5TT-dJ-GGq" firstAttribute="top" secondItem="0tq-Cj-ELZ" secondAttribute="bottom" constant="9" id="OcD-Hb-tz7"/>
+                <constraint firstItem="5TT-dJ-GGq" firstAttribute="leading" secondItem="xxW-65-FJR" secondAttribute="trailing" constant="12" id="azw-yU-Lhc"/>
                 <constraint firstAttribute="bottom" secondItem="5TT-dJ-GGq" secondAttribute="bottom" constant="20" id="loN-XM-tLB"/>
                 <constraint firstItem="0tq-Cj-ELZ" firstAttribute="top" secondItem="Hz6-mo-xeY" secondAttribute="top" id="sH7-c5-g15"/>
-                <constraint firstAttribute="trailing" secondItem="5TT-dJ-GGq" secondAttribute="trailing" constant="20" id="tde-R0-lTj"/>
+                <constraint firstAttribute="trailing" secondItem="5TT-dJ-GGq" secondAttribute="trailing" id="tde-R0-lTj"/>
+                <constraint firstItem="xxW-65-FJR" firstAttribute="baseline" secondItem="5TT-dJ-GGq" secondAttribute="baseline" id="yLl-Xe-JjK"/>
                 <constraint firstAttribute="trailing" secondItem="0tq-Cj-ELZ" secondAttribute="trailing" id="zJ8-eg-EWy"/>
             </constraints>
         </customView>
         <menu id="2ji-H1-fqK">
             <items>
-                <menuItem title="Delete..." id="XPq-XB-FsT">
+                <menuItem title="Remove..." id="XPq-XB-FsT">
                     <modifierMask key="keyEquivalentModifierMask"/>
                     <connections>
                         <action selector="delete:" target="-1" id="Jeh-KB-3qN"/>

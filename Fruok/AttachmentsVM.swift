@@ -98,7 +98,6 @@ class AttachmentsViewModel: NSObject, MVVMViewModel, CollectionDragAndDropViewMo
 	struct AttachmentDeleteConfirmationInfo {
 
 		let question: String
-		let detailString: String
 		let callback: () -> Void
 	}
 
@@ -114,14 +113,13 @@ class AttachmentsViewModel: NSObject, MVVMViewModel, CollectionDragAndDropViewMo
 
 		if attachments.count > 1 {
 
-			question = NSString(format: NSLocalizedString("Delete %i Files", comment: "Multi attachment deletion") as NSString, indexes.count) as String
+			question = NSString(format: NSLocalizedString("Remove %i Attachments from this task?", comment: "Multi attachment deletion") as NSString, indexes.count) as String
 		} else {
-			question = NSString(format: NSLocalizedString("Delete File %@?", comment: "Attachment deletion") as NSString, attachments.first?.filename ?? "_untitled_") as String
+			question = NSString(format: NSLocalizedString("Remove Attachment %@ from this task?", comment: "Attachment deletion") as NSString, attachments.first?.filename ?? "_untitled_") as String
 		}
 
 		let info = AttachmentDeleteConfirmationInfo(
 			question: question,
-			detailString: NSLocalizedString("This action can not be undone", comment: "Attachment deletion warning"),
 
 			callback: { [weak self] in
 				self?.task.removeFromAttachments(NSOrderedSet(array: attachments))
@@ -140,5 +138,10 @@ class AttachmentsViewModel: NSObject, MVVMViewModel, CollectionDragAndDropViewMo
 	}
 
 	var attachmentsToOpen = Property<[URL]>([])
+
+	func attachmentSelectorViewModel() -> AttachmentSelectorViewModel? {
+
+		return AttachmentSelectorViewModel(with: task)
+	}
 
 }

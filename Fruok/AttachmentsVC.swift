@@ -54,9 +54,9 @@ class AttachmentsViewController: NSViewController, MVVMView {
 			let alert = NSAlert()
 			alert.alertStyle = .warning
 			alert.messageText = info.question
-			alert.informativeText = info.detailString
-			alert.addButton(withTitle: NSLocalizedString("Delete", comment: "Confirm task deletion button"))
-			alert.addButton(withTitle: NSLocalizedString("Cancel", comment: "Cancel task deletion button"))
+//			alert.informativeText = info.detailString?
+			alert.addButton(withTitle: NSLocalizedString("Remove", comment: "Confirm attachment remove button"))
+			alert.addButton(withTitle: NSLocalizedString("Cancel", comment: "Cancel attachment remove button"))
 
 			alert.beginSheetModal(for: window, completionHandler: { response in
 
@@ -110,6 +110,19 @@ class AttachmentsViewController: NSViewController, MVVMView {
 
 	}
 
+	@IBAction func assignAttachment(_ sender: Any) {
+
+		let sheetController = AttachmentSelectorWindowController()
+		if let selectorViewModel = self.viewModel?.attachmentSelectorViewModel() {
+			sheetController.attachmentViewController.set(viewModel: selectorViewModel)
+		}
+		
+		self.view.window?.beginSheet(sheetController.window!, completionHandler: { response in
+
+			_ = sheetController
+		})
+	}
+
 	@IBAction func openAttachment(_ sender: Any?) {
 
 		self.viewModel?.userWantsOpenAttachmentsAt(indexes: self.tableView.selectedRowIndexes)
@@ -117,7 +130,10 @@ class AttachmentsViewController: NSViewController, MVVMView {
 
 	@IBAction func delete(_ sender: Any?) {
 
-		self.viewModel?.userWantsDeleteAttachments(at: self.tableView.selectedRowIndexes)
+		if self.tableView.clickedRow >= 0 {
+			let indexes = IndexSet(integer: self.tableView.clickedRow)
+			self.viewModel?.userWantsDeleteAttachments(at: indexes)
+		}
 	}
 }
 

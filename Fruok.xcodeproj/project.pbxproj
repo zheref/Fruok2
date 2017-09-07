@@ -10,6 +10,11 @@
 		271EAC0BF16FE40B996281AF /* Pods_FruokUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 35F75909185B30AAE0ED14CB /* Pods_FruokUITests.framework */; };
 		52F2D2AB02B9F0489EF794AE /* Pods_FruokTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9FB1C67FA28B9D791E06D7D5 /* Pods_FruokTests.framework */; };
 		C510E1B01BE92F1C0CD199E6 /* Pods_Fruok.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3F4F892E3EC3444EAE5707A1 /* Pods_Fruok.framework */; };
+		D80B54801F61316400AF7086 /* AttachmentSelectorWC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D80B547E1F61316400AF7086 /* AttachmentSelectorWC.swift */; };
+		D80B54811F61316400AF7086 /* AttachmentSelectorWC.xib in Resources */ = {isa = PBXBuildFile; fileRef = D80B547F1F61316400AF7086 /* AttachmentSelectorWC.xib */; };
+		D80B54851F61321200AF7086 /* AttachmentSelectorVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D80B54831F61321200AF7086 /* AttachmentSelectorVC.swift */; };
+		D80B54861F61321200AF7086 /* AttachmentSelectorVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = D80B54841F61321200AF7086 /* AttachmentSelectorVC.xib */; };
+		D80B54881F61373100AF7086 /* AttachmentSelectorVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = D80B54871F61373100AF7086 /* AttachmentSelectorVM.swift */; };
 		D82E214C1F3BEC8000F601DD /* DocumentWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D82E214B1F3BEC8000F601DD /* DocumentWindowController.swift */; };
 		D82E21531F3C540100F601DD /* TasksCollectionVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D82E21521F3C540100F601DD /* TasksCollectionVC.swift */; };
 		D82E21551F3C541800F601DD /* TasksCollectionVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = D82E21541F3C541800F601DD /* TasksCollectionVM.swift */; };
@@ -171,6 +176,11 @@
 		6C62FC992BCF259AA9BEB170 /* Pods-FruokUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FruokUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-FruokUITests/Pods-FruokUITests.release.xcconfig"; sourceTree = "<group>"; };
 		9FB1C67FA28B9D791E06D7D5 /* Pods_FruokTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FruokTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D2C4E5796C10D7F492F44FA3 /* Pods-Fruok.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Fruok.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Fruok/Pods-Fruok.debug.xcconfig"; sourceTree = "<group>"; };
+		D80B547E1F61316400AF7086 /* AttachmentSelectorWC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AttachmentSelectorWC.swift; sourceTree = "<group>"; };
+		D80B547F1F61316400AF7086 /* AttachmentSelectorWC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AttachmentSelectorWC.xib; sourceTree = "<group>"; };
+		D80B54831F61321200AF7086 /* AttachmentSelectorVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AttachmentSelectorVC.swift; sourceTree = "<group>"; };
+		D80B54841F61321200AF7086 /* AttachmentSelectorVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AttachmentSelectorVC.xib; sourceTree = "<group>"; };
+		D80B54871F61373100AF7086 /* AttachmentSelectorVM.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AttachmentSelectorVM.swift; sourceTree = "<group>"; };
 		D82E214B1F3BEC8000F601DD /* DocumentWindowController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DocumentWindowController.swift; sourceTree = "<group>"; };
 		D82E21521F3C540100F601DD /* TasksCollectionVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TasksCollectionVC.swift; sourceTree = "<group>"; };
 		D82E21541F3C541800F601DD /* TasksCollectionVM.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TasksCollectionVM.swift; sourceTree = "<group>"; };
@@ -366,6 +376,26 @@
 				35F75909185B30AAE0ED14CB /* Pods_FruokUITests.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		D80B547D1F61310500AF7086 /* AttachmentSelector */ = {
+			isa = PBXGroup;
+			children = (
+				D80B547E1F61316400AF7086 /* AttachmentSelectorWC.swift */,
+				D80B547F1F61316400AF7086 /* AttachmentSelectorWC.xib */,
+				D80B54821F6131D300AF7086 /* AttachmentSelectorVC */,
+			);
+			name = AttachmentSelector;
+			sourceTree = "<group>";
+		};
+		D80B54821F6131D300AF7086 /* AttachmentSelectorVC */ = {
+			isa = PBXGroup;
+			children = (
+				D80B54831F61321200AF7086 /* AttachmentSelectorVC.swift */,
+				D80B54841F61321200AF7086 /* AttachmentSelectorVC.xib */,
+				D80B54871F61373100AF7086 /* AttachmentSelectorVM.swift */,
+			);
+			name = AttachmentSelectorVC;
 			sourceTree = "<group>";
 		};
 		D82E214A1F3BEC5D00F601DD /* DocumentWindow */ = {
@@ -686,6 +716,7 @@
 				D834BD3F1F4C1290001B99D2 /* Attachments */,
 				D86F68801F5486F300B89BB6 /* Statistics */,
 				D8EB13921F5DA9B5000EA5AC /* AttachmentOverview */,
+				D80B547D1F61310500AF7086 /* AttachmentSelector */,
 			);
 			name = UI;
 			sourceTree = "<group>";
@@ -951,6 +982,7 @@
 				D87858F01F56E397004FF111 /* style.css in Resources */,
 				D8388E491F37905B004A2DA3 /* Assets.xcassets in Resources */,
 				D8C2AD2A1F3A7EBC002D75B2 /* KanbanTaskStateItem.xib in Resources */,
+				D80B54811F61316400AF7086 /* AttachmentSelectorWC.xib in Resources */,
 				D834BD431F4C12AC001B99D2 /* AttachmentsVC.xib in Resources */,
 				D84FB9F31F5304CD0080FC28 /* PomodoroVC.xib in Resources */,
 				D8F7B4721F423C4E00060F08 /* DeleteTaskStateConfirmationDialog.xib in Resources */,
@@ -960,6 +992,7 @@
 				D834BD381F4B0D58001B99D2 /* ProjectMetadataVC.xib in Resources */,
 				D87858ED1F56E397004FF111 /* data.yml in Resources */,
 				D8396CC61F5FEFB800C9D0C4 /* Icon.icns in Resources */,
+				D80B54861F61321200AF7086 /* AttachmentSelectorVC.xib in Resources */,
 				D87858EE1F56E397004FF111 /* invoice.html.mustache in Resources */,
 				D8F7B47F1F44EE2800060F08 /* SubtasksVC.xib in Resources */,
 				D86F68841F54875F00B89BB6 /* StatisticsVC.xib in Resources */,
@@ -1151,6 +1184,7 @@
 				D87858E61F56DB0B004FF111 /* InvoiceVC.swift in Sources */,
 				D84E45B61F49BB3B00C7891F /* RGBAColorsMarshalling.swift in Sources */,
 				D82ECF291F37985D008251C2 /* BaseTask+CoreDataClass.swift in Sources */,
+				D80B54881F61373100AF7086 /* AttachmentSelectorVM.swift in Sources */,
 				D82E216C1F3C5CE400F601DD /* Subtask+CoreDataProperties.swift in Sources */,
 				D86441081F4EA9EE00884D49 /* NSManagedContext+UndoGroup.swift in Sources */,
 				D83BF7CA1F52F3D900339637 /* PomodoroLog+CoreDataProperties.swift in Sources */,
@@ -1158,6 +1192,7 @@
 				D8FC65131F48C2420065D566 /* LabelEditingItem.swift in Sources */,
 				D82E217F1F40F2F700F601DD /* CollectionViewModel.swift in Sources */,
 				D8EB13991F5DCE07000EA5AC /* AttachmentOverviewVC.swift in Sources */,
+				D80B54801F61316400AF7086 /* AttachmentSelectorWC.swift in Sources */,
 				D8C2AD291F3A7EBC002D75B2 /* KanbanTaskStateItem.swift in Sources */,
 				D82E21681F3C5CE400F601DD /* Label+CoreDataProperties.swift in Sources */,
 				D82E217B1F3F822000F601DD /* NSManagedObjectContext+URI.swift in Sources */,
@@ -1171,6 +1206,7 @@
 				D8EB139C1F5DCE8A000EA5AC /* AttachmentOverviewVM.swift in Sources */,
 				D82E215B1F3C587D00F601DD /* KanbanTaskItem.swift in Sources */,
 				D8339DF11F47127800EA5617 /* LabelItem.swift in Sources */,
+				D80B54851F61321200AF7086 /* AttachmentSelectorVC.swift in Sources */,
 				D8339DED1F47111300EA5617 /* LabelItemVM.swift in Sources */,
 				D8F7B4761F4364B200060F08 /* NestedScrollView.swift in Sources */,
 				D84FB9F21F5304CD0080FC28 /* PomodoroVC.swift in Sources */,

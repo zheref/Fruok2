@@ -91,7 +91,7 @@ class LabelsCollectionLayout: HorizontalFittingCollectionLayout {
 
 	func position(for index: Int, computedWidths: [CGFloat]) -> CGFloat {
 
-		let position = computedWidths[0..<index].reduce(CGFloat(kInterItemMargin)) { (result, width) -> CGFloat in
+		let position = computedWidths[0..<index].reduce(CGFloat(0)) { (result, width) -> CGFloat in
 			return result + width + kInterItemMargin
 		}
 		return position

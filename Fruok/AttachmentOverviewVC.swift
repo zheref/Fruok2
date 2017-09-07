@@ -74,7 +74,10 @@ class AttachmentOverviewController: NSViewController, MVVMView {
 
 	@IBAction func delete(_ sender: Any?) {
 
-		self.viewModel?.userWantsDeleteAttachments(at: self.tableView.selectedRowIndexes)
+		if self.tableView.clickedRow >= 0 {
+			let indexes = IndexSet(integer: self.tableView.clickedRow)
+			self.viewModel?.userWantsDeleteAttachments(at: indexes)
+		}
 	}
 }
 

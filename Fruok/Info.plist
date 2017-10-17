@@ -11,6 +11,8 @@
 			<array>
 				<string>fruokdocument</string>
 			</array>
+			<key>CFBundleTypeIconFile</key>
+			<string>DocIcon</string>
 			<key>CFBundleTypeMIMETypes</key>
 			<array/>
 			<key>CFBundleTypeName</key>
@@ -82,7 +84,7 @@
 			<key>UTTypeDescription</key>
 			<string>Fruok Document</string>
 			<key>UTTypeIconFile</key>
-			<string>Icon</string>
+			<string>DocIcon</string>
 			<key>UTTypeIdentifier</key>
 			<string>com.tristan.fruok.document</string>
 			<key>UTTypeTagSpecification</key>

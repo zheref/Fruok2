@@ -91,12 +91,16 @@ class PomodoroViewModel: NSObject, MVVMViewModel {
 
 		NotificationCenter.default.reactive.notification(name: .NSManagedObjectContextObjectsDidChange, object: self.task.managedObjectContext).observeNext { note in
 
-			let changedSubtasks = [NSInsertedObjectsKey, NSUpdatedObjectsKey, NSDeletedObjectsKey]
-				.map { note.userInfo?[$0] as? Set<AnyHashable> }
-				.flatMap { $0 }
-				.flatMap { $0 }
-				.filter { $0 is Subtask }
+			var changedSubtasksSet = Set<AnyHashable>()
 
+			for key in [NSInsertedObjectsKey, NSUpdatedObjectsKey, NSDeletedObjectsKey] {
+				if let objs = note.userInfo?[key] as? Set<AnyHashable> {
+					changedSubtasksSet.formUnion(objs)
+				}
+			}
+
+			let changedSubtasks = Array(changedSubtasksSet).filter{ $0 is Subtask }
+			
 			if changedSubtasks.count > 0 {
 				self.subtasksDidChange()
 			}

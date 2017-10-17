@@ -11,8 +11,6 @@
 			<array>
 				<string>fruokdocument</string>
 			</array>
-			<key>CFBundleTypeIconFile</key>
-			<string>Icon</string>
 			<key>CFBundleTypeMIMETypes</key>
 			<array/>
 			<key>CFBundleTypeName</key>

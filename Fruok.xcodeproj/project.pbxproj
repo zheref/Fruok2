@@ -79,7 +79,6 @@
 		D8396CBF1F5DEF9800C9D0C4 /* TableCells.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8396CBE1F5DEF9800C9D0C4 /* TableCells.swift */; };
 		D8396CC11F5DF00A00C9D0C4 /* TableCellsViewModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8396CC01F5DF00A00C9D0C4 /* TableCellsViewModels.swift */; };
 		D8396CC41F5FC9F100C9D0C4 /* PomodoroController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8396CC31F5FC9F100C9D0C4 /* PomodoroController.swift */; };
-		D8396CC61F5FEFB800C9D0C4 /* Icon.icns in Resources */ = {isa = PBXBuildFile; fileRef = D8396CC51F5FEFB800C9D0C4 /* Icon.icns */; };
 		D83BF7C91F52F3D900339637 /* PomodoroSession+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = D83BF7C71F52F3D900339637 /* PomodoroSession+CoreDataProperties.swift */; };
 		D83BF7CA1F52F3D900339637 /* PomodoroLog+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = D83BF7C81F52F3D900339637 /* PomodoroLog+CoreDataProperties.swift */; };
 		D83BF7CD1F52F3EB00339637 /* PomodoroSession+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = D83BF7CB1F52F3EB00339637 /* PomodoroSession+CoreDataClass.swift */; };
@@ -251,7 +250,6 @@
 		D8396CBE1F5DEF9800C9D0C4 /* TableCells.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableCells.swift; sourceTree = "<group>"; };
 		D8396CC01F5DF00A00C9D0C4 /* TableCellsViewModels.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableCellsViewModels.swift; sourceTree = "<group>"; };
 		D8396CC31F5FC9F100C9D0C4 /* PomodoroController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PomodoroController.swift; sourceTree = "<group>"; };
-		D8396CC51F5FEFB800C9D0C4 /* Icon.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = Icon.icns; sourceTree = "<group>"; };
 		D83BF7C71F52F3D900339637 /* PomodoroSession+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "PomodoroSession+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		D83BF7C81F52F3D900339637 /* PomodoroLog+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "PomodoroLog+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		D83BF7CB1F52F3EB00339637 /* PomodoroSession+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "PomodoroSession+CoreDataClass.swift"; sourceTree = "<group>"; };
@@ -590,7 +588,6 @@
 				D8C2AD171F3A4CC7002D75B2 /* Fruok-Bridging-Header.h */,
 				D8388E481F37905B004A2DA3 /* Assets.xcassets */,
 				D8388E4A1F37905B004A2DA3 /* Main.storyboard */,
-				D8396CC51F5FEFB800C9D0C4 /* Icon.icns */,
 				D87858E81F56E397004FF111 /* InoiceTemplate */,
 				D8388E4D1F37905B004A2DA3 /* Info.plist */,
 				D85D52661F501B52009B34FE /* Fruok.entitlements */,
@@ -991,7 +988,6 @@
 				D8339DEF1F4711E000EA5617 /* LabelItem.xib in Resources */,
 				D834BD381F4B0D58001B99D2 /* ProjectMetadataVC.xib in Resources */,
 				D87858ED1F56E397004FF111 /* data.yml in Resources */,
-				D8396CC61F5FEFB800C9D0C4 /* Icon.icns in Resources */,
 				D80B54861F61321200AF7086 /* AttachmentSelectorVC.xib in Resources */,
 				D87858EE1F56E397004FF111 /* invoice.html.mustache in Resources */,
 				D8F7B47F1F44EE2800060F08 /* SubtasksVC.xib in Resources */,

@@ -135,7 +135,7 @@ class PomodoroViewModel: NSObject, MVVMViewModel {
 		case .sessionRunning(pomodoroLog: let log):
 
 			let timeString: String
-			if let session = log.session, let startDate = session.startDate as? Date {
+			if let session = log.session, let startDate = (session.startDate as Date?) {
 
 				let displaySeconds = max(session.duration - Date().timeIntervalSince(startDate), 0.0)
 				timeString = self.formatTime(seconds: displaySeconds)
@@ -274,7 +274,7 @@ class PomodoroViewModel: NSObject, MVVMViewModel {
 
 			guard
 				let session = log.session,
-				let startDate = session.startDate as? Date else {
+				let startDate = (session.startDate as Date?) else {
 
 					self.lifeCyclePhase = .beforeFirstRun // should not happen
 				return

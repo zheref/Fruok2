@@ -9,8 +9,8 @@ target 'Fruok' do
   use_frameworks!
 
   # Pods for Fruok
-  pod 'Bond', '6.2.6'
-  pod 'Charts', '~> 3.0.2'
+  pod 'Bond', '~> 6.3.0'
+  pod 'Charts', '3.0.3'
   pod 'GRMustache.swift', '~> 2.0.0'
 
   target 'FruokTests' do

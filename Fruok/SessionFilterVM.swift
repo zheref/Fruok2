@@ -272,8 +272,8 @@ class SessionFilterViewModel: NSObject, MVVMViewModel {
 			return (session1.startDate as Date? ?? Date()) < (session2.startDate as Date? ?? Date())
 		}
 
-		let start = (sessions.first?.startDate as? Date)?.startOfDay ?? Date().startOfDay
-		let end = (sessions.last?.startDate as? Date)?.endOfDay ?? Date()
+		let start = (sessions.first?.startDate as Date?)?.startOfDay ?? Date().startOfDay
+		let end = (sessions.last?.startDate as Date?)?.endOfDay ?? Date()
 
 		return DateRange(startDate: start, endDate: end)
 	}

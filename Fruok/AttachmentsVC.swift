@@ -174,7 +174,7 @@ extension AttachmentsViewController: NSTableViewDataSource, NSTableViewDelegate 
 		let urls = info.draggingPasteboard().pasteboardItems?
 			.map { $0.propertyList(forType: kUTTypeFileURL as String) }
 			.flatMap{ $0 }
-			.map { NSURL(pasteboardPropertyList: $0, ofType: kUTTypeFileURL as String) as? URL }
+			.map { NSURL(pasteboardPropertyList: $0, ofType: kUTTypeFileURL as String) as URL? }
 			.flatMap{ $0 }
 
 		if let urls = urls, urls.count > 0 {

@@ -87,7 +87,7 @@ class StatisticsViewModel: NSObject, MVVMViewModel {
 
 			let perDay: [Date:[PomodoroSession]] = self.sessionFilterViewModel.sessions.grouping(by: { session in
 
-				let index = dayStarts.binaryInsertion(search: session.startDate as! Date, options: .last)
+				let index = dayStarts.binaryInsertion(search: session.startDate! as Date, options: .last)
 
 				precondition(index > 0)
 
